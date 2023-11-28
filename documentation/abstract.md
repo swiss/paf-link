@@ -1,6 +1,1 @@
-# Abstract 
-Le [[Modèle Générale Prov-SE Ontology]] a pour mission de répertorier  et de classer l'information issues des activités de l'Administration fédérale. Cette Ontology doit prendre en charge non seulement les agents qui composent l'Administration fédérale mais également leurs activités et les items qui composent leurs activités. 
-
-^^*-*modèle pas seulement pour la totalité de l'administration fédérale mais également spécifique aux aspects parlementaires qu'on pourrait qualifier de sous-modèle-*^^*
-
-// décrire les données et le format des données //
+The **paf.link schema** has the goal of describing a RDF ([[[rdf11-concepts]]]) data schema for describing the activities of the public administration. As it is an activity based schema, it draws heavily on the [[[prov-o]]] which it extends with generic classes for public affaires. The paf.link schema supports not only the agents that make up the public administrations, but also their activities and the items that make up their activities. The paf.link schema allows to be adapted to actual public administrations by defining different application profiles (e.g. ch.paf.link).
