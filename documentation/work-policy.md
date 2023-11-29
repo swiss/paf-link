@@ -3,9 +3,9 @@
 Definition on decisions and goals regarding the work done on the schema.
 
 
-## Non-Functional Goals
+## Non-Functional Goals
 
-### We do not try to minimize the ammount of Properties in this schema, in general we will declinate all properties to be clearly used on a class.
+### We do not try to minimize the ammount of Properties in this schema, in general we will declinate all properties to be clearly used on a class.
 
 E.g. instead of reusing [prov:wasInformedBy](http://www.w3.org/ns/prov#wasInformedBy) for more specific sub-classes like a ConsultationActivity, we will always define specific properties for the sub-classes.
 
@@ -15,4 +15,4 @@ The idea is to be more help-full for the hierarchicaly endproducts (XML and JSON
 
 
 
-## Style guide for links, classes and properties
+## Style guide for links, classes and properties
