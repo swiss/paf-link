@@ -3,10 +3,10 @@
 ## Classes
 
 ### Proposal and Decision
-[todo] Describe the binome of proposal and decision. 
+[TODO] Describe the binome of proposal and decision. 
 * The only answer on Proposal can be a Decision.
 * (Also explain that it should only be used in the process where the decision becomes authorative (independent of level). For the use of informative decisions see "Information".)
-* Make examples: Beispiele: BR-Antrag -> BR-Beschluss; Parlamentarischer Vorstoss -> Verabschiedung des parlamentarischen Vorstosses; 
+* [TODO] Make examples: Beispiele: BR-Antrag -> BR-Beschluss; Parlamentarischer Vorstoss -> Verabschiedung des parlamentarischen Vorstosses; 
 
 ### paf:Proposal {#Proposal} (subClass of prov:Activity)
 * Antrag
@@ -30,6 +30,8 @@ The Agent (Person or Group) which submits the Proposal.
         rdfs:comment "The EDI is the issuer of this proposoal."@en
     ];
 ```
+
+ vs.
 
 ```turtle example
  paf:hasProposalSubmitter [
@@ -61,21 +63,68 @@ The Agent (Person or Group) which submits the Proposal.
 This is the activity in the process to answer in a formally asked proposal.
 
 
-
-
+###  Consultation & Comment
+* Beispiele: Vernehmlassung; Ämterkonsultation; Mitberichtsverfahren
 Konsultation -> Stellungnahme 
 
-Beispiele: Vernehmlassung; Ämterkonsultation; Mitberichtsverfahren
-
-Auftrag -> Erledigung
-
-Beispiele: Auftrag zur Erarbeitung einer Stellungnahme der BK an ein Departement -> Erledigung in Form eines Antrags an den Bundesrat; Verabschiedung einer Motion durch die Bundesversammlung -> Auftrag an den BR, die Motion umzusetzen; Brief der GPK an den Bundesrat -> Auftrag, der GPK zu antworten*) 
-Information
+### paf:Consultation (subClass of prov:Activity)
+* Konsultation
+* consultation
+* consultazione
 
 
-### Agent
+https://www.termdat.bk.admin.ch/entry/56977
 
-### Activity
+### paf:Comment (subClass of prov:Activity)
+* Stellungnahme
+* avis
+* parere ([TODO] check)
+
+
+https://www.termdat.bk.admin.ch/entry/23059
+
+
+### Mandate & (Liquidation or Resolution [TODO])
+
+* Beispiele: Auftrag zur Erarbeitung einer Stellungnahme der BK an ein Departement -> Erledigung in Form eines Antrags an den Bundesrat; Verabschiedung einer Motion durch die Bundesversammlung -> Auftrag an den BR, die Motion umzusetzen; Brief der GPK an den Bundesrat -> Auftrag, der GPK zu antworten*)
+
+### paf:Mandate (subClass of prov:Activity)
+* Auftrag
+* mandat
+* mandato
+
+https://www.termdat.bk.admin.ch/search/entry/109134
+### paf:Resolution (subClass of prov:Activity)
+[TODO] resolution comes from terminology of the parlament, potentially, it is better to have a more common term to day "done".
+* Erledigung (Auflösung?)
+* resolution
+* risoluzione
+
+https://www.termdat.bk.admin.ch/entry/95501
+
+
+### Information and Acknowledgement
+
+### paf:Information (subClass of prov:Activity)
+* Information
+* information
+* informazione
+
+The activity of sendin an information.
+
+https://www.termdat.bk.admin.ch/entry/380634
+
+### paf:Acknowledgement (subClass of prov:Activity)
+
+
+
+
+
+
+
+
+
+# Swiss Public Affairs (ch.paf.link): Layer 3
 
 
 
@@ -85,8 +134,7 @@ Définition :
 
 ##### Introduction 
 
-Les activités de l'Administration fédérale sont notamment caractérisées par un type particulier d'activité, il s'agit de ce que l'on communément appeler "Verbe". Ces Verbes correspondent aux activités réalisées par les "parlementaires" au près du "Conseil fédéral". Cette catégorie très particulière d'activité n'existe qu'entre ceux deux types d'agents. 
-L'intérêt de définir spécifiquement ces activités avec des caractéristiques claires permet d'envisager l'automatisation de certains processus lors des interactions entre les activités parlementaires et le conseil fédéral. 
+
 ##### Initiative Parlementaire 
 
 Nature : 
@@ -146,50 +194,6 @@ Groupe : Interventions parlementaires
 Groupe : Interventions parlementaires 
 
 État : 
-
-
-
-
-
-
-
-Notre modèle [[Modèle Générale Prov-SE Ontology]] 
-
-
-créer des catégorie d'activité (demande, réponse etc) 
-
-
-Bare Bones Liste des verbes. Les trois premiers sont structurellement des "paires". Je veux dire par là que l'un ne devrait pas exister sans l'autre, bien que le premier verbe soit généralement antérieur et provoque une "attente" jusqu'à ce que le deuxième "verbe" correspondant ait également eu lieu. Le quatrième verbe - "information" - ne fait pas nécessairement partie d'une paire et est donc un verbe "autonome". Cela n'exclut pas
-
-Demande -> Décision 
-
-Exemples : Proposition du CF -> Décision du CF ; Intervention parlementaire -> Adoption de l'intervention parlementaire ;
-
-Consultation -> Avis 
-
-Exemples : Consultation ; Consultation des offices ; Procédure de co-rapport
-
-Mandat -> Exécution
-
-Exemples : Mandat d'élaborer une prise de position de la ChF à un département -> exécution sous forme de proposition au Conseil fédéral ; adoption d'une motion par l'Assemblée fédérale -> mandat au CF de mettre en œuvre la motion ; lettre de la CdG au Conseil fédéral -> mandat de répondre à la CdG*) 
-
-Information
-
-* Une lettre de la CdG au Conseil fédéral n'est pas une "consultation -> prise de position", car le Conseil fédéral n'a pas, dans les faits, la liberté de ne pas prendre position. Je n'utiliserais la "consultation -> prise de position" que dans les cas où les acteurs auxquels on s'adresse décident eux-mêmes s'ils veulent ou non déposer une prise de position.
-
-
-
-### Entity
-
-### Item
-
-
-
-
-# Swiss Public Affairs (ch.paf.link): Layer 3
-
-
-
 
 
 # Namespaces Declarations
