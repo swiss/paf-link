@@ -2,7 +2,7 @@
 
 ## Classes
 
-### Proposal and Decision
+### Proposal & Decision
 [TODO] Describe the binome of proposal and decision. 
 * The only answer on Proposal can be a Decision.
 * (Also explain that it should only be used in the process where the decision becomes authorative (independent of level). For the use of informative decisions see "Information".)
@@ -84,7 +84,7 @@ https://www.termdat.bk.admin.ch/entry/56977
 https://www.termdat.bk.admin.ch/entry/23059
 
 
-### Mandate & (Liquidation or Resolution [TODO])
+### Mandate & Resolution
 
 * Beispiele: Auftrag zur Erarbeitung einer Stellungnahme der BK an ein Departement -> Erledigung in Form eines Antrags an den Bundesrat; Verabschiedung einer Motion durch die Bundesversammlung -> Auftrag an den BR, die Motion umzusetzen; Brief der GPK an den Bundesrat -> Auftrag, der GPK zu antworten*)
 
@@ -103,7 +103,7 @@ https://www.termdat.bk.admin.ch/search/entry/109134
 https://www.termdat.bk.admin.ch/entry/95501
 
 
-### Information and Acknowledgement
+### Information & Acknowledgement
 
 ### paf:Information (subClass of prov:Activity)
 * Information
