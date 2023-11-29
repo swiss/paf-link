@@ -1,27 +1,83 @@
-# Prov-SE: Core
-
-## Introduction
-Notre modèle est un fork du modèle Prov-o, il en reprend les éléments essentiels tel que le
-
-Notre ontology fournit les fondations pour s'implémenter dans une large variété d'applications de contextes de domaines et formes d'informations. La structure présentée ici offre un cadre large pour toutes les activités inhérentes à l'Administration fédérale. 
-
-
-## Prov-SE Ontology : Description
-
-## Expanded Terms
-
-## Qualified Terms
-
-
-
-
-# Core Schema
+# Public Affairs (paf.link): Layer 2
 
 ## Classes
+
+### Proposal and Decision
+[todo] Describe the binome of proposal and decision. 
+* The only answer on Proposal can be a Decision.
+* (Also explain that it should only be used in the process where the decision becomes authorative (independent of level). For the use of informative decisions see "Information".)
+* Make examples: Beispiele: BR-Antrag -> BR-Beschluss; Parlamentarischer Vorstoss -> Verabschiedung des parlamentarischen Vorstosses; 
+
+### paf:Proposal {#Proposal} (subClass of prov:Activity)
+* Antrag
+* proposition
+* proposta
+
+This is the activity in the process to formally ask for a decision.
+
+#### Properties
+
+### paf:proposalSubmitter (subProperty of prov:wasAssociatedWith)
+
+### paf:hasProposalSubmitter ([TODO] vs prov:qualifiedAssociation and fixed prov:hadRole paf:proposalSubmitter) (subProperty of prov:qualifiedAssociation)
+The Agent (Person or Group) which submits the Proposal.
+
+```turtle example
+ prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent   :[EFD](https://ld.admin.ch/department/V);
+        prov:hadRole paf:ProposalSubmitter;
+        rdfs:comment "The EDI is the issuer of this proposoal."@en
+    ];
+```
+
+```turtle example
+ paf:hasProposalSubmitter [
+        a prov:Association;
+        paf:proposalSubmitter: [EFD](https://ld.admin.ch/department/V);
+        prov:hadRole :pafProposalSubmitter;
+        rdfs:comment "The EDI is the issuer of this proposoal."@en
+    ];
+```
+
+### paf:hasProposalReceiver
+
+#### References
+- [^paf_proposal_1] https://www.termdat.bk.admin.ch/entry/56995
+- [^paf_proposal_submitter] https://www.termdat.bk.admin.ch/entry/109151
+
+
+
+
+
+
+
+
+### paf:Decision {#Decision} (subClass of prov:Activity)
+* Entscheid
+* décision
+* decisione
+
+This is the activity in the process to answer in a formally asked proposal.
+
+
+
+
+Konsultation -> Stellungnahme 
+
+Beispiele: Vernehmlassung; Ämterkonsultation; Mitberichtsverfahren
+
+Auftrag -> Erledigung
+
+Beispiele: Auftrag zur Erarbeitung einer Stellungnahme der BK an ein Departement -> Erledigung in Form eines Antrags an den Bundesrat; Verabschiedung einer Motion durch die Bundesversammlung -> Auftrag an den BR, die Motion umzusetzen; Brief der GPK an den Bundesrat -> Auftrag, der GPK zu antworten*) 
+Information
+
 
 ### Agent
 
 ### Activity
+
+
 
 Définition : 
 
@@ -122,25 +178,18 @@ Information
 * Une lettre de la CdG au Conseil fédéral n'est pas une "consultation -> prise de position", car le Conseil fédéral n'a pas, dans les faits, la liberté de ne pas prendre position. Je n'utiliserais la "consultation -> prise de position" que dans les cas où les acteurs auxquels on s'adresse décident eux-mêmes s'ils veulent ou non déposer une prise de position.
 
 
-Antrag -> Entscheid 
-
-Beispiele: BR-Antrag -> BR-Beschluss; Parlamentarischer Vorstoss -> Verabschiedung des parlamentarischen Vorstosses; 
-
-Konsultation -> Stellungnahme 
-
-Beispiele: Vernehmlassung; Ämterkonsultation; Mitberichtsverfahren
-
-Auftrag -> Erledigung
-
-Beispiele: Auftrag zur Erarbeitung einer Stellungnahme der BK an ein Departement -> Erledigung in Form eines Antrags an den Bundesrat; Verabschiedung einer Motion durch die Bundesversammlung -> Auftrag an den BR, die Motion umzusetzen; Brief der GPK an den Bundesrat -> Auftrag, der GPK zu antworten*) 
-Information
 
 ### Entity
 
 ### Item
 
 
-## Properties
+
+
+# Swiss Public Affairs (ch.paf.link): Layer 3
+
+
+
 
 
 # Namespaces Declarations
