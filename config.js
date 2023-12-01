@@ -5,6 +5,7 @@ var respecConfig = {
     format: 'markdown', 
     latestVersion: null,
     maxTocLevel: 4,
+    preProcess: [loadTurtle],
     postProcess: [jumpTo],
     github: {
       repoURL: "https://github.com/bequrios/paf-link",
