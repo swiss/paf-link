@@ -1,118 +1,168 @@
 # Layer 2: Public Affairs (paf.link) {#paf-link}
 
-## Classes
+## Proposal & Decision
 
-### Proposal & Decision
 [TODO] Describe the binome of proposal and decision. 
+
 * The only answer on Proposal can be a Decision.
 * (Also explain that it should only be used in the process where the decision becomes authorative (independent of level). For the use of informative decisions see "Information".)
 * [TODO] Make examples: Beispiele: BR-Antrag -> BR-Beschluss; Parlamentarischer Vorstoss -> Verabschiedung des parlamentarischen Vorstosses; 
 
-### paf:Proposal {#Proposal} (subClass of prov:Activity)
-* Antrag
-* proposition
-* proposta
+### Class *paf:Proposal* {#Proposal}
+
+paf:Proposal is an rdfs:subClass of prov:Activity
+
+[Translations](https://www.termdat.bk.admin.ch/entry/56995):
+
+* E: proposal
+* D: Antrag
+* F: proposition
+* I: proposta
 
 This is the activity in the process to formally ask for a decision.
 
-#### Properties
+#### Property Variant A *paf:hasProposalSubmitter*
 
-### paf:proposalSubmitter (subProperty of prov:wasAssociatedWith)
+paf:hasProposalSubmitter is a rdfs:subProperty of prov:wasAssociatedWith
 
-### paf:hasProposalSubmitter ([TODO] vs prov:qualifiedAssociation and fixed prov:hadRole paf:proposalSubmitter) (subProperty of prov:qualifiedAssociation)
-The Agent (Person or Group) which submits the Proposal.
+[Translations](https://www.termdat.bk.admin.ch/entry/109151)
 
+The agent (person or group) which submits the proposal.
+
+<aside class="example">
 ```turtle
- prov:qualifiedAssociation [
+:proposal_1 a paf:Proposal;
+    paf:hasProposalSubmitter :submitter_1.
+```
+</aside>
+
+#### Property Variant B *prov:qualifiedAssociation*
+
+The agent (person or group) which submits the proposal.
+
+<aside class="example">
+```turtle
+:proposal_1 a paf:Proposal;
+    prov:qualifiedAssociation [
         a prov:Association;
-        prov:agent   :[EFD](https://ld.admin.ch/department/V);
+        prov:agent   :submitter_1;
         prov:hadRole paf:ProposalSubmitter;
-        rdfs:comment "The EDI is the issuer of this proposoal."@en
-    ];
+        rdfs:comment "submitter_1 is the issuer of this proposoal."@en
+    ].
 ```
+</aside>
 
- vs.
+#### Property Variant C *paf:hasProposalSubmitter*
 
-```ttl
- paf:hasProposalSubmitter [
+The agent (person or group) which submits the proposal.
+
+<aside class="example">
+```turtle
+:proposal_1 a paf:Proposal;
+    paf:hasProposalSubmitter [
         a prov:Association;
-        paf:proposalSubmitter: [EFD](https://ld.admin.ch/department/V);
-        prov:hadRole :pafProposalSubmitter;
-        rdfs:comment "The EDI is the issuer of this proposoal."@en
-    ];
+        prov:agent   :submitter_1;
+        prov:hadRole paf:ProposalSubmitter;
+        rdfs:comment "submitter_1 is the issuer of this proposoal."@en
+    ].
 ```
+</aside>
 
-### paf:hasProposalReceiver
+#### Property Variant D *paf:hasProposalSubmitter*
 
-#### References
-- [^paf_proposal_1] https://www.termdat.bk.admin.ch/entry/56995
-- [^paf_proposal_submitter] https://www.termdat.bk.admin.ch/entry/109151
+The agent (person or group) which submits the proposal.
 
+<aside class="example">
+```turtle
+:proposal_1 a paf:Proposal;
+    paf:hasProposalSubmitter [
+        a prov:Association;
+        paf:hasProposalSubmitter :submitter_1;
+        prov:hadRole paf:ProposalSubmitter;
+        rdfs:comment "submitter_1 is the issuer of this proposoal."@en
+    ].
+```
+</aside>
 
+#### Property *paf:hasProposalReceiver*
 
+### Class *paf:Decision* {#Decision}
 
+paf:Decision is a rdfs:subClass of prov:Activity
 
+Translations
 
-
-
-### paf:Decision {#Decision} (subClass of prov:Activity)
 * Entscheid
 * décision
 * decisione
 
-This is the activity in the process to answer in a formally asked proposal.
+This is the activity to formally answer the corresponding paf:Proposal.
 
+## Consultation & Comment
 
-###  Consultation & Comment
 * Beispiele: Vernehmlassung; Ämterkonsultation; Mitberichtsverfahren
 Konsultation -> Stellungnahme 
 
-### paf:Consultation (subClass of prov:Activity)
+### Class *paf:Consultation* {#Consultation}
+
+paf:Consultation is a rdfs:subClass of prov:Activity
+
+[Tranlations](https://www.termdat.bk.admin.ch/entry/56977)
+
 * Konsultation
 * consultation
 * consultazione
 
+### Class *paf:Comment* {#Comment}
 
-https://www.termdat.bk.admin.ch/entry/56977
+paf:Comment is a rdfs:subClass of prov:Activity
 
-### paf:Comment (subClass of prov:Activity)
+[Translations](https://www.termdat.bk.admin.ch/entry/23059)
+
 * Stellungnahme
 * avis
 * parere ([TODO] check)
 
-
-https://www.termdat.bk.admin.ch/entry/23059
-
-
-### Mandate & Resolution
+## Mandate & Resolution
 
 * Beispiele: Auftrag zur Erarbeitung einer Stellungnahme der BK an ein Departement -> Erledigung in Form eines Antrags an den Bundesrat; Verabschiedung einer Motion durch die Bundesversammlung -> Auftrag an den BR, die Motion umzusetzen; Brief der GPK an den Bundesrat -> Auftrag, der GPK zu antworten*)
 
-### paf:Mandate (subClass of prov:Activity)
+### Class *paf:Mandate*
+
+paf:Mandate is a rdfs:subClass of prov:Activity
+
+[Translations](https://www.termdat.bk.admin.ch/search/entry/109134)
+
 * Auftrag
 * mandat
 * mandato
 
-https://www.termdat.bk.admin.ch/search/entry/109134
-### paf:Resolution (subClass of prov:Activity)
+### Class *paf:Resolution*
+
+paf:Resolution is a rdfs:subClass of prov:Activity
+
 [TODO] resolution comes from terminology of the parlament, potentially, it is better to have a more common term to day "done".
+
+[Tranlations](https://www.termdat.bk.admin.ch/entry/95501)
+
 * Erledigung (Auflösung?)
 * resolution
 * risoluzione
 
-https://www.termdat.bk.admin.ch/entry/95501
+## Information & Acknowledgement
 
+### Class *paf:Information*
 
-### Information & Acknowledgement
+paf:Information is a rdfs:subClass of prov:Activity
 
-### paf:Information (subClass of prov:Activity)
+[Tranlations](https://www.termdat.bk.admin.ch/entry/380634)
+
 * Information
 * information
 * informazione
 
-The activity of sendin an information.
+The activity of sending an information.
 
-https://www.termdat.bk.admin.ch/entry/380634
+### Class *paf:Acknowledgment*
 
-### paf:Acknowledgement (subClass of prov:Activity)
-
+paf:Acknowledgment is a rdfs:subClass of prov:Activity
