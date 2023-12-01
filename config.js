@@ -2,6 +2,7 @@ var respecConfig = {
     specStatus: "unofficial",
     shortName: 'paf-link',
     edDraftURI: "https://paf.link/",
+    format: 'markdown', 
     latestVersion: null,
     maxTocLevel: 4,
     postProcess: [jumpTo],
@@ -9,7 +10,7 @@ var respecConfig = {
       repoURL: "https://github.com/bequrios/paf-link",
       branch: "main", // alternative branch
     },
-    authors: [{
+    editors: [{
       name: "Théophile Boucard",
       company: "Federal Chancellery (FCh)",
       companyURL: "https://www.bk.admin.ch",
