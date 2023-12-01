@@ -1,3 +1,5 @@
+## Introduction
+
 # Namespaces Declarations
 
 | PREFIX | IRI |

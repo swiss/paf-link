@@ -30,10 +30,12 @@ paf:hasProposalSubmitter is a rdfs:subProperty of prov:wasAssociatedWith
 The agent (person or group) which submits the proposal.
 
 <aside class="example">
+
 ```turtle
 :proposal_1 a paf:Proposal;
     paf:hasProposalSubmitter :submitter_1.
 ```
+
 </aside>
 
 #### Property Variant B *prov:qualifiedAssociation*
@@ -41,6 +43,7 @@ The agent (person or group) which submits the proposal.
 The agent (person or group) which submits the proposal.
 
 <aside class="example">
+
 ```turtle
 :proposal_1 a paf:Proposal;
     prov:qualifiedAssociation [
@@ -50,6 +53,7 @@ The agent (person or group) which submits the proposal.
         rdfs:comment "submitter_1 is the issuer of this proposoal."@en
     ].
 ```
+
 </aside>
 
 #### Property Variant C *paf:hasProposalSubmitter*
@@ -57,6 +61,7 @@ The agent (person or group) which submits the proposal.
 The agent (person or group) which submits the proposal.
 
 <aside class="example">
+
 ```turtle
 :proposal_1 a paf:Proposal;
     paf:hasProposalSubmitter [
@@ -66,6 +71,7 @@ The agent (person or group) which submits the proposal.
         rdfs:comment "submitter_1 is the issuer of this proposoal."@en
     ].
 ```
+
 </aside>
 
 #### Property Variant D *paf:hasProposalSubmitter*
@@ -73,6 +79,7 @@ The agent (person or group) which submits the proposal.
 The agent (person or group) which submits the proposal.
 
 <aside class="example">
+
 ```turtle
 :proposal_1 a paf:Proposal;
     paf:hasProposalSubmitter [
@@ -82,6 +89,7 @@ The agent (person or group) which submits the proposal.
         rdfs:comment "submitter_1 is the issuer of this proposoal."@en
     ].
 ```
+
 </aside>
 
 #### Property *paf:hasProposalReceiver*
