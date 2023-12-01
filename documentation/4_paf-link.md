@@ -8,7 +8,7 @@
 * (Also explain that it should only be used in the process where the decision becomes authorative (independent of level). For the use of informative decisions see "Information".)
 * [TODO] Make examples: Beispiele: BR-Antrag -> BR-Beschluss; Parlamentarischer Vorstoss -> Verabschiedung des parlamentarischen Vorstosses; 
 
-### Class *paf:Proposal* {#Proposal}
+### Class **paf:Proposal** {#Proposal}
 
 paf:Proposal is an rdfs:subClass of prov:Activity
 
@@ -21,7 +21,7 @@ paf:Proposal is an rdfs:subClass of prov:Activity
 
 This is the activity in the process to formally ask for a decision.
 
-#### Property Variant A *paf:hasProposalSubmitter*
+#### Property Variant A **paf:hasProposalSubmitter**
 
 paf:hasProposalSubmitter is a rdfs:subProperty of prov:wasAssociatedWith
 
@@ -38,7 +38,7 @@ The agent (person or group) which submits the proposal.
 
 </aside>
 
-#### Property Variant B *prov:qualifiedAssociation*
+#### Property Variant B **prov:qualifiedAssociation**
 
 The agent (person or group) which submits the proposal.
 
@@ -48,7 +48,7 @@ The agent (person or group) which submits the proposal.
 :proposal_1 a paf:Proposal;
     prov:qualifiedAssociation [
         a prov:Association;
-        prov:agent   :submitter_1;
+        prov:agent :submitter_1;
         prov:hadRole paf:ProposalSubmitter;
         rdfs:comment "submitter_1 is the issuer of this proposoal."@en
     ].
@@ -56,7 +56,7 @@ The agent (person or group) which submits the proposal.
 
 </aside>
 
-#### Property Variant C *paf:hasProposalSubmitter*
+#### Property Variant C **paf:hasProposalSubmitter**
 
 The agent (person or group) which submits the proposal.
 
@@ -66,7 +66,7 @@ The agent (person or group) which submits the proposal.
 :proposal_1 a paf:Proposal;
     paf:hasProposalSubmitter [
         a prov:Association;
-        prov:agent   :submitter_1;
+        prov:agent :submitter_1;
         prov:hadRole paf:ProposalSubmitter;
         rdfs:comment "submitter_1 is the issuer of this proposoal."@en
     ].
@@ -74,7 +74,7 @@ The agent (person or group) which submits the proposal.
 
 </aside>
 
-#### Property Variant D *paf:hasProposalSubmitter*
+#### Property Variant D **paf:hasProposalSubmitter**
 
 The agent (person or group) which submits the proposal.
 
@@ -92,9 +92,9 @@ The agent (person or group) which submits the proposal.
 
 </aside>
 
-#### Property *paf:hasProposalReceiver*
+#### Property **paf:hasProposalReceiver**
 
-### Class *paf:Decision* {#Decision}
+### Class **paf:Decision** {#Decision}
 
 paf:Decision is a rdfs:subClass of prov:Activity
 
@@ -109,9 +109,9 @@ This is the activity to formally answer the corresponding paf:Proposal.
 ## Consultation & Comment
 
 * Beispiele: Vernehmlassung; Ämterkonsultation; Mitberichtsverfahren
-Konsultation -> Stellungnahme 
+Konsultation -> Stellungnahme
 
-### Class *paf:Consultation* {#Consultation}
+### Class **paf:Consultation** {#Consultation}
 
 paf:Consultation is a rdfs:subClass of prov:Activity
 
@@ -121,7 +121,7 @@ paf:Consultation is a rdfs:subClass of prov:Activity
 * consultation
 * consultazione
 
-### Class *paf:Comment* {#Comment}
+### Class **paf:Comment** {#Comment}
 
 paf:Comment is a rdfs:subClass of prov:Activity
 
@@ -135,7 +135,7 @@ paf:Comment is a rdfs:subClass of prov:Activity
 
 * Beispiele: Auftrag zur Erarbeitung einer Stellungnahme der BK an ein Departement -> Erledigung in Form eines Antrags an den Bundesrat; Verabschiedung einer Motion durch die Bundesversammlung -> Auftrag an den BR, die Motion umzusetzen; Brief der GPK an den Bundesrat -> Auftrag, der GPK zu antworten*)
 
-### Class *paf:Mandate*
+### Class **paf:Mandate**
 
 paf:Mandate is a rdfs:subClass of prov:Activity
 
@@ -145,7 +145,7 @@ paf:Mandate is a rdfs:subClass of prov:Activity
 * mandat
 * mandato
 
-### Class *paf:Resolution*
+### Class **paf:Resolution**
 
 paf:Resolution is a rdfs:subClass of prov:Activity
 
@@ -159,7 +159,7 @@ paf:Resolution is a rdfs:subClass of prov:Activity
 
 ## Information & Acknowledgement
 
-### Class *paf:Information*
+### Class **paf:Information**
 
 paf:Information is a rdfs:subClass of prov:Activity
 
@@ -171,6 +171,6 @@ paf:Information is a rdfs:subClass of prov:Activity
 
 The activity of sending an information.
 
-### Class *paf:Acknowledgment*
+### Class **paf:Acknowledgment**
 
 paf:Acknowledgment is a rdfs:subClass of prov:Activity
