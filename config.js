@@ -9,7 +9,7 @@ var respecConfig = {
       repoURL: "https://github.com/bequrios/paf-link",
       branch: "main", // alternative branch
     },
-    editors: [{
+    authors: [{
       name: "Théophile Boucard",
       company: "Federal Chancellery (FCh)",
       companyURL: "https://www.bk.admin.ch",
