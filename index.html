@@ -17,7 +17,7 @@
         const action = "highlight-load-lang";
         const langURL =
           "https://bequrios.github.io/highlightjs-turtle/src/turtle.js";
-        const propName = "hljs"; // This funtion is defined in the highlighter being loaded
+        const propName = "turtle"; // This funtion is defined in the highlighter being loaded
         const lang = "turtle"; // this is the class you use to identify the language
         worker.postMessage({ action, langURL, propName, lang });
         return new Promise(resolve => {
