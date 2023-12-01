@@ -22,7 +22,7 @@ This is the activity in the process to formally ask for a decision.
 ### paf:hasProposalSubmitter ([TODO] vs prov:qualifiedAssociation and fixed prov:hadRole paf:proposalSubmitter) (subProperty of prov:qualifiedAssociation)
 The Agent (Person or Group) which submits the Proposal.
 
-```turtle example
+```turtle
  prov:qualifiedAssociation [
         a prov:Association;
         prov:agent   :[EFD](https://ld.admin.ch/department/V);
@@ -33,7 +33,7 @@ The Agent (Person or Group) which submits the Proposal.
 
  vs.
 
-```turtle example
+```ttl
  paf:hasProposalSubmitter [
         a prov:Association;
         paf:proposalSubmitter: [EFD](https://ld.admin.ch/department/V);
