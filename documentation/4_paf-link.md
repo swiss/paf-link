@@ -1,4 +1,4 @@
-# Public Affairs (paf.link): Layer 2
+# Layer 2: Public Affairs (paf.link)
 
 ## Classes
 

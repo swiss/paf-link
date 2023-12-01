@@ -1,4 +1,4 @@
-# Swiss Public Affairs (ch.paf.link): Layer 3
+# Layer 3: Swiss Public Affairs (ch.paf.link)
 
 Définition : 
 

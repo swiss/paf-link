@@ -1,5 +1,3 @@
-# Level 1
+# Layer 1: PROV-O
 
-## Level 2
-
-### Level 3
+![PROV-O](https://www.w3.org/TR/2013/REC-prov-o-20130430/diagrams/starting-points.svg "The PROV Ontology with the basic classes, [Source](https://www.w3.org/TR/2013/REC-prov-o-20130430/diagrams/starting-points.svg))
