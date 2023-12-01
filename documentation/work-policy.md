@@ -1,7 +1,5 @@
-
 # Work Policy
 Definition on decisions and goals regarding the work done on the schema.
-
 
 ## Non-Functional Goals
 
@@ -12,7 +10,5 @@ E.g. instead of reusing [prov:wasInformedBy](http://www.w3.org/ns/prov#wasInform
 The idea is to be more help-full for the hierarchicaly endproducts (XML and JSON) to be legible and understandble by only looking at the definition of the sub-class, without any need to understand the higher levels. 
 
 (But for sure in in RDF we will create proper [rdfs:subPropertyOf](https://www.w3.org/TR/rdf12-schema/#ch_subpropertyof).)
-
-
 
 ## Style guide for links, classes and properties
