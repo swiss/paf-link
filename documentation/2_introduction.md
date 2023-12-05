@@ -9,6 +9,8 @@
 * Extensible to a variety of sub-types of public affairs.
 * Extensible to more fine grained aspects of public affair processes.
 * Focus on exchange between organisations and systems. (With a guide-line on how to store in rest.)
+* Defined way how to connected the different processes of public affairs. (E.g. parlament motion, with executive affair, with law text publication, etc.)
+* Possible to describe document based processes, and also structured data processes. (E.g. it is possible to connect documents, like PDFs to the Affairs, but also have the information also or only hold as structured data.)
 * Possibility to analyze and query on different levels.
 * Independent development in different corners of the overall public affair process is possible with a future unification.
 
@@ -17,9 +19,9 @@
 [TODO formulate in prose]
 
 * Event Based
-  * To enable independent development.
-  * To avoid confusion on perspective.
+  * To avoid confusion on perspective. Different Affairs hold different stati in organisations at the same time. 
   * To allow extension in depth (more detailed sub-process) and width (to include more parts of a public affair process).
+  * To enable independent development.
 * Shared concepts as driver for interoperability.
 * A schema build on RDF, with deterministic transformation to XML and JSON representations.
 
