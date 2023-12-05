@@ -11,4 +11,8 @@ The idea is to be more help-full for the hierarchicaly endproducts (XML and JSON
 
 (But for sure in in RDF we will create proper [rdfs:subPropertyOf](https://www.w3.org/TR/rdf12-schema/#ch_subpropertyof).)
 
+### We take over the properties of prov-o on Level 2, and only create the necessary Sub-Classes and Roles for each interaction tuple.
+
+We do not go into declinating all properties (giving them new names) on the Level 2 (Proposal - Decision, Consultation - Comment, Mandate - Resolution, Information etc. ) but we stick to the correctly applied prov-o Properties and make examples. Although on the Level 3, the goal is to give all properties concrete implementation names.
+
 ## Style guide for links, classes and properties
