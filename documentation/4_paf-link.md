@@ -106,18 +106,18 @@ Translations
 
 This is the activity to formally answer the corresponding paf:Proposal.
 
-# Property Variant A paf:hasDecisionDecisionmaker
-# The agent (person or group) which make the decision.
+####  Property Variant A paf:hasDecisionDecisionmaker
+The agent (person or group) which make the decision.
 
 <aside class="example">
-``````turtle
+```turtle
 :decision_1 a paf:Decision;
     paf:hasDecisionDecisionmaker :decisionmaker_1.
 ```
 </aside>
 
-# Property Variant B prov:qualifiedAssociation
-# The agent (person or group) which submits the decision.
+#### Property Variant B prov:qualifiedAssociation
+The agent (person or group) which submits the decision.
 
 ```:decision_1 a paf:Decision;
     paf:hasDecisionDecisionmaker [
@@ -127,9 +127,9 @@ This is the activity to formally answer the corresponding paf:Proposal.
         rdfs:comment "decisionmaker_1 is the issuer of this decision."@en
     ].
 ```
-# Property Variant C paf:hasDecisionDecisionmaker
+#### Property Variant C paf:hasDecisionDecisionmaker
+The agent (person or group) which submits the decision.
 
-# The agent (person or group) which submits the decision.
 :decision_1 a paf:Decision;
     paf:hasDecisionDecisionmaker [
         a prov:Association;
@@ -138,9 +138,8 @@ This is the activity to formally answer the corresponding paf:Proposal.
         rdfs:comment "decisionmaker_1 is the issuer of this decision."@en
     ].  
 
-# Property Variant D paf:hasDecisionDecisionmaker
-
-# The agent (person or group) which submits the decision.
+#### Property Variant D paf:hasDecisionDecisionmaker
+The agent (person or group) which submits the decision.
 
 :decision_1 a paf:Decision;
     paf:hasDecisionDecisionmaker [
