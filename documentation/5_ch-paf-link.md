@@ -6,7 +6,7 @@
 
 ```turtle
 :OCo_2023.2118 a paf:ConsultationActivity ;
-	prov:startedAtTime "2023-10-19T00:00:00Z"; # official start of the consultation
+	paf-ch:officeConsultationStarted "2023-10-19T00:00:00Z"; # official start of the consultation / sub-property of prov:startedAtTime
 	prov:endedAtTime "2023-11-01T00:00:00Z": # deadline for the inputs of the consultation
   prov:qualifiedAssociation [
         a prov:Association;
