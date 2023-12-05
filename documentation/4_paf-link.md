@@ -110,10 +110,12 @@ This is the activity to formally answer the corresponding paf:Proposal.
 The agent (person or group) which make the decision.
 
 <aside class="example">
+    
 ```turtle
 :decision_1 a paf:Decision;
     paf:hasDecisionDecisionmaker :decisionmaker_1.
 ```
+
 </aside>
 
 #### Property Variant B prov:qualifiedAssociation
