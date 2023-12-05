@@ -47,9 +47,17 @@
 
 ```turtle
 
-:N0.1 a paf:ConsultationEntity ;
+:Test_2023.2943 a paf:ConsultationEntity ;
+	# manque peut-être quelque chose ici 
+	prov:generatedAtTime "2023-10-19T00:00:00Z"^^xsd:dateTime; #date of the generation of the entity
+prov:qualifiedGeneration [
+	a prov:Generation;
+	prov:activity : Consultation
+	prov:wasGeneratedBy :Consultation;
+	prov:agent <https://ld.admin.ch/office/III.1.4>; # Staatssekretariat für Migration
+	
 
-
+];
 
 
 ```
