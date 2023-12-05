@@ -470,6 +470,8 @@ paf:Information is a rdfs:subClass of prov:Activity
 * information
 * informazione
 
+[Translations](https://www.termdat.bk.admin.ch/entry/379293)
+
 The activity of sending an information.
 
 ### Class **paf:Acknowledgment**
