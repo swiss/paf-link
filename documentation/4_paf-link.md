@@ -8,7 +8,7 @@
 * (Also explain that it should only be used in the process where the decision becomes authorative (independent of level). For the use of informative decisions see "Information".)
 * [TODO] Make examples: Beispiele: BR-Antrag -> BR-Beschluss; Parlamentarischer Vorstoss -> Verabschiedung des parlamentarischen Vorstosses; 
 
-### Class **paf:Proposal** {#Proposal}
+### Class **paf:ProposalActivity** {#Proposal}
 
 paf:Proposal is an rdfs:subClass of prov:Activity
 
@@ -111,7 +111,7 @@ The agent (person or group) which submits the proposal.
 
 #### Property **paf:hasProposalReceiver**
 
-### Class **paf:Decision** {#Decision}
+### Class **paf:DecisionActivity** {#Decision}
 
 paf:Decision is a rdfs:subClass of prov:Activity
 
