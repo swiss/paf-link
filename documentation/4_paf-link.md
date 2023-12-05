@@ -272,6 +272,7 @@ The agent (person or group) which submits the consultation.
 ```
 
 </aside>
+
 ### Class **paf:Comment** {#Comment}
 
 paf:Comment is a rdfs:subClass of prov:Activity
