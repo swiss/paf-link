@@ -452,6 +452,9 @@ paf:Resolution is a rdfs:subClass of prov:Activity
 
 [TODO] resolution comes from terminology of the parlament, potentially, it is better to have a more common term to day "done".
 
+Maybe "perform" could be more appropriate 
+[Tranlations](https://www.termdat.bk.admin.ch/entry/208688)
+
 [Tranlations](https://www.termdat.bk.admin.ch/entry/95501)
 
 * Erledigung (Auflösung?)
