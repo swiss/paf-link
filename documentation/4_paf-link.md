@@ -356,9 +356,6 @@ The agent (person or group) which submits the comment.
 
 </aside>
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Mandate & Resolution
 
 * Beispiele: Auftrag zur Erarbeitung einer Stellungnahme der BK an ein Departement -> Erledigung in Form eines Antrags an den Bundesrat; Verabschiedung einer Motion durch die Bundesversammlung -> Auftrag an den BR, die Motion umzusetzen; Brief der GPK an den Bundesrat -> Auftrag, der GPK zu antworten*)
@@ -372,6 +369,77 @@ paf:Mandate is a rdfs:subClass of prov:Activity
 * Auftrag
 * mandat
 * mandato
+
+#### Property Variant A **paf:hasMandateSubmitter**
+
+paf:hasMandateSubmitter is a rdfs:subProperty of prov:wasAssociatedWith
+
+[Translations](https://www.termdat.bk.admin.ch/entry/109151)
+
+The agent (person or group) which submits the mandate.
+
+<aside class="example">
+
+```turtle
+:mandate_1 a paf:Mandate;
+    paf:hasMandateSubmitter :submitter_1.
+```
+
+</aside>
+
+#### Property Variant B **prov:qualifiedAssociation**
+
+The agent (person or group) which submits the mandate.
+
+<aside class="example">
+
+```turtle
+:mandate_1 a paf:Mandate;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :submitter_1;
+        prov:hadRole paf:MandateSubmitter;
+        rdfs:comment "submitter_1 is the issuer of this mandate."@en
+    ].
+```
+
+</aside>
+
+#### Property Variant C **paf:hasMandateSubmitter**
+
+The agent (person or group) which submits the mandate.
+
+<aside class="example">
+
+```turtle
+:mandate_1 a paf:Mandate;
+    paf:hasMandateSubmitter [
+        a prov:Association;
+        prov:agent :submitter_1;
+        prov:hadRole paf:mandateSubmitter;
+        rdfs:comment "submitter_1 is the issuer of this mandate."@en
+    ].
+```
+
+</aside>
+
+#### Property Variant D **paf:hasMandateSubmitter**
+
+The agent (person or group) which submits the mandate.
+
+<aside class="example">
+
+```turtle
+:mandate_1 a paf:Mandate;
+    paf:hasMandateSubmitter [
+        a prov:Association;
+        paf:hasMandateSubmitter :submitter_1;
+        prov:hadRole paf:MandateSubmitter;
+        rdfs:comment "submitter_1 is the issuer of this mandate."@en
+    ].
+```
+
+</aside>
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
