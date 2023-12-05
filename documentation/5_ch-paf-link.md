@@ -59,6 +59,8 @@ prov:qualifiedGeneration [
 
 ].
 
+# Intégrer l'item au sein de l'entity em utilisant FRBR
+
 
 ```
 </aside>
