@@ -121,7 +121,10 @@ The agent (person or group) which make the decision.
 #### Property Variant B prov:qualifiedAssociation
 The agent (person or group) which submits the decision.
 
-```:decision_1 a paf:Decision;
+<aside class="example">
+
+```turtle
+:decision_1 a paf:Decision;
     paf:hasDecisionDecisionmaker [
         a prov:Association;
         paf:hasProposalDecisionmaker :decisionmaker_1;
@@ -129,9 +132,15 @@ The agent (person or group) which submits the decision.
         rdfs:comment "decisionmaker_1 is the issuer of this decision."@en
     ].
 ```
+
+</aside>
+
 #### Property Variant C paf:hasDecisionDecisionmaker
 The agent (person or group) which submits the decision.
 
+<aside class="example">
+
+```turtle
 :decision_1 a paf:Decision;
     paf:hasDecisionDecisionmaker [
         a prov:Association;
@@ -139,9 +148,16 @@ The agent (person or group) which submits the decision.
         prov:hadRole paf:DecisionDecisionmaker;
         rdfs:comment "decisionmaker_1 is the issuer of this decision."@en
     ].  
+```
+
+</aside>
 
 #### Property Variant D paf:hasDecisionDecisionmaker
 The agent (person or group) which submits the decision.
+
+<aside class="example">
+
+```turtle
 
 :decision_1 a paf:Decision;
     paf:hasDecisionDecisionmaker [
@@ -150,8 +166,9 @@ The agent (person or group) which submits the decision.
         prov:hadRole paf:DecisionDecisionmaker;
         rdfs:comment "decisionmaker_1 is the issuer of this decision."@en
     ].  
+```
 
-
+</aside>
 
 ## Consultation & Comment
 
