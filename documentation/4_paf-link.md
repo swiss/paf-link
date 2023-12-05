@@ -108,12 +108,11 @@ paf:DecisionActivity is a rdfs:subClass of prov:Activity
 
 This is the activity to formally answer the corresponding paf:ProposalActivity.
 
-[Translations](https://www.termdat.bk.admin.ch/entry/132147):
-
-
 #### Class **paf:DecisionMaker** {#DecisionMaker}
 
 paf:DecisionMaker is a rdfs:subClass of prov:Activity
+
+[Translations](https://www.termdat.bk.admin.ch/entry/132147)
 
 The agent (person or group) which issues the decision.
 
