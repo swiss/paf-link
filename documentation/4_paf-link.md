@@ -119,7 +119,7 @@ The agent (person or group) which make the decision.
 </aside>
 
 #### Property Variant B prov:qualifiedAssociation
-The agent (person or group) which submits the decision.
+The agent (person or group) which issues the decision.
 
 <aside class="example">
 
@@ -136,7 +136,7 @@ The agent (person or group) which submits the decision.
 </aside>
 
 #### Property Variant C paf:hasDecisionDecisionmaker
-The agent (person or group) which submits the decision.
+The agent (person or group) which issues the decision.
 
 <aside class="example">
 
@@ -153,7 +153,7 @@ The agent (person or group) which submits the decision.
 </aside>
 
 #### Property Variant D paf:hasDecisionDecisionmaker
-The agent (person or group) which submits the decision.
+The agent (person or group) which issues the decision.
 
 <aside class="example">
 
