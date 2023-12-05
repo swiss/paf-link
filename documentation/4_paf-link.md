@@ -185,6 +185,76 @@ paf:Consultation is a rdfs:subClass of prov:Activity
 * consultation
 * consultazione
 
+#### Property Variant A **paf:hasConsultationSubmitter**
+
+paf:hasConsultationSubmitter is a rdfs:subProperty of prov:wasAssociatedWith
+
+[Translations](https://www.termdat.bk.admin.ch/entry/109151)
+
+The agent (person or group) which submits the consultation.
+
+<aside class="example">
+
+```turtle
+:consultation_1 a paf:Consultation;
+    paf:hasConsultationSubmitter :submitter_1.
+```
+
+</aside>
+
+#### Property Variant B **prov:qualifiedAssociation**
+
+The agent (person or group) which submits the consultation.
+
+<aside class="example">
+
+```turtle
+:consultation_1 a paf:Consultationer;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :submitter_1;
+        prov:hadRole paf:ConsultationSubmitter;
+        rdfs:comment "submitter_1 is the issuer of this consultation."@en
+    ].
+```
+
+</aside>
+
+#### Property Variant C **paf:hasConsultationSubmitter**
+
+The agent (person or group) which submits the consultation.
+
+<aside class="example">
+
+```turtle
+:consultation_1 a paf:Consultation;
+    paf:hasConsultationlSubmitter [
+        a prov:Association;
+        prov:agent :submitter_1;
+        prov:hadRole paf:ConsultationlSubmitter;
+        rdfs:comment "submitter_1 is the issuer of this consultation."@en
+    ].
+```
+
+</aside>
+
+#### Property Variant D **paf:hasConsultationSubmitter**
+
+The agent (person or group) which submits the consultation.
+
+<aside class="example">
+
+```turtle
+:consultation_1 a paf:Consultation;
+    paf:hasConsultationSubmitter [
+        a prov:Association;
+        paf:hasConsultationSubmitter :submitter_1;
+        prov:hadRole paf:ConsultationSubmitter;
+        rdfs:comment "submitter_1 is the issuer of this consultation."@en
+    ].
+```
+
+</aside>
 ### Class **paf:Comment** {#Comment}
 
 paf:Comment is a rdfs:subClass of prov:Activity
