@@ -33,31 +33,31 @@ paf:ProposalReceiver is an rdfs:subClass of prov:Agent
 
 The agent (person or group) which receives the proposal.
 
-#### Usage of **prov:qualifiedAssociation**
+#### Usage of prov:qualifiedAssociation
 
-<aside class="example">
+<aside class="example" title="Usage of prov:qualifiedAssociation in Turtle">
 
 ```turtle
-:proposal_1 a paf:ProposalActivity;
+:proposal-activity-1 a paf:ProposalActivity;
     prov:qualifiedAssociation [
         a prov:Association;
-        prov:agent :submitter_1;
+        prov:agent :proposal-submitter-1;
         prov:hadRole paf:ProposalSubmitter;
-        rdfs:comment "submitter_1 is the issuer of this proposoal."@en.
+        rdfs:comment "proposal-submitter-1 is the issuer of proposal-activity-1."@en;
     ].
 ```
 
 </aside>
 
-<aside class="example">
+<aside class="example" title="Usage of prov:qualifiedAssociation in XML">
 
 ```xml
 <prov:document>
-    <paf:ProposalActivity prov:id=":proposal_1">
+    <paf:ProposalActivity prov:id=":proposal-activity-1">
         <prov:qualifiedAssociation>
-            <prov:agent prov:ref=":submitter_1"/>
+            <prov:agent prov:ref=":proposal-submitter-1"/>
             <prov:hadRole prov:ref="paf:ProposalSubmitter"/>
-            <rdfs:comment xml:lang="en">submitter_1 is the issuer of this proposal.</rdfs:comment>
+            <rdfs:comment xml:lang="en">proposal-submitter-1 is the issuer of proposal-activity-1.</rdfs:comment>
         </prov:qualifiedAssociation>
     </paf:ProposalActivity>
 </prov:document>
@@ -65,25 +65,40 @@ The agent (person or group) which receives the proposal.
 
 </aside>
 
-#### Usage of **prov:wasInformedBy**
+#### Usage of prov:wasInformedBy
 
 To connect a higher level process, e.g. a Parliament Affair Identificator.
 
-<aside class="example">
+<aside class="example" title="Usage of prov:wasInformedBy in Turtle">
 
 ```turtle
-:proposal_1 a paf:ProposalActivity;
-    prov:wasInformedBy :affair_1;
+:proposal-activity-1 a paf:ProposalActivity;
+    prov:wasInformedBy :affair-1.
 
-:affair_1 a prov:Activity;
-    rdfs:comment "A higher level activity."@en.
+:affair-1 a prov:Activity;
+    rdfs:comment "affair-1 is a higher level activity."@en.
 ```
 
 </aside>
 
-### Class **paf:DecisionActivity** {#Decision}
+<aside class="example" title="Usage of prov:wasInformedBy in XML">
 
-paf:Decision is a rdfs:subClass of prov:Activity
+```xml
+<prov:document>
+    <paf:ProposalActivity prov:id=":proposal-activity-1">
+        <prov:wasInformedBy prof:ref=":affair-1"/>
+    </paf:ProposalActivity>
+    <paf:Activity prov:id=":affair-1">
+        <rdfs:comment xml:lang="en">affair-1 is a higher level activity.</rdfs:comment>
+    </paf:Activity>
+</prov:document>
+```
+
+</aside>
+
+### Class **paf:DecisionActivity** {#DecisionActivity}
+
+paf:DecisionActivity is a rdfs:subClass of prov:Activity
 
 [Translations](https://www.termdat.bk.admin.ch/entry/414335):
 
@@ -91,362 +106,77 @@ paf:Decision is a rdfs:subClass of prov:Activity
 * décision
 * decisione
 
-This is the activity to formally answer the corresponding paf:Decision.
+This is the activity to formally answer the corresponding paf:ProposalActivity.
 
 [Translations](https://www.termdat.bk.admin.ch/entry/132147):
 
-####  Property Variant A paf:hasDecisionDecisionmaker
-The agent (person or group) which make the decision.
 
-<aside class="example">
-    
-```turtle
-:decision_1 a paf:Decision;
-    paf:hasDecisionDecisionmaker :decisionmaker_1.
-```
+#### Class **paf:DecisionMaker** {#DecisionMaker}
 
-</aside>
+paf:DecisionMaker is a rdfs:subClass of prov:Activity
 
-#### Property Variant B prov:qualifiedAssociation
 The agent (person or group) which issues the decision.
 
-<aside class="example">
+#### Usage of prov:qualifiedAssociation
+
+<aside class="example" title="Usage of prov:qualifiedAssociation in Turtle">
 
 ```turtle
-:decision_1 a paf:Decision;
-    paf:hasDecisionDecisionmaker [
-        a prov:Association;
-        paf:hasProposalDecisionmaker :decisionmaker_1;
-        prov:hadRole paf:DecisionDecisionmaker;
-        rdfs:comment "decisionmaker_1 is the issuer of this decision."@en
-    ].
-```
-
-</aside>
-
-#### Property Variant C paf:hasDecisionDecisionmaker
-The agent (person or group) which issues the decision.
-
-<aside class="example">
-
-```turtle
-:decision_1 a paf:Decision;
-    paf:hasDecisionDecisionmaker [
-        a prov:Association;
-        prov:agent :decisionmaker_1;
-        prov:hadRole paf:DecisionDecisionmaker;
-        rdfs:comment "decisionmaker_1 is the issuer of this decision."@en
-    ].  
-```
-
-</aside>
-
-#### Property Variant D paf:hasDecisionDecisionmaker
-The agent (person or group) which issues the decision.
-
-<aside class="example">
-
-```turtle
-
-:decision_1 a paf:Decision;
-    paf:hasDecisionDecisionmaker [
-        a prov:Association;
-        paf:hasProposalDecisionmaker :decisionmaker_1;
-        prov:hadRole paf:DecisionDecisionmaker;
-        rdfs:comment "decisionmaker_1 is the issuer of this decision."@en
-    ].  
-```
-
-</aside>
-
-## Consultation & Comment
-
-* Beispiele: Vernehmlassung; Ämterkonsultation; Mitberichtsverfahren
-Konsultation -> Stellungnahme
-
-### Class **paf:Consultation** {#Consultation}
-
-paf:Consultation is a rdfs:subClass of prov:Activity
-
-[Tranlations](https://www.termdat.bk.admin.ch/entry/56977)
-
-* Konsultation
-* consultation
-* consultazione
-
-#### Property Variant A **paf:hasConsultationSubmitter**
-
-paf:hasConsultationSubmitter is a rdfs:subProperty of prov:wasAssociatedWith
-
-[Translations](https://www.termdat.bk.admin.ch/entry/109151)
-
-The agent (person or group) which submits the consultation.
-
-<aside class="example">
-
-```turtle
-:consultation_1 a paf:Consultation;
-    paf:hasConsultationSubmitter :submitter_1.
-```
-
-</aside>
-
-#### Property Variant B **prov:qualifiedAssociation**
-
-The agent (person or group) which submits the consultation.
-
-<aside class="example">
-
-```turtle
-:consultation_1 a paf:Consultationer;
+:decision-activity-1 a paf:DecisionActivity;
     prov:qualifiedAssociation [
         a prov:Association;
-        prov:agent :submitter_1;
-        prov:hadRole paf:ConsultationSubmitter;
-        rdfs:comment "submitter_1 is the issuer of this consultation."@en
+        prov:agent :decision-maker-1;
+        prov:hadRole paf:DecisionMaker;
+        rdfs:comment "decision-maker-1 is the issuer of decision-activity-1."@en;
     ].
 ```
 
 </aside>
 
-#### Property Variant C **paf:hasConsultationSubmitter**
+### Full Example on Proposal & Decision
 
-The agent (person or group) which submits the consultation.
-
-<aside class="example">
+<aside class="example" title="Full Example on Proposal & Decision">
 
 ```turtle
-:consultation_1 a paf:Consultation;
-    paf:hasConsultationlSubmitter [
-        a prov:Association;
-        prov:agent :submitter_1;
-        prov:hadRole paf:ConsultationlSubmitter;
-        rdfs:comment "submitter_1 is the issuer of this consultation."@en
-    ].
-```
+@prefix : <https://example.com/> .
+@prefix paf: <https://paf.link/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
 
-</aside>
-
-#### Property Variant D **paf:hasConsultationSubmitter**
-
-The agent (person or group) which submits the consultation.
-
-<aside class="example">
-
-```turtle
-:consultation_1 a paf:Consultation;
-    paf:hasConsultationSubmitter [
-        a prov:Association;
-        paf:hasConsultationSubmitter :submitter_1;
-        prov:hadRole paf:ConsultationSubmitter;
-        rdfs:comment "submitter_1 is the issuer of this consultation."@en
-    ].
-```
-
-</aside>
-
-### Class **paf:Comment** {#Comment}
-
-paf:Comment is a rdfs:subClass of prov:Activity
-
-[Translations](https://www.termdat.bk.admin.ch/entry/23059)
-
-* Stellungnahme
-* avis
-* parere ([TODO] check)
-
-
-
- #### Property Variant A **paf:hasProposalSubmitter**
-
-paf:hasCommentSubmitter is a rdfs:subProperty of prov:wasAssociatedWith
-
-[Translations](https://www.termdat.bk.admin.ch/entry/109151)
-
-The agent (person or group) which submits the Comment.
-
-<aside class="example">
-
-```turtle
-:comment_1 a paf:Comment;
-    paf:hasCommentSubmitter :submitter_1.
-```
-
-</aside>
-
-#### Property Variant B **prov:qualifiedAssociation**
-
-The agent (person or group) which submits the comment.
-
-<aside class="example">
-
-```turtle
-:comment_1 a paf:Comment;
+:proposal-activity-1 a paf:ProposalActivity;
     prov:qualifiedAssociation [
         a prov:Association;
-        prov:agent :submitter_1;
-        prov:hadRole paf:CommentSubmitter;
-        rdfs:comment "submitter_1 is the issuer of this comment."@en
-    ].
-```
+        prov:agent :proposal-maker-1;
+        prov:hadRole paf:ProposalMaker;
+    ];
+	prov:used :proposal-1;
+	prov:wasInformedBy :parlamentary-activity-1;
+	prov:wasInformedBy :executive-activity-1;
+	prov:wasInformedBy :law-activity-1.
 
-</aside>
+:proposal-1 a prov:Entity;
+	prov:wasGeneratedBy :proposal-activity-1.
 
-#### Property Variant C **paf:hasCommentlSubmitter**
+:parlamentary-activity-1 a prov:Activity;
+	schema:identifier "23.0123".
 
-The agent (person or group) which submits the comment.
+:executive-activity-1 a prov:Activity;
+	schema:identifier "321".
 
-<aside class="example">
+:law-activity-1 a prov:Activity;
+	schema:identifier "SR21.1".
 
-```turtle
-:comment_1 a paf:Comment;
-    paf:hasCommentSubmitter [
-        a prov:Association;
-        prov:agent :submitter_1;
-        prov:hadRole paf:CommentSubmitter;
-        rdfs:comment "submitter_1 is the issuer of this comment."@en
-    ].
-```
-
-</aside>
-
-#### Property Variant D **paf:hasCommentSubmitter**
-
-The agent (person or group) which submits the comment.
-
-<aside class="example">
-
-```turtle
-:comment_1 a paf:Comment;
-    paf:hasCommentSubmitter [
-        a prov:Association;
-        paf:hasCommentSubmitter :submitter_1;
-        prov:hadRole paf:CommentSubmitter;
-        rdfs:comment "submitter_1 is the issuer of this comment."@en
-    ].
-```
-
-</aside>
-
-## Mandate & Resolution
-
-* Beispiele: Auftrag zur Erarbeitung einer Stellungnahme der BK an ein Departement -> Erledigung in Form eines Antrags an den Bundesrat; Verabschiedung einer Motion durch die Bundesversammlung -> Auftrag an den BR, die Motion umzusetzen; Brief der GPK an den Bundesrat -> Auftrag, der GPK zu antworten*)
-
-### Class **paf:Mandate**
-
-paf:Mandate is a rdfs:subClass of prov:Activity
-
-[Translations](https://www.termdat.bk.admin.ch/search/entry/109134)
-
-* Auftrag
-* mandat
-* mandato
-
-#### Property Variant A **paf:hasMandateSubmitter**
-
-paf:hasMandateSubmitter is a rdfs:subProperty of prov:wasAssociatedWith
-
-[Translations](https://www.termdat.bk.admin.ch/entry/109151)
-
-The agent (person or group) which submits the mandate.
-
-<aside class="example">
-
-```turtle
-:mandate_1 a paf:Mandate;
-    paf:hasMandateSubmitter :submitter_1.
-```
-
-</aside>
-
-#### Property Variant B **prov:qualifiedAssociation**
-
-The agent (person or group) which submits the mandate.
-
-<aside class="example">
-
-```turtle
-:mandate_1 a paf:Mandate;
+:decision-activity-1 a paf:DecisionActivity;
     prov:qualifiedAssociation [
         a prov:Association;
-        prov:agent :submitter_1;
-        prov:hadRole paf:MandateSubmitter;
-        rdfs:comment "submitter_1 is the issuer of this mandate."@en
-    ].
+        prov:agent :decision-maker-1;
+        prov:hadRole paf:DecisionMaker;
+    ];
+    prov:wasInformedBy :proposal-activity-1;
+	prov:used :decision-1.
+
+:decision-1 a prov:Entity;
+	prov:wasGeneratedBy :decision-activity-1.
 ```
 
 </aside>
-
-#### Property Variant C **paf:hasMandateSubmitter**
-
-The agent (person or group) which submits the mandate.
-
-<aside class="example">
-
-```turtle
-:mandate_1 a paf:Mandate;
-    paf:hasMandateSubmitter [
-        a prov:Association;
-        prov:agent :submitter_1;
-        prov:hadRole paf:mandateSubmitter;
-        rdfs:comment "submitter_1 is the issuer of this mandate."@en
-    ].
-```
-
-</aside>
-
-#### Property Variant D **paf:hasMandateSubmitter**
-
-The agent (person or group) which submits the mandate.
-
-<aside class="example">
-
-```turtle
-:mandate_1 a paf:Mandate;
-    paf:hasMandateSubmitter [
-        a prov:Association;
-        paf:hasMandateSubmitter :submitter_1;
-        prov:hadRole paf:MandateSubmitter;
-        rdfs:comment "submitter_1 is the issuer of this mandate."@en
-    ].
-```
-
-</aside>
-
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-### Class **paf:Resolution**
-
-paf:Resolution is a rdfs:subClass of prov:Activity
-
-[TODO] resolution comes from terminology of the parlament, potentially, it is better to have a more common term to day "done".
-
-Maybe "perform" could be more appropriate 
-[Tranlations](https://www.termdat.bk.admin.ch/entry/208688)
-
-[Tranlations](https://www.termdat.bk.admin.ch/entry/95501)
-
-* Erledigung (Auflösung?)
-* resolution
-* risoluzione
-
-## Information & Acknowledgement
-
-### Class **paf:Information**
-
-paf:Information is a rdfs:subClass of prov:Activity
-
-[Tranlations](https://www.termdat.bk.admin.ch/entry/380634)
-
-* Information
-* information
-* informazione
-
-[Translations](https://www.termdat.bk.admin.ch/entry/379293)
-
-The activity of sending an information.
-
-### Class **paf:Acknowledgment**
-
-paf:Acknowledgment is a rdfs:subClass of prov:Activity
