@@ -106,6 +106,49 @@ Translations
 
 This is the activity to formally answer the corresponding paf:Proposal.
 
+# Property Variant A paf:hasDecisionDecisionmaker
+# The agent (person or group) which make the decision.
+
+:decision_1 a paf:Decision;
+    paf:hasDecisionDecisionmaker :decisionmaker_1.
+
+
+# Property Variant B prov:qualifiedAssociation
+# The agent (person or group) which submits the decision.
+
+:decision_1 a paf:Decision;
+    paf:hasDecisionDecisionmaker [
+        a prov:Association;
+        paf:hasProposalDecisionmaker :decisionmaker_1;
+        prov:hadRole paf:DecisionDecisionmaker;
+        rdfs:comment "decisionmaker_1 is the issuer of this decision."@en
+    ].
+
+# Property Variant C paf:hasDecisionDecisionmaker
+
+# The agent (person or group) which submits the decision.
+:decision_1 a paf:Decision;
+    paf:hasDecisionDecisionmaker [
+        a prov:Association;
+        prov:agent :decisionmaker_1;
+        prov:hadRole paf:DecisionDecisionmaker;
+        rdfs:comment "decisionmaker_1 is the issuer of this decision."@en
+    ].  
+
+# Property Variant D paf:hasDecisionDecisionmaker
+
+# The agent (person or group) which submits the decision.
+
+:decision_1 a paf:Decision;
+    paf:hasDecisionDecisionmaker [
+        a prov:Association;
+        paf:hasProposalDecisionmaker :decisionmaker_1;
+        prov:hadRole paf:DecisionDecisionmaker;
+        rdfs:comment "decisionmaker_1 is the issuer of this decision."@en
+    ].  
+
+
+
 ## Consultation & Comment
 
 * Beispiele: Vernehmlassung; Ämterkonsultation; Mitberichtsverfahren
