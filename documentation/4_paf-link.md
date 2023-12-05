@@ -56,6 +56,23 @@ The agent (person or group) which submits the proposal.
 
 </aside>
 
+<aside class="example">
+
+```xml
+<Proposal xmlns:paf="http://example.com/paf#" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <iri>:proposal_1</iri>
+    <type>paf:Proposal</type>
+    <qualifiedAssociation>
+        <type>prov:Association</type>
+        <agent>submitter_1</agent>
+        <hadRole>paf:ProposalSubmitter</hadRole>
+        <comment xml:lang="en">submitter_1 is the issuer of this proposal.</comment>
+    </qualifiedAssociation>
+</Proposal>
+```
+
+</aside>
+
 #### Property Variant C **paf:hasProposalSubmitter**
 
 The agent (person or group) which submits the proposal.
