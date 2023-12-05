@@ -1,7 +1,7 @@
 # Layer 3: Swiss Public Affairs (ch.paf.link) {#ch-paf-link}
 
 ## Office Consultation Registration
-
+### Activity
 <aside class="example">
 
 ```turtle
@@ -40,6 +40,31 @@
     ].
 ```
 </aside>
+
+### Entity
+
+<aside class="example">
+
+```turtle
+
+:Test_2023.2943 a paf:ConsultationEntity ;
+	# manque peut-être quelque chose ici 
+	prov:generatedAtTime "2023-10-19T00:00:00Z"^^xsd:dateTime; #date of the generation of the entity
+prov:qualifiedGeneration [
+	a prov:Generation;
+	prov:activity : Consultation
+	prov:wasGeneratedBy :Consultation;
+	prov:agent <https://ld.admin.ch/office/III.1.4>; # Staatssekretariat für Migration
+	
+
+].
+
+# Intégrer l'item au sein de l'entity em utilisant FRBR
+
+
+```
+</aside>
+
 
 ## Procedural Request (Motion, Postulate) - Proposal for Resolution or Information
 
