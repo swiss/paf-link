@@ -320,54 +320,37 @@ The agent (person or group) which submits the comment.
 
 </aside>
 
-<aside class="example">
+#### Property Variant C **paf:hasCommentlSubmitter**
 
-```xml
-<Proposal xmlns:paf="http://example.com/paf#" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <iri>:proposal_1</iri>
-    <type>paf:Proposal</type>
-    <qualifiedAssociation>
-        <type>prov:Association</type>
-        <agent>submitter_1</agent>
-        <hadRole>paf:ProposalSubmitter</hadRole>
-        <comment xml:lang="en">submitter_1 is the issuer of this proposal.</comment>
-    </qualifiedAssociation>
-</Proposal>
-```
-
-</aside>
-
-#### Property Variant C **paf:hasProposalSubmitter**
-
-The agent (person or group) which submits the proposal.
+The agent (person or group) which submits the comment.
 
 <aside class="example">
 
 ```turtle
-:proposal_1 a paf:Proposal;
-    paf:hasProposalSubmitter [
+:comment_1 a paf:Comment;
+    paf:hasCommentSubmitter [
         a prov:Association;
         prov:agent :submitter_1;
-        prov:hadRole paf:ProposalSubmitter;
-        rdfs:comment "submitter_1 is the issuer of this proposoal."@en
+        prov:hadRole paf:CommentSubmitter;
+        rdfs:comment "submitter_1 is the issuer of this comment."@en
     ].
 ```
 
 </aside>
 
-#### Property Variant D **paf:hasProposalSubmitter**
+#### Property Variant D **paf:hasCommentSubmitter**
 
-The agent (person or group) which submits the proposal.
+The agent (person or group) which submits the comment.
 
 <aside class="example">
 
 ```turtle
-:proposal_1 a paf:Proposal;
-    paf:hasProposalSubmitter [
+:comment_1 a paf:Comment;
+    paf:hasCommentSubmitter [
         a prov:Association;
-        paf:hasProposalSubmitter :submitter_1;
-        prov:hadRole paf:ProposalSubmitter;
-        rdfs:comment "submitter_1 is the issuer of this proposoal."@en
+        paf:hasCommentSubmitter :submitter_1;
+        prov:hadRole paf:CommentSubmitter;
+        rdfs:comment "submitter_1 is the issuer of this comment."@en
     ].
 ```
 
