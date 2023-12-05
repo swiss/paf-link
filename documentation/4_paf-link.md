@@ -8,9 +8,9 @@
 * (Also explain that it should only be used in the process where the decision becomes authorative (independent of level). For the use of informative decisions see "Information".)
 * [TODO] Make examples: Beispiele: BR-Antrag -> BR-Beschluss; Parlamentarischer Vorstoss -> Verabschiedung des parlamentarischen Vorstosses; 
 
-### Class **paf:ProposalActivity** {#Proposal}
+### Class **paf:ProposalActivity** {#ProposalActivity}
 
-paf:Proposal is an rdfs:subClass of prov:Activity
+paf:ProposalActivity is an rdfs:subClass of prov:Activity
 
 [Translations](https://www.termdat.bk.admin.ch/entry/56995):
 
@@ -21,10 +21,13 @@ paf:Proposal is an rdfs:subClass of prov:Activity
 
 This is the activity in the process to formally ask for a decision.
 
+#### Class **paf:ProposalSubmitter** {#ProposalSubmitter}
 
-#### Usage of **prov:qualifiedAssociation**
+paf:ProposalSubmitter is an rdfs:subClass of prov:Agent
 
 The agent (person or group) which submits the proposal.
+
+#### Usage of **prov:qualifiedAssociation**
 
 <aside class="example">
 
@@ -34,15 +37,15 @@ The agent (person or group) which submits the proposal.
         a prov:Association;
         prov:agent :submitter_1;
         prov:hadRole paf:ProposalSubmitter;
-        rdfs:comment "submitter_1 is the issuer of this proposoal."@en
+        rdfs:comment "submitter_1 is the issuer of this proposoal."@en.
     ].
-    
 ```
+
 </aside>
 
 #### Usage of **prov:wasInformedBy**
 
-To connect a higher level process, e.g. a Parlament Affair Identificator.
+To connect a higher level process, e.g. a Parliament Affair Identificator.
 
 <aside class="example">
 
@@ -51,9 +54,9 @@ To connect a higher level process, e.g. a Parlament Affair Identificator.
     prov:wasInformedBy :affair_1;
 
 :affair_1 a prov:Activity;
-    rdfs:comment "A higher level activity.";
-    
+    rdfs:comment "A higher level activity."@en.
 ```
+
 </aside>
 
 <aside class="example">
