@@ -283,6 +283,99 @@ paf:Comment is a rdfs:subClass of prov:Activity
 * avis
 * parere ([TODO] check)
 
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ #### Property Variant A **paf:hasProposalSubmitter**
+
+paf:hasCommentSubmitter is a rdfs:subProperty of prov:wasAssociatedWith
+
+[Translations](https://www.termdat.bk.admin.ch/entry/109151)
+
+The agent (person or group) which submits the Comment.
+
+<aside class="example">
+
+```turtle
+:comment_1 a paf:Comment;
+    paf:hasCommentSubmitter :submitter_1.
+```
+
+</aside>
+
+#### Property Variant B **prov:qualifiedAssociation**
+
+The agent (person or group) which submits the comment.
+
+<aside class="example">
+
+```turtle
+:comment_1 a paf:Comment;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :submitter_1;
+        prov:hadRole paf:CommentSubmitter;
+        rdfs:comment "submitter_1 is the issuer of this comment."@en
+    ].
+```
+
+</aside>
+
+<aside class="example">
+
+```xml
+<Proposal xmlns:paf="http://example.com/paf#" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <iri>:proposal_1</iri>
+    <type>paf:Proposal</type>
+    <qualifiedAssociation>
+        <type>prov:Association</type>
+        <agent>submitter_1</agent>
+        <hadRole>paf:ProposalSubmitter</hadRole>
+        <comment xml:lang="en">submitter_1 is the issuer of this proposal.</comment>
+    </qualifiedAssociation>
+</Proposal>
+```
+
+</aside>
+
+#### Property Variant C **paf:hasProposalSubmitter**
+
+The agent (person or group) which submits the proposal.
+
+<aside class="example">
+
+```turtle
+:proposal_1 a paf:Proposal;
+    paf:hasProposalSubmitter [
+        a prov:Association;
+        prov:agent :submitter_1;
+        prov:hadRole paf:ProposalSubmitter;
+        rdfs:comment "submitter_1 is the issuer of this proposoal."@en
+    ].
+```
+
+</aside>
+
+#### Property Variant D **paf:hasProposalSubmitter**
+
+The agent (person or group) which submits the proposal.
+
+<aside class="example">
+
+```turtle
+:proposal_1 a paf:Proposal;
+    paf:hasProposalSubmitter [
+        a prov:Association;
+        paf:hasProposalSubmitter :submitter_1;
+        prov:hadRole paf:ProposalSubmitter;
+        rdfs:comment "submitter_1 is the issuer of this proposoal."@en
+    ].
+```
+
+</aside>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ## Mandate & Resolution
 
 * Beispiele: Auftrag zur Erarbeitung einer Stellungnahme der BK an ein Departement -> Erledigung in Form eines Antrags an den Bundesrat; Verabschiedung einer Motion durch die Bundesversammlung -> Auftrag an den BR, die Motion umzusetzen; Brief der GPK an den Bundesrat -> Auftrag, der GPK zu antworten*)
