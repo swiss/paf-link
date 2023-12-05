@@ -57,7 +57,7 @@ prov:qualifiedGeneration [
 	prov:agent <https://ld.admin.ch/office/III.1.4>; # Staatssekretariat für Migration
 	
 
-];
+].
 
 
 ```
