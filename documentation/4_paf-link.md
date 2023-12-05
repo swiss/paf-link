@@ -115,13 +115,15 @@ The agent (person or group) which submits the proposal.
 
 paf:Decision is a rdfs:subClass of prov:Activity
 
-Translations
+[Translations](https://www.termdat.bk.admin.ch/entry/414335):
 
 * Entscheid
 * décision
 * decisione
 
-This is the activity to formally answer the corresponding paf:Proposal.
+This is the activity to formally answer the corresponding paf:Decision.
+
+[Translations](https://www.termdat.bk.admin.ch/entry/132147):
 
 ####  Property Variant A paf:hasDecisionDecisionmaker
 The agent (person or group) which make the decision.
