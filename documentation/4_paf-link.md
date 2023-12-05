@@ -27,6 +27,12 @@ paf:ProposalSubmitter is an rdfs:subClass of prov:Agent
 
 The agent (person or group) which submits the proposal.
 
+#### Class **paf:ProposalReceiver** {#ProposalReceiver}
+
+paf:ProposalReceiver is an rdfs:subClass of prov:Agent
+
+The agent (person or group) which receives the proposal.
+
 #### Usage of **prov:qualifiedAssociation**
 
 <aside class="example">
@@ -39,6 +45,22 @@ The agent (person or group) which submits the proposal.
         prov:hadRole paf:ProposalSubmitter;
         rdfs:comment "submitter_1 is the issuer of this proposoal."@en.
     ].
+```
+
+</aside>
+
+<aside class="example">
+
+```xml
+<prov:document>
+    <paf:ProposalActivity prov:id=":proposal_1">
+        <prov:qualifiedAssociation>
+            <prov:agent prov:ref=":submitter_1"/>
+            <prov:hadRole prov:ref="paf:ProposalSubmitter"/>
+            <rdfs:comment xml:lang="en">submitter_1 is the issuer of this proposal.</rdfs:comment>
+        </prov:qualifiedAssociation>
+    </paf:ProposalActivity>
+</prov:document>
 ```
 
 </aside>
@@ -58,26 +80,6 @@ To connect a higher level process, e.g. a Parliament Affair Identificator.
 ```
 
 </aside>
-
-<aside class="example">
-
-```xml
-<Proposal xmlns:paf="http://example.com/paf#" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <iri>:proposal_1</iri>
-    <type>paf:Proposal</type>
-    <qualifiedAssociation>
-        <type>prov:Association</type>
-        <agent>submitter_1</agent>
-        <hadRole>paf:ProposalSubmitter</hadRole>
-        <comment xml:lang="en">submitter_1 is the issuer of this proposal.</comment>
-    </qualifiedAssociation>
-</Proposal>
-```
-
-</aside>
-
-
-#### Property **paf:hasProposalReceiver**
 
 ### Class **paf:DecisionActivity** {#Decision}
 
