@@ -5,7 +5,7 @@
 <aside class="example">
 
 ```turtle
-:OCo_2023.2118 a paf:Consultation ;
+:OCo_2023.2118 a paf:ConsultationActivity ;
 	prov:startedAtTime "2023-10-19T00:00:00Z"; # official start of the consultation
 	prov:endedAtTime "2023-11-01T00:00:00Z": # deadline for the inputs of the consultation
   prov:qualifiedAssociation [
@@ -19,7 +19,7 @@
         prov:hadRole paf:ExplicitConsultationReceiver.
   ].
 
-:registration_OCo_2023.2118 a paf:Information ;
+:registration_OCo_2023.2118 a paf:InformationActivity ;
   prov:wasInformedBy :OCo_2023.2118;
 	prov:startedAtTime "2023-10-08T14:23:00Z"; # time of the registration
     prov:qualifiedAssociation [
