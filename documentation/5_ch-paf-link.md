@@ -1,7 +1,7 @@
 # Layer 3: Swiss Public Affairs (ch.paf.link) {#ch-paf-link}
 
 ## Office Consultation Registration
-
+### Activity
 <aside class="example">
 
 ```turtle
@@ -40,6 +40,21 @@
     ].
 ```
 </aside>
+
+### Entity
+
+<aside class="example">
+
+```turtle
+
+:N0.1 a paf:ConsultationEntity ;
+
+
+
+
+```
+</aside>
+
 
 ## Procedural Request (Motion, Postulate) - Proposal for Resolution or Information
 
