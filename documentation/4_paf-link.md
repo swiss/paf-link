@@ -21,39 +21,39 @@ paf:Proposal is an rdfs:subClass of prov:Activity
 
 This is the activity in the process to formally ask for a decision.
 
-#### Property Variant A **paf:hasProposalSubmitter**
 
-paf:hasProposalSubmitter is a rdfs:subProperty of prov:wasAssociatedWith
-
-[Translations](https://www.termdat.bk.admin.ch/entry/109151)
+#### Usage of **prov:qualifiedAssociation**
 
 The agent (person or group) which submits the proposal.
 
 <aside class="example">
 
 ```turtle
-:proposal_1 a paf:Proposal;
-    paf:hasProposalSubmitter :submitter_1.
-```
-
-</aside>
-
-#### Property Variant B **prov:qualifiedAssociation**
-
-The agent (person or group) which submits the proposal.
-
-<aside class="example">
-
-```turtle
-:proposal_1 a paf:Proposal;
+:proposal_1 a paf:ProposalActivity;
     prov:qualifiedAssociation [
         a prov:Association;
         prov:agent :submitter_1;
         prov:hadRole paf:ProposalSubmitter;
         rdfs:comment "submitter_1 is the issuer of this proposoal."@en
     ].
+    
 ```
+</aside>
 
+#### Usage of **prov:wasInformedBy**
+
+To connect a higher level process, e.g. a Parlament Affair Identificator.
+
+<aside class="example">
+
+```turtle
+:proposal_1 a paf:ProposalActivity;
+    prov:wasInformedBy :affair_1;
+
+:affair_1 a prov:Activity;
+    rdfs:comment "A higher level activity.";
+    
+```
 </aside>
 
 <aside class="example">
@@ -73,41 +73,6 @@ The agent (person or group) which submits the proposal.
 
 </aside>
 
-#### Property Variant C **paf:hasProposalSubmitter**
-
-The agent (person or group) which submits the proposal.
-
-<aside class="example">
-
-```turtle
-:proposal_1 a paf:Proposal;
-    paf:hasProposalSubmitter [
-        a prov:Association;
-        prov:agent :submitter_1;
-        prov:hadRole paf:ProposalSubmitter;
-        rdfs:comment "submitter_1 is the issuer of this proposoal."@en
-    ].
-```
-
-</aside>
-
-#### Property Variant D **paf:hasProposalSubmitter**
-
-The agent (person or group) which submits the proposal.
-
-<aside class="example">
-
-```turtle
-:proposal_1 a paf:Proposal;
-    paf:hasProposalSubmitter [
-        a prov:Association;
-        paf:hasProposalSubmitter :submitter_1;
-        prov:hadRole paf:ProposalSubmitter;
-        rdfs:comment "submitter_1 is the issuer of this proposoal."@en
-    ].
-```
-
-</aside>
 
 #### Property **paf:hasProposalReceiver**
 
