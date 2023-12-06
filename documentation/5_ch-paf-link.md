@@ -80,7 +80,7 @@ prov:qualifiedGeneration [
 	prov:actedOnBehalfof :administration_fédérale;
 .
 
-:administration_fédérale 2 a paf:Agent;
+:administration_fédérale a paf:Agent;
 	a prov:Agent, prov:Organization;
 	foaf:name "Administration fédérale";
 ```
