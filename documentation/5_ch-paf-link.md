@@ -66,7 +66,7 @@ prov:qualifiedGeneration [
 ```
 </aside>
 
-### Entity
+### Agent
 
 <aside class="example">
 
