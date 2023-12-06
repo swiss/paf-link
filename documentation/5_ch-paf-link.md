@@ -83,6 +83,7 @@ prov:qualifiedGeneration [
 :administration_fédérale a paf:Agent;
 	a prov:Agent, prov:Organization;
 	foaf:name "Administration fédérale";
+.
 ```
 </aside>
 
