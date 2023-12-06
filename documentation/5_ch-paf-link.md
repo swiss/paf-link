@@ -66,6 +66,14 @@ prov:qualifiedGeneration [
 ```
 </aside>
 
+### Entity
+
+<aside class="example">
+
+```turtle
+:Test_2023.3423 a paf:Agent
+```
+</aside>
 
 ## Procedural Request (Motion, Postulate) - Proposal for Resolution or Information
 
