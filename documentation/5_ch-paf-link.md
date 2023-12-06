@@ -71,7 +71,18 @@ prov:qualifiedGeneration [
 <aside class="example">
 
 ```turtle
-:Test_2023.3423 a paf:Agent
+:John_Doe a paf:Agent;
+	a  prov:Agent, prov:Person;
+	foaf:firstname "John"^^xsd:string;
+	foaf:surname "Doe"^^xsd:string;
+	foaf:mbox <mailto:john.doe@examle.org>;
+	foaf:phone "0041583414901"^^xsd:string;
+	prov:actedOnBehalfof :administration_fédérale;
+.
+
+:administration_fédérale 2 a paf:Agent;
+	a prov:Agent, prov:Organization;
+	foaf:name "Administration fédérale";
 ```
 </aside>
 
