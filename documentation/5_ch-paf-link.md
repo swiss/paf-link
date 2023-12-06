@@ -77,12 +77,13 @@ prov:qualifiedGeneration [
 	foaf:surname "Doe"^^xsd:string;
 	foaf:mbox <mailto:john.doe@examle.org>;
 	foaf:phone "0041583414901"^^xsd:string;
-	prov:actedOnBehalfof :administration_fédérale;
+	prov:actedOnBehalfof :secrétariat_général;
 .
 
-:administration_fédérale a paf:Agent;
+:secrétariat_général a paf:Agent;
 	a prov:Agent, prov:Organization;
-	foaf:name "Administration fédérale";
+	prov:Agent <https://ld.admin.ch/office/III.1.1>;
+	foaf:name "Secrétariat général";
 .
 ```
 </aside>
