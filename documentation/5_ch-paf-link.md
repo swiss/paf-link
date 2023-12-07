@@ -82,7 +82,7 @@ prov:qualifiedGeneration [
 
 :secrétariat_général a paf:Agent;
 	a prov:Agent, prov:Organization;
-	prov:Agent <https://ld.admin.ch/office/III.1.1>;
+	prov:Agent <https://ld.admin.ch/office/III.1.1>; # Generalsekretariat
 	foaf:name "Secrétariat général";
 .
 ```
