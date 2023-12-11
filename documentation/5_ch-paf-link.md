@@ -56,6 +56,11 @@ prov:qualifiedGeneration [
 	prov:wasGeneratedBy :Consultation;
 	prov:agent <https://ld.admin.ch/office/III.1.4>; # Staatssekretariat für Migration
 	prov:wasAttributedTo : <https://ld.admin.ch/office/III.1.1>; #Attribution is the ascribing of an entity to an agent.
+
+	a owl:Manifestation;
+	owl:isEmbodimentOf ;Expression_Consultation_des_offices_1;
+	owl: isPartOf ;Manifestation_Document_1;
+
 ].
 
 
