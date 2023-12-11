@@ -55,9 +55,10 @@ prov:qualifiedGeneration [
 	prov:activity : Consultation
 	prov:wasGeneratedBy :Consultation;
 	prov:agent <https://ld.admin.ch/office/III.1.4>; # Staatssekretariat für Migration
-	
-
+	prov:wasAttributedTo : <https://ld.admin.ch/office/III.1.1>; #Attribution is the ascribing of an entity to an agent.
 ].
+
+
 
 # Intégrer l'item au sein de l'entity em utilisant FRBR
 #https://vocab.org/frbr/core
