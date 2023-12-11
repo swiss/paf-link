@@ -59,7 +59,7 @@ prov:qualifiedGeneration [
 
 	a owl:Manifestation;
 	owl:isEmbodimentOf ;Expression_Consultation_des_offices_1;
-	owl: isPartOf ;Manifestation_Document_1;
+	owl:isPartOf ;Manifestation_Document_1;
 
 ].
 
