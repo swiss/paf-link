@@ -50,18 +50,14 @@
 :Test_2023.2943 a paf:ConsultationEntity ;
 	# manque peut-être quelque chose ici 
 	prov:generatedAtTime "2023-10-19T00:00:00Z"^^xsd:dateTime; #date of the generation of the entity
-prov:qualifiedGeneration [
-	a prov:Generation;
-	prov:activity : Consultation
-	prov:wasGeneratedBy :Consultation;
-	prov:agent <https://ld.admin.ch/office/III.1.4>; # Staatssekretariat für Migration
-	prov:wasAttributedTo : <https://ld.admin.ch/office/III.1.1>; #Attribution is the ascribing of an entity to an agent.
 
-	a owl:Manifestation; #https://sparontologies.github.io/frbr/current/frbr.html#d4e1305
-	owl:isEmbodimentOf ;Expression_Consultation_des_offices_1;
-	owl:isPartOf ;Manifestation_Document_1;
+	ch-paf:oCoTitle "Titel der ÄK"@de;
+	ch-paf:oCoIntroduction "Einführung"@de;
 
-].
+	a owl:Manifestation ; # https://sparontologies.github.io/frbr/current/frbr.html#d4e1305
+	owl:isEmbodimentOf Expression_Consultation_des_offices_1 ;
+	owl:isPartOf Manifestation_Document_1 .
+
 
 
 
