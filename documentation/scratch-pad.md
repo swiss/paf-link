@@ -355,5 +355,7 @@ The activity of sending an information.
 
 ### Class **paf:Acknowledgment**
 
+* The acknowledgement is optional in most cases. But for (potentially a technical) receive acknowledgement it's possible to use.
+
 paf:Acknowledgment is a rdfs:subClass of prov:Activity
 
