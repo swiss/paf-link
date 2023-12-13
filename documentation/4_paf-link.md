@@ -49,7 +49,7 @@ The agent (person or group) which receives the proposal.
 
 </aside>
 
-<aside class="example" title="Usage of prov:qualifiedAssociation in XML">
+<aside class="example" title="A: Usage of prov:qualifiedAssociation in XML">
 
 ```xml
 <prov:document>
@@ -58,6 +58,41 @@ The agent (person or group) which receives the proposal.
             <prov:agent prov:ref=":proposal-submitter-1"/>
             <prov:hadRole prov:ref="paf:ProposalSubmitter"/>
             <rdfs:comment xml:lang="en">proposal-submitter-1 is the issuer of proposal-activity-1.</rdfs:comment>
+        </prov:qualifiedAssociation>
+    </paf:ProposalActivity>
+</prov:document>
+```
+
+</aside>
+
+<aside class="example" title="B: Usage of prov:qualifiedAssociation in XML">
+
+```xml
+<prov:document>
+    <paf:ProposalActivity prov:id=":proposal-activity-1">
+        <prov:qualifiedAssociation prov:rev="association-1"/>
+        <prov:Association prov:id="association-1">
+            <prov:agent prov:ref=":proposal-submitter-1"/>
+            <prov:hadRole prov:ref="paf:ProposalSubmitter"/>
+            <rdfs:comment xml:lang="en">proposal-submitter-1 is the issuer of proposal-activity-1.</rdfs:comment>
+        </prov:Association>
+    </paf:ProposalActivity>
+</prov:document>
+```
+
+</aside>
+
+<aside class="example" title="C: Usage of prov:qualifiedAssociation in XML">
+
+```xml
+<prov:document>
+    <paf:ProposalActivity prov:id=":proposal-activity-1">
+        <prov:qualifiedAssociation>
+            <prov:Association>
+                <prov:agent prov:ref=":proposal-submitter-1"/>
+                <prov:hadRole prov:ref="paf:ProposalSubmitter"/>
+                <rdfs:comment xml:lang="en">proposal-submitter-1 is the issuer of proposal-activity-1.</rdfs:comment>
+            </prov:Association>
         </prov:qualifiedAssociation>
     </paf:ProposalActivity>
 </prov:document>
@@ -134,7 +169,7 @@ The agent (person or group) which issues the decision.
 
 ### Full Example on Proposal & Decision
 
-<aside class="example" title="Full Example on Proposal & Decision">
+<aside class="example" title="Full Example on Proposal & Decision in Turtle">
 
 ```turtle
 @prefix : <https://example.com/> .
@@ -142,52 +177,6 @@ The agent (person or group) which issues the decision.
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix schema: <http://schema.org/> .
 
-:proposal-activity-1 a paf:ProposalActivity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :proposal-submitter-1;
-        prov:hadRole paf:ProposalSubmitter;
-    ];
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :proposal-receiver-1;
-        prov:hadRole paf:ProposalReceiver;
-    ];
-	prov:used :proposal-1;
-	prov:wasInformedBy :parlamentary-activity-1;
-	prov:wasInformedBy :executive-activity-1;
-	prov:wasInformedBy :law-activity-1.
-
-:proposal-1 a prov:Entity;
-	prov:wasGeneratedBy :proposal-activity-1.
-
-:parlamentary-activity-1 a prov:Activity;
-	schema:identifier "23.0123".
-
-:executive-activity-1 a prov:Activity;
-	schema:identifier "321".
-
-:law-activity-1 a prov:Activity;
-	schema:identifier "SR21.1".
-
-:decision-activity-1 a paf:DecisionActivity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :decision-maker-1;
-        prov:hadRole paf:DecisionMaker;
-    ];
-    prov:wasInformedBy :proposal-activity-1;
-	prov:used :decision-1.
-
-:decision-1 a prov:Entity;
-	prov:wasGeneratedBy :decision-activity-1.
-```
-
-</aside>
-
-<aside class="example" title="Full Example on Proposal & Decision">
-
-```turtle
 :proposal-activity-1 a paf:ProposalActivity;
     prov:qualifiedAssociation [
         a prov:Association;
