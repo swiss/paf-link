@@ -1,9 +1,9 @@
-## Introduction
+# Introduction
 
-# Problem Decleration and Goal
+## Problem Declaration and Goal
+[TODO formulate in prose]
 
-
-# Main Features
+## Main Features
 
 * Simple in its core.
 * Extensible to a variety of sub-types of public affairs.
@@ -14,8 +14,7 @@
 * Possibility to analyze and query on different levels.
 * Independent development in different corners of the overall public affair process is possible with a future unification.
 
-
-# Design Decisions
+## Design Decisions
 [TODO formulate in prose]
 
 * Event Based
@@ -25,8 +24,16 @@
 * Shared concepts as driver for interoperability.
 * A schema build on RDF, with deterministic transformation to XML and JSON representations.
 
+## Layered Design
 
-# Namespaces Declarations
+<figure id="figure">
+  <img src="img/layers.svg" alt="Layered Design" />
+  <figcaption>
+    The paf.link public affaires schema with its layered design.
+  </figcaption>
+</figure>
+
+## Namespaces Declarations
 
 | PREFIX | IRI |
 | :--- | :--- |
@@ -38,4 +45,3 @@
 | xsd | [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) |
 | rdfs | [http://www.w3.org/2000/01/rdf-schema#](http://www.w3.org/2000/01/rdf-schema#) |
 | rdf | [http://www.w3.org/1999/02/22-rdf-syntax-ns#](http://www.w3.org/1999/02/22-rdf-syntax-ns#) |
-
