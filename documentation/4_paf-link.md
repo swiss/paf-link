@@ -145,8 +145,59 @@ The agent (person or group) which issues the decision.
 :proposal-activity-1 a paf:ProposalActivity;
     prov:qualifiedAssociation [
         a prov:Association;
-        prov:agent :proposal-maker-1;
-        prov:hadRole paf:ProposalMaker;
+        prov:agent :proposal-submitter-1;
+        prov:hadRole paf:ProposalSubmitter;
+    ];
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :proposal-receiver-1;
+        prov:hadRole paf:ProposalReceiver;
+    ];
+	prov:used :proposal-1;
+	prov:wasInformedBy :parlamentary-activity-1;
+	prov:wasInformedBy :executive-activity-1;
+	prov:wasInformedBy :law-activity-1.
+
+:proposal-1 a prov:Entity;
+	prov:wasGeneratedBy :proposal-activity-1.
+
+:parlamentary-activity-1 a prov:Activity;
+	schema:identifier "23.0123".
+
+:executive-activity-1 a prov:Activity;
+	schema:identifier "321".
+
+:law-activity-1 a prov:Activity;
+	schema:identifier "SR21.1".
+
+:decision-activity-1 a paf:DecisionActivity;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :decision-maker-1;
+        prov:hadRole paf:DecisionMaker;
+    ];
+    prov:wasInformedBy :proposal-activity-1;
+	prov:used :decision-1.
+
+:decision-1 a prov:Entity;
+	prov:wasGeneratedBy :decision-activity-1.
+```
+
+</aside>
+
+<aside class="example" title="Full Example on Proposal & Decision">
+
+```turtle
+:proposal-activity-1 a paf:ProposalActivity;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :proposal-submitter-1;
+        prov:hadRole paf:ProposalSubmitter;
+    ];
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :proposal-receiver-1;
+        prov:hadRole paf:ProposalReceiver;
     ];
 	prov:used :proposal-1;
 	prov:wasInformedBy :parlamentary-activity-1;
