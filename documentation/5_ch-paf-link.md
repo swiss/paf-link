@@ -51,8 +51,19 @@
 	# manque peut-être quelque chose ici 
 	prov:generatedAtTime "2023-10-19T00:00:00Z"^^xsd:dateTime; #date of the generation of the entity
 
-	ch-paf:oCoTitle "Titel der ÄK"@de;
-	ch-paf:oCoIntroduction "Einführung"@de;
+	ch-paf:oCoTitle "Titel" der ÄK"@de;
+	ch-paf:oCoRequestTo "Antrag an" @de;
+	ch-pagf-oCoDate "Datum" @de;
+	ch-paf:oCoIntroduction "Einleitung" @de;
+	ch-paf:oCoIssues "Problemstellung" @de;
+	ch-paf:oCoModification "Änderung" @de;
+	ch-paf:oCoConsequences "Auswirkungen" @de;
+	ch-paf:oCoRelationshipToLaW "Verhältnis zum Recht" @de;
+	ch-paf:oCoDeadlineFoPublication "Frist für die Veröffentlichung"  @de;
+	ch-paf:oCoComments "Stellungnahmen"  @de;
+	ch-paf:oCoRequestFor "Antrag von"  @de;
+	ch-paf:oCoAnnexes "Beilagen" @de;
+
 
 	a owl:Manifestation ; # https://sparontologies.github.io/frbr/current/frbr.html#d4e1305
 	owl:isEmbodimentOf Expression_Consultation_des_offices_1 ;
