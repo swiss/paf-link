@@ -7,12 +7,12 @@
 
 * Simple in its core.
 * Extensible to a variety of sub-types of public affairs.
-* Extensible to more fine grained aspects of public affair processes.
-* Focus on exchange between organisations and systems. (With a guide-line on how to store in rest.)
+* Extensible to more fine grained aspects of public affair processes, base on activities.
 * Defined way how to connected the different processes of public affairs. (E.g. parlament motion, with executive affair, with law text publication, etc.)
+* Focus on exchange between organisations and systems. (With a guide-line on how to store at rest.)
 * Possible to describe document based processes, and also structured data processes. (E.g. it is possible to connect documents, like PDFs to the Affairs, but also have the information also or only hold as structured data.)
-* Possibility to analyze and query on different levels.
-* Independent development in different corners of the overall public affair process is possible with a future unification.
+* Possibility to analyze and query on the different levels.
+* Independent development in different corners of the overall public affair process is possible with a future unification. (Different levels inside the Governement, but also Lobby Organisations, Journalists etc. )
 
 ## Design Decisions
 [TODO formulate in prose]
