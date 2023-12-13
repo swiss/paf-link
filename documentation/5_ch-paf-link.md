@@ -5,22 +5,10 @@
 <aside class="example">
 
 ```turtle
-:OCo_2023.2118 a paf:ConsultationActivity ;
-	paf-ch:officeConsultationStarted "2023-10-19T00:00:00Z"; # official start of the consultation / sub-property of prov:startedAtTime
-	prov:endedAtTime "2023-11-01T00:00:00Z": # deadline for the inputs of the consultation
-  prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent <https://ld.admin.ch/office/III.1.4>; # Staatssekretariat für Migration
-        prov:hadRole paf:ConsultationOrganizationCreator.
-  ].
-  prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent <https://ld.admin.ch/office/III.1.2>; # Bundesamt für Justiz
-        prov:hadRole paf:ExplicitConsultationReceiver.
-  ].
 
-:registration_OCo_2023.2118 a paf:InformationActivity ;
-  prov:wasInformedBy :OCo_2023.2118;
+# 1st registration
+:ActID-23097234 a paf:InformationActivity ;
+  	prov:generation :OCo_2023.2118;
 	prov:startedAtTime "2023-10-08T14:23:00Z"; # time of the registration
     prov:qualifiedAssociation [
         a prov:Association;
@@ -38,6 +26,58 @@
         prov:agent :arthur_registro; #  person registrating the consultation
         prov:hadRole paf:ConsultationRegistrator
     ].
+
+# 2nd generation of id
+
+:OCo_2023.2118 a prov:Entity, schema:Identiy .
+
+
+# 3rd consultation Activity
+:ActID-2002039 a paf:ConsultationActivity ;
+	prov:informedBy :ActID-23097234;
+
+	prov:uses :OCo_2023.2118
+	prov:uses :CuriaID23.23223
+
+	paf-ch:officeConsultationStarted "2023-10-19T00:00:00Z"; # official start of the consultation / sub-property of prov:startedAtTime
+	prov:endedAtTime "2023-11-01T00:00:00Z": # deadline for the inputs of the consultation
+  prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent <https://ld.admin.ch/office/III.1.4>; # Staatssekretariat für Migration
+        prov:hadRole paf:ConsultationOrganizationCreator.
+  ].
+  prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent <https://ld.admin.ch/office/III.1.2>; # Bundesamt für Justiz
+        prov:hadRole paf:ExplicitConsultationReceiver.
+  ].
+
+
+# 4th responses
+
+:ActID-20020392 a paf:CommentActivity ;
+	prov:wasInformedBy :ActID-2002039;
+	prov:used :OCo_2023.2118
+	prov:used [a ediProcessNumber;
+			rdfs:title "EDI-223s2"
+		  ]
+	paf-ch:officeConsultationCommented "2023-10-19T00:00:00Z"; # official start of the consultation / sub-property of prov:startedAtTime
+
+  	prov:qualifiedAssociation [
+        	a prov:Association;
+        	prov:agent <https://ld.admin.ch/office/III.1.2> # BJ
+        	prov:hadRole paf:ConsultationCommenter.
+  	].
+	prov:uses :ActID-2002392-answer1;
+
+:ActID-2002392-answer1 a prov:Entity.
+
+:ActID-20020394 a paf:CommentActivity ;
+	prov:informedBy :ActID-2002039;
+	prov:uses :OCo_2023.2118
+	paf-ch:officeConsultationCommented "2023-10-19T00:00:00Z"; # official start of the consultation / sub-property of prov:startedAtTime
+
+
 ```
 </aside>
 
