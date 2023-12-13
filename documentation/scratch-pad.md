@@ -232,7 +232,9 @@ The agent (person or group) which submits the comment.
 
 </aside>
 
-## Mandate & Resolution
+## Mandate & Resolution (TaskAssignement & TaskAchievement)
+
+* **Mandate to specific** -> look for more general terms.
 
 * Beispiele: Auftrag zur Erarbeitung einer Stellungnahme der BK an ein Departement -> Erledigung in Form eines Antrags an den Bundesrat; Verabschiedung einer Motion durch die Bundesversammlung -> Auftrag an den BR, die Motion umzusetzen; Brief der GPK an den Bundesrat -> Auftrag, der GPK zu antworten*)
 
