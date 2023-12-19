@@ -1,6 +1,17 @@
 # Layer 2: Public Affairs (paf.link) {#paf-link}
 
-## Proposal & Decision
+## Affaires & Activities
+
+Public affaires usually consist of multiple activities that need to be linked together. The following parts show the different activities that can be linked together to form a public affaire.
+
+### Activity Independent Identifier of an Affair
+
+The collection of all activities would be sufficient to represent all aspects of and affair. But from an user experience point of view, most affairs have a unique (often domain specific) identifier that the affair is referred to. Therefore in this chapter we define how the activities are connected to one or multiple affair identifiers through the generation and the usage of a prov:Entity.
+
+> [!NOTE]  
+> The use of prov:Entity to represent and affair is optional and mostly to represent affair identifiers that are already in use.
+
+## Proposal & Decision Activities
 
 [TODO] Describe the binome of proposal and decision. 
 
@@ -45,56 +56,32 @@ The agent (person or group) which receives the proposal.
         prov:hadRole paf:ProposalSubmitter;
         rdfs:comment "proposal-submitter-1 is the issuer of proposal-activity-1."@en;
     ].
+
+:proposal-submitter-1 a prov:Agent;
+    schema:name "Proposal Submitter 1".
 ```
 
 </aside>
 
-<aside class="example" title="A: Usage of prov:qualifiedAssociation in XML">
+<aside class="example" title="Usage of prov:qualifiedAssociation in XML">
 
 ```xml
 <prov:document>
+
     <paf:ProposalActivity prov:id=":proposal-activity-1">
-        <prov:qualifiedAssociation>
+        <prov:qualifiedAssociation prov:ref="association-1"/>
+    </paf:ProposalActivity>
+
+    <prov:Association prov:id="association-1">
             <prov:agent prov:ref=":proposal-submitter-1"/>
             <prov:hadRole prov:ref="paf:ProposalSubmitter"/>
             <rdfs:comment xml:lang="en">proposal-submitter-1 is the issuer of proposal-activity-1.</rdfs:comment>
-        </prov:qualifiedAssociation>
-    </paf:ProposalActivity>
-</prov:document>
-```
+    </prov:Association>
 
-</aside>
+    <prov:Agent prov:id=":proposal-submitter-1">
+        <schema:name>Proposal Submitter 1</schema:name>
+    </prov:Agent>
 
-<aside class="example" title="B: Usage of prov:qualifiedAssociation in XML">
-
-```xml
-<prov:document>
-    <paf:ProposalActivity prov:id=":proposal-activity-1">
-        <prov:qualifiedAssociation prov:rev="association-1"/>
-        <prov:Association prov:id="association-1">
-            <prov:agent prov:ref=":proposal-submitter-1"/>
-            <prov:hadRole prov:ref="paf:ProposalSubmitter"/>
-            <rdfs:comment xml:lang="en">proposal-submitter-1 is the issuer of proposal-activity-1.</rdfs:comment>
-        </prov:Association>
-    </paf:ProposalActivity>
-</prov:document>
-```
-
-</aside>
-
-<aside class="example" title="C: Usage of prov:qualifiedAssociation in XML">
-
-```xml
-<prov:document>
-    <paf:ProposalActivity prov:id=":proposal-activity-1">
-        <prov:qualifiedAssociation>
-            <prov:Association>
-                <prov:agent prov:ref=":proposal-submitter-1"/>
-                <prov:hadRole prov:ref="paf:ProposalSubmitter"/>
-                <rdfs:comment xml:lang="en">proposal-submitter-1 is the issuer of proposal-activity-1.</rdfs:comment>
-            </prov:Association>
-        </prov:qualifiedAssociation>
-    </paf:ProposalActivity>
 </prov:document>
 ```
 
@@ -120,12 +107,15 @@ To connect a higher level process, e.g. a Parliament Affair Identificator.
 
 ```xml
 <prov:document>
+    
     <paf:ProposalActivity prov:id=":proposal-activity-1">
         <prov:wasInformedBy prof:ref=":affair-1"/>
     </paf:ProposalActivity>
+    
     <paf:Activity prov:id=":affair-1">
         <rdfs:comment xml:lang="en">affair-1 is a higher level activity.</rdfs:comment>
     </paf:Activity>
+    
 </prov:document>
 ```
 
@@ -219,13 +209,3 @@ The agent (person or group) which issues the decision.
 ```
 
 </aside>
-
-
-### Activity Independent Identifier of an Affair
-
-An Affair is a series of activities. This collection of activities are sufficient to represent all aspects of and affair. But from an User Experience point of view, most Affairs have a unique (often domain specific) Identifier to communicated over an Affair. Therefore in this chapter we define how the Activites are connected to one or multiple Affair Identifiers through the generation and the usage of an Prov Entity.
-
-> [!NOTE]  
-> The use of Prov Entities to represent and Affair is optional and mostly to represent already used affair Identifiers.
-
-
