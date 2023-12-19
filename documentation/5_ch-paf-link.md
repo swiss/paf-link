@@ -144,6 +144,12 @@
 ## Procedural Request (Motion, Postulate) - Proposal for Resolution or Information
 
 ### Internal Request TaskActivity 
+* task id
+* based on a Curia ID -> with title and text and potentialy link
+* language
+* office / responsible person
+* chapter -> is it done or not?
+* connex 
 ( from BK to Dep)
 
 ### Procedural Request ProposalActivity
