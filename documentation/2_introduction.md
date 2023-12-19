@@ -27,7 +27,7 @@
 ## Layered Design
 
 <figure id="figure">
-  <img src="img/layers.svg" alt="Layered Design" />
+  <img src="../img/layers.svg" alt="Layered Design" />
   <figcaption>
     The paf.link public affaires schema with its layered design.
   </figcaption>
