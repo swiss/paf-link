@@ -8,7 +8,7 @@ var respecConfig = {
     preProcess: [loadTurtle],
     postProcess: [jumpTo],
     github: {
-      repoURL: "https://github.com/bequrios/paf-link",
+      repoURL: "https://github.com/swiss/paf-link",
       branch: "main", // alternative branch
     },
     editors: [{
