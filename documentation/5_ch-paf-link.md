@@ -147,14 +147,17 @@
 ( from BK to Dep)
 
 ### Procedural Request ProposalActivity
+For Mopo Report, chapter 1, propose a resolution (Abschreibung) (task done).
 ( from BK to PD)
 
 
 ### Procedural Request DecisionActivity
+For MoPo Report on each Proposal Activity, the answer on Chapter 1 proposals.
 ( from PD to BK)
 
 
 ### Procedural Request InformationActivity
+For Mopo Report, chapter 2, informing on status of procedural request.
 ( from BK to PD)
 
 
