@@ -143,11 +143,18 @@
 
 ## Procedural Request (Motion, Postulate) - Proposal for Resolution or Information
 
+### Internal Request TaskActivity 
+( from BK to Dep)
+
 ### Procedural Request ProposalActivity
+( from BK to PD)
 
 
 ### Procedural Request DecisionActivity
+( from PD to BK)
 
 
 ### Procedural Request InformationActivity
+( from BK to PD)
+
 
