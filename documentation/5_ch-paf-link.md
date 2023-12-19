@@ -29,7 +29,7 @@
 
 # 2nd generation of id
 
-:OCo_2023.2118 a prov:Entity, schema:Identiy .
+:OCo_2023.2118 a prov:Entity, ch-paf:OfficeConsultation .
 
 
 # 3rd consultation Activity
