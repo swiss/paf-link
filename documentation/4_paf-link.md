@@ -219,3 +219,13 @@ The agent (person or group) which issues the decision.
 ```
 
 </aside>
+
+
+### Activity Independent Identifier of an Affair
+
+An Affair is a series of activities. This collection of activities are sufficient to represent all aspects of and affair. But from an User Experience point of view, most Affairs have a unique (often domain specific) Identifier to communicated over an Affair. Therefore in this chapter we define how the Activites are connected to one or multiple Affair Identifiers through the generation and the usage of an Prov Entity.
+
+> [!NOTE]  
+> The use of Prov Entities to represent and Affair is optional and mostly to represent already used affair Identifiers.
+
+
