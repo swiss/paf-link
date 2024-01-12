@@ -6,7 +6,42 @@ Public affaires usually consist of multiple activities that need to be linked to
 
 ### Activity Independent Identifier of an Affair
 
-The collection of all activities would be sufficient to represent all aspects of and affair. But from an user experience point of view, most affairs have a unique (often domain specific) identifier that the affair is referred to. Therefore in this chapter we define how the activities are connected to one or multiple affair identifiers through the generation and the usage of a prov:Entity.
+The collection of all activities would be sufficient to represent all activity aspects of the corresponding affair. But from a user experience point of view, most affairs have a unique (often domain specific) identifier that the affair is referred to. Therefore it is possible to connect an activity to one or multiple affair identifiers through the generation and the usage of a prov:Entity. All prov:Activities link to the identifier prov:Entity by means of prov:used. The prov:activity that is responsable for creating the identifier and with it the prov:Entity ist connected via a prov:wasGeneratedBy from the prov:Entity to the prov:Activity. This is to ensure easier querying for all prov:Activities that have the same identifier.
+
+<figure id="figure">
+    <img src="img/identifier_entity.svg" alt="Use of prov:Entity to create an affair identifier" />
+    <figcaption>
+        Use of prov:Entity to create an affair identifier.
+    </figcaption>
+</figure>
+
+<aside class="example" title="Query for all activities with the same identifier.">
+
+```turtle
+:activity_1 a prov:Activity;
+    prov:used :entity_1.
+
+:activity_2 a prov:Activity;
+    prov:used :entity_1.
+
+:activity_3 a prov:Activity;
+    prov:used :entity_1.
+
+:activity_4 a prov:Activity;
+    prov:used :entity_1.
+
+:entity_1 a prov:Entity;
+    prov:wasGeneratedBy :activity_1.
+```
+
+```sparql
+SELECT * WHERE {
+    ?activity a prov:Activity;
+        prov:used :entity_1.
+}
+```
+
+</aside>
 
 > [!NOTE]  
 > The use of prov:Entity to represent and affair is optional and mostly to represent affair identifiers that are already in use.
