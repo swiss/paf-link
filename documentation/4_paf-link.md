@@ -15,9 +15,12 @@ The collection of all activities would be sufficient to represent all activity a
     </figcaption>
 </figure>
 
-<aside class="example" title="Query for all activities with the same identifier.">
+<aside class="example" title="Activities with a single identifier.">
 
 ```turtle
+@prefix : <https://example.com/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
 :activity_1 a prov:Activity;
     prov:used :entity_1.
 
@@ -34,7 +37,14 @@ The collection of all activities would be sufficient to represent all activity a
     prov:wasGeneratedBy :activity_1.
 ```
 
+</aside>
+
+<aside class="example" title="Query for all activities with the same identifier.">
+
 ```sparql
+PREFIX : <https://example.com/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
 SELECT * WHERE {
     ?activity a prov:Activity;
         prov:used :entity_1.
@@ -244,3 +254,11 @@ The agent (person or group) which issues the decision.
 ```
 
 </aside>
+
+## Consultation & Comment Activities
+
+## Mandate & Resolution Activities
+
+Alternative names: TaskAssignement & TaskFulfilment Activities
+
+## Information & Acknowledgement Activities
