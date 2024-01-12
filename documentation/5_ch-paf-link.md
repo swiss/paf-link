@@ -152,18 +152,75 @@
 * connex 
 ( from BK to Dep)
 
-### Procedural Request ProposalActivity
+
+
+
+### Procedural Request Proposal for Abandonment ProposalActivity (Chapter1)
 For Mopo Report, chapter 1, propose a resolution (Abschreibung) (task done).
 ( from BK to PD)
 
+<aside class="example">
 
-### Procedural Request DecisionActivity
+```turtle
+
+# 1st registration
+:PropAct-19.4390 a paf:ProceduralRequest-ProposalForAbandonment-ProposalActivity ; # Chapter1 
+  	prov:used :Curia-19.4390;
+	prov:startedAtTime "2020-10-08T14:23:00Z"; # Time of Proposal
+
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent <https://ld.admin.ch/FCh>; # 
+        prov:hadRole paf:Proposer;
+    ].
+
+# 2nd Entity
+
+"""Die am 1. Januar 2022 in Kraft getretenen Weisungen des Bundesrates vom 18. August 2021 über Administrativ- und 
+Disziplinaruntersuchungen (BBl 2021 1903) bezeichnen Beratungsstellen in Sachen Administrativ- und Disziplinaruntersuchungen
+und legen die Konsultations- und Dokumentationspflichten der für die Anordnung dieser Untersuchungen zuständigen Stellen fest. 
+Diese Weisungen sind für die Departemente und die ihnen unterstellten Verwaltungseinheiten sowie die Bundeskanzlei verbindlich 
+und werden in der Praxis umgesetzt.
+Der Bundesrat erachtet das Anliegen der Motion als erfüllt und beantragt deren Abschreibung"""
+
+# 2nd generation of id
+
+:Curia-19.4390; a prov:Entity, ch-paf:Motion . (ch-paf:Postulate)
+
+
+```
+</aside>
+
+
+
+
+
+
+### Procedural Request DecisionActivity (Chapter 1 / Answer)
 For MoPo Report on each Proposal Activity, the answer on Chapter 1 proposals.
 ( from PD to BK)
 
 
-### Procedural Request InformationActivity
+### Procedural Request Report Of State InformationActivity (Chapter 2)
 For Mopo Report, chapter 2, informing on status of procedural request.
 ( from BK to PD)
+<aside class="example">
+
+```turtle
+# Chapter2 ProceduralRequest-ReportOfState-InformationActivity
+```
+</aside>
+
+<aside class="example">
+
+### Procedural Request Report of Abandoned (Chapter 3)
+For Mopo Report, chapter 3 / Annex1, informing on already abandoned procedural requests.
+( from BK to PD)
+
+```turtle
+# Annex 1 (Chapter3) ProceduralRequest-ReportOfAbandoned-InformationActivity
+```
+</aside>
+
 
 
