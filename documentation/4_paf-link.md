@@ -267,3 +267,4 @@ Alternative names:
 
 * TaskAssignement & TaskFulfilment Activities
 * Mandate & Resolution Activities
+* Todo & Done Activities ("done" does not sound like an activity)
