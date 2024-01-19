@@ -24,6 +24,8 @@ PROV-O consists of different categories representing different levels of granula
 - **Expanded terms** (classes and properties)
 - **Qualified terms** (classes and properties)
 
+## Starting Point Terms
+
 The starting point classes and their properties are shown in the following figure:
 
 <figure id="figure">
@@ -31,6 +33,10 @@ The starting point classes and their properties are shown in the following figur
   <figcaption>The PROV Ontology with the three starting point classes and their properties, <a href="https://www.w3.org/TR/2013/REC-prov-o-20130430/" target="_blank">Source</a>.
   </figcaption>
 </figure>
+
+## Expanded Terms
+
+The expanded terms introduce some more specific subclasses and properties but also more general properties compared to the starting point terms. In addition, terms that relate entities according to their levels of abstraction are added. Furthermore, additional terms to describe the lifetime of entities and activities are defined.
 
 ## Qualified Terms
 
