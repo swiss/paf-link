@@ -39,6 +39,8 @@ If a relation between entities, activities and actors can not be adequately desc
 <aside class="example" title="Using starting point terms for describing a relation.">
 
 ```turtle
+@prefix : <https://example.com/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 
 :activity-1 a prov:Activity.
 :agent-1 a prov:Agent.
@@ -51,6 +53,8 @@ If a relation between entities, activities and actors can not be adequately desc
 <aside class="example" title="Using qualified terms for describing a relation.">
 
 ```turtle
+@prefix : <https://example.com/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 
 :activity-1 a prov:Activity.
 :agent-1 a prov:Agent.

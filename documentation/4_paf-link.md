@@ -1,8 +1,8 @@
 # Layer 2: Public Affairs (paf.link) {#paf-link}
 
-## Affaires & Activities
+## Affairs & Activities
 
-Public affaires usually consist of multiple activities that need to be linked together. The following parts show the different activities that can be linked together to form a public affaire.
+Public affairs usually consist of multiple activities that need to be linked together. The following parts show the different activities that can be linked together to form a public affair.
 
 ### Activity Independent Identifier of an Affair
 
@@ -257,8 +257,13 @@ The agent (person or group) which issues the decision.
 
 ## Consultation & Comment Activities
 
-## Mandate & Resolution Activities
-
-Alternative names: TaskAssignement & TaskFulfilment Activities
-
 ## Information & Acknowledgement Activities
+
+## Order & Completion Activities
+
+These activites are meant to be a sort of "catch-all" activities if the other are not suitable. In fact, all the activities described before could be understood as some kind of "order and completion" activities.
+
+Alternative names:
+
+* TaskAssignement & TaskFulfilment Activities
+* Mandate & Resolution Activities
