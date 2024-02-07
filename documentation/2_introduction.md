@@ -38,6 +38,7 @@
 | PREFIX | IRI |
 | :--- | :--- |
 | paf | [https://paf.link/](https://paf.link/) |
+| chpaf | [https://ch.paf.link/](https://ch.paf.link/) |
 | prov | [https://www.w3.org/ns/prov#](https://www.w3.org/ns/prov#) |
 | schema | [http://schema.org/](http://schema.org) |
 | skos | [http://www.w3.org/2004/02/skos/core#](https://www.w3.org/2009/08/skos-reference/skos.html) |
