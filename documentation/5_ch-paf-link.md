@@ -191,11 +191,6 @@ Der Bundesrat erachtet das Anliegen der Motion als erfüllt und beantragt deren 
 ```
 </aside>
 
-
-
-
-
-
 ### Procedural Request DecisionActivity (Chapter 1 / Answer)
 For MoPo Report on each Proposal Activity, the answer on Chapter 1 proposals.
 ( from PD to BK)
@@ -222,5 +217,46 @@ For Mopo Report, chapter 3 / Annex1, informing on already abandoned procedural r
 ```
 </aside>
 
+### Full Example
 
+<aside class="example">
 
+```turtle
+@prefix : <https://example.com/> .
+@prefix ch-paf: <https://ch.paf.link/> .
+@prefix paf: <https://paf.link/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+
+:mo-po-creation-activity-1 a ch-paf:MoPoCreationActivity;
+	prov:used :mo-po-entity-1.
+
+:mo-po-entity-1 a ch-paf:MoPoEntity;
+	prov:wasGeneratedBy :mo-po-creation-activity-1;
+	schema:identifier "2019 P 18.3750";
+	schema:name "Verstärkte Regulierung der EU im Bereich der internationalen Rheinschifffahrt. Interessenwahrung der Schweiz (Janiak)";
+	schema:text "Der Bundesrat wird gebeten, in einem Bericht aufzuzeigen, wie sich die Entwicklung des Rheinregimes...".
+
+:mo-po-report-activity-1 a ch-paf:MoPoReportActivity;
+	prov:used :mo-po-entity-1, :mo-po-report-1;
+	prov:wasInformedBy :mo-po-creation-activity-1.
+	
+:mo-po-report-1 a ch-paf:MoPoReport;
+	schema:text "Das Postulat beauftragt den Bundesrat aufzuzeigen...".
+
+:mo-po-proposal-activity-1 a ch-paf:MoPoProposalActivity;
+	prov:used :mo-po-entity-1, :mo-po-proposal-1;
+	prov:wasInformedBy :mo-po-report-activity-1.
+
+:mo-po-proposal-1 a ch-paf:MoPoProposal;
+	prov:text "Postulatsbericht vom 16. Dezember 2022...".
+
+:mo-po-proposal-decision-activity-1 a ch-paf:MoPoProposalDecisionActivity;
+	prov:used :mo-po-entity-1, :mo-po-proposal-decision-1;
+	prov:wasInformedBy :mo-po-proposal-activity-1.
+
+:mo-po-proposal-decision-1 a ch-paf:MoPoProposalDecision;
+	ch-paf:moPoProposalDecision ch-paf:MoPoProposalAccepted.
+```
+
+</aside>
