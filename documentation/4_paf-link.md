@@ -8,14 +8,14 @@ Public affairs usually consist of multiple activities that need to be linked tog
 
 The collection of all linked activities would be sufficient to represent all activity aspects of the corresponding affair. But from a user experience point of view, most affairs have a unique (often domain specific) identifier that the affair is referred to. Therefore it is possible to connect an activity to one or multiple affair identifiers through the generation and the usage of a prov:Entity. All prov:Activities link to the identifier prov:Entity by means of prov:used. The prov:activity that is responsible for creating the identifier and the resulting prov:Entity is connected via a prov:wasGeneratedBy from the prov:Entity to the prov:Activity (linking backwards in time). The content of such identifier entities basically only have a class, an identifier via schema:identifier and a prov:wasGeneratedBy as content. The identity creating prov:Entity is also linked via paf:used to the identifier paf:Entity which is temporally not true but done for easier querying of all connected activities.
 
-<figure id="figure">
+<figure>
     <img src="img/identifier_entity.svg" alt="Use of prov:Entity to create an affair identifier" />
     <figcaption>
         Use of prov:Entity to create an affair identifier.
     </figcaption>
 </figure>
 
-<figure id="figure">
+<figure>
   <pre class="diagram mermaid">
 flowchart TD
     activity-1[:activity-1] -->|prov:used| entity-1(["`:entity-1
