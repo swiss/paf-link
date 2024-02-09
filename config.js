@@ -5,7 +5,7 @@ var respecConfig = {
     format: 'markdown', 
     latestVersion: null,
     maxTocLevel: 4,
-    preProcess: [window.respecMermaid.createFigures],
+    preProcess: [loadTurtle, window.respecMermaid.createFigures],
     postProcess: [jumpTo],
     github: {
       repoURL: "https://github.com/swiss/paf-link",

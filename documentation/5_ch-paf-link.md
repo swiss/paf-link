@@ -228,6 +228,9 @@ For Mopo Report, chapter 3 / Annex1, informing on already abandoned procedural r
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix schema: <http://schema.org/> .
 
+:mo-po-registration-activity a ch-paf:MoPoRegistrationActivity;
+	prov:used :mo-po-entity-1.
+
 :mo-po-creation-activity-1 a ch-paf:MoPoCreationActivity;
 	prov:used :mo-po-entity-1.
 
