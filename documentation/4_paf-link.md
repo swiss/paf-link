@@ -15,7 +15,7 @@ The collection of all linked activities would be sufficient to represent all act
     </figcaption>
 </figure>
 
-<figure>
+<figure id="figure">
   <pre class="diagram mermaid">
 flowchart TD
     activity-1[:activity-1] -->|prov:used| entity-1(["`:entity-1
