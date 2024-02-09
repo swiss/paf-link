@@ -74,3 +74,7 @@ If a relation between entities, activities and actors can not be adequately desc
 ```
 
 </aside>
+
+## Backwards in Time Linking Direction
+
+PROV-O is activity based and all activities have a strong relation to a temporal dimension. In PROV-O, entities, activities and agents are connected **backwards in time**. So items that happen later, link to their predecessors and not vice versa. This notion with past tense is also normally used in the paf.link schema. E.g. a later activity is linked to its predecessor by paf:wasInformedBy and an entity is linked with paf:wasCreatedBy the corresponding activity if the entity is a result of this activity.
