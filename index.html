@@ -2,47 +2,46 @@
 <html>
   <head>
     <meta charset='utf-8'>
-    <script>
-      function jumpTo(config) {
-        let element = document.getElementById(location.pathname.substr(location.pathname.lastIndexOf("/")+1));
-        if(element !== null && typeof element !== "undefined")
-            element.scrollIntoView(true)
-      }
-
-      async function loadTurtle() {
-        //this is the function you call in 'preProcess', to load the highlighter
-        const worker = await new Promise(resolve => {
-          require(["core/worker"], ({ worker }) => resolve(worker));
-        });
-        const action = "highlight-load-lang";
-        const langURL =
-          "https://swiss.github.io/paf-link/turtle.js";
-        const propName = "turtle"; // This funtion is defined in the highlighter being loaded
-        const lang = "turtle"; // this is the class you use to identify the language
-        worker.postMessage({ action, langURL, propName, lang });
-        return new Promise(resolve => {
-          worker.addEventListener("message", function listener({ data }) {
-            const { action: responseAction, lang: responseLang } = data;
-            if (responseAction === action && responseLang === lang) {
-              worker.removeEventListener("message", listener);
-              resolve();
-            }
-          });
-        });
-      }
-    </script>
     <script type="text/javascript" src='https://www.w3.org/Tools/respec/respec-w3c' async class='remove'></script>
     <script class="remove" src="https://cdn.jsdelivr.net/gh/w3c/respec-mermaid@1.1.0/dist/main.js"></script>
     <script class='remove'>
-      var module = {}
+      var respecConfig = {
+    specStatus: "unofficial",
+    shortName: 'paf-link',
+    format: 'markdown', 
+    latestVersion: null,
+    maxTocLevel: 4,
+    preProcess: [window.respecMermaid.createFigures],
+    postProcess: [jumpTo],
+    github: {
+      repoURL: "https://github.com/bequrios/paf-link",
+      branch: "main", // alternative branch
+    },
+    editors: [{
+      name: "Théophile Boucard",
+      company: "Federal Chancellery (FCh)",
+      companyURL: "https://www.bk.admin.ch",
+      url: "mailto:theophile.boucard@bk.admin.ch"
+    },
+    {
+      name: "Michael Luggen",
+      company: "Federal Chancellery (FCh)",
+      companyURL: "https://www.bk.admin.ch",
+      url: "mailto:michael.luggen@bk.admin.ch"
+    },
+    {
+      name: "Benedikt Hitz-Gamper",
+      company: "Bern University of Applied Sciences (BFH)",
+      companyURL: "https://www.bfh.ch",
+      url: "mailto:benedikt.hitz@bfh.ch",
+    }]
+  };
     </script>
     <script type="text/javascript" src='config.js' class='remove'></script>
     <title>paf.link: Public Affaires Schema</title>
   </head>
   <body>
-
-    <!-- <h1 id='title'>paf.link: Public Affaires Schema</h1> -->
-
+    
     <section id='abstract' data-include-format="markdown" data-include="documentation/1_abstract.md"></section>
     
     <section id='issue-summary'></section>
