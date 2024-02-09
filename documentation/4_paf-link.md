@@ -6,7 +6,7 @@ Public affairs usually consist of multiple activities that need to be linked tog
 
 ### Activity Independent Identifier of an Affair
 
-The collection of all linked activities would be sufficient to represent all activity aspects of the corresponding affair. But from a user experience point of view, most affairs have a unique (often domain specific) identifier that the affair is referred to. Therefore it is possible to connect an activity to one or multiple affair identifiers through the generation and the usage of a prov:Entity. All prov:Activities link to the identifier prov:Entity by means of prov:used. The prov:activity that is responsible for creating the identifier and the resulting prov:Entity is connected via a prov:wasGeneratedBy from the prov:Entity to the prov:Activity (linking backwards in time). This is to ensure easier querying for all prov:Activities that have the same identifier. The content of such identifier entities basically only have a class and and an identifier as content.
+The collection of all linked activities would be sufficient to represent all activity aspects of the corresponding affair. But from a user experience point of view, most affairs have a unique (often domain specific) identifier that the affair is referred to. Therefore it is possible to connect an activity to one or multiple affair identifiers through the generation and the usage of a prov:Entity. All prov:Activities link to the identifier prov:Entity by means of prov:used. The prov:activity that is responsible for creating the identifier and the resulting prov:Entity is connected via a prov:wasGeneratedBy from the prov:Entity to the prov:Activity (linking backwards in time). The content of such identifier entities basically only have a class, an identifier via schema:identifier and a prov:wasGeneratedBy as content. The identity creating prov:Entity is also linked via paf:used to the identifier paf:Entity which is temporally not true but done for easier querying of all connected activities.
 
 <figure id="figure">
     <img src="img/identifier_entity.svg" alt="Use of prov:Entity to create an affair identifier" />
@@ -20,21 +20,26 @@ The collection of all linked activities would be sufficient to represent all act
 ```turtle
 @prefix : <https://example.com/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
 
-:activity_1 a prov:Activity;
-    prov:used :entity_1.
+:activity-1 a prov:Activity;
+    prov:used :entity-1.
 
-:activity_2 a prov:Activity;
-    prov:used :entity_1.
+:activity-2 a prov:Activity;
+    prov:used :entity-1;
+    prov:wasInformedBy :activity-1.
 
-:activity_3 a prov:Activity;
-    prov:used :entity_1.
+:activity-3 a prov:Activity;
+    prov:used :entity-1;
+    prov:wasInformedBy :activity-2.
 
-:activity_4 a prov:Activity;
-    prov:used :entity_1.
+:activity-4 a prov:Activity;
+    prov:used :entity-1;
+    prov:wasInformedBy :activity-3.
 
-:entity_1 a prov:Entity;
-    prov:wasGeneratedBy :activity_1.
+:entity-1 a prov:Entity;
+    prov:wasGeneratedBy :activity-1;
+    schema:identifier "SomeReallyObscureIdentifier".
 ```
 
 </aside>
@@ -47,7 +52,7 @@ PREFIX prov: <http://www.w3.org/ns/prov#>
 
 SELECT * WHERE {
     ?activity a prov:Activity;
-        prov:used :entity_1.
+        prov:used :entity-1.
 }
 ```
 
