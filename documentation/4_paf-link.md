@@ -315,7 +315,7 @@ The agent (person or group) which issues the decision.
 
 #### Usage of prov:qualifiedAssociation ? 
 
-### Full Example on ****Information & Acknowledgement Activities
+### Full Example on Information & Acknowledgement Activities
 
 ## Order & Completion Activities
 
