@@ -279,7 +279,43 @@ The agent (person or group) which issues the decision.
 
 ## Consultation & Comment Activities
 
+### Class paf:ConsultationActivity
+
+#### Class paf:ConsultationSubmitter
+
+#### Class paff:ConsultationReceiver
+
+#### Usage of prov:qualifiedAssociation ? 
+
+#### Usage of prov:wasInformedBy  ?
+
+### Class paf:CommentActivity 
+
+#### Class paf:CommentMaker (maker est-ce le bon terme )
+
+#### Usage of prov:qualifiedAssociation ? 
+
+### Full Example on Consultation & Comment
+
 ## Information & Acknowledgement Activities
+
+### Class paf:InformationActivity
+
+#### Class paf:InformationSubmitter
+
+#### Class paff:InformationReceiver
+
+#### Usage of prov:qualifiedAssociation ? 
+
+#### Usage of prov:wasInformedBy  ? 
+
+### Class paf:AcknowledgementActivity
+
+#### Class paf:AcknowledgementMaker (maker est-ce le bon terme ? )
+
+#### Usage of prov:qualifiedAssociation ? 
+
+### Full Example on ****Information & Acknowledgement Activities
 
 ## Order & Completion Activities
 
