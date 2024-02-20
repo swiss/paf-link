@@ -1,4 +1,4 @@
-# Layer 3: Swiss Public Affairs (ch.paf.link) {#ch-paf-link}
+# Layer 3: Swiss Public Affairs (ch.paf.link) {#chpaf-link}
 
 ## Office Consultation Registration
 ### Activity
@@ -29,7 +29,7 @@
 
 # 2nd generation of id
 
-:OCo_2023.2118 a prov:Entity, ch-paf:OfficeConsultation .
+:OCo_2023.2118 a prov:Entity, chpaf:OfficeConsultation .
 
 
 # 3rd consultation Activity
@@ -91,18 +91,18 @@
 	# manque peut-être quelque chose ici 
 	prov:generatedAtTime "2023-10-19T00:00:00Z"^^xsd:dateTime; #date of the generation of the entity
 
-	ch-paf:oCoTitle "Titel" der ÄK"@de;
-	ch-paf:oCoRequestTo "Antrag an" @de;
+	chpaf:oCoTitle "Titel" der ÄK"@de;
+	chpaf:oCoRequestTo "Antrag an" @de;
 	ch-pagf-oCoDate "Datum" @de;
-	ch-paf:oCoIntroduction "Einleitung" @de;
-	ch-paf:oCoIssues "Problemstellung" @de;
-	ch-paf:oCoModification "Änderung" @de;
-	ch-paf:oCoConsequences "Auswirkungen" @de;
-	ch-paf:oCoRelationshipToLaW "Verhältnis zum Recht" @de;
-	ch-paf:oCoDeadlineFoPublication "Frist für die Veröffentlichung"  @de;
-	ch-paf:oCoComments "Stellungnahmen"  @de;
-	ch-paf:oCoRequestFor "Antrag von"  @de;
-	ch-paf:oCoAnnexes "Beilagen" @de;
+	chpaf:oCoIntroduction "Einleitung" @de;
+	chpaf:oCoIssues "Problemstellung" @de;
+	chpaf:oCoModification "Änderung" @de;
+	chpaf:oCoConsequences "Auswirkungen" @de;
+	chpaf:oCoRelationshipToLaW "Verhältnis zum Recht" @de;
+	chpaf:oCoDeadlineFoPublication "Frist für die Veröffentlichung"  @de;
+	chpaf:oCoComments "Stellungnahmen"  @de;
+	chpaf:oCoRequestFor "Antrag von"  @de;
+	chpaf:oCoAnnexes "Beilagen" @de;
 
 
 	a owl:Manifestation ; # https://sparontologies.github.io/frbr/current/frbr.html#d4e1305
@@ -185,7 +185,7 @@ Der Bundesrat erachtet das Anliegen der Motion als erfüllt und beantragt deren 
 
 # 2nd generation of id
 
-:Curia-19.4390; a prov:Entity, ch-paf:Motion . (ch-paf:Postulate)
+:Curia-19.4390; a prov:Entity, chpaf:Motion . (chpaf:Postulate)
 
 
 ```
@@ -223,43 +223,43 @@ For Mopo Report, chapter 3 / Annex1, informing on already abandoned procedural r
 
 ```turtle
 @prefix : <https://example.com/> .
-@prefix ch-paf: <https://ch.paf.link/> .
+@prefix chpaf: <https://ch.paf.link/> .
 @prefix paf: <https://paf.link/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix schema: <http://schema.org/> .
 
-:mo-po-registration-activity a ch-paf:MoPoRegistrationActivity;
+:mo-po-registration-activity a chpaf:MoPoRegistrationActivity;
 	prov:used :mo-po-entity-1.
 
-:mo-po-creation-activity-1 a ch-paf:MoPoCreationActivity;
+:mo-po-creation-activity-1 a chpaf:MoPoCreationActivity;
 	prov:used :mo-po-entity-1.
 
-:mo-po-entity-1 a ch-paf:MoPoEntity;
+:mo-po-entity-1 a chpaf:MoPoEntity;
 	prov:wasGeneratedBy :mo-po-creation-activity-1;
 	schema:identifier "2019 P 18.3750";
 	schema:name "Verstärkte Regulierung der EU im Bereich der internationalen Rheinschifffahrt. Interessenwahrung der Schweiz (Janiak)";
 	schema:text "Der Bundesrat wird gebeten, in einem Bericht aufzuzeigen, wie sich die Entwicklung des Rheinregimes...".
 
-:mo-po-report-activity-1 a ch-paf:MoPoReportActivity;
+:mo-po-report-activity-1 a chpaf:MoPoReportActivity;
 	prov:used :mo-po-entity-1, :mo-po-report-1;
 	prov:wasInformedBy :mo-po-creation-activity-1.
 	
-:mo-po-report-1 a ch-paf:MoPoReport;
+:mo-po-report-1 a chpaf:MoPoReport;
 	schema:text "Das Postulat beauftragt den Bundesrat aufzuzeigen...".
 
-:mo-po-proposal-activity-1 a ch-paf:MoPoProposalActivity;
+:mo-po-proposal-activity-1 a chpaf:MoPoProposalActivity;
 	prov:used :mo-po-entity-1, :mo-po-proposal-1;
 	prov:wasInformedBy :mo-po-report-activity-1.
 
-:mo-po-proposal-1 a ch-paf:MoPoProposal;
+:mo-po-proposal-1 a chpaf:MoPoProposal;
 	schema:text "Postulatsbericht vom 16. Dezember 2022...".
 
-:mo-po-proposal-decision-activity-1 a ch-paf:MoPoProposalDecisionActivity;
+:mo-po-proposal-decision-activity-1 a chpaf:MoPoProposalDecisionActivity;
 	prov:used :mo-po-entity-1, :mo-po-proposal-decision-1;
 	prov:wasInformedBy :mo-po-proposal-activity-1.
 
-:mo-po-proposal-decision-1 a ch-paf:MoPoProposalDecision;
-	ch-paf:moPoProposalDecision ch-paf:MoPoProposalAccepted.
+:mo-po-proposal-decision-1 a chpaf:MoPoProposalDecision;
+	chpaf:moPoProposalDecision chpaf:MoPoProposalAccepted.
 ```
 
 </aside>
