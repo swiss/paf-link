@@ -228,37 +228,67 @@ For Mopo Report, chapter 3 / Annex1, informing on already abandoned procedural r
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix schema: <http://schema.org/> .
 
-:mo-po-registration-activity a chpaf:MoPoRegistrationActivity;
-	prov:used :mo-po-entity-1.
+:mo-po-admission-activity a chpaf:MoPoAdmissionActivity, prov:Activity;
+	schema:comment "The activity that brings the MoPo into the system boundaries"@en;
+	prov:used :mo-po-admission-entity, :mo-po-identifier-entity.
 
-:mo-po-creation-activity-1 a chpaf:MoPoCreationActivity;
-	prov:used :mo-po-entity-1.
+:mo-po-admission-entity a chpaf:MoPoAdmissionEntity, prov:Entity;
+	schema:comment "The entity that contains all the known info about the MoPo from outside the system boundaries"@en.
 
-:mo-po-entity-1 a chpaf:MoPoEntity;
-	prov:wasGeneratedBy :mo-po-creation-activity-1;
-	schema:identifier "2019 P 18.3750";
+:mo-po-identifier-activity a chpaf:MoPoIdentifierActivity, prov:Activity;
+	schema:comment "The activity that creates the identifier entity."@en;
+	prov:wasInformedBy :mo-po-admission-activity;
+	prov:used :mo-po-identifier-entity.
+
+:mo-po-identifier-entity a chpaf:MoPoIdentifierEntity, prov:Entity;
+	schema:comment "The entity tha represents the identifier of the MoPo."@en;
+	prov:wasGeneratedBy :mo-po-identifier-activity;
+	prov:wasDerivedFrom :mo-po-admission-entity;
+	schema:identifier "2019 P 18.3750".
+
+:mo-po-creation-activity a chpaf:MoPoCreationActivity, prov:Activity;
+	schema:comment "The activity that adds all the available information to the MoPo."@en;
+	prov:wasInformedBy :mo-po-identifier-activity;
+	prov:used :mo-po-identifier-entity.
+
+:mo-po-entity a chpaf:MoPoEntity, prov:Entity;
+	schema:comment "The entity that represents the actual MoPo."@en;
+	prov:wasGeneratedBy :mo-po-creation-activity;
+	prov:wasDerivedFrom :mo-po-identifier-entity;
 	schema:name "Verstärkte Regulierung der EU im Bereich der internationalen Rheinschifffahrt. Interessenwahrung der Schweiz (Janiak)";
 	schema:text "Der Bundesrat wird gebeten, in einem Bericht aufzuzeigen, wie sich die Entwicklung des Rheinregimes...".
 
-:mo-po-report-activity-1 a chpaf:MoPoReportActivity;
-	prov:used :mo-po-entity-1, :mo-po-report-1;
-	prov:wasInformedBy :mo-po-creation-activity-1.
+:mo-po-report-activity a chpaf:MoPoReportActivity, prov:Activity;
+	schema:comment "The activity that reports the MoPo."@en;
+	prov:wasInformedBy :mo-po-creation-activity;
+	prov:used :mo-po-identifier-entity.
 	
-:mo-po-report-1 a chpaf:MoPoReport;
+:mo-po-report-entity a chpaf:MoPoReportEntity, prov:Entity;
+	schema:comment "The entity that represents the report of the MoPo."@en;
+	prov:wasGeneratedBy :mo-po-report-activity;
+	prov:wasDerivedFrom :mo-po-entity;
 	schema:text "Das Postulat beauftragt den Bundesrat aufzuzeigen...".
 
-:mo-po-proposal-activity-1 a chpaf:MoPoProposalActivity;
-	prov:used :mo-po-entity-1, :mo-po-proposal-1;
-	prov:wasInformedBy :mo-po-report-activity-1.
-
-:mo-po-proposal-1 a chpaf:MoPoProposal;
+:mo-po-proposal-activity a chpaf:MoPoProposalActivity, prov:Activity;
+	schema:comment "The activity that makes a proposal to the MoPo."@en;
+	prov:wasInformedBy :mo-po-report-activity;
+	prov:used :mo-po-identifier-entity.
+	
+:mo-po-proposal-entity a chpaf:MoPoProposalEntity, prov:Entity;
+	schema:comment "The entity that represents the proposal to the MoPo."@en;
+	prov:wasGeneratedBy :mo-po-proposal-activity;
+	prov:wasDerivedFrom :mo-po-report-entity;
 	schema:text "Postulatsbericht vom 16. Dezember 2022...".
 
-:mo-po-proposal-decision-activity-1 a chpaf:MoPoProposalDecisionActivity;
-	prov:used :mo-po-entity-1, :mo-po-proposal-decision-1;
-	prov:wasInformedBy :mo-po-proposal-activity-1.
+:mo-po-proposal-decision-activity a chpaf:MoPoProposalDecisionActivity, prov:Activity;
+	schema:comment "The activity that leads to a decision to the MoPo."@en;
+	prov:wasInformedBy :mo-po-proposal-activity;
+	prov:used :mo-po-identifier-entity.
 
-:mo-po-proposal-decision-1 a chpaf:MoPoProposalDecision;
+:mo-po-proposal-decision-entity a chpaf:MoPoProposalDecisionEntity, prov:Entity;
+	schema:comment "The entity that represents the decision to the MoPo."@en;
+	prov:wasGeneratedBy :mo-po-proposal-decision-activity;
+	prov:wasDerivedFrom :mo-po-proposal-entity;
 	chpaf:moPoProposalDecision chpaf:MoPoProposalAccepted.
 ```
 
