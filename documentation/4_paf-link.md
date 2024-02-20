@@ -531,7 +531,7 @@ EXAMPLE : Usage of prov:wasInformedBy in XML
 
 paf:AcknowledgementActivity is a rdfs:subClass of prov:Activity
 
-[Translations](https://www.termdat.bk.admin.ch/entry/414335):
+Translations
 
 - E
 - D
