@@ -283,7 +283,7 @@ The agent (person or group) which issues the decision.
 
 paf:ConsultationActivity is an rdfs:subClass of prov:Activity 
 
-Translations:
+[Translations](https://www.termdat.bk.admin.ch/entry/56976):
 
 - E: Consultation
 - D: Vernehmlassungsverfahren
@@ -374,12 +374,12 @@ EXEMPLE: Usage of prov:wasInformedBy in XML
 
 paf:CommentActivity is a rdfs:subClass of prov:Activity 
 
-Translations: 
+[Translations](https://www.termdat.bk.admin.ch/entry/23059):
 
 - E: Comment
-- D:
-- F:
-- I:
+- D: Stellungsnahme
+- F: avis/prise de position
+
 
 This is the activity to formally answer the corresponding paf:CommentActivtiy.
 
@@ -461,12 +461,12 @@ EXAMPLE 10: Full Example on Consultation & Comment in Turtle
 ### Class paf:InformationActivity
 paf:InformationActivity is an rdfs:subClass of prov:Activity
 
-Translations:
+[Translations](https://www.termdat.bk.admin.ch/entry/380634):
 
 - E: Information
-- D:
-- F:
-- I:
+- D: Information
+- F: Information
+- I: Informazione
 
 This is the activity in the process to formally ask for a decision.
 
@@ -531,12 +531,12 @@ EXAMPLE : Usage of prov:wasInformedBy in XML
 
 paf:AcknowledgementActivity is a rdfs:subClass of prov:Activity
 
-Translations
+[Translations](https://www.termdat.bk.admin.ch/entry/379358):
 
-- E
-- D
-- F
-- I
+- E Acknowledgement
+- D Quittierung
+- F Accusé de réception
+- I conferma
 
 This is the activity to formally answer the corresponding paf:InformationActivity.
 
