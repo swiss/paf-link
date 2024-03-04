@@ -12,6 +12,18 @@ var respecConfig = {
       branch: "main", // alternative branch
     },
     editors: [{
+      name: "Jörg De Bernardi",
+      company: "Federal Chancellery (FCh)",
+      companyURL: "https://www.bk.admin.ch",
+      url: "mailto:joerg.debernardi@bk.admin.ch"
+    },
+    {
+      name: "Louis Bernath",
+      company: "Federal Chancellery (FCh)",
+      companyURL: "https://www.bk.admin.ch",
+      url: "mailto:louis.bernath@bk.admin.ch"
+    },
+    {
       name: "Théophile Boucard",
       company: "Federal Chancellery (FCh)",
       companyURL: "https://www.bk.admin.ch",
