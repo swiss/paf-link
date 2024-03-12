@@ -1,0 +1,182 @@
+{    
+    "activities": [
+        {
+            "uri": ":registration-activity-1",
+            "prov:startetAtTime": "2019-01-01"
+        },
+        {
+            "uri": ":proposal-activity-1",
+            "rdf:type": "paf:ProposalActivity",
+            "prov:used": [
+                ":identifier-entity-1",
+                ":name-entity-1",
+                ":description-entity-1"
+            ],
+            "prov:qualifiedAssociation": [
+                {
+                    "prov:agent": ":Colocambiado",
+                    "prov:hadRole": "paf:ProposalSubmitter"
+                },
+                {
+                    "prov:agent": ":NR",
+                    "prov:hadRole": "paf:ProposalReceiver"
+                }
+            ]
+        },
+        {
+            "uri": ":decision-activity-1",
+            "rdf:type": "paf:DecisionActivity",
+            "prov:used": [
+                ":identifier-entity-1",
+                ":name-entity-1",
+                ":description-entity-1"
+            ],
+            "prov:qualifiedAssociation": [
+                {
+                    "prov:agent": ":NR",
+                    "prov:hadRole": "paf:DecisionMaker"
+                }
+            ]
+        },
+        {
+            "uri": ":proposal-activity-2",
+            "rdf:type": "paf:ProposalActivity",
+            "prov:used": [
+                ":identifier-entity-1",
+                ":name-entity-1",
+                ":description-entity-1"
+            ]
+        },
+        {
+            "uri": ":change-activity-1"
+        },
+        {
+            "uri": ":decision-activity-2",
+            "rdf:type": "paf:DecisionActivity",
+            "prov:used": [
+                ":identifier-entity-1",
+                ":name-entity-1",
+                ":description-entity-2"
+            ]
+        },
+        {
+            "uri": ":proposal-activity-3",
+            "rdf:type": "paf:ProposalActivity",
+            "prov:used": [
+                ":identifier-entity-1",
+                ":name-entity-1",
+                ":description-entity-2"
+            ]
+        },
+        {
+            "uri": ":decision-activity-3",
+            "rdf:type": "paf:DecisionActivity",
+            "prov:used": [
+                ":identifier-entity-1",
+                ":name-entity-1",
+                ":description-entity-2"
+            ]
+        },
+        {
+            "uri": ":handing-over-activity-1",
+            "prov:startetAtTime": "2019-01-01",
+            "prov:qualifiedAssociation":[
+                {
+                    "prov:agent": ":parliament-service",
+                    "prov:hadRole": "paf:SendingParty"
+                },
+                {
+                    "prov:agent": ":bk-service-1",
+                    "prov:hadRole": "paf:ReceivingParty"
+                }
+            ]
+        }
+    ],
+    "entities": [
+        {
+            "schema:identifier": [
+                {
+                    "uri": ":identifier-entity-1",
+                    "prov:wasGeneratedBy": ":registration-activity-1",
+                    "schema:identifier": "21.3279",
+                    "paf:identifierType": "paf:ParliamentaryIdentifier",
+                    "prov:startetAtTime": "1991-08-01"
+                }
+            ]
+        },
+        {
+            "paf:type":[
+                {
+                    "uri": ":type-entity-1",
+                    "prov:wasGeneratedBy": ":registration-activity-1",
+                    "paf:type": "paf:Proposal"
+                }
+            ]
+        },
+        {
+            "prov:depositionDate": [
+                {
+                    "uri": ":deposition-date-entity-1",
+                    "prov:wasGeneratedBy": ":registration-activity-1",
+                    "prov:depositionDate": "2018-12-01"
+                }
+            ]
+        },
+        {
+            "schema:name": [
+                {
+                    "uri": ":name-entity-1",
+                    "prov:wasGeneratedBy": ":registration-activity-1",
+                    "schema:name": "Motion Colocambiado"
+                }
+            ]
+        },
+        {
+            "schema:description": [
+                {
+                    "uri": ":description-entity-1",
+                    "prov:wasGeneratedBy": ":registration-activity-1",
+                    "schema:description": "Change the background color of the Swiss flag from red to blue to show some modernization and progress in the country.",
+                    "prov:wasInvalidatedBy": ":change-activity-1"
+                },
+                {
+                    "uri": ":description-entity-2",
+                    "prov:wasGeneratedBy": ":change-activity-1",
+                    "schema:description": "Change the background color of the Swiss flag to show some modernization and progress in the country. The new color should be chosen by consultation.",
+                    "prov:wasInvalidatedBy": ":handing-over-activity-1"
+                },
+                {
+                    "uri": ":description-entity-3",
+                    "prov:wasGeneratedBy": ":handing-over-activity-1",
+                    "schema:description": "Change the background color of the Swiss flag to show some modernization and progress in the country. The new color should be chosen by consultation.@en",
+                    "schema:description": "Changer la couleur de fond du drapeau suisse pour montrer une certaine modernisation et un certain progrès dans le pays. La nouvelle couleur doit être choisie par consultation.@fr"
+                }
+            ]
+        },
+        {
+            "paf:decision": [
+                {
+                    "uri": ":decision-entity-1",
+                    "prov:wasGeneratedBy": ":decision-activity-1",
+                    "paf:decision": "paf:Accepted",
+                    "paf:voteYes": 130,
+                    "paf:voteNo": 70
+                },
+                {
+                    "uri": ":decision-entity-2",
+                    "prov:wasGeneratedBy": ":decision-activity-2",
+                    "paf:decision": "paf:Accepted",
+                    "paf:voteYes": 30,
+                    "paf:voteNo": 18
+                },
+                {
+                    "uri": ":decision-entity-3",
+                    "prov:wasGeneratedBy": ":decision-activity-3",
+                    "paf:decision": "paf:Accepted",
+                    "paf:voteYes": 150,
+                    "paf:voteNo": 50
+                }
+            ]
+        }
+    ]
+}
