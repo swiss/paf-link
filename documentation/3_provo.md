@@ -20,13 +20,13 @@ It also introduces concepts like generation, usage, and association to capture h
 
 PROV-O consists of different categories representing different levels of granularity to describe provenance information:
 
-- **Starting point terms** (classes and properties)
-- **Expanded terms** (classes and properties)
-- **Qualified terms** (classes and properties)
+- **[Starting point terms](https://www.w3.org/TR/prov-o/#description-starting-point-terms)** (classes and properties)
+- **[Expanded terms](https://www.w3.org/TR/prov-o/#description-expanded-terms)** (classes and properties)
+- **[Qualified terms](https://www.w3.org/TR/prov-o/#description-qualified-terms)** (classes and properties)
 
 ## Starting Point Terms
 
-The starting point classes and their properties are shown in the following figure:
+The [starting point terms](https://www.w3.org/TR/prov-o/#description-starting-point-terms) including classes and their properties are shown in the following figure:
 
 <figure id="figure">
   <img src="https://www.w3.org/TR/2013/REC-prov-o-20130430/diagrams/starting-points.svg" alt="PROV-O" />
@@ -36,45 +36,44 @@ The starting point classes and their properties are shown in the following figur
 
 ## Expanded Terms
 
-The expanded terms introduce some more specific subclasses and properties but also more general properties compared to the starting point terms. In addition, terms that relate entities according to their levels of abstraction are added. Furthermore, additional terms to describe the lifetime of entities and activities are defined.
+The [expanded terms](https://www.w3.org/TR/prov-o/#description-expanded-terms) introduce some more specific subclasses and properties but also more general properties compared to the starting point terms. In addition, terms that relate entities according to their levels of abstraction are added. Furthermore, additional terms to describe the lifetime of entities and activities are defined.
 
 ## Qualified Terms
 
-If a relation between entities, activities and actors can not be adequately described with starting point or expanded terms, PROV-O allows the application of a special **qualification pattern** which results in so called qualified terms. This qualification pattern is basically a RDF reification.
+If a relation between entities, activities and actors can not be adequately described with starting point or expanded terms, PROV-O allows the application of a special **qualification pattern** which results in so called [qualified terms](https://www.w3.org/TR/prov-o/#description-qualified-terms). This qualification pattern is basically a RDF reification.
 
-<aside class="example" title="Using starting point terms for describing a relation.">
+<aside class="example" title="Using <em>starting point terms</em> for describing a relation.">
 
 ```turtle
 @prefix : <https://example.com/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 
-:activity-1 a prov:Activity.
-:agent-1 a prov:Agent.
+:activity a prov:Activity.
+:agent a prov:Agent.
 
-:activity-1 prov:wasAssociatedWith :agent_1.
+:activity prov:wasAssociatedWith :agent.
 ```
 
 </aside>
 
-<aside class="example" title="Using qualified terms for describing a relation.">
+<aside class="example" title="Using <em>qualified terms</em> for describing a relation.">
 
 ```turtle
 @prefix : <https://example.com/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 
-:activity-1 a prov:Activity.
-:agent-1 a prov:Agent.
+:activity a prov:Activity.
+:agent a prov:Agent.
 
-:activity-1 prov:qualifiedAssociation [
+:activity prov:qualifiedAssociation [
         a prov:Association;
-        prov:agent :agent-1;
+        prov:agent :agent;
         prov:hadRole :ActivityStarter;
-        rdfs:comment "agent-1 startet activity-1 by..."@en;
     ].
 ```
 
 </aside>
 
-## Backwards in Time Linking Direction
+## Linking Direction
 
-PROV-O is activity based and all activities have a strong relation to a temporal dimension. In PROV-O, entities, activities and agents are connected **backwards in time**. So items that happen later, link to their predecessors and not vice versa. This notion with past tense is also normally used in the paf.link schema. E.g. a later activity is linked to its predecessor by paf:wasInformedBy and an entity is linked with paf:wasCreatedBy the corresponding activity if the entity is a result of this activity.
+PROV-O is activity based and all activities have a strong relation to a temporal dimension. In PROV-O, entities, activities and agents are connected **backwards in time**. So items that happen later, link to their predecessors and not vice versa. If it is necessary to have also a forward in time link, PROV-O has some [recommendations](https://www.w3.org/TR/prov-o/#inverse-names-table) for these inverse names.

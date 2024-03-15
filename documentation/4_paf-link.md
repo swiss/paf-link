@@ -1,5 +1,54 @@
 # Layer 2: Public Affairs (paf.link) {#paf-link}
 
+PROV-O is deliberately very open in its design to allow to be used in a wide variety of application scenarios. The paf.link schema builds on this open foundation and defines some narrower **design principles** how to use PROV-O to represent public affaires.
+
+## Public Affairs
+
+In its simplest form, public affairs are **activities** undertaken by **actors** (person or systems) that result in **entities** that contain some information.
+
+## Design Principles
+
+### Activities
+
+Activities are bound to to **take place at a certain point in time** and can have a **time duration**. They are **executed by actors** that can be single persons or groups of people or technical systems. Activities are **chained in temporal succession** to build an **activity stream** that can also branch and reunite.
+
+<figure id="activities">
+  <img src="img/activities.svg" alt="Activity Stream" />
+  <figcaption>
+    Activity stream.
+  </figcaption>
+</figure>
+
+Activities can have **input entities** that provide the necessary data that the activity can happen. Activities do not contain results of the activity itself but they can produce **output entities** representing the result of the activity.
+
+<figure id="entities_usage">
+  <img src="img/entities_usage.svg" alt="Input and Output Entities" />
+  <figcaption>
+    Input and output entities of a certain activity.
+  </figcaption>
+</figure>
+
+### Entities
+
+Entities are created by activities representing the result of a specific activity (e.g. votin result of a voting activity). They can also serve as input information for later activities.
+
+Entities are modelled in an **atomic** way meaning that every entity contains only **one main information** linked by a specific RDF predicate (e.g. schema:name or schema:description). This main information can be **enriched by metadata** (e.g. the exact voting result for an entity stating an acceptance result). The reason for this strategy of atomic entities is to allow for simpler addition of metadata without creating additional reification (blank) nodes.
+
+If an entity needs to be changed, complemented or deleted, a subsequent entity has to be generated defining the status of the former entity (e.g. not valid anymore or complemented by). Once an entity is created by an activity, it can not "just be deleted". This is to ensure **complete traceability**.
+
+Entities are not directly linked to actors. This can only be done via the corresponding activity.
+
+<figure id="entities_succession">
+  <img src="img/entities_succession.svg" alt="Succession of Entities" />
+  <figcaption>
+    Atomic entities wit one main information. Validity symbolised by colors.
+  </figcaption>
+</figure>
+
+### View Points
+
+The challenge with public affairs is that they do **look differently depending on the view point** on the affair. To allow for these different perspectives, a paf:ViewPoint can be defined that links to all the activities, actors and entities relevant for this specific perspective via dcterm:hasPart (no subclass of prov:used can be used for this because the range of this predicate has to allow for activities, actors and entities at the same time).
+
 ## Affairs & Activities
 
 Public affairs usually consist of multiple activities that need to be linked together. The following parts show the different activities that can be linked together to form a public affair.
