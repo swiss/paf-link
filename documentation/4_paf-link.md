@@ -59,17 +59,7 @@ View points also allow to have different identifiers for different perspectives 
 
 ### Basic Affair
 
-The following example illustrates a very basic affair based on three activities:
-
-- registration of the affair in the system
-- proposal to a deciding body
-- decision activity
-
-The affair uses three different predicates and therefore three entities:
-
-- schema:identifier
-- schema:name
-- schema:description
+The following example illustrates a very basic affair based on three activities. First a **registration activity** that creates entities for identification, name and description of a public affair. The second activity uses these three entities to form a **proposal** to a deciding body. The last activity is the **decision activity** that creates a result entity stating the outcome of the decision:
 
 <aside class="example" title="Design Principles: Basic Affair">
     <pre class="ttl">
@@ -78,6 +68,8 @@ The affair uses three different predicates and therefore three entities:
 </aside>
 
 ### Changing Entities
+
+The following example shows how a **changing activity** complements and invalidates entities that have been created before by a registering activity:
 
 <aside class="example" title="Design Principles: Changing Entities">
     <pre class="ttl">
@@ -90,16 +82,6 @@ The affair uses three different predicates and therefore three entities:
   <figcaption>
     A change activity that complements an identifier entity and invalidates a description entity.
   </figcaption>
-</figure>
-
-<figure>
-  ```diagram mermaid
-sequenceDiagram
-    Alice->>John: Hello John, how are you?
-    John-->>Alice: Great!
-    Alice-)John: See you later!
-```
-<figcaption>A sequence diagram example</figcaption>
 </figure>
 
 ## Proposal & Decision Activities
