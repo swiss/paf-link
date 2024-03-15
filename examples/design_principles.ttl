@@ -1,4 +1,3 @@
-
 @prefix : <https://example.com/> .
 @prefix paf: <https://paf.link/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .

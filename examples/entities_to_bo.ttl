@@ -1,4 +1,3 @@
-
 @prefix : <https://example.com/> .
 @prefix paf: <https://paf.link/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -22,7 +21,7 @@
     prov:wasGeneratedBy :registration-activity;
     rdf:predicate schema:identifier;
     schema:identifier "CH-1234";
-    paf:wasCompletedBy :change-activity.
+    paf:wasComplementedBy :change-activity.
 
 :identifier-entity-2 a prov:Entity;
     prov:wasDerivedFrom :identifier-entity-1;

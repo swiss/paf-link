@@ -51,6 +51,10 @@ The challenge with public affairs is that they do **look differently depending o
 
 View points also allow to have different identifiers for different perspectives of the affair. This would be done by having point different view points to different entities containing the `schema:identifier` predicate.
 
+### Open Questions
+
+- `prov:wasInvalidatedBy` to the activity is temporally wrong, should probably be `prov:invalidated` to the entity
+
 ## Examples to the Design Principles
 
 ### Basic Affair
@@ -80,6 +84,23 @@ The affair uses three different predicates and therefore three entities:
         <section data-include-format="text" data-include="../examples/entities_to_bo.ttl" data-include-replace="true"></section>
     </pre>
 </aside>
+
+<figure id="entities_to_bo">
+  <img src="img/entities_to_bo.svg" alt="Changing Entities" />
+  <figcaption>
+    A change activity that complements an identifier entity and invalidates a description entity.
+  </figcaption>
+</figure>
+
+<figure>
+  ```diagram mermaid
+sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+    Alice-)John: See you later!
+```
+<figcaption>A sequence diagram example</figcaption>
+</figure>
 
 ## Proposal & Decision Activities
 
