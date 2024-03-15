@@ -41,7 +41,7 @@ Entities are not directly linked to actors. This can only be done via the corres
 <figure id="entities_succession">
   <img src="img/entities_succession.svg" alt="Succession of Entities" />
   <figcaption>
-    Atomic entities wit one main information. Validity symbolised by colors.
+    Atomic entities with one main information. Validity symbolised by colors.
   </figcaption>
 </figure>
 

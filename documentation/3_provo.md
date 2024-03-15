@@ -42,7 +42,7 @@ The [expanded terms](https://www.w3.org/TR/prov-o/#description-expanded-terms) i
 
 If a relation between entities, activities and actors can not be adequately described with starting point or expanded terms, PROV-O allows the application of a special **qualification pattern** which results in so called [qualified terms](https://www.w3.org/TR/prov-o/#description-qualified-terms). This qualification pattern is basically a RDF reification.
 
-<aside class="example" title="Using <em>starting point terms</em> for describing a relation.">
+<aside class="example" title="Usingstarting point terms for describing a relation.">
 
 ```turtle
 @prefix : <https://example.com/> .
@@ -56,7 +56,7 @@ If a relation between entities, activities and actors can not be adequately desc
 
 </aside>
 
-<aside class="example" title="Using <em>qualified terms</em> for describing a relation.">
+<aside class="example" title="Using qualified terms for describing a relation.">
 
 ```turtle
 @prefix : <https://example.com/> .
