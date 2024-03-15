@@ -51,9 +51,9 @@ The challenge with public affairs is that they do **look differently depending o
 
 View points also allow to have different identifiers for different perspectives of the affair. This would be done by having point different view points to different entities containing the `schema:identifier` predicate.
 
-## Basic Examples
+## Examples to the Design Principles
 
-### Proposal and Decision
+### Basic Affair
 
 The following example illustrates a very basic affair based on three activities:
 
@@ -67,73 +67,15 @@ The affair uses three different predicates and therefore three entities:
 - schema:name
 - schema:description
 
-<aside class="example" title="Basic Example to Show the Design Principles.">
-
-```turtle
-@prefix : <https://example.com/> .
-@prefix paf: <https://paf.link/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix schema: <http://schema.org/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix dcterm: <http://purl.org/dc/terms/>.
-
-:registration-activity a prov:Activity;
-    prov:startedAtTime "2024-01-01".
-
-:identifier-entity a prov:Entity;
-    prov:wasGeneratedBy :registration-activity;
-    rdf:predicate schema:identifier;
-    schema:identifier "CH-1234".
-
-:name-entity a prov:Entity;
-    prov:wasGeneratedBy :registration-activity;
-    rdf:predicate schema:name;
-    schema:name "Colocambiado".
-
-:description-entity a prov:Entity;
-    prov:wasGeneratedBy :registration-activity;
-    rdf:predicate schema:description;
-    schema:description "Change background color of Swiss national flag to blue".
-
-:proposal-activity a prov:Activity;
-    prov:wasInformedBy :registration-activity;
-    prov:startetAtTime "2024-01-02";
-    prov:used :identifier-entity, :name-entity, :description-entity;
-    prov:qualifiedAssociation [ 
-        a prov:Association; 
-        prov:agent :Colocambiado;
-        prov:hadRole paf:ProposalSubmitter];
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :national-council;
-        prov:hadRole paf:ProposalReceiver].
-
-:decision-activity a prov:Activity;
-    prov:wasInformedBy :proposal-activity;
-    prov:startetAtTime: "2024-01-03";
-    prov:used :identifier-entity, :name-entity, :description-entity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :national-council;
-        prov:hadRole paf:DecisionMaker].
-
-:decision-entity a prov:Entity;
-    prov:wasGeneratedBy :decision-activity;
-    rdf:predicate paf:decision;
-    paf:decision paf:Accepted;
-    paf:voteYes 130;
-    paf:voteNo 70.
-
-:view-point a paf:ViewPoint;
-    dcterm:hasPart :registration-activity, :proposal-activity, :decision-activity, :identifier-entity, :name-entity, :description-entity, :decision-entity.
-```
-
+<aside class="example" title="Design Principles: Basic Affair">
+    <code class="ttl">
+        <section data-include-format="text" data-include="../examples/design_principles.ttl" data-include-replace="true"></section>
+    </code>
 </aside>
 
 ### Changing Entities
 
-<aside class="example">
-        <p>This is an example.</p>
+<aside class="example" title="Design Principles: Changing Entities">
         <pre class="ttl">
             <section data-include="../examples/entities_to_bo.ttl" data-include-replace="true"></section>
         </pre>
