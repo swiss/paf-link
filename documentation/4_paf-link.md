@@ -41,7 +41,7 @@ Entities are not directly linked to actors. This can only be done via the corres
 <figure id="entities_succession">
   <img src="img/entities_succession.svg" alt="Succession of Entities" />
   <figcaption>
-    Atomic entities with one main information. Validity symbolised by colors.
+    Atomic entities with one main information. Validity symbolised by colors. This affair has two valid names but only one valid description.
   </figcaption>
 </figure>
 
@@ -51,7 +51,9 @@ The challenge with public affairs is that they do **look differently depending o
 
 View points also allow to have different identifiers for different perspectives of the affair. This would be done by having point different view points to different entities containing the `schema:identifier` predicate.
 
-## Basic Example
+## Basic Examples
+
+### Proposal and Decision
 
 The following example illustrates a very basic affair based on three activities:
 
@@ -126,6 +128,15 @@ The affair uses three different predicates and therefore three entities:
     dcterm:hasPart :registration-activity, :proposal-activity, :decision-activity, :identifier-entity, :name-entity, :description-entity, :decision-entity.
 ```
 
+</aside>
+
+### Changing Entities
+
+<aside class="example">
+        <p>This is an example.</p>
+        <pre class="ttl">
+            <section data-include="../examples/entities_to_bo.ttl" data-include-replace="true"></section>
+        </pre>
 </aside>
 
 ## Proposal & Decision Activities
