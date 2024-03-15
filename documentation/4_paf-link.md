@@ -49,83 +49,84 @@ Entities are not directly linked to actors. This can only be done via the corres
 
 The challenge with public affairs is that they do **look differently depending on the view point** on the affair. To allow for these different perspectives, a paf:ViewPoint can be defined that links to all the activities, actors and entities relevant for this specific perspective via dcterm:hasPart (no subclass of prov:used can be used for this because the range of this predicate has to allow for activities, actors and entities at the same time).
 
-## Affairs & Activities
+View points also allow to have different identifiers for different perspectives of the affair. This would be done by having point different view points to different entities containing the `schema:identifier` predicate.
 
-Public affairs usually consist of multiple activities that need to be linked together. The following parts show the different activities that can be linked together to form a public affair.
+## Basic Example
 
-### Activity Independent Identifier of an Affair
+The following example illustrates a very basic affair based on three activities:
 
-The collection of all linked activities would be sufficient to represent all activity aspects of the corresponding affair. But from a user experience point of view, most affairs have a unique (often domain specific) identifier that the affair is referred to. Therefore it is possible to connect an activity to one or multiple affair identifiers through the generation and the usage of a prov:Entity. All prov:Activities link to the identifier prov:Entity by means of prov:used. The prov:activity that is responsible for creating the identifier and the resulting prov:Entity is connected via a prov:wasGeneratedBy from the prov:Entity to the prov:Activity (linking backwards in time). The content of such identifier entities basically only have a class, an identifier via schema:identifier and a prov:wasGeneratedBy as content. The identity creating prov:Entity is also linked via paf:used to the identifier paf:Entity which is temporally not true but done for easier querying of all connected activities.
+- registration of the affair in the system
+- proposal to a deciding body
+- decision activity
 
-<figure>
-    <img src="img/identifier_entity.svg" alt="Use of prov:Entity to create an affair identifier" />
-    <figcaption>
-        Use of prov:Entity to create an affair identifier.
-    </figcaption>
-</figure>
+The affair uses three different predicates and therefore three entities:
 
-<figure>
-  <pre class="diagram mermaid">
-flowchart TD
-    activity-1[:activity-1] -->|prov:used| entity-1(["`:entity-1
-    schema:identifier 'xyz'`"])
-    style entity-1 fill:#FFFFCC,stroke:#FFFF33
-    entity-1 -->|prov:wasGeneratedBy| activity-1
-    activity-2[:activity-2] -->|prov:wasInformedBy| activity-1
-    activity-2 -->|prov:used| entity-1
-    activity-3[:activity-3] -->|prov:wasInformedBy| activity-2
-    activity-3 -->|prov:used| entity-1
-    activity-4[:activity-4] -->|prov:wasInformedBy| activity-3
-    activity-4 -->|prov:used| entity-1
-  </pre>
-  <figcaption>Use of prov:Entity to create an affair identifier.</figcaption>
-</figure>
+- schema:identifier
+- schema:name
+- schema:description
 
-<aside class="example" title="Activities with a single identifier.">
+<aside class="example" title="Basic Example to Show the Design Principles.">
 
 ```turtle
 @prefix : <https://example.com/> .
+@prefix paf: <https://paf.link/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix dcterm: <http://purl.org/dc/terms/>.
 
-:activity-1 a prov:Activity;
-    prov:used :entity-1.
+:registration-activity a prov:Activity;
+    prov:startedAtTime "2024-01-01".
 
-:activity-2 a prov:Activity;
-    prov:used :entity-1;
-    prov:wasInformedBy :activity-1.
+:identifier-entity a prov:Entity;
+    prov:wasGeneratedBy :registration-activity;
+    rdf:predicate schema:identifier;
+    schema:identifier "CH-1234".
 
-:activity-3 a prov:Activity;
-    prov:used :entity-1;
-    prov:wasInformedBy :activity-2.
+:name-entity a prov:Entity;
+    prov:wasGeneratedBy :registration-activity;
+    rdf:predicate schema:name;
+    schema:name "Colocambiado".
 
-:activity-4 a prov:Activity;
-    prov:used :entity-1;
-    prov:wasInformedBy :activity-3.
+:description-entity a prov:Entity;
+    prov:wasGeneratedBy :registration-activity;
+    rdf:predicate schema:description;
+    schema:description "Change background color of Swiss national flag to blue".
 
-:entity-1 a prov:Entity;
-    prov:wasGeneratedBy :activity-1;
-    schema:identifier "SomeReallyObscureIdentifier".
+:proposal-activity a prov:Activity;
+    prov:wasInformedBy :registration-activity;
+    prov:startetAtTime "2024-01-02";
+    prov:used :identifier-entity, :name-entity, :description-entity;
+    prov:qualifiedAssociation [ 
+        a prov:Association; 
+        prov:agent :Colocambiado;
+        prov:hadRole paf:ProposalSubmitter];
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :national-council;
+        prov:hadRole paf:ProposalReceiver].
+
+:decision-activity a prov:Activity;
+    prov:wasInformedBy :proposal-activity;
+    prov:startetAtTime: "2024-01-03";
+    prov:used :identifier-entity, :name-entity, :description-entity;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :national-council;
+        prov:hadRole paf:DecisionMaker].
+
+:decision-entity a prov:Entity;
+    prov:wasGeneratedBy :decision-activity;
+    rdf:predicate paf:decision;
+    paf:decision paf:Accepted;
+    paf:voteYes 130;
+    paf:voteNo 70.
+
+:view-point a paf:ViewPoint;
+    dcterm:hasPart :registration-activity, :proposal-activity, :decision-activity, :identifier-entity, :name-entity, :description-entity, :decision-entity.
 ```
 
 </aside>
-
-<aside class="example" title="Query for all activities with the same identifier.">
-
-```sparql
-PREFIX : <https://example.com/>
-PREFIX prov: <http://www.w3.org/ns/prov#>
-
-SELECT * WHERE {
-    ?activity a prov:Activity;
-        prov:used :entity-1.
-}
-```
-
-</aside>
-
-> [!NOTE]  
-> The use of prov:Entity to represent and affair is optional and mostly to represent affair identifiers that are already in use.
 
 ## Proposal & Decision Activities
 
