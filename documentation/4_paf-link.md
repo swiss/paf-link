@@ -68,17 +68,17 @@ The affair uses three different predicates and therefore three entities:
 - schema:description
 
 <aside class="example" title="Design Principles: Basic Affair">
-    <code class="ttl">
-        <section data-include="../examples/design_principles.ttl" data-include-replace="true"></section>
-    </code>
+    <pre class="ttl">
+        <section data-include-format="markdown" data-include="../examples/design_principles.ttl" data-include-replace="true"></section>
+    </pre>
 </aside>
 
 ### Changing Entities
 
 <aside class="example" title="Design Principles: Changing Entities">
-        <pre class="ttl">
-            <section data-include="../examples/entities_to_bo.ttl" data-include-replace="true"></section>
-        </pre>
+    <pre class="ttl">
+        <section data-include="../examples/entities_to_bo.ttl" data-include-replace="true"></section>
+    </pre>
 </aside>
 
 ## Proposal & Decision Activities
