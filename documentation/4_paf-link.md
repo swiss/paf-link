@@ -69,7 +69,7 @@ The affair uses three different predicates and therefore three entities:
 
 <aside class="example" title="Design Principles: Basic Affair">
     <pre class="ttl">
-        <section data-include-format="markdown" data-include="../examples/design_principles.ttl" data-include-replace="true"></section>
+        <section data-include-format="text" data-include="../examples/design_principles.ttl" data-include-replace="true"></section>
     </pre>
 </aside>
 
@@ -77,7 +77,7 @@ The affair uses three different predicates and therefore three entities:
 
 <aside class="example" title="Design Principles: Changing Entities">
     <pre class="ttl">
-        <section data-include="../examples/entities_to_bo.ttl" data-include-replace="true"></section>
+        <section data-include-format="text" data-include="../examples/entities_to_bo.ttl" data-include-replace="true"></section>
     </pre>
 </aside>
 
