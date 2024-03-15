@@ -51,10 +51,6 @@ The challenge with public affairs is that they do **look differently depending o
 
 View points also allow to have different identifiers for different perspectives of the affair. This would be done by having point different view points to different entities containing the `schema:identifier` predicate.
 
-### Open Questions
-
-- `prov:wasInvalidatedBy` to the activity is temporally wrong, should probably be `prov:invalidated` to the entity
-
 ## Examples to the Design Principles
 
 ### Basic Affair
