@@ -44,7 +44,7 @@ flowchart TB
 
 ### Entities
 
-Entities are created by activities representing the result of a specific activity (e.g. votin result of a voting activity). They can also serve as input information for later activities.
+Entities are created by activities representing the result of a specific activity (e.g. voting result of a voting activity). They can also serve as input information for later activities.
 
 Entities are modelled in an **atomic** way meaning that every entity contains only **one main information** linked by a specific RDF predicate (e.g. schema:name or schema:description). This main information can be **enriched by metadata** (e.g. the exact voting result for an entity stating an acceptance result). The reason for this strategy of atomic entities is to allow for simpler addition of metadata without creating additional reification (blank) nodes.
 
@@ -76,6 +76,13 @@ The following example illustrates a very basic affair based on three activities.
         <section data-include-format="text" data-include="../examples/design_principles.ttl" data-include-replace="true"></section>
     </pre>
 </aside>
+
+<figure id="design-principles">
+  <img src="img/design_principles.svg" alt="Design Principles: Basic Affair" />
+  <figcaption>
+    A basic affair example with registration- proposal- and decision-activity.
+  </figcaption>
+</figure>
 
 ### Changing Entities
 
