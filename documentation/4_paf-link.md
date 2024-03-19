@@ -31,15 +31,15 @@ Activities can have **input entities** that provide the necessary data that the 
 <figure id="entities_usage_mermaid">
 
 ```mermaid
-flowchart TB;
-    activity-1[[activity-1]]-->|prov:used|entity-1([entity-1]);
-    entity-2([entity-2]) & entity-3([entity-3])-->|prov:wasGeneratedBy|activity-1;
-    class activity-1 activity;
+flowchart TB
+    a1[[activity-1]] --> |prov:used| e1([entity-1]);
+    e2([entity-2]) & e3([entity-3]) --> |prov:wasGeneratedBy| a1;
+    class a1 activity;
 	classDef activity fill:#b598e3, stroke:#644d87;
-	class entity-1,entity-2,entity-3 entity;
+	class e1,e2,e3 entity;
 	classDef entity fill:#FFFFCC,stroke:#FFFF33;
 ```
-<figcaption>Input and output entities of a certain activity.</figcaption>
+<figcaption>Input and output entities of a certain activity (as mermaid diagram).</figcaption>
 </figure>
 
 ### Entities
