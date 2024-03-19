@@ -28,20 +28,6 @@ Activities can have **input entities** that provide the necessary data that the 
   </figcaption>
 </figure>
 
-<figure id="entities_usage_mermaid">
-
-```mermaid
-flowchart TB
-    a1[[activity-1]] --> |prov:used| e1([entity-1]);
-    e2([entity-2]) & e3([entity-3]) --> |prov:wasGeneratedBy| a1;
-    class a1 activity;
-	classDef activity fill:#b598e3, stroke:#644d87;
-	class e1,e2,e3 entity;
-	classDef entity fill:#FFFFCC,stroke:#FFFF33;
-```
-<figcaption>Input and output entities of a certain activity (as mermaid diagram).</figcaption>
-</figure>
-
 ### Entities
 
 Entities are created by activities representing the result of a specific activity (e.g. voting result of a voting activity). They can also serve as input information for later activities.
