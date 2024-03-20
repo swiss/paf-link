@@ -40,7 +40,15 @@ var respecConfig = {
       company: "Bern University of Applied Sciences (BFH)",
       companyURL: "https://www.bfh.ch",
       url: "mailto:benedikt.hitz@bfh.ch",
-    }]
+    }],
+    logos: [
+      {
+        src: "https://www.bk.admin.ch/bk/de/_jcr_content/logo/image.imagespooler.png/1505934763610/logo.png",
+        url: "https://www.bk.admin.ch/bk/en/home.html",
+        alt: "Federal Chancellery (FCh)",
+        id: "fch-logo",
+      },
+    ],
   };
 
 module.exports = respecConfig
