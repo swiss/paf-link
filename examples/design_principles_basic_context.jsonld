@@ -26,12 +26,20 @@
             "@id": "http://www.w3.org/ns/prov#wasInformedBy",
             "@type": "@id"
         },
+        "startedAtTime": {
+            "@id": "http://www.w3.org/ns/prov#startedAtTime",
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "wasGeneratedBy": {
+            "@id": "http://www.w3.org/ns/prov#wasGeneratedBy",
+            "@type": "@id"
+        },
         "predicate": {
             "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
             "@type": "@id"
         },
-        "wasGeneratedBy": {
-            "@id": "http://www.w3.org/ns/prov#wasGeneratedBy",
+        "hasPart": {
+            "@id": "http://purl.org/dc/terms/hasPart",
             "@type": "@id"
         },
         "decision": {
@@ -40,11 +48,11 @@
         },
         "voteNo": {
             "@id": "https://paf.link/voteNo",
-            "@type": "@id"
+            "@type": "http://www.w3.org/2001/XMLSchema#integer"
         },
         "voteYes": {
             "@id": "https://paf.link/voteYes",
-            "@type": "@id"
+            "@type": "http://www.w3.org/2001/XMLSchema#integer"
         }
     }
 }
