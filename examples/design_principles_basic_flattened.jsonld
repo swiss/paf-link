@@ -1,0 +1,176 @@
+{
+    "@context": {
+      "prov": "http://www.w3.org/ns/prov#",
+      "schema": "http://schema.org/",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "dcterms": "http://purl.org/dc/terms/",
+      "paf": "https://paf.link/",
+      "example": "https://example.com/",
+      "identifier": "http://schema.org/identifier",
+      "name": "http://schema.org/name",
+      "description": "http://schema.org/description",
+      "agent": {
+        "@id": "http://www.w3.org/ns/prov#agent",
+        "@type": "@id"
+      },
+      "role": {
+        "@id": "http://www.w3.org/ns/prov#hadRole",
+        "@type": "@id"
+      },
+      "association": {
+        "@id": "http://www.w3.org/ns/prov#qualifiedAssociation",
+        "@type": "@id"
+      },
+      "used": {
+        "@id": "http://www.w3.org/ns/prov#used",
+        "@type": "@id"
+      },
+      "wasInformedBy": {
+        "@id": "http://www.w3.org/ns/prov#wasInformedBy",
+        "@type": "@id"
+      },
+      "startedAtTime": {
+        "@id": "http://www.w3.org/ns/prov#startedAtTime",
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+      },
+      "wasGeneratedBy": {
+        "@id": "http://www.w3.org/ns/prov#wasGeneratedBy",
+        "@type": "@id"
+      },
+      "predicate": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+        "@type": "@id"
+      },
+      "hasPart": {
+        "@id": "http://purl.org/dc/terms/hasPart",
+        "@type": "@id"
+      },
+      "decision": {
+        "@id": "https://paf.link/decision",
+        "@type": "@id"
+      },
+      "voteNo": {
+        "@id": "https://paf.link/voteNo",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      },
+      "voteYes": {
+        "@id": "https://paf.link/voteYes",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    "@graph": [
+      {
+        "@id": "_:b0",
+        "@type": "prov:Association",
+        "agent": "example:Colocambiado",
+        "role": "paf:ProposalSubmitter"
+      },
+      {
+        "@id": "_:b1",
+        "@type": "prov:Association",
+        "agent": "example:national-council",
+        "role": "paf:ProposalReceiver"
+      },
+      {
+        "@id": "_:b2",
+        "@type": "prov:Association",
+        "agent": "example:national-council",
+        "role": "paf:DecisionMaker"
+      },
+      {
+        "@id": "example:decision-activity",
+        "@type": "prov:Activity",
+        "association": "_:b2",
+        "prov:startedAtTime:": {
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "@value": "2024-01-03T12:00:00Z"
+        },
+        "used": [
+          "example:identifier-entity",
+          "example:name-entity",
+          "example:description-entity"
+        ],
+        "wasInformedBy": "example:proposal-activity"
+      },
+      {
+        "@id": "example:decision-entity",
+        "@type": "prov:Entity",
+        "predicate": "paf:decision",
+        "wasGeneratedBy": "example:decision-activity",
+        "decision": "paf:Accepted",
+        "voteNo": "70",
+        "voteYes": "130"
+      },
+      {
+        "@id": "example:description-entity",
+        "@type": "prov:Entity",
+        "description": [
+          {
+            "@language": "en",
+            "@value": "Change background color of Swiss national flag to blue"
+          },
+          {
+            "@language": "de",
+            "@value": "Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau"
+          },
+          {
+            "@language": "it",
+            "@value": "Modifica il colore di sfondo della bandiera nazionale svizzera in blu"
+          },
+          {
+            "@language": "fr",
+            "@value": "Modifiez la couleur de fond du drapeau national suisse en bleu"
+          }
+        ],
+        "predicate": "schema:description",
+        "wasGeneratedBy": "example:registration-activity"
+      },
+      {
+        "@id": "example:identifier-entity",
+        "@type": "prov:Entity",
+        "identifier": "CH-1234",
+        "predicate": "schema:identifier",
+        "wasGeneratedBy": "example:registration-activity"
+      },
+      {
+        "@id": "example:name-entity",
+        "@type": "prov:Entity",
+        "name": "Colocambiado",
+        "predicate": "schema:name",
+        "wasGeneratedBy": "example:registration-activity"
+      },
+      {
+        "@id": "example:proposal-activity",
+        "@type": "prov:Activity",
+        "association": [
+          "_:b0",
+          "_:b1"
+        ],
+        "startedAtTime": "2024-01-02T12:00:00Z",
+        "used": [
+          "example:identifier-entity",
+          "example:name-entity",
+          "example:description-entity"
+        ],
+        "wasInformedBy": "example:registration-activity"
+      },
+      {
+        "@id": "example:registration-activity",
+        "@type": "prov:Activity",
+        "startedAtTime": "2024-01-01T12:00:00Z"
+      },
+      {
+        "@id": "example:view-point",
+        "@type": "paf:ViewPoint",
+        "hasPart": [
+          "example:registration-activity",
+          "example:proposal-activity",
+          "example:decision-activity",
+          "example:identifier-entity",
+          "example:name-entity",
+          "example:description-entity",
+          "example:decision-entity"
+        ]
+      }
+    ]
+  }

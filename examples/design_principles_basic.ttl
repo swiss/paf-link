@@ -5,9 +5,10 @@
 @prefix schema: <http://schema.org/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 :registration-activity a prov:Activity;
-    prov:startedAtTime "2024-01-01".
+    prov:startedAtTime "2024-01-01T12:00:00Z"^^xsd:dateTime.
 
 :identifier-entity a prov:Entity;
     prov:wasGeneratedBy :registration-activity;
@@ -22,11 +23,14 @@
 :description-entity a prov:Entity;
     prov:wasGeneratedBy :registration-activity;
     rdf:predicate schema:description;
-    schema:description "Change background color of Swiss national flag to blue".
+    schema:description "Change background color of Swiss national flag to blue"@en;
+    schema:description "Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau"@de;
+    schema:description "Modifica il colore di sfondo della bandiera nazionale svizzera in blu"@it;
+    schema:description "Modifiez la couleur de fond du drapeau national suisse en bleu"@fr.
 
 :proposal-activity a prov:Activity;
     prov:wasInformedBy :registration-activity;
-    prov:startetAtTime "2024-01-02";
+    prov:startedAtTime "2024-01-02T12:00:00Z"^^xsd:dateTime;
     prov:used :identifier-entity, :name-entity, :description-entity;
     prov:qualifiedAssociation [ 
         a prov:Association; 
@@ -39,7 +43,7 @@
 
 :decision-activity a prov:Activity;
     prov:wasInformedBy :proposal-activity;
-    prov:startetAtTime: "2024-01-03";
+    prov:startedAtTime: "2024-01-03T12:00:00Z"^^xsd:dateTime;
     prov:used :identifier-entity, :name-entity, :description-entity;
     prov:qualifiedAssociation [
         a prov:Association;

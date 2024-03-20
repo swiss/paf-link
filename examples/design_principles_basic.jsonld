@@ -36,7 +36,10 @@
         "http://www.w3.org/ns/prov#qualifiedAssociation": {
           "@id": "_:b2"
         },
-        "http://www.w3.org/ns/prov#startetAtTime:": "2024-01-03",
+        "http://www.w3.org/ns/prov#startedAtTime:": {
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "@value": "2024-01-03T12:00:00Z"
+        },
         "http://www.w3.org/ns/prov#used": [
           {
             "@id": "https://example.com/identifier-entity"
@@ -76,7 +79,24 @@
       {
         "@id": "https://example.com/description-entity",
         "@type": "http://www.w3.org/ns/prov#Entity",
-        "http://schema.org/description": "Change background color of Swiss national flag to blue",
+        "http://schema.org/description": [
+          {
+            "@language": "en",
+            "@value": "Change background color of Swiss national flag to blue"
+          },
+          {
+            "@language": "de",
+            "@value": "Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau"
+          },
+          {
+            "@language": "it",
+            "@value": "Modifica il colore di sfondo della bandiera nazionale svizzera in blu"
+          },
+          {
+            "@language": "fr",
+            "@value": "Modifiez la couleur de fond du drapeau national suisse en bleu"
+          }
+        ],
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": {
           "@id": "http://schema.org/description"
         },
@@ -117,7 +137,10 @@
             "@id": "_:b1"
           }
         ],
-        "http://www.w3.org/ns/prov#startetAtTime": "2024-01-02",
+        "http://www.w3.org/ns/prov#startedAtTime": {
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "@value": "2024-01-02T12:00:00Z"
+        },
         "http://www.w3.org/ns/prov#used": [
           {
             "@id": "https://example.com/identifier-entity"
@@ -136,7 +159,10 @@
       {
         "@id": "https://example.com/registration-activity",
         "@type": "http://www.w3.org/ns/prov#Activity",
-        "http://www.w3.org/ns/prov#startedAtTime": "2024-01-01"
+        "http://www.w3.org/ns/prov#startedAtTime": {
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "@value": "2024-01-01T12:00:00Z"
+        }
       },
       {
         "@id": "https://example.com/view-point",

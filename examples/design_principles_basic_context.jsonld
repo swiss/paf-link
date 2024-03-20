@@ -1,3 +1,4 @@
+
 {
     "@context": {
         "prov": "http://www.w3.org/ns/prov#",
@@ -6,6 +7,9 @@
         "dcterms": "http://purl.org/dc/terms/",
         "paf": "https://paf.link/",
         "example": "https://example.com/",
+        "identifier": "http://schema.org/identifier",
+        "name": "http://schema.org/name",
+        "description": "http://schema.org/description",
         "agent": {
             "@id": "http://www.w3.org/ns/prov#agent",
             "@type": "@id"
