@@ -1,8 +1,5 @@
 # References
 
-[[Vocabulary Specification]]
-[[The Prov-SE Namespace]]
-
 ## Modèles complémentaires
 
 - https://sparontologies.github.io/frbr/current/frbr.html
