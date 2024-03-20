@@ -61,18 +61,12 @@ In this case, no proposal entity is created because the proposal is already incl
 
 <aside class="example" title="Design Principles: Basic Affair">
     <pre class="ttl">
-        <section data-include-format="text" data-include="../examples/design_principles.ttl" data-include-replace="true"></section>
+        <section data-include-format="text" data-include="../examples/design_principles_basic.ttl" data-include-replace="true"></section>
     </pre>
 </aside>
 
-<aside class="example" title="test">
-    <pre class="turtle">
-        <section data-include-format="text" data-include="../examples/test.ttl" data-include-replace="true"></section>
-    </pre>
-</aside>
-
-<figure id="design-principles">
-  <img src="img/design_principles.svg" alt="Design Principles: Basic Affair" />
+<figure id="design_principles_basic">
+  <img src="img/design_principles_basic.svg" alt="Design Principles: Basic Affair" />
   <figcaption>
     A basic affair example with registration- proposal- and decision-activity.
   </figcaption>
@@ -84,12 +78,12 @@ The following example shows how a **changing activity** complements and invalida
 
 <aside class="example" title="Design Principles: Changing Entities">
     <pre class="ttl">
-        <section data-include-format="text" data-include="../examples/entities_to_bo.ttl" data-include-replace="true"></section>
+        <section data-include-format="text" data-include="../examples/design_principles_change.ttl" data-include-replace="true"></section>
     </pre>
 </aside>
 
-<figure id="entities_to_bo">
-  <img src="img/entities_to_bo.svg" alt="Changing Entities" />
+<figure id="design_principles_change">
+  <img src="img/design_principles_change.svg" alt="Design Principles: Changing Entities" />
   <figcaption>
     A change activity that complements an identifier entity and invalidates a description entity.
   </figcaption>
