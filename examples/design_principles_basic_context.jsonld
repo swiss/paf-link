@@ -1,0 +1,50 @@
+{
+    "@context": {
+        "prov": "http://www.w3.org/ns/prov#",
+        "schema": "http://schema.org/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "dcterms": "http://purl.org/dc/terms/",
+        "paf": "https://paf.link/",
+        "example": "https://example.com/",
+        "agent": {
+            "@id": "http://www.w3.org/ns/prov#agent",
+            "@type": "@id"
+        },
+        "role": {
+            "@id": "http://www.w3.org/ns/prov#hadRole",
+            "@type": "@id"
+        },
+        "association": {
+            "@id": "http://www.w3.org/ns/prov#qualifiedAssociation",
+            "@type": "@id"
+        },
+        "used": {
+            "@id": "http://www.w3.org/ns/prov#used",
+            "@type": "@id"
+        },
+        "wasInformedBy": {
+            "@id": "http://www.w3.org/ns/prov#wasInformedBy",
+            "@type": "@id"
+        },
+        "predicate": {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+            "@type": "@id"
+        },
+        "wasGeneratedBy": {
+            "@id": "http://www.w3.org/ns/prov#wasGeneratedBy",
+            "@type": "@id"
+        },
+        "decision": {
+            "@id": "https://paf.link/decision",
+            "@type": "@id"
+        },
+        "voteNo": {
+            "@id": "https://paf.link/voteNo",
+            "@type": "@id"
+        },
+        "voteYes": {
+            "@id": "https://paf.link/voteYes",
+            "@type": "@id"
+        }
+    }
+}

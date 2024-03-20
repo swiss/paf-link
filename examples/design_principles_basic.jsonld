@@ -1,0 +1,169 @@
+{
+    "@graph": [
+      {
+        "@id": "_:b0",
+        "@type": "http://www.w3.org/ns/prov#Association",
+        "http://www.w3.org/ns/prov#agent": {
+          "@id": "https://example.com/Colocambiado"
+        },
+        "http://www.w3.org/ns/prov#hadRole": {
+          "@id": "https://paf.link/ProposalSubmitter"
+        }
+      },
+      {
+        "@id": "_:b1",
+        "@type": "http://www.w3.org/ns/prov#Association",
+        "http://www.w3.org/ns/prov#agent": {
+          "@id": "https://example.com/national-council"
+        },
+        "http://www.w3.org/ns/prov#hadRole": {
+          "@id": "https://paf.link/ProposalReceiver"
+        }
+      },
+      {
+        "@id": "_:b2",
+        "@type": "http://www.w3.org/ns/prov#Association",
+        "http://www.w3.org/ns/prov#agent": {
+          "@id": "https://example.com/national-council"
+        },
+        "http://www.w3.org/ns/prov#hadRole": {
+          "@id": "https://paf.link/DecisionMaker"
+        }
+      },
+      {
+        "@id": "https://example.com/decision-activity",
+        "@type": "http://www.w3.org/ns/prov#Activity",
+        "http://www.w3.org/ns/prov#qualifiedAssociation": {
+          "@id": "_:b2"
+        },
+        "http://www.w3.org/ns/prov#startetAtTime:": "2024-01-03",
+        "http://www.w3.org/ns/prov#used": [
+          {
+            "@id": "https://example.com/identifier-entity"
+          },
+          {
+            "@id": "https://example.com/name-entity"
+          },
+          {
+            "@id": "https://example.com/description-entity"
+          }
+        ],
+        "http://www.w3.org/ns/prov#wasInformedBy": {
+          "@id": "https://example.com/proposal-activity"
+        }
+      },
+      {
+        "@id": "https://example.com/decision-entity",
+        "@type": "http://www.w3.org/ns/prov#Entity",
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": {
+          "@id": "https://paf.link/decision"
+        },
+        "http://www.w3.org/ns/prov#wasGeneratedBy": {
+          "@id": "https://example.com/decision-activity"
+        },
+        "https://paf.link/decision": {
+          "@id": "https://paf.link/Accepted"
+        },
+        "https://paf.link/voteNo": {
+          "@type": "http://www.w3.org/2001/XMLSchema#integer",
+          "@value": "70"
+        },
+        "https://paf.link/voteYes": {
+          "@type": "http://www.w3.org/2001/XMLSchema#integer",
+          "@value": "130"
+        }
+      },
+      {
+        "@id": "https://example.com/description-entity",
+        "@type": "http://www.w3.org/ns/prov#Entity",
+        "http://schema.org/description": "Change background color of Swiss national flag to blue",
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": {
+          "@id": "http://schema.org/description"
+        },
+        "http://www.w3.org/ns/prov#wasGeneratedBy": {
+          "@id": "https://example.com/registration-activity"
+        }
+      },
+      {
+        "@id": "https://example.com/identifier-entity",
+        "@type": "http://www.w3.org/ns/prov#Entity",
+        "http://schema.org/identifier": "CH-1234",
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": {
+          "@id": "http://schema.org/identifier"
+        },
+        "http://www.w3.org/ns/prov#wasGeneratedBy": {
+          "@id": "https://example.com/registration-activity"
+        }
+      },
+      {
+        "@id": "https://example.com/name-entity",
+        "@type": "http://www.w3.org/ns/prov#Entity",
+        "http://schema.org/name": "Colocambiado",
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": {
+          "@id": "http://schema.org/name"
+        },
+        "http://www.w3.org/ns/prov#wasGeneratedBy": {
+          "@id": "https://example.com/registration-activity"
+        }
+      },
+      {
+        "@id": "https://example.com/proposal-activity",
+        "@type": "http://www.w3.org/ns/prov#Activity",
+        "http://www.w3.org/ns/prov#qualifiedAssociation": [
+          {
+            "@id": "_:b0"
+          },
+          {
+            "@id": "_:b1"
+          }
+        ],
+        "http://www.w3.org/ns/prov#startetAtTime": "2024-01-02",
+        "http://www.w3.org/ns/prov#used": [
+          {
+            "@id": "https://example.com/identifier-entity"
+          },
+          {
+            "@id": "https://example.com/name-entity"
+          },
+          {
+            "@id": "https://example.com/description-entity"
+          }
+        ],
+        "http://www.w3.org/ns/prov#wasInformedBy": {
+          "@id": "https://example.com/registration-activity"
+        }
+      },
+      {
+        "@id": "https://example.com/registration-activity",
+        "@type": "http://www.w3.org/ns/prov#Activity",
+        "http://www.w3.org/ns/prov#startedAtTime": "2024-01-01"
+      },
+      {
+        "@id": "https://example.com/view-point",
+        "@type": "https://paf.link/ViewPoint",
+        "http://purl.org/dc/terms/hasPart": [
+          {
+            "@id": "https://example.com/registration-activity"
+          },
+          {
+            "@id": "https://example.com/proposal-activity"
+          },
+          {
+            "@id": "https://example.com/decision-activity"
+          },
+          {
+            "@id": "https://example.com/identifier-entity"
+          },
+          {
+            "@id": "https://example.com/name-entity"
+          },
+          {
+            "@id": "https://example.com/description-entity"
+          },
+          {
+            "@id": "https://example.com/decision-entity"
+          }
+        ]
+      }
+    ]
+  }
