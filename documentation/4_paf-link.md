@@ -66,14 +66,8 @@ In this case, no proposal entity is created because the proposal is already incl
 </aside>
 
 <aside class="example" title="test">
-    <pre class="ttl">
+    <pre class="turtle">
         <section data-include-format="text" data-include="../examples/test.ttl" data-include-replace="true"></section>
-    </pre>
-</aside>
-
-<aside class="example" title="test">
-    <pre class="json">
-        <section data-include-format="text" data-include="../examples/toyexample.json" data-include-replace="true"></section>
     </pre>
 </aside>
 
