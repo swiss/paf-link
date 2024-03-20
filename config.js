@@ -46,6 +46,8 @@ var respecConfig = {
         src: "img/logo.png",
         url: "https://www.bk.admin.ch/bk/en/home.html",
         alt: "Federal Chancellery (FCh)",
+        width: 230,
+        height: 75,
         id: "fch-logo",
       },
     ],
