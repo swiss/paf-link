@@ -1,0 +1,7 @@
+:registration-activity a prov:Activity;
+    prov:startedAtTime "2024-01-01".
+
+:identifier-entity a prov:Entity;
+    prov:wasGeneratedBy :registration-activity;
+    rdf:predicate schema:identifier;
+    schema:identifier "CH-1234".
