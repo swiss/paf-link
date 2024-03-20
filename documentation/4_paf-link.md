@@ -60,7 +60,7 @@ The following example illustrates a very basic affair based on three activities.
 In this case, no proposal entity is created because the proposal is already included in the description entity. If this would not be the case, a creation of a proposal entity would be useful and in turn, the decision activity would use this proposal entity. The reason why the decision entity again uses entities and not just links to the proposal activity is the possibility that the deciding body would first change something in the entities used by the proposal before deciding and then, it would be important to use this newly changed entities in the decision activity.
 
 <aside class="example" title="Design Principles: Basic Affair">
-    <pre class="ttl">
+    <pre class="ttl nolinks">
         <section data-include-format="text" data-include="../examples/design_principles.ttl" data-include-replace="true"></section>
     </pre>
 </aside>
