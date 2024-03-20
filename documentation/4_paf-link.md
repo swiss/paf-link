@@ -55,7 +55,9 @@ View points also allow to have different identifiers for different perspectives 
 
 ### Basic Affair
 
-The following example illustrates a very basic affair based on three activities. First a **registration activity** that creates entities for identification, name and description of a public affair. The second activity uses these three entities to form a **proposal** to a deciding body. The last activity is the **decision activity** that creates a result entity stating the outcome of the decision:
+The following example illustrates a very basic affair based on three activities. First a **registration activity** that creates entities for identification, name and description of a public affair. The second activity uses these three entities to form a **proposal** to a deciding body. The last activity is the **decision activity** that creates a decision entity stating the result of the decision. 
+
+In this case, no proposal entity is created because the proposal is already included in the description entity. If this would not be the case, a creation of a proposal entity would be useful and in turn, the decision activity would use this proposal entity. The reason why the decision entity again uses entities and not just links to the proposal activity is the possibility that the deciding body would first change something in the entities used by the proposal before deciding and then, it would be important to use this newly changed entities in the decision activity.
 
 <aside class="example" title="Design Principles: Basic Affair">
     <pre class="ttl">
@@ -72,7 +74,7 @@ The following example illustrates a very basic affair based on three activities.
 
 ### Changing Entities
 
-The following example shows how a **changing activity** complements and invalidates entities that have been created before by a registering activity:
+The following example shows how a **changing activity** complements and invalidates entities that have been created before by a registering activity. It could be argued that the changing activity should use the entities that it is going to complement and invalidate especially for the description entity because the new one is somehow based on the old one. Such decisions whether to use these entities on the activity will be firmly stated in the application profile. On the level of the paf.link schema, this is not defined.
 
 <aside class="example" title="Design Principles: Changing Entities">
     <pre class="ttl">

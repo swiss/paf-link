@@ -26,7 +26,7 @@
 
 ## Layered Design
 
-As it is good practice, the paf.link schema strives for reuse of existing vocabulary. Using PROV-O as a **base layer** gives paf.link a robust and widespread foundation. As PROV-O by design is very generic, paf.link postulates on a **second layer** some **design principles** to model public affairs from the basic elements of PROV-O. Furthermore, some additional classes and predicates are defined in this layer within the context of public affairs. This second layer is still somehow generic. Therefore a **third layer** as an application profile for real world public affairs is created to allow modelling very specific public affairs for certain realms of public administration.
+As it is good practice, the paf.link schema strives for reuse of existing vocabulary. Using PROV-O as a **base layer** gives paf.link a robust and widespread foundation. As PROV-O by design is very generic, paf.link postulates on a **second layer** some **design principles** to model public affairs from the basic elements of PROV-O. Furthermore, some additional classes and predicates are defined in this layer within the context of public affairs. This second layer is still somehow generic. Therefore a **third layer** as an application profile for real world public affairs is created to allow modelling very specific public affairs for certain realms of public administration. In this application profile, all elements have to be declared whether they are mandatory (and in which cardinality) or if they are optional.
 
 <figure id="figure">
   <img src="img/layers.svg" alt="Layered Design" />
