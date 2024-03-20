@@ -1,4 +1,4 @@
-# Layer 3: Swiss Public Affairs (ch.paf.link) {#chpaf-link}
+# Layer 3: Swiss Public Affairs (chpaf.link) {#chpaf-link}
 
 ## Office Consultation Registration
 ### Activity

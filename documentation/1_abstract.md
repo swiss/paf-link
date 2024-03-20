@@ -1,9 +1,10 @@
 # Abstract
 
-<aside class="warning" title="Draft">
-This Document is in its first draft. The content is in no place stable as of now.
-</aside>
+<div class="advisement">
 
-The **paf.link schema** has the goal of describing a RDF ([[[rdf11-concepts]]]) data schema for describing the activities of the public administration. As it is an activity based schema, it draws heavily on the [[[prov-o]]] which it extends with generic classes for public affaires. The paf.link schema supports not only the agents that make up the public administrations, but also their activities and the entities (items) that make up their activities. The paf.link schema allows to be adapted to actual public administrations by using an application profile (e.g. [ch.paf.link](#ch-paf-link)).
+Warning: This Document is in its first draft. The content is not stable as of now.
+</div>
 
-The paf.link schema provides the foundations for implementation in a wide variety of applications, contexts, domains and forms of information. The structure presented here offers a broad framework for all activities inherent to a public administration.
+The **paf.link schema** is an RDF ([[[rdf11-concepts]]]) data schema for describing **public affairs** (paf) administered by the public administration. It is based on the [[[prov-o]]] which it extends with certain design principles and subclasses and subpredicates for public affaires. Using **activities**, **agents** and **entities** as central elements, paf.link schema allows to model public affairs to their fullest complexities. Furthermore, the paf.link schema allows to be adapted to actual public administrations by using an **application profile** (e.g. [chpaf.link](#chpaf-link)).
+
+The paf.link schema provides the foundations for implementing public affaires in a wide variety of applications and contexts. In addition, deterministic transformations from RDF to JSON and XML are given to allow this schema to be used also outside the Linked Data sphere.
