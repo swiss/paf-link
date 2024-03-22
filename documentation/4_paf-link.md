@@ -60,7 +60,7 @@ The following example illustrates a very basic affair based on three activities.
 In this case, no proposal entity is created because the proposal is already included in the description entity. If this would not be the case, a creation of a proposal entity would be useful and in turn, the decision activity would use this proposal entity. The reason why the decision entity again uses entities and not just links to the proposal activity is the possibility that the deciding body would first change something in the entities used by the proposal before deciding and then, it would be important to use this newly changed entities in the decision activity.
 
 <aside class="example" title="Design Principles: Basic Affair">
-    <pre class="ttl">
+    <pre class="turtle">
         <section data-include-format="text" data-include="../examples/design_principles_basic.ttl" data-include-replace="true"></section>
     </pre>
 </aside>
@@ -77,7 +77,7 @@ In this case, no proposal entity is created because the proposal is already incl
 The following example shows how a **changing activity** complements and invalidates entities that have been created before by a registering activity. It could be argued that the changing activity should use the entities that it is going to complement and invalidate especially for the description entity because the new one is somehow based on the old one. Such decisions whether to use these entities on the activity will be firmly stated in the application profile. On the level of the paf.link schema, this is not defined.
 
 <aside class="example" title="Design Principles: Changing Entities">
-    <pre class="ttl">
+    <pre class="turtle">
         <section data-include-format="text" data-include="../examples/design_principles_change.ttl" data-include-replace="true"></section>
     </pre>
 </aside>
@@ -111,13 +111,25 @@ To allow for maximum impact of the paf.link schema, the data should also be avai
     </pre>
 </aside>
 
-## Proposal & Decision Activities
+## Proposal & Decision Affair
 
-[TODO] Describe the binome of proposal and decision. 
+The affair of a proposal and decision means that someone or some body is formally asking for a decision (proposal) and another authoritative body is deciding on this proposal. This affair contains at least a proposal- and a decision activity.
 
-* The only answer on Proposal can be a Decision.
-* (Also explain that it should only be used in the process where the decision becomes authorative (independent of level). For the use of informative decisions see "Information".)
-* [TODO] Make examples: Beispiele: BR-Antrag -> BR-Beschluss; Parlamentarischer Vorstoss -> Verabschiedung des parlamentarischen Vorstosses; 
+The proposal activity uses existing entities to build the actual proposal. If the entities are not already existing, an upstream activity needs to create them (e.g. some kind of registration activity). The decision activity again uses entities to the decide on. These can and normally will be the entities that the proposal used but there is the possibility that the deciding body wants to change the proposal with the help of an upstream activity (e.g. some kind of change activity) and then the decision activity will use these newly created entities for the decision. Whereas the proposal activity will not necessarily create new entities, the decision activity will create a result entity stating the result and possibly some details of the decision.
+
+Because there is not necessarily a direct succession between the proposal- and decision activity, the decision activity has a separate link to the proposal activity connecting these two.
+
+### Mandatory Elements
+
+Proposal activity:
+
+- `prov:used` to the entities that form the proposal
+
+Decision activity:
+
+- `paf:proposalActivity` to link to the proposal activity
+- `prov:used` to the entities that are decided upon
+- an entity that links by `prov:wasGeneratedBy` to the decision activity
 
 ### Class **paf:ProposalActivity** {#ProposalActivity}
 
@@ -125,10 +137,10 @@ paf:ProposalActivity is an rdfs:subClass of prov:Activity
 
 [Translations](https://www.termdat.bk.admin.ch/entry/56995):
 
-* E: proposal
-* D: Antrag
-* F: proposition
-* I: proposta
+* en: proposal
+* de: Antrag
+* fr: proposition
+* it: proposta
 
 This is the activity in the process to formally ask for a decision.
 
@@ -144,92 +156,16 @@ paf:ProposalReceiver is an rdfs:subClass of prov:Agent
 
 The agent (person or group) which receives the proposal.
 
-#### Usage of prov:qualifiedAssociation
-
-<aside class="example" title="Usage of prov:qualifiedAssociation in Turtle">
-
-```turtle
-:proposal-activity-1 a paf:ProposalActivity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :proposal-submitter-1;
-        prov:hadRole paf:ProposalSubmitter;
-        rdfs:comment "proposal-submitter-1 is the issuer of proposal-activity-1."@en;
-    ].
-
-:proposal-submitter-1 a prov:Agent;
-    schema:name "Proposal Submitter 1".
-```
-
-</aside>
-
-<aside class="example" title="Usage of prov:qualifiedAssociation in XML">
-
-```xml
-<prov:document>
-
-    <paf:ProposalActivity prov:id=":proposal-activity-1">
-        <prov:qualifiedAssociation prov:ref="association-1"/>
-    </paf:ProposalActivity>
-
-    <prov:Association prov:id="association-1">
-            <prov:agent prov:ref=":proposal-submitter-1"/>
-            <prov:hadRole prov:ref="paf:ProposalSubmitter"/>
-            <rdfs:comment xml:lang="en">proposal-submitter-1 is the issuer of proposal-activity-1.</rdfs:comment>
-    </prov:Association>
-
-    <prov:Agent prov:id=":proposal-submitter-1">
-        <schema:name>Proposal Submitter 1</schema:name>
-    </prov:Agent>
-
-</prov:document>
-```
-
-</aside>
-
-#### Usage of prov:wasInformedBy
-
-To connect a higher level process, e.g. a Parliament Affair Identificator.
-
-<aside class="example" title="Usage of prov:wasInformedBy in Turtle">
-
-```turtle
-:proposal-activity-1 a paf:ProposalActivity;
-    prov:wasInformedBy :affair-1.
-
-:affair-1 a prov:Activity;
-    rdfs:comment "affair-1 is a higher level activity."@en.
-```
-
-</aside>
-
-<aside class="example" title="Usage of prov:wasInformedBy in XML">
-
-```xml
-<prov:document>
-    
-    <paf:ProposalActivity prov:id=":proposal-activity-1">
-        <prov:wasInformedBy prof:ref=":affair-1"/>
-    </paf:ProposalActivity>
-    
-    <paf:Activity prov:id=":affair-1">
-        <rdfs:comment xml:lang="en">affair-1 is a higher level activity.</rdfs:comment>
-    </paf:Activity>
-    
-</prov:document>
-```
-
-</aside>
-
 ### Class **paf:DecisionActivity** {#DecisionActivity}
 
 paf:DecisionActivity is a rdfs:subClass of prov:Activity
 
 [Translations](https://www.termdat.bk.admin.ch/entry/414335):
 
-* Entscheid
-* décision
-* decisione
+* en: Decision
+* de: Entscheid
+* fr: décision
+* it: decisione
 
 This is the activity to formally answer the corresponding paf:ProposalActivity.
 
@@ -241,73 +177,12 @@ paf:DecisionMaker is a rdfs:subClass of prov:Activity
 
 The agent (person or group) which issues the decision.
 
-#### Usage of prov:qualifiedAssociation
-
-<aside class="example" title="Usage of prov:qualifiedAssociation in Turtle">
-
-```turtle
-:decision-activity-1 a paf:DecisionActivity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :decision-maker-1;
-        prov:hadRole paf:DecisionMaker;
-        rdfs:comment "decision-maker-1 is the issuer of decision-activity-1."@en;
-    ].
-```
-
-</aside>
-
 ### Full Example on Proposal & Decision
 
-<aside class="example" title="Full Example on Proposal & Decision in Turtle">
-
-```turtle
-@prefix : <https://example.com/> .
-@prefix paf: <https://paf.link/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix schema: <http://schema.org/> .
-
-:proposal-activity-1 a paf:ProposalActivity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :proposal-submitter-1;
-        prov:hadRole paf:ProposalSubmitter;
-    ];
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :proposal-receiver-1;
-        prov:hadRole paf:ProposalReceiver;
-    ];
-	prov:used :proposal-1;
-	prov:wasInformedBy :parlamentary-activity-1;
-	prov:wasInformedBy :executive-activity-1;
-	prov:wasInformedBy :law-activity-1.
-
-:proposal-1 a prov:Entity;
-	prov:wasGeneratedBy :proposal-activity-1.
-
-:parlamentary-activity-1 a prov:Activity;
-	schema:identifier "23.0123".
-
-:executive-activity-1 a prov:Activity;
-	schema:identifier "321".
-
-:law-activity-1 a prov:Activity;
-	schema:identifier "SR21.1".
-
-:decision-activity-1 a paf:DecisionActivity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :decision-maker-1;
-        prov:hadRole paf:DecisionMaker;
-    ];
-    prov:wasInformedBy :proposal-activity-1;
-	prov:used :decision-1.
-
-:decision-1 a prov:Entity;
-	prov:wasGeneratedBy :decision-activity-1.
-```
-
+<aside class="example" title="Full Example on Proposal & Decision">
+    <pre class="turtle">
+        <section data-include-format="text" data-include="../examples/proposal_decision.ttl" data-include-replace="true"></section>
+    </pre>
 </aside>
 
 ## Consultation & Comment Activities

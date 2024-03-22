@@ -1,0 +1,76 @@
+
+@prefix : <https://example.com/> .
+@prefix paf: <https://paf.link/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:registration-activity a prov:Activity;
+    prov:startedAtTime "2024-01-01T12:00:00Z"^^xsd:dateTime.
+
+:identifier-entity a prov:Entity;
+    prov:wasGeneratedBy :registration-activity;
+    rdf:predicate schema:identifier;
+    schema:identifier "CH-1234".
+
+:name-entity a prov:Entity;
+    prov:wasGeneratedBy :registration-activity;
+    rdf:predicate schema:name;
+    schema:name "Colocambiado".
+
+:description-entity-1 a prov:Entity;
+    prov:wasGeneratedBy :registration-activity;
+    rdf:predicate schema:description;
+    schema:description "Change background color of Swiss national flag to blue"@en;
+    schema:description "Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau"@de;
+    schema:description "Modifica il colore di sfondo della bandiera nazionale svizzera in blu"@it;
+    schema:description "Modifiez la couleur de fond du drapeau national suisse en bleu"@fr;
+    prov:wasInvalidatetBy :change-activity.
+
+:proposal-activity a prov:Activity;
+    prov:wasInformedBy :registration-activity;
+    prov:startedAtTime "2024-01-02T12:00:00Z"^^xsd:dateTime;
+    prov:used :identifier-entity, :name-entity, :description-entity-1;
+    prov:qualifiedAssociation [ 
+        a prov:Association; 
+        prov:agent :Colocambiado;
+        prov:hadRole paf:ProposalSubmitter];
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :national-council;
+        prov:hadRole paf:ProposalReceiver].
+
+:change-activity a prov:Activity;
+    prov:wasInformedBy :proposal-activity;
+    prov:startedAtTime "2024-01-03T12:00:00Z"^^xsd:dateTime;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :national-council;
+        prov:hadRole paf:ChangeMaker].
+
+:description-entity-2 a prov:Entity;
+    prov:wasGeneratedBy :change-activity;
+    rdf:predicate schema:description;
+    schema:description "Change background color of Swiss national flag to blue and yellow"@en;
+    schema:description "Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau und gelb"@de;
+    schema:description "Modifica il colore di sfondo della bandiera nazionale svizzera in blu e giallo"@it;
+    schema:description "Modifiez la couleur de fond du drapeau national suisse en bleu et jaune"@fr.
+
+:decision-activity a prov:Activity;
+    prov:wasInformedBy :change-activity;
+    paf:proposalActivity :proposal-activity;
+    prov:startedAtTime: "2024-01-04T12:00:00Z"^^xsd:dateTime;
+    prov:used :identifier-entity, :name-entity, :description-entity-2;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :national-council;
+        prov:hadRole paf:DecisionMaker].
+
+:decision-entity a prov:Entity;
+    prov:wasGeneratedBy :decision-activity;
+    rdf:predicate paf:decision;
+    paf:decision paf:Accepted;
+    paf:voteYes 130;
+    paf:voteNo 70.
