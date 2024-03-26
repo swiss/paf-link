@@ -16,6 +16,25 @@ Key components of PROV-O include
 
 It also introduces concepts like generation, usage, and association to capture how entities and activities are related to each other over time.
 
+## Toy example of the model 
+In order to understand the RDF schema we use to describe the activities of public administration that relate specifically to parliamentary interventions, we have developed an example to help everyone understand how it works. It's a fictional story that helps us understand how a parliamentary intervention works. Mrs. Colocambiado, a member of parliament, makes a parliamentary intervention by submitting a motion to the National Council to change the background color of the national flag to blue, in order to make it more modern.  
+
+**The Steps**
+
+1. Intervention Motion by a politician in the National Council. ( Change the background color of the national flag to blue to look more modern).
+2. National Council accepts.
+3. Council of States accepts with modification (color to be subject to consultation).
+4. National Council accepts with modification.
+5. The motion is forwarded to the Federal Chancellery.
+6. ChF Allocation to department
+7. Department Allocation to office
+8. Office launches consultation
+9. Cantons and political parties respond to consultation.
+10. The Office makes a proposal to amend the law to change the color to dark ochre yellow.
+11. There is a proposal from the Federal Council.
+12. The Federal Council takes a positive decision in accordance with the motion.
+13. The motion is communicated to Parliament.
+
 ## PROV-O Categories
 
 PROV-O consists of different categories representing different levels of granularity to describe provenance information:
