@@ -32,7 +32,7 @@ Activities can have **input entities** that provide the necessary data that the 
 
 Entities are created by activities representing the result of a specific activity (e.g. voting result of a voting activity). They can also serve as input information for later activities.
 
-Entities are modelled in an **atomic** way meaning that every entity contains only **one main information** linked by a specific RDF predicate (e.g. schema:name or schema:description). This main information can be **enriched by metadata** (e.g. the exact voting result for an entity stating an acceptance result). The reason for this strategy of atomic entities is to allow for simpler addition of metadata without creating additional reification (blank) nodes.
+Entities are modelled in an **atomic** way meaning that every entity contains only **one main information** linked by a specific RDF predicate (e.g. `schema:name` or `schema:description`). This main information can be **enriched by metadata** (e.g. the exact voting result for an entity stating an acceptance result). The reason for this strategy of atomic entities is to allow for simpler addition of metadata without creating additional reification (blank) nodes.
 
 If an entity needs to be changed, complemented or deleted, a subsequent entity has to be generated defining the status of the former entity (e.g. not valid anymore or complemented by). Once an entity is created by an activity, it can not "just be deleted". This is to ensure **complete traceability**.
 
@@ -47,15 +47,41 @@ Entities are not directly linked to actors. This can only be done via the corres
 
 ### View Points
 
-The challenge with public affairs is that they do **look differently depending on the view point** on the affair. To allow for these different perspectives, a paf:ViewPoint can be defined that links to all the activities, actors and entities relevant for this specific perspective via dcterm:hasPart (no subclass of prov:used can be used for this because the range of this predicate has to allow for activities, actors and entities at the same time).
+The challenge with public affairs is that they do **look differently depending on the view point** on the affair. To allow for these different perspectives, a `paf:ViewPoint` can be defined that links to all the activities, actors and entities relevant for this specific perspective via `dcterm:hasPart` (no subclass of `prov:used` can be used for this because the range of this predicate has to allow for activities, actors and entities at the same time).
 
 View points also allow to have different identifiers for different perspectives of the affair. This would be done by having point different view points to different entities containing the `schema:identifier` predicate.
 
 ## Examples to the Design Principles
 
+### Real World Inspired Toy Example
+
+In the following sections, examples are shown to illustrate the application of the design principles to some "real world" examples. They are still somewhat generic but are inspired by real public affairs used in Switzerland.
+
+The final example will be a fictional story that helps to understand how a parliamentary intervention with all its associated steps works: 
+
+*Mrs. Colocambiado, a member of parliament, makes a parliamentary intervention by submitting a motion to change the background color of the national flag to blue, in order to make it more modern.*
+
+This example will finally include all these necessary steps:
+
+1. Intervention Motion by a politician in the National Council. (Change the background color of the national flag to blue to look more modern).
+2. National Council accepts.
+3. Council of States accepts with a modification (color to be subject to consultation).
+4. National Council also accepts with this modification.
+5. The motion is forwarded to the Federal Chancellery.
+6. The Federal Chancellery allocates the motion to the right department.
+7. Department allocates motion to the responsible office.
+8. Office launches consultation.
+9. Cantons and political parties respond to consultation.
+10. The Office makes a proposal to amend the law to change the color to dark ochre yellow.
+11. There is a proposal from the Federal Council.
+12. The Federal Council takes a positive decision in accordance with the motion.
+13. The motion is communicated to Parliament.
+
+To form this above described example, some more basic elements of such a complex affair are laid out in the next paragraphs:
+
 ### Basic Affair
 
-The following example illustrates a very basic affair based on three activities. First a **registration activity** that creates entities for identification, name and description of a public affair. The second activity uses these three entities to form a **proposal** to a deciding body. The last activity is the **decision activity** that creates a decision entity stating the result of the decision. 
+The following example illustrates a very basic affair based on three activities. First a **registration activity** that creates entities for identification, name and description of a public affair. The second activity uses these three entities to form a **proposal** to a deciding body. The last activity is the **decision activity** that creates a decision entity stating the result of the decision.
 
 In this case, no proposal entity is created because the proposal is already included in the description entity. If this would not be the case, a creation of a proposal entity would be useful and in turn, the decision activity would use this proposal entity. The reason why the decision entity again uses entities and not just links to the proposal activity is the possibility that the deciding body would first change something in the entities used by the proposal before deciding and then, it would be important to use this newly changed entities in the decision activity.
 
@@ -113,13 +139,23 @@ To allow for maximum impact of the paf.link schema, the data should also be avai
 
 ## Proposal & Decision Affair
 
-The affair of a proposal and decision means that someone or some body is formally asking for a decision (proposal) and another authoritative body is deciding on this proposal. This affair contains at least a proposal- and a decision activity.
+The affair of a proposal and decision means that someone or some body is formally asking for a decision (proposal) and another authoritative body is deciding on this proposal. Such an affair contains at least the following activities:
 
-The proposal activity uses existing entities to build the actual proposal. If the entities are not already existing, an upstream activity needs to create them (e.g. some kind of registration activity). The decision activity again uses entities to the decide on. These can and normally will be the entities that the proposal used but there is the possibility that the deciding body wants to change the proposal with the help of an upstream activity (e.g. some kind of change activity) and then the decision activity will use these newly created entities for the decision. Whereas the proposal activity will not necessarily create new entities, the decision activity will create a result entity stating the result and possibly some details of the decision.
+- registration activity
+- proposal activity
+- decision activity
+
+The registration activity is needed to create the entities that are afterwards bundled by the proposal activity to form the actual proposal. The proposal activity does not create new entities. The reason for this design decision ist that the actual proposal can be queried easily by only looking for all entities that are used by the proposal entity and not have to look for entities that are used OR created by the proposal activity.
+
+The decision activity again uses entities to the decide on. These can and normally will be the entities that the proposal used but there is the possibility that the deciding body wants to change the proposal with the help of an upstream activity (e.g. some kind of change activity) and then the decision activity will use these newly created entities for the decision. Whereas the proposal activity must not create new entities, the decision activity will create a result entity stating the result and possibly some details of the decision.
 
 Because there is not necessarily a direct succession between the proposal- and decision activity, the decision activity has a separate link to the proposal activity connecting these two.
 
 ### Mandatory Elements
+
+Registration activity:
+
+- entities that link by `prov:wasGeneratedBy` or `paf:wasComplementedBy` to the registration activity
 
 Proposal activity:
 
