@@ -1,0 +1,80 @@
+@prefix : <https://example.com/> .
+@prefix paf: <https://paf.link/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:registration-activty a prov:Activity.
+
+:3668-name-entity a prov:Entity;
+    prov:wasCreatedBy :registration-activty;
+    rdf:predicate schema:name;
+    schema:name "Möglichkeiten der rechtlichen Anerkennung der Schweizer Gebärdensprachen und konkrete praktische Umsetzungsmassnahmen zur vollständigen Teilhabe (Rytz Regula)"@de.
+
+:3668-identifier-entity a prov:Entity;
+    prov:wasCreatedBy :registration-activty;
+    rdf:predicate schema:identifier;
+    schema:identifier "2019 P 19.3668".
+
+:description-entity a prov:Entity;
+    prov:wasCreatedBy :registration-activty;
+    rdf:predicate schema:description;
+    schema:description "Der Bundesrat wird beauftragt, in einem Bericht Möglichkeiten der rechtlichen Anerkennung der drei Schweizer Gebärdensprachen darzulegen..."@de.
+
+:3670-name-entity a prov:Entity;
+    prov:wasCreatedBy :registration-activty;
+    rdf:predicate schema:name;
+    schema:name "Möglichkeiten der rechtlichen Anerkennung der Schweizer Gebärdensprachen und konkrete praktische Umsetzungsmassnahmen zur vollständigen Teilhabe (Lohr)"@de.
+
+:3670-identifier-entity a prov:Entity;
+    prov:wasCreatedBy :registration-activty;
+    rdf:predicate schema:identifier;
+    schema:identifier "2019 P 19.3670".
+
+:3672-name-entity a prov:Entity;
+    prov:wasCreatedBy :registration-activty;
+    rdf:predicate schema:name;
+    schema:name "Möglichkeiten der rechtlichen Anerkennung der Schweizer Gebärdensprachen und konkrete praktische Umsetzungsmassnahmen zur vollständigen Teilhabe (Romano)"@de.
+
+:3672-identifier-entity a prov:Entity;
+    prov:wasCreatedBy :registration-activty;
+    rdf:predicate schema:identifier;
+    schema:identifier "2019 P 19.3672".
+
+:3684-name-entity a prov:Entity;
+    prov:wasCreatedBy :registration-activty;
+    rdf:predicate schema:name;
+    schema:name "Möglichkeiten der rechtlichen Anerkennung der Schweizer Gebärdensprachen und konkrete praktische Umsetzungsmassnahmen zur vollständigen Teilhabe (Reynard)"@de.
+
+:3684-identifier-entity a prov:Entity;
+    prov:wasCreatedBy :registration-activty;
+    rdf:predicate schema:identifier;
+    schema:identifier "2019 P 19.3684".
+
+:proposal-creation-activity a prov:Activity;
+    prov:wasInformedBy :registration-activty;
+    prov:used :3668-name-entity, :3668-identifier-entity, :description-entity, :3670-name-entity, :3670-identifier-entity, :3672-name-entity, :3672-identifier-entity, :3684-name-entity, :3684-identifier-entity.
+
+:answer-entity a prov:Entity;
+    prov:wasGeneratedBy :answer-creation-activity;
+    rdf:predicate chpaf:mopoAnswer;
+    chpaf:mopoAnswer "Die Postulate verlangen vom Bundesrat, in einem Bericht die Möglichkeiten..."@de;
+    chpaf:report <https://www.newsd.admin.ch/newsd/message/attachments/68324.pdf>;
+    dcterm:relation "22.3373".
+
+:proposal-entity a prov:Entity;
+    prov:wasGeneratedBy :proposal-creation-activity;
+    rdf:predicate chpaf:proposal;
+    chpaf:proposal chpaf:Abandonment;
+    schema:description "Der Bundesrat erachtet das Anliegen der Postulate als erfüllt und beantragt deren Abschreibung."@de.
+
+:proposal-activity a prov:Activity, chpaf:ProposalForAbandonmentActivity;
+    prov:wasInformedBy :answer-creation-activity;
+    prov:qualifiedAssciation [
+        a prov:Association;
+        prov:agent <https://ld.admin.ch/FC>;
+        prov:hadRole paf:ProposalSubmitter;
+    ];
+    prov:used :3668-name-entity, :3668-identifier-entity, :description-entity, :3670-name-entity, :3670-identifier-entity, :3672-name-entity, :3672-identifier-entity, :3684-name-entity, :3684-identifier-entity, :answer-entity, :proposal-entity.
