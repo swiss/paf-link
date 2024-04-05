@@ -65,13 +65,16 @@
     prov:wasGeneratedBy :22_p9_1-proposal-creation-activity;
     rdf:predicate chpaf:mopoAnswer;
     chpaf:mopoAnswer "Die Postulate verlangen vom Bundesrat, in einem Bericht die Möglichkeiten..."@de;
+    paf:meta chpaf:report;
     chpaf:report <https://www.newsd.admin.ch/newsd/message/attachments/68324.pdf>;
+    paf:meta dcterm:relation;
     dcterm:relation "22.3373".
 
 :22_p9_1-proposal-entity a prov:Entity;
     prov:wasGeneratedBy :22_p9_1-proposal-creation-activity;
     rdf:predicate chpaf:proposal;
     chpaf:proposal chpaf:Abandonment;
+    paf:meta schema:description;
     schema:description "Der Bundesrat erachtet das Anliegen der Postulate als erfüllt und beantragt deren Abschreibung."@de.
 
 :22_p9_1-proposal-activity a prov:Activity, chpaf:ProposalForAbandonmentActivity;

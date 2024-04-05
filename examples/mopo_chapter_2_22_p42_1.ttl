@@ -29,7 +29,9 @@
 :22_p42_1-information-entity a prov:Entity;
     prov:wasGeneratedBy :22_p42_1-information-creation-activity;
     rdf:predicate chpaf:mopoInformation;
-    chpaf:mopoInformation "Ein Sondierungsprozess mit der EU im Hinblick auf die Aufnahme von allfälligen Verhandlungen über die Fortsetzung und Vertiefung des bilateralen Weges ist im Gange..."@de.
+    chpaf:mopoInformation "Ein Sondierungsprozess mit der EU im Hinblick auf die Aufnahme von allfälligen Verhandlungen über die Fortsetzung und Vertiefung des bilateralen Weges ist im Gange..."@de;
+    paf:meta chpaf:mopoProceedings;
+    chpaf:mopoProceedings "Die Umsetzung der Motion kann erst erfolgen, wenn weitere Schritte zur Klärung der Beziehungen zur EU gemacht wurden."@de.
 
 :22_p42_1-information-activity a prov:Activity, chpaf:ReportOfStateOfImplementationActivity;
     prov:wasInformedBy :22_p42_1-information-creation-activity;

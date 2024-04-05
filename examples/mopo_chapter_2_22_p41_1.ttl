@@ -39,7 +39,9 @@
 :22_p41_1-information-entity a prov:Entity;
     prov:wasGeneratedBy :22_p41_1-information-creation-activity;
     rdf:predicate chpaf:mopoInformation;
-    chpaf:mopoInformation "Die Motionen führten zu verschiedenen Umsetzungsarbeiten zur Schaffung und Veröffentlichung elektronischer Schnittstellen (API)..."@de.
+    chpaf:mopoInformation "Die Motionen führten zu verschiedenen Umsetzungsarbeiten zur Schaffung und Veröffentlichung elektronischer Schnittstellen (API)..."@de;
+    paf:meta chpaf:mopoProceedings;
+    chpaf:mopoProceedings "Der Bundesrat wird mit dem Inkrafttreten des EMBaG die beiden Motionen als erfüllt erachten und zu diesem Zeitpunkt deren Abschreibung beantragen."@de.
 
 :22_p41_1-information-activity a prov:Activity, chpaf:ReportOfStateOfImplementationActivity;
     prov:wasInformedBy :22_p41_1-information-creation-activity;

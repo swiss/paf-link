@@ -34,12 +34,13 @@
 :22_p5_1-answer-entity a prov:Entity;
     prov:wasGeneratedBy :22_p5_1-proposal-creation-activity;
     rdf:predicate chpaf:mopoAnswer;
-     chpaf:mopoAnswer "Die am 1. Januar 2022 in Kraft getretenen Weisungen des Bundesrates..."@de.
+    chpaf:mopoAnswer "Die am 1. Januar 2022 in Kraft getretenen Weisungen des Bundesrates..."@de.
 
 :22_p5_1-proposal-entity a prov:Entity;
     prov:wasGeneratedBy :22_p5_1-proposal-creation-activity;
     rdf:predicate chpaf:proposal;
     chpaf:proposal chpaf:Abandonment;
+    paf:meta schema:description;
     schema:description "Der Bundesrat erachtet das Anliegen der Motion als erfüllt und beantragt deren Abschreibung."@de.
 
 :22_p5_1-proposal-activity a prov:Activity, chpaf:ProposalForAbandonmentActivity;
