@@ -1,0 +1,60 @@
+@prefix : <https://example.com/> .
+@prefix paf: <https://paf.link/> .
+@prefix chpaf: <https://ch.paf.link/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Local ID: 22_p5_1-...: Year 2022, page 5, item 1
+# Local ID: 4390-: Motion 2020 M 19.4390
+
+:22_p5_1-registration-activity a prov:Activity.
+
+:4390-name-entity a prov:Entity;
+    prov:wasCreatedBy :22_p5_1-registration-activity;
+    rdf:predicate schema:name;
+    schema:name "Anlaufstelle(n) in Sachen Administrativ- und Disziplinaruntersuchungen Geschäftsprüfungskommission NR)"@de.
+
+:4390-identifier-entity a prov:Entity;
+    prov:wasCreatedBy :22_p5_1-registration-activity;
+    rdf:predicate schema:identifier;
+    schema:identifier "2020 M 19.4390".
+
+:4390-description-entity a prov:Entity;
+    prov:wasCreatedBy :22_p5_1-registration-activity;
+    rdf:predicate schema:description;
+    schema:description "Der Bundesrat wird beauftragt, eine oder mehrere Stellen zu bezeichnen..."@de.
+
+:22_p5_1-proposal-creation-activity a prov:Activity;
+    prov:wasInformedBy :22_p5_1-registration-activity;
+    prov:used :4390-name-entity, :4390-identifier-entity, :4390-description-entity.
+
+:22_p5_1-answer-entity a prov:Entity;
+    prov:wasGeneratedBy :22_p5_1-proposal-creation-activity;
+    rdf:predicate chpaf:mopoAnswer;
+     chpaf:mopoAnswer "Die am 1. Januar 2022 in Kraft getretenen Weisungen des Bundesrates..."@de.
+
+:22_p5_1-proposal-entity a prov:Entity;
+    prov:wasGeneratedBy :22_p5_1-proposal-creation-activity;
+    rdf:predicate chpaf:proposal;
+    chpaf:proposal chpaf:Abandonment;
+    schema:description "Der Bundesrat erachtet das Anliegen der Motion als erfüllt und beantragt deren Abschreibung."@de.
+
+:22_p5_1-proposal-activity a prov:Activity, chpaf:ProposalForAbandonmentActivity;
+    prov:wasInformedBy :22_p5_1-proposal-creation-activity;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent <https://ld.admin.ch/FCh>;
+        prov:hadRole paf:Submitter;
+    ];
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent <https://ld.admin.ch/FA>;
+        prov:hadRole paf:Receiver;
+    ];
+    prov:used :4390-name-entity, :4390-identifier-entity, :4390-description-entity, :22_p5_1-answer-entity, :22_p5_1-proposal-entity.
+
+:4390-mopo a paf:ViewPoint, chpaf:Motion;
+    dcterm:hasPart :4390-name-entity, :4390-identifier-entity, :4390-description-entity.

@@ -1,64 +1,79 @@
 @prefix : <https://example.com/> .
 @prefix paf: <https://paf.link/> .
+@prefix chpaf: <https://ch.paf.link/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix schema: <http://schema.org/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dcterm: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:registration-activty a prov:Activity.
+# Local ID: 22_p5_3-...: Year 2022, page 5, item 3
+# Local ID: 3280-: Postulate 2020 P 20.3280
+
+:22_p5_3-registration-activity a prov:Activity.
 
 :3280-name-entity a prov:Entity;
-    prov:wasCreatedBy :registration-activty;
+    prov:wasCreatedBy :22_p5_3-registration-activity;
     rdf:predicate schema:name;
     schema:name "Wissenschaftliches Potenzial für Krisenzeiten nutzen (Michel)"@de.
 
 :3280-identifier-entity a prov:Entity;
-    prov:wasCreatedBy :registration-activty;
+    prov:wasCreatedBy :22_p5_3-registration-activity;
     rdf:predicate schema:identifier;
     schema:identifier "2020 P 20.3280".
 
 :3280-description-entity a prov:Entity;
-    prov:wasCreatedBy :registration-activty;
+    prov:wasCreatedBy :22_p5_3-registration-activity;
     rdf:predicate schema:description;
     schema:description "Der Bundesrat wird beauftragt, in einem Bericht zu prüfen, wie ein interdisziplinäres..."@de.
 
 :3542-name-entity a prov:Entity;
-    prov:wasCreatedBy :registration-activty;
+    prov:wasCreatedBy :22_p5_3-registration-activity;
     rdf:predicate schema:name;
     schema:name "Ein Kompetenzzentrum für die Zeit nach Covid-19 (de Quattro)"@de.
 
 :3542-identifier-entity a prov:Entity;
-    prov:wasCreatedBy :registration-activty;
+    prov:wasCreatedBy :22_p5_3-registration-activity;
     rdf:predicate schema:identifier;
     schema:identifier "2022 P 20.3542".
 
 :3542-description-entity a prov:Entity;
-    prov:wasCreatedBy :registration-activty;
+    prov:wasCreatedBy :22_p5_3-registration-activity;
     rdf:predicate schema:description;
     schema:description "Der Bundesrat wird beauftragt, in einem Bericht die Schaffung eines Kompetenzzentrums..."@de.
 
-:proposal-creation-activity a prov:Activity;
-    prov:wasInformedBy :registration-activty;
+:22_p5_3-proposal-creation-activity a prov:Activity;
+    prov:wasInformedBy :22_p5_3-registration-activity;
     prov:used :3280-name-entity, :3280-identifier-entity, :3280-description-entity, :3542-name-entity, :3542-identifier-entity, :3542-description-entity.
 
-:answer-entity a prov:Entity;
-    prov:wasGeneratedBy :answer-creation-activity;
+:22_p5_3-answer-entity a prov:Entity;
+    prov:wasGeneratedBy :22_p5_3-proposal-creation-activity;
     rdf:predicate chpaf:mopoAnswer;
     chpaf:mopoAnswer "Postulatsbericht vom 23. November 2022 «Wissenschaftliches Potenzial für Krisenzeiten nutzen»."@de;
     chpaf:report <https://www.newsd.admin.ch/newsd/message/attachments/74007.pdf>.
 
-:proposal-entity a prov:Entity;
-    prov:wasGeneratedBy :proposal-creation-activity;
+:22_p5_3-proposal-entity a prov:Entity;
+    prov:wasGeneratedBy :22_p5_3-proposal-creation-activity;
     rdf:predicate chpaf:proposal;
     chpaf:proposal chpaf:Abandonment;
     schema:description "Der Bundesrat erachtet das Anliegen der Postulate als erfüllt und beantragt deren Abschreibung."@de.
 
-:proposal-activity a prov:Activity, chpaf:ProposalForAbandonmentActivity;
-    prov:wasInformedBy :answer-creation-activity;
-    prov:qualifiedAssciation [
+:22_p5_3-proposal-activity a prov:Activity, chpaf:ProposalForAbandonmentActivity;
+    prov:wasInformedBy :22_p5_3-proposal-creation-activity;
+    prov:qualifiedAssociation [
         a prov:Association;
-        prov:agent <https://ld.admin.ch/FC>;
-        prov:hadRole paf:ProposalSubmitter;
+        prov:agent <https://ld.admin.ch/FCh>;
+        prov:hadRole paf:Submitter;
     ];
-    prov:used :3280-name-entity, :3280-identifier-entity, :3280-description-entity, :3542-name-entity, :3542-identifier-entity, :3542-description-entity, :answer-entity, :proposal-entity.
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent <https://ld.admin.ch/FA>;
+        prov:hadRole paf:Receiver;
+    ];
+    prov:used :3280-name-entity, :3280-identifier-entity, :3280-description-entity, :3542-name-entity, :3542-identifier-entity, :3542-description-entity, :22_p5_3-answer-entity, :22_p5_3-proposal-entity.
+
+:3280-mopo a paf:ViewPoint;
+    dcterm:hasPart :3280-name-entity, :3280-identifier-entity, :3280-description-entity.
+
+:3542-mopo a paf:ViewPoint;
+    dcterm:hasPart :3542-name-entity, :3542-identifier-entity, :3542-description-entity.
