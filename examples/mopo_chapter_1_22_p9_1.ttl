@@ -13,47 +13,47 @@
 :22_p9_1-registration-activity a prov:Activity.
 
 :3668-name-entity a prov:Entity;
-    prov:wasCreatedBy :22_p9_1-registration-activity;
+    prov:wasGeneratedBy :22_p9_1-registration-activity;
     rdf:predicate schema:name;
     schema:name "Möglichkeiten der rechtlichen Anerkennung der Schweizer Gebärdensprachen und konkrete praktische Umsetzungsmassnahmen zur vollständigen Teilhabe (Rytz Regula)"@de.
 
 :3668-identifier-entity a prov:Entity;
-    prov:wasCreatedBy :22_p9_1-registration-activity;
+    prov:wasGeneratedBy :22_p9_1-registration-activity;
     rdf:predicate schema:identifier;
     schema:identifier "2019 P 19.3668".
 
 :3668-3670-3672-3684-description-entity a prov:Entity;
-    prov:wasCreatedBy :22_p9_1-registration-activity;
+    prov:wasGeneratedBy :22_p9_1-registration-activity;
     rdf:predicate schema:description;
     schema:description "Der Bundesrat wird beauftragt, in einem Bericht Möglichkeiten der rechtlichen Anerkennung der drei Schweizer Gebärdensprachen darzulegen..."@de.
 
 :3670-name-entity a prov:Entity;
-    prov:wasCreatedBy :22_p9_1-registration-activity;
+    prov:wasGeneratedBy :22_p9_1-registration-activity;
     rdf:predicate schema:name;
     schema:name "Möglichkeiten der rechtlichen Anerkennung der Schweizer Gebärdensprachen und konkrete praktische Umsetzungsmassnahmen zur vollständigen Teilhabe (Lohr)"@de.
 
 :3670-identifier-entity a prov:Entity;
-    prov:wasCreatedBy :22_p9_1-registration-activity;
+    prov:wasGeneratedBy :22_p9_1-registration-activity;
     rdf:predicate schema:identifier;
     schema:identifier "2019 P 19.3670".
 
 :3672-name-entity a prov:Entity;
-    prov:wasCreatedBy :22_p9_1-registration-activity;
+    prov:wasGeneratedBy :22_p9_1-registration-activity;
     rdf:predicate schema:name;
     schema:name "Möglichkeiten der rechtlichen Anerkennung der Schweizer Gebärdensprachen und konkrete praktische Umsetzungsmassnahmen zur vollständigen Teilhabe (Romano)"@de.
 
 :3672-identifier-entity a prov:Entity;
-    prov:wasCreatedBy :22_p9_1-registration-activity;
+    prov:wasGeneratedBy :22_p9_1-registration-activity;
     rdf:predicate schema:identifier;
     schema:identifier "2019 P 19.3672".
 
 :3684-name-entity a prov:Entity;
-    prov:wasCreatedBy :22_p9_1-registration-activity;
+    prov:wasGeneratedBy :22_p9_1-registration-activity;
     rdf:predicate schema:name;
     schema:name "Möglichkeiten der rechtlichen Anerkennung der Schweizer Gebärdensprachen und konkrete praktische Umsetzungsmassnahmen zur vollständigen Teilhabe (Reynard)"@de.
 
 :3684-identifier-entity a prov:Entity;
-    prov:wasCreatedBy :22_p9_1-registration-activity;
+    prov:wasGeneratedBy :22_p9_1-registration-activity;
     rdf:predicate schema:identifier;
     schema:identifier "2019 P 19.3684".
 

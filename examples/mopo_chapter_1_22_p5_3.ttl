@@ -13,32 +13,32 @@
 :22_p5_3-registration-activity a prov:Activity.
 
 :3280-name-entity a prov:Entity;
-    prov:wasCreatedBy :22_p5_3-registration-activity;
+    prov:wasGeneratedBy :22_p5_3-registration-activity;
     rdf:predicate schema:name;
     schema:name "Wissenschaftliches Potenzial für Krisenzeiten nutzen (Michel)"@de.
 
 :3280-identifier-entity a prov:Entity;
-    prov:wasCreatedBy :22_p5_3-registration-activity;
+    prov:wasGeneratedBy :22_p5_3-registration-activity;
     rdf:predicate schema:identifier;
     schema:identifier "2020 P 20.3280".
 
 :3280-description-entity a prov:Entity;
-    prov:wasCreatedBy :22_p5_3-registration-activity;
+    prov:wasGeneratedBy :22_p5_3-registration-activity;
     rdf:predicate schema:description;
     schema:description "Der Bundesrat wird beauftragt, in einem Bericht zu prüfen, wie ein interdisziplinäres..."@de.
 
 :3542-name-entity a prov:Entity;
-    prov:wasCreatedBy :22_p5_3-registration-activity;
+    prov:wasGeneratedBy :22_p5_3-registration-activity;
     rdf:predicate schema:name;
     schema:name "Ein Kompetenzzentrum für die Zeit nach Covid-19 (de Quattro)"@de.
 
 :3542-identifier-entity a prov:Entity;
-    prov:wasCreatedBy :22_p5_3-registration-activity;
+    prov:wasGeneratedBy :22_p5_3-registration-activity;
     rdf:predicate schema:identifier;
     schema:identifier "2022 P 20.3542".
 
 :3542-description-entity a prov:Entity;
-    prov:wasCreatedBy :22_p5_3-registration-activity;
+    prov:wasGeneratedBy :22_p5_3-registration-activity;
     rdf:predicate schema:description;
     schema:description "Der Bundesrat wird beauftragt, in einem Bericht die Schaffung eines Kompetenzzentrums..."@de.
 

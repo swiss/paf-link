@@ -13,17 +13,17 @@
 :22_p5_1-registration-activity a prov:Activity.
 
 :4390-name-entity a prov:Entity;
-    prov:wasCreatedBy :22_p5_1-registration-activity;
+    prov:wasGeneratedBy :22_p5_1-registration-activity;
     rdf:predicate schema:name;
     schema:name "Anlaufstelle(n) in Sachen Administrativ- und Disziplinaruntersuchungen Geschäftsprüfungskommission NR)"@de.
 
 :4390-identifier-entity a prov:Entity;
-    prov:wasCreatedBy :22_p5_1-registration-activity;
+    prov:wasGeneratedBy :22_p5_1-registration-activity;
     rdf:predicate schema:identifier;
     schema:identifier "2020 M 19.4390".
 
 :4390-description-entity a prov:Entity;
-    prov:wasCreatedBy :22_p5_1-registration-activity;
+    prov:wasGeneratedBy :22_p5_1-registration-activity;
     rdf:predicate schema:description;
     schema:description "Der Bundesrat wird beauftragt, eine oder mehrere Stellen zu bezeichnen..."@de.
 
@@ -50,7 +50,7 @@
         prov:agent <https://ld.admin.ch/FCh>;
         prov:hadRole paf:Submitter;
     ];
-    prov:qualifiedAssociation [
+        prov:qualifiedAssociation [
         a prov:Association;
         prov:agent <https://ld.admin.ch/FA>;
         prov:hadRole paf:Receiver;

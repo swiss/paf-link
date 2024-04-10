@@ -13,22 +13,22 @@
 :22_p41_1-registration-activity a prov:Activity.
 
 :4238-name-entity a prov:Entity;
-    prov:wasCreatedBy :22_p41_1-registration-activity;
+    prov:wasGeneratedBy :22_p41_1-registration-activity;
     rdf:predicate schema:name;
     schema:name "Einführung von elektronischen Schnittstellen in der Bundesverwaltung. Dadurch den Informationsaustausch erleichtern (Grüter)"@de.
 
 :4238-identifier-entity a prov:Entity;
-    prov:wasCreatedBy :22_p41_1-registration-activity;
+    prov:wasGeneratedBy :22_p41_1-registration-activity;
     rdf:predicate schema:identifier;
     schema:identifier "2019 M 18.4238".
 
 :4276-name-entity a prov:Entity;
-    prov:wasCreatedBy :22_p41_1-registration-activity;
+    prov:wasGeneratedBy :22_p41_1-registration-activity;
     rdf:predicate schema:name;
     schema:name "Erleichterter Informationsaustausch durch die Einführung von elektronischen Schnittstellen in der Bundesverwaltung (Vonlanthen)"@de.
 
 :4276-identifier-entity a prov:Entity;
-    prov:wasCreatedBy :22_p41_1-registration-activity;
+    prov:wasGeneratedBy :22_p41_1-registration-activity;
     rdf:predicate schema:identifier;
     schema:identifier "2019 M 18.4276".
 

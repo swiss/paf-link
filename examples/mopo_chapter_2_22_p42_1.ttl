@@ -13,12 +13,12 @@
 :22_p42_1-registration-activity a prov:Activity.
 
 :3005-name-entity a prov:Entity;
-    prov:wasCreatedBy :22_p42_1-registration-activity;
+    prov:wasGeneratedBy :22_p42_1-registration-activity;
     rdf:predicate schema:name;
     schema:name "Massnahmen zur frühzeitigen Information des Parlamentes über relevante europäische Gesetzgebungsentwürfe (Aussenpolitische Kommission SR)"@de.
 
 :3005-identifier-entity a prov:Entity;
-    prov:wasCreatedBy :22_p42_1-registration-activity;
+    prov:wasGeneratedBy :22_p42_1-registration-activity;
     rdf:predicate schema:identifier;
     schema:identifier "2010 M 10.3005".
 
