@@ -583,7 +583,10 @@ go to [Easy RDF](https://www.easyrdf.org/) and click on "Converter" in the menu 
 
 2.3) select the format into which the data should be converted, depending on your requirements take "Json-LD" or "RDF/XML".
 
-![Capture d'écran 2024-05-21 113845.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e50dcbda-e53b-4724-ba7b-af7e05132926/75bd2b33-f430-46c1-a8f6-66ec6362cf7c/Capture_dcran_2024-05-21_113845.png)
+<figure id="figure">
+  <img src="https://github.com/swiss/paf-link/blob/main/img/2.png" />
+</figure>
+
 
 2.4) then press "submit
 
