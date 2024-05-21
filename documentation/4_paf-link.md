@@ -575,3 +575,13 @@ go to [Easy RDF](https://www.easyrdf.org/) and click on "Converter" in the menu 
 
 2.1) Add data in the space provided.
 ![Capture d'écran 2024-05-21 112950.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e50dcbda-e53b-4724-ba7b-af7e05132926/0cdfd2d0-5efc-4b41-b61b-1fc63c878324/Capture_dcran_2024-05-21_112950.png)
+
+2.2) select the initial data format
+
+2.3) select the format into which the data should be converted, depending on your requirements take "Json-LD" or "RDF/XML".
+
+![Capture d'écran 2024-05-21 113845.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e50dcbda-e53b-4724-ba7b-af7e05132926/75bd2b33-f430-46c1-a8f6-66ec6362cf7c/Capture_dcran_2024-05-21_113845.png)
+
+2.4) then press "submit
+
+2.5) A new menu opens at the bottom of the page, framed with your converted code.
