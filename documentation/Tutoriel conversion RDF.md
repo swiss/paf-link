@@ -74,7 +74,7 @@ go to [Easy RDF](https://www.easyrdf.org/) and click on "Converter" in the menu 
 :acknowledgement-1 a prov:Entity;
     prov:wasGeneratedBy :acknowledgement-activity-1.
 ```
-Output data : 
+#### Output data : 
 
 ```<?xml version="1.0" encoding="utf-8" ?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
