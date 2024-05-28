@@ -28,29 +28,30 @@ go to [Easy RDF](https://www.easyrdf.org/) and click on "Converter" in the menu 
 ### 2.6) Result
 
 #### Input data : 
+```jsx
 @prefix : <https://example.com/> .
 @prefix paf: <https://paf.link/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix schema: <http://schema.org/> .
 
-:consultation-activity-1 a paf:ConsultationlActivity;
+:information-activity-1 a paf:InformationActivity;
     prov:qualifiedAssociation [
         a prov:Association;
-        prov:agent :consultation-submitter-1;
-        prov:hadRole paf:ConsultationlSubmitter;
+        prov:agent :information-submitter-1;
+        prov:hadRole paf:InformationSubmitter;
     ];
     prov:qualifiedAssociation [
         a prov:Association;
-        prov:agent :consultation-receiver-1;
-        prov:hadRole paf:ConsultationReceiver;
+        prov:agent :information-receiver-1;
+        prov:hadRole paf:InformationReceiver;
     ];
-    prov:used :consultation-1;
+    prov:used :information-1;
     prov:wasInformedBy :parlamentary-activity-1;
     prov:wasInformedBy :executive-activity-1;
     prov:wasInformedBy :law-activity-1.
 
 :proposal-1 a prov:Entity;
-    prov:wasGeneratedBy :consultation-activity-1.
+    prov:wasGeneratedBy :information-activity-1.
 
 :parlamentary-activity-1 a prov:Activity;
     schema:identifier "23.0123".
@@ -61,17 +62,18 @@ go to [Easy RDF](https://www.easyrdf.org/) and click on "Converter" in the menu 
 :law-activity-1 a prov:Activity;
     schema:identifier "SR21.1".
 
-:decision-activity-1 a paf:CommentActivity;
+:acknowledgemen-activity-1 a paf:AcknowledgementActivity;
     prov:qualifiedAssociation [
         a prov:Association;
-        prov:agent :comment-maker-1;
-        prov:hadRole paf:CommentMaker;
+        prov:agent :acknowledgement-maker-1;
+        prov:hadRole paf:AcknowledgemetnMaker;
     ];
-    prov:wasInformedBy :proposal-activity-1;
-    prov:used :decision-1.
+    prov:wasInformedBy :information-activity-1;
+    prov:used :acknowledgement-1.
 
-:decision-1 a prov:Entity;
-    prov:wasGeneratedBy :decision-activity-1.
+:acknowledgement-1 a prov:Entity;
+    prov:wasGeneratedBy :acknowledgement-activity-1.
+```
 
 
 # Tutorial RDF to XML
