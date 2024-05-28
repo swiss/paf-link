@@ -1,4 +1,4 @@
-# Tutorial RDF to JSON
+# Tutorial RDF to XML
 
 ## Step 1:
 
@@ -142,4 +142,14 @@ go to [Easy RDF](https://www.easyrdf.org/) and click on "Converter" in the menu 
 
 </rdf:RDF>
 ```
-# Tutorial RDF to XML
+# Tutorial RDF to JSON
+
+## Step 1:
+go to [Easy RDF]([https://www.easyrdf.org/](https://json-ld.org/)) and click on "Playground" in the menu bar 
+
+## Step 2:
+### 2.1) Add data in the space provided.
+<figure id="figure">
+  <img src="https://github.com/swiss/paf-link/blob/main/img/JSON-LD%201.png" />
+</figure>
+
