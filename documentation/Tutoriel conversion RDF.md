@@ -25,4 +25,53 @@ go to [Easy RDF](https://www.easyrdf.org/) and click on "Converter" in the menu 
 
 ### 2.5) A new menu opens at the bottom of the page, framed with your converted code.
 
+### 2.6) Result
+
+#### Input data : 
+@prefix : <https://example.com/> .
+@prefix paf: <https://paf.link/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+
+:consultation-activity-1 a paf:ConsultationlActivity;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :consultation-submitter-1;
+        prov:hadRole paf:ConsultationlSubmitter;
+    ];
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :consultation-receiver-1;
+        prov:hadRole paf:ConsultationReceiver;
+    ];
+    prov:used :consultation-1;
+    prov:wasInformedBy :parlamentary-activity-1;
+    prov:wasInformedBy :executive-activity-1;
+    prov:wasInformedBy :law-activity-1.
+
+:proposal-1 a prov:Entity;
+    prov:wasGeneratedBy :consultation-activity-1.
+
+:parlamentary-activity-1 a prov:Activity;
+    schema:identifier "23.0123".
+
+:executive-activity-1 a prov:Activity;
+    schema:identifier "321".
+
+:law-activity-1 a prov:Activity;
+    schema:identifier "SR21.1".
+
+:decision-activity-1 a paf:CommentActivity;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :comment-maker-1;
+        prov:hadRole paf:CommentMaker;
+    ];
+    prov:wasInformedBy :proposal-activity-1;
+    prov:used :decision-1.
+
+:decision-1 a prov:Entity;
+    prov:wasGeneratedBy :decision-activity-1.
+
+
 # Tutorial RDF to XML
