@@ -74,6 +74,72 @@ go to [Easy RDF](https://www.easyrdf.org/) and click on "Converter" in the menu 
 :acknowledgement-1 a prov:Entity;
     prov:wasGeneratedBy :acknowledgement-activity-1.
 ```
+Output data : 
 
+```<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:prov="http://www.w3.org/ns/prov#"
+         xmlns:schema="http://schema.org/">
 
+  <rdf:Description rdf:about="https://example.com/consultation-activity-1">
+    <rdf:type rdf:resource="https://paf.link/ConsultationlActivity"/>
+    <prov:qualifiedAssociation>
+      <prov:Association>
+        <prov:agent rdf:resource="https://example.com/consultation-submitter-1"/>
+        <prov:hadRole rdf:resource="https://paf.link/ConsultationlSubmitter"/>
+      </prov:Association>
+    </prov:qualifiedAssociation>
+
+    <prov:qualifiedAssociation>
+      <prov:Association>
+        <prov:agent rdf:resource="https://example.com/consultation-receiver-1"/>
+        <prov:hadRole rdf:resource="https://paf.link/ConsultationReceiver"/>
+      </prov:Association>
+    </prov:qualifiedAssociation>
+
+    <prov:used rdf:resource="https://example.com/consultation-1"/>
+    <prov:wasInformedBy>
+      <prov:Activity rdf:about="https://example.com/parlamentary-activity-1">
+        <schema:identifier>23.0123</schema:identifier>
+      </prov:Activity>
+    </prov:wasInformedBy>
+
+    <prov:wasInformedBy>
+      <prov:Activity rdf:about="https://example.com/executive-activity-1">
+        <schema:identifier>321</schema:identifier>
+      </prov:Activity>
+    </prov:wasInformedBy>
+
+    <prov:wasInformedBy>
+      <prov:Activity rdf:about="https://example.com/law-activity-1">
+        <schema:identifier>SR21.1</schema:identifier>
+      </prov:Activity>
+    </prov:wasInformedBy>
+
+  </rdf:Description>
+
+  <prov:Entity rdf:about="https://example.com/proposal-1">
+    <prov:wasGeneratedBy rdf:resource="https://example.com/consultation-activity-1"/>
+  </prov:Entity>
+
+  <rdf:Description rdf:about="https://example.com/decision-activity-1">
+    <rdf:type rdf:resource="https://paf.link/CommentActivity"/>
+    <prov:qualifiedAssociation>
+      <prov:Association>
+        <prov:agent rdf:resource="https://example.com/comment-maker-1"/>
+        <prov:hadRole rdf:resource="https://paf.link/CommentMaker"/>
+      </prov:Association>
+    </prov:qualifiedAssociation>
+
+    <prov:wasInformedBy rdf:resource="https://example.com/proposal-activity-1"/>
+    <prov:used>
+      <prov:Entity rdf:about="https://example.com/decision-1">
+        <prov:wasGeneratedBy rdf:resource="https://example.com/decision-activity-1"/>
+      </prov:Entity>
+    </prov:used>
+
+  </rdf:Description>
+
+</rdf:RDF>
+```
 # Tutorial RDF to XML
