@@ -153,3 +153,53 @@ go to [Easy RDF]([https://www.easyrdf.org/](https://json-ld.org/)) and click on 
   <img src="https://github.com/swiss/paf-link/blob/main/img/JSON-LD%201.png" />
 </figure>
 
+### 2.2) select the shape
+<figure id="figure">
+  <img src="https://github.com/swiss/paf-link/blob/main/img/JSON-LD%202.png" />
+</figure>
+
+### 2.3) Result
+
+#### Input data : 
+```
+{
+  "@context": "https://json-ld.org/contexts/person.jsonld",
+  "@id": "http://dbpedia.org/resource/John_Lennon",
+  "name": "John Lennon",
+  "born": "1940-10-09",
+  "spouse": "http://dbpedia.org/resource/Cynthia_Lennon"
+}
+```
+
+#### Output data : 
+
+```
+[
+  {
+    "@id": "http://dbpedia.org/resource/John_Lennon",
+    "http://schema.org/birthDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "1940-10-09"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "John Lennon"
+      }
+    ],
+    "http://schema.org/spouse": [
+      {
+        "@id": "http://dbpedia.org/resource/Cynthia_Lennon"
+      }
+    ]
+  }
+]
+
+```
+
+
+
+
+
+
