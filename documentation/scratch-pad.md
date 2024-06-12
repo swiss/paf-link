@@ -359,3 +359,28 @@ The activity of sending an information.
 
 paf:Acknowledgment is a rdfs:subClass of prov:Activity
 
+### Real World Inspired Toy Example
+
+In the following sections, examples are shown to illustrate the application of the design principles to some "real world" examples. They are still somewhat generic but are inspired by real public affairs used in Switzerland.
+
+The final example will be a fictional story that helps to understand how a parliamentary intervention with all its associated steps works: 
+
+*Mrs. Colocambiado, a member of parliament, makes a parliamentary intervention by submitting a motion to change the background color of the national flag to blue, in order to make it more modern.*
+
+This example will finally include all these necessary steps:
+
+1. Intervention Motion by a politician in the National Council. (Change the background color of the national flag to blue to look more modern).
+2. National Council accepts.
+3. Council of States accepts with a modification (color to be subject to consultation).
+4. National Council also accepts with this modification.
+5. The motion is forwarded to the Federal Chancellery.
+6. The Federal Chancellery allocates the motion to the right department.
+7. Department allocates motion to the responsible office.
+8. Office launches consultation.
+9. Cantons and political parties respond to consultation.
+10. The Office makes a proposal to amend the law to change the color to dark ochre yellow.
+11. There is a proposal from the Federal Council.
+12. The Federal Council takes a positive decision in accordance with the motion.
+13. The motion is communicated to Parliament.
+
+To form this above described example, some more basic elements of such a complex affair are laid out in the next paragraphs:

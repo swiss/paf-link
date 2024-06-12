@@ -11,38 +11,18 @@
 
 :change-activity a prov:Activity;
     prov:startedAtTime "2024-01-02";
-    prov:wasInformedBy :registration-activity;
-    prov:qualifiedAssociation [ 
-        a prov:Association;
-        prov:agent :user;
-        prov:hadRole :change-role
-    ].
+    prov:wasInformedBy :registration-activity.
 
-:identifier-entity-1 a prov:Entity;
+:base-entity-1 a prov:Entity;
     prov:wasGeneratedBy :registration-activity;
-    rdf:predicate schema:identifier;
     schema:identifier "CH-1234";
-    paf:wasComplementedBy :change-activity.
-
-:identifier-entity-2 a prov:Entity;
-    prov:wasDerivedFrom :identifier-entity-1;
-    prov:wasGeneratedBy :change-activity;
-    rdf:predicate schema:identifier;
-    schema:identifier "CH-5678".
-
-:name-entity a prov:Entity;
-    prov:wasGeneratedBy :registration-activity;
-    rdf:predicate schema:name;
-    schema:name "Colocombiado".
-
-:description-entity-1 a prov:Entity;
-    prov:wasGeneratedBy :registration-activity;
-    rdf:predicate schema:description;
+    schema:name "Colocombiado";
     schema:description "Change the color to blue";
-    prov:wasInvalidatedBy :change-activity.
+    paf:wasReplacedBy :base-entity-2.
 
-:description-entity-2 a prov:Entity;
-    prov:wasDerivedFrom :description-entity-1;
+:base-entity-2 a prov:Entity;
     prov:wasGeneratedBy :change-activity;
-    rdf:predicate schema:description;
-    schema:description "Change the color to red".
+    schema:identifier "CH-1234", "CH-5678";
+    schema:name "Colocombiado";
+    schema:description "Change the color to red";
+    paf:replaced :base-entity-1.

@@ -13,19 +13,29 @@
 :base-entity a prov:Entity;
     prov:wasGeneratedBy :registration-activity;
     schema:identifier "CH-1234";
-    schema:name "Colocambiado";
-    schema:description "Change background color of Swiss national flag to blue"@en;
-    schema:description "Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau"@de;
-    schema:description "Modifica il colore di sfondo della bandiera nazionale svizzera in blu"@it;
-    schema:description "Modifiez la couleur de fond du drapeau national suisse en bleu"@fr.
+    schema:name "More Cheese for Everyone";
+    schema:description "The federal council must develop a plan to produce more cheese."@en.
+
+:proposal-creation-activity a prov:Activity;
+    prov:wasInformedBy :registration-activity;
+    prov:startedAtTime "2024-01-02T12:00:00Z"^^xsd:dateTime;
+    prov:used :base-entity;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :federal-council;
+        prov:hadRole paf:ProposalCreator].
+
+:proposal-entity a prov:Entity;
+    prov:wasGeneratedBy :proposal-creation-activity;
+    paf:proposal "The federal council will build a federal cheese university."@en.
 
 :proposal-activity a prov:Activity;
     prov:wasInformedBy :registration-activity;
     prov:startedAtTime "2024-01-02T12:00:00Z"^^xsd:dateTime;
-    prov:used :base-entity;
+    prov:used :base-entity, :proposal-entity;
     prov:qualifiedAssociation [ 
         a prov:Association; 
-        prov:agent :Colocambiado;
+        prov:agent :federal-council;
         prov:hadRole paf:ProposalSubmitter];
     prov:qualifiedAssociation [
         a prov:Association;
@@ -35,7 +45,7 @@
 :decision-activity a prov:Activity;
     prov:wasInformedBy :proposal-activity;
     prov:startedAtTime: "2024-01-03T12:00:00Z"^^xsd:dateTime;
-    prov:used :base-entity;
+    prov:used :base-entity, :proposal-entity;
     prov:qualifiedAssociation [
         a prov:Association;
         prov:agent :national-council;
@@ -43,6 +53,6 @@
 
 :decision-entity a prov:Entity;
     prov:wasGeneratedBy :decision-activity;
-    paf:decision paf:Accepted;
-    paf:voteYes 130;
-    paf:voteNo 70.
+    paf:decision paf:Rejected;
+    paf:voteYes 0;
+    paf:voteNo 200.
