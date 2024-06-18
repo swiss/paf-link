@@ -5,24 +5,38 @@
 @prefix schema: <http://schema.org/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
-:registration-activity a prov:Activity;
+:registration-activity-1 a paf:RegistrationActivity;
     prov:startedAtTime "2024-01-01".
 
-:change-activity a prov:Activity;
-    prov:startedAtTime "2024-01-02";
-    prov:wasInformedBy :registration-activity.
-
-:base-entity-1 a prov:Entity;
-    prov:wasGeneratedBy :registration-activity;
+:CH-1234 a paf:IdentifierEntity;
     schema:identifier "CH-1234";
+    prov:wasGeneratedBy :registration-activity-1.
+
+:base-entity-1 a paf:BaseEntity;
     schema:name "Colocombiado";
     schema:description "Change the color to blue";
-    paf:wasReplacedBy :base-entity-2.
+    prov:wasGeneratedBy :registration-activity-1.
 
-:base-entity-2 a prov:Entity;
-    prov:wasGeneratedBy :change-activity;
-    schema:identifier "CH-1234", "CH-5678";
+:registration-activity-2 a paf:RegistrationActivity;
+    prov:startedAtTime "2024-01-02";
+    prov:wasInformedBy :registration-activity-1;
+    prov:used :CH-1234, :base-entity-1.
+
+:CH-5678 a paf:IdentifierEntity;
+    schema:identifier "CH-5678";
+    prov:wasGeneratedBy :registration-activity-2.
+
+:base-entity-2 a paf:BaseEntity;
     schema:name "Colocombiado";
     schema:description "Change the color to red";
-    paf:replaced :base-entity-1.
+    prov:wasGeneratedBy :registration-activity-2.
+
+# class definitions
+
+paf:RegistrationActivity owl:subClassOf prov:Activity.
+
+paf:IdentifierEntity owl:subClassOf prov:Entity.
+paf:BaseEntity owl:subClassOf prov:Entity.

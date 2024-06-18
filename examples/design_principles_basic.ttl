@@ -6,23 +6,27 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dcterm: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
-:registration-activity a prov:Activity;
+:registration-activity a paf:RegistrationActivity;
     prov:startedAtTime "2024-01-01T12:00:00Z"^^xsd:dateTime.
 
-:base-entity a prov:Entity;
-    prov:wasGeneratedBy :registration-activity;
+:CH-1234 a paf:IdentifierEntity;
     schema:identifier "CH-1234";
+    prov:wasGeneratedBy :registration-activity.
+
+:base-entity a paf:BaseEntity;
+    prov:wasGeneratedBy :registration-activity;
     schema:name "Colocambiado";
     schema:description "Change background color of Swiss national flag to blue"@en;
     schema:description "Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau"@de;
     schema:description "Modifica il colore di sfondo della bandiera nazionale svizzera in blu"@it;
     schema:description "Modifiez la couleur de fond du drapeau national suisse en bleu"@fr.
 
-:proposal-activity a prov:Activity;
+:proposal-activity a paf:ProposalActivity;
     prov:wasInformedBy :registration-activity;
     prov:startedAtTime "2024-01-02T12:00:00Z"^^xsd:dateTime;
-    prov:used :base-entity;
+    prov:used :CH-1234, :base-entity;
     prov:qualifiedAssociation [ 
         a prov:Association; 
         prov:agent :Colocambiado;
@@ -32,17 +36,27 @@
         prov:agent :national-council;
         prov:hadRole paf:ProposalReceiver].
 
-:decision-activity a prov:Activity;
+:decision-activity a paf:DecisionActivity;
     prov:wasInformedBy :proposal-activity;
     prov:startedAtTime: "2024-01-03T12:00:00Z"^^xsd:dateTime;
-    prov:used :base-entity;
+    prov:used :CH-1234, :base-entity;
     prov:qualifiedAssociation [
         a prov:Association;
         prov:agent :national-council;
         prov:hadRole paf:DecisionMaker].
 
-:decision-entity a prov:Entity;
+:decision-entity a paf:DecisionEntity;
     prov:wasGeneratedBy :decision-activity;
     paf:decision paf:Accepted;
     paf:voteYes 130;
     paf:voteNo 70.
+
+# class definitions
+
+paf:RegistrationActivity owl:subClassOf prov:Activity.
+paf:ProposalActivity owl:subClassOf prov:Activity.
+paf:DecisionActivity owl:subClassOf prov:Activity.
+
+paf:IdentifierEntity owl:subClassOf prov:Entity.
+paf:BaseEntity owl:subClassOf prov:Entity.
+paf:DecisionEntity owl:subClassOf prov:Entity.
