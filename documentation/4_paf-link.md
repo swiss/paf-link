@@ -46,14 +46,14 @@ A special case is an **identifier entity** that represent the identifier of a sp
 
 To ensure **complete traceability**, entities should not be changed or deleted after their creation. If a change is necessary, a new entity should be created. Connecting such entities to their predecessors could be advantageous in terms of convenience but is not a requirement by the paf.link design principles.
 
-Entities are not directly linked to agents. This can only be done via the corresponding activity. Furthermore, entities can not act at the same time as input and output entities of a specific activity.
-
 <figure id="entities_succession">
   <img src="img/entities_succession.svg" alt="Changing Entities" />
   <figcaption>
-    Changing entities by replacing it. Validity symbolised by colors.
+    Changing entities by replacing it. Validity symbolised by colors. Links between entities added for convenience.
   </figcaption>
 </figure>
+
+Entities are not directly linked to agents. This can only be done via the corresponding activity. Furthermore, entities can not act at the same time as input and output entities of a specific activity.
 
 ### Subclasses of PROV-O
 
