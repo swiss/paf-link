@@ -5,7 +5,9 @@ Public administrations often handle their affairs in similar ways, revealing rec
 
 The main goal of the Public Affairs Schema (paf) is to provide a common data model for public affairs that is interoperable with all levels of public administration, while also capturing the specific details of each administration. Since it is unlikely that an entire administration will adopt a common data model all at once, the secondary goal is to ensure that an independent step-by-step adoption at different areas and levels is possible, ultimately converging to a common data model in the long run.
 
-Once the described data model is in place and widely used, it will allow for the publication and inquiry of a multitude of use cases, ultimately providing enhanced transparency and, in turn, increasing trust in the functioning of public administration.
+Once the described data model is in place and widely used, it will allow for the publication and inquiry of a multitude of use cases, ultimately providing enhanced transparency and, in turn, increasing trust in the functioning of public administration. The focus on an interoperable data model by design will further reduce mapping and transformation resource which leads to overal higher efficiency.
+
+Ultimately, by making public administration information easier accessible to both the administration itself and third parties, the schema enhances citizens' ability to form informed opinions. This increased transparency strengthens the democratic system.
 
 ## Main Features
 
