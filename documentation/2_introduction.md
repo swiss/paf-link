@@ -1,7 +1,7 @@
 # Introduction
 
 ## Problem Declaration and Goal
-Public administrations often handle their affairs in similar ways, revealing recurring patterns. However, the specifics of how each country's government and its administrative levels manage these affairs can vary significantly. The approach described here focuses on identifying the smallest common core that can describe a simple activity (or event). It provides a framework to link and connect these activities, offering insights into the functioning of public affairs both at an overview level and in capturing the detailed differences between various administrations.
+Public administrations often handle their affairs in similar ways, revealing recurring patterns. However, the specifics of how each country's government and its administrative levels manage these affairs can vary significantly. The approach described here focuses on identifying the smallest common core that can describe an activity (or event). It provides a framework to link and connect these activities, offering insights into the functioning of public affairs both at an overview level and in capturing the detailed differences between various administrations.
 
 The main goal of the Public Affairs Schema (paf) is to provide a common data model for public affairs that is interoperable with all levels of public administration, while also capturing the specific details of each administration. Since it is unlikely that an entire administration will adopt a common data model all at once, the secondary goal is to ensure that an independent step-by-step adoption at different areas and levels is possible, ultimately converging to a common data model in the long run.
 
