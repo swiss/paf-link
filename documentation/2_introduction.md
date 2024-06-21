@@ -9,15 +9,15 @@ Once the described data model is in place and widely used, it will allow for the
 
 ## Main Features
 
-*Core Simplicity and Extensibility*: The core of the Public Affairs Schema (paf.link) is designed to be simple, based on activities making it easy to understand and implement. It can be extended to accommodate a wide range of public affairs sub-types and capture more fine-grained aspects of public affair processes based on specific activities.
+**Core Simplicity and Extensibility**: The core of the Public Affairs Schema (paf.link) is designed to be simple, based on activities making it easy to understand and implement. It can be extended to accommodate a wide range of public affairs sub-types and capture more fine-grained aspects of public affair processes based on specific activities.
 
-*Independent yet Unified Development*: Independent development in different areas of the overall public affair process is supported, with a path by design for future unification. This includes different levels within public administrations.
+**Independent yet Unified Development**: Independent development in different areas of the overall public affair process is supported, with a path by design for future unification. This includes different levels within public administrations.
 
-*Defined Process Connections*: There is a well-defined method for connecting different public affairs processes, such as linking parliamentary motions with executive actions and law text publications.
+**Defined Process Connections**: There is a well-defined method for connecting different public affairs processes, such as linking parliamentary motions with executive actions and law text publications. To map to underlying data management systems one ore multiple object identifiers can be used to express the connection of an activity to a process.
 
-*Inter-organizational and System Exchange*: The schema focuses the exchange of information between organizations and systems, and only in a second priority provides guidelines on how to store data at rest. It supports both document-based processes (e.g., PDFs) and structured data processes, allowing for flexible information management.
+**Inter-organizational and System Exchange**: The schema focuses the exchange of information between organizations and systems, and only in a second priority provides guidelines on how to store data at rest. It supports both document-based processes (e.g., PDFs) and structured data processes, allowing for flexible information management.
 
-*Multi-level Analysis and Querying*: The schema enables analysis and querying at various levels, facilitating detailed insights into public affairs processes.
+**Multi-level Analysis and Querying**: The schema enables analysis and querying at various levels, facilitating detailed insights into public affairs processes.
 
 
 
