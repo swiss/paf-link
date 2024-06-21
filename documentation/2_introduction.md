@@ -32,7 +32,11 @@ Once the described data model is in place and widely used, it will allow for the
 
 
 ## Layered Design
-As it is good practice, the paf.link schema strives for reuse of existing vocabulary. Using PROV-O as a **base layer** gives paf.link a robust and widespread foundation. As PROV-O by design is very generic, paf.link postulates on a **second layer** some **design principles** to model public affairs from the basic elements of PROV-O. Furthermore, some additional classes and predicates are defined in this layer within the context of public affairs. This second layer is still somehow generic. Therefore a **third layer** as an application profile for real world public affairs is created to allow modelling very specific public affairs for certain realms of public administration. In this application profile, all elements have to be declared whether they are mandatory (and in which cardinality) or if they are optional.
+As it is good practice, the paf.link schema strives for reuse of existing vocabulary. Using PROV-O as a **base layer** gives paf.link a robust and widespread foundation. As PROV-O by design is very generic, the Public Affairs Schema (paf.link) provides on a **second layer** a framework of **design principles** to model public affairs based on the core elements of PROV-O. Additional classes and predicates are defined in this layer within the context of public affairs. The second layer is generic and strives for interoperability of public administrations between countries and and different levels of adminstrations.
+
+The **third layer** provides naming and classes for the concrete instances of public affairs at a specific level of the public adminstration. It is created to allow the modeling specific public affairs for certain realms of public administration. On the third layer, all elements have to be declared whether they are mandatory (and in which cardinality) or if they are optional.
+
+The three layers elements are connected by sub-classing the next hihgher layer.
 
 <figure id="figure">
   <img src="img/layers.svg" alt="Layered Design" />
