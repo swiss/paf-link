@@ -9,31 +9,33 @@ Once the described data model is in place and widely used, it will allow for the
 
 Ultimately, by making public administration information easier accessible to both the administration itself and third parties, the schema enhances citizens' ability to form informed opinions. This increased transparency strengthens the democratic system.
 
-## Main Features
+### One authorative data model will not fit.
+-> 
 
-**Core Simplicity and Extensibility**: The core of the Public Affairs Schema (paf.link) is designed to be simple, based on activities making it easy to understand and implement. It can be extended to accommodate a wide range of public affairs sub-types and capture more fine-grained aspects of public affair processes based on specific activities.
+### Perspectives and dynamic history. 
+-> what is activity based: perspectives on the same affair are important (example on the motion which changes stati from pd to bk)
+
+The Public Affairs Schema (paf.link) is designed to be activity-based (or event-based) to avoid confusion regarding perspectives. Different public affairs can express different statuses in various organizations simultaneously.
 -> vs Business Objects 
+
+## Main Features
+**Core Simplicity and Extensibility**: The core of the Public Affairs Schema (paf.link) is designed to be simple, based on activities making it easy to understand and implement. It can be extended to accommodate a wide range of public affairs sub-types and capture more fine-grained aspects of public affair processes based on specific activities.
 
 **Independent yet Unified Development**: Independent development in different areas of the overall public affair process is supported, with a path by design for future unification. This includes different levels within public administrations.
 -> how to grow organically
+  *Support for Independent Development*: The schema enables independent development, allowing different parts of the public affair process to be developed separately with the full integration as final goal.
 
 **Defined Process Connections**: There is a well-defined method for connecting different public affairs processes, such as linking parliamentary motions with executive actions and law text publications. To map to underlying data management systems one or multiple object identifiers can be used to express the connection of an activity to a process.
 -> future proof
 
-  **Inter-organizational and System Exchange**: The schema focuses the exchange of information between organizations and systems, and only in a second priority provides guidelines on how to store data at rest. It supports both document-based processes (e.g., PDFs) and structured data processes, allowing for flexible information management.
-  -> co-existence between document based and structured information
+    **Inter-organizational and System Exchange**: The schema focuses the exchange of information between organizations and systems, and only in a second priority provides guidelines on how to store data at rest. It supports both document-based processes (e.g., PDFs) and structured data processes, allowing for flexible information management.
+    -> co-existence between document based and structured information
 
 **Multi-level Analysis and Querying**: The schema enables analysis and querying at various levels, facilitating detailed insights into public affairs processes.
-  -> multiple levels federal
+    -> multiple levels federal
+   *Shared Concepts for Interoperability*: The use of shared concepts within the schema drives interoperability between different organizations and systems.
+   *Extensible in Depth and Width*: The schema allows for extensions both in depth, by detailing more specific sub-processes, and in width, by including additional parts of the public affair process.
 
-## High-level Design Decisions
-*Event-Based*: The Public Affairs Schema (paf.link) is designed to be event-based to avoid confusion regarding perspectives. Different public affairs can express different statuses in various organizations simultaneously.
-
-*Extensible in Depth and Width*: The schema allows for extensions both in depth, by detailing more specific sub-processes, and in width, by including additional parts of the public affair process.
-
-*Support for Independent Development*: The schema enables independent development, allowing different parts of the public affair process to be developed separately with the full integration as final goal.
-
-*Shared Concepts for Interoperability*: The use of shared concepts within the schema drives interoperability between different organizations and systems.
 
 
 ## Layered Design
