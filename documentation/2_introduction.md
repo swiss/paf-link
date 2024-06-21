@@ -1,31 +1,37 @@
 # Introduction
 
 ## Problem Declaration and Goal
-[TODO formulate in prose]
+Public administrations often handle their affairs in similar ways, revealing recurring patterns. However, the specifics of how each country's government and its administrative levels manage these affairs can vary significantly. The approach described here focuses on identifying the smallest common core that can describe a simple activity (or event). It provides a framework to link and connect these activities, offering insights into the functioning of public affairs both at an overview level and in capturing the detailed differences between various administrations.
+
+The main goal of the Public Affairs Schema (paf) is to provide a common data model for public affairs that is interoperable with all levels of public administration, while also capturing the specific details of each administration. Since it is unlikely that an entire administration will adopt a common data model all at once, the secondary goal is to ensure that an independent step-by-step adoption at different areas and levels is possible, ultimately converging to a common data model in the long run.
+
+Once the described data model is in place and widely used, it will allow for the publication and inquiry of a multitude of use cases, ultimately providing enhanced transparency and, in turn, increasing trust in the functioning of public administration.
 
 ## Main Features
 
-* Simple in its core.
-* Extensible to a variety of sub-types of public affairs.
-* Extensible to more fine grained aspects of public affair processes, base on activities.
-* Defined way how to connected the different processes of public affairs. (E.g. parlament motion, with executive affair, with law text publication, etc.)
-* Focus on exchange between organisations and systems. (With a guide-line on how to store at rest.)
-* Possible to describe document based processes, and also structured data processes. (E.g. it is possible to connect documents, like PDFs to the Affairs, but also have the information also or only hold as structured data.)
-* Possibility to analyze and query on the different levels.
-* Independent development in different corners of the overall public affair process is possible with a future unification. (Different levels inside the Governement, but also Lobby Organisations, Journalists etc. )
+*Core Simplicity and Extensibility*: The core of the Public Affairs Schema (paf.link) is designed to be simple, based on activities making it easy to understand and implement. It can be extended to accommodate a wide range of public affairs sub-types and capture more fine-grained aspects of public affair processes based on specific activities.
 
-## Design Decisions
-[TODO formulate in prose]
+*Independent yet Unified Development*: Independent development in different areas of the overall public affair process is supported, with a path by design for future unification. This includes different levels within public administrations.
 
-* Event Based
-  * To avoid confusion on perspective. Different Affairs hold different stati in organisations at the same time. 
-  * To allow extension in depth (more detailed sub-process) and width (to include more parts of a public affair process).
-  * To enable independent development.
-* Shared concepts as driver for interoperability.
-* A schema build on RDF, with deterministic transformation to XML and JSON representations.
+*Defined Process Connections*: There is a well-defined method for connecting different public affairs processes, such as linking parliamentary motions with executive actions and law text publications.
+
+*Inter-organizational and System Exchange*: The schema focuses the exchange of information between organizations and systems, and only in a second priority provides guidelines on how to store data at rest. It supports both document-based processes (e.g., PDFs) and structured data processes, allowing for flexible information management.
+
+*Multi-level Analysis and Querying*: The schema enables analysis and querying at various levels, facilitating detailed insights into public affairs processes.
+
+
+
+## High-level Design Decisions
+*Event-Based*: The Public Affairs Schema (paf.link) is designed to be event-based to avoid confusion regarding perspectives. Different public affairs can express different statuses in various organizations simultaneously.
+
+*Extensible in Depth and Width*: The schema allows for extensions both in depth, by detailing more specific sub-processes, and in width, by including additional parts of the public affair process.
+
+*Support for Independent Development*: The schema enables independent development, allowing different parts of the public affair process to be developed separately with the full integration as final goal.
+
+*Shared Concepts for Interoperability*: The use of shared concepts within the schema drives interoperability between different organizations and systems.
+
 
 ## Layered Design
-
 As it is good practice, the paf.link schema strives for reuse of existing vocabulary. Using PROV-O as a **base layer** gives paf.link a robust and widespread foundation. As PROV-O by design is very generic, paf.link postulates on a **second layer** some **design principles** to model public affairs from the basic elements of PROV-O. Furthermore, some additional classes and predicates are defined in this layer within the context of public affairs. This second layer is still somehow generic. Therefore a **third layer** as an application profile for real world public affairs is created to allow modelling very specific public affairs for certain realms of public administration. In this application profile, all elements have to be declared whether they are mandatory (and in which cardinality) or if they are optional.
 
 <figure id="figure">
