@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:prov="http://www.w3.org/ns/prov#"
+         xmlns:schema="http://schema.org/"
+         xmlns:ns0="https://paf.link/">
+
+  <rdf:Description rdf:about="https://example.com/registration-activity">
+    <prov:startedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-01T12:00:00Z</prov:startedAtTime>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://example.com/CH-1234">
+    <schema:identifier>CH-1234</schema:identifier>
+    <prov:wasGeneratedBy rdf:resource="https://example.com/registration-activity"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://example.com/base-entity">
+    <prov:wasGeneratedBy rdf:resource="https://example.com/registration-activity"/>
+    <schema:name>Colocambiado</schema:name>
+    <schema:description xml:lang="en">Change background color of Swiss national flag to blue</schema:description>
+    <schema:description xml:lang="de">Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau</schema:description>
+    <schema:description xml:lang="it">Modifica il colore di sfondo della bandiera nazionale svizzera in blu</schema:description>
+    <schema:description xml:lang="fr">Modifiez la couleur de fond du drapeau national suisse en bleu</schema:description>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://example.com/proposal-activity">
+    <prov:wasInformedBy rdf:resource="https://example.com/registration-activity"/>
+    <prov:startedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-02T12:00:00Z</prov:startedAtTime>
+    <prov:used rdf:resource="https://example.com/CH-1234"/>
+    <prov:used rdf:resource="https://example.com/base-entity"/>
+    <prov:qualifiedAssociation>
+      <prov:Association>
+        <prov:agent rdf:resource="https://example.com/Colocambiado"/>
+        <prov:hadRole rdf:resource="https://paf.link/ProposalSubmitter"/>
+      </prov:Association>
+    </prov:qualifiedAssociation>
+
+    <prov:qualifiedAssociation>
+      <prov:Association>
+        <prov:agent rdf:resource="https://example.com/national-council"/>
+        <prov:hadRole rdf:resource="https://paf.link/ProposalReceiver"/>
+      </prov:Association>
+    </prov:qualifiedAssociation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://example.com/decision-activity">
+    <prov:wasInformedBy rdf:resource="https://example.com/proposal-activity"/>
+    <prov:startedAtTime: rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-03T12:00:00Z</prov:startedAtTime:>
+    <prov:used rdf:resource="https://example.com/CH-1234"/>
+    <prov:used rdf:resource="https://example.com/base-entity"/>
+    <prov:qualifiedAssociation>
+      <prov:Association>
+        <prov:agent rdf:resource="https://example.com/national-council"/>
+        <prov:hadRole rdf:resource="https://paf.link/DecisionMaker"/>
+      </prov:Association>
+    </prov:qualifiedAssociation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://example.com/decision-entity">
+    <prov:wasGeneratedBy rdf:resource="https://example.com/decision-activity"/>
+    <ns0:decision rdf:resource="https://paf.link/Accepted"/>
+    <ns0:voteYes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">130</ns0:voteYes>
+    <ns0:voteNo rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</ns0:voteNo>
+  </rdf:Description>
+
+</rdf:RDF>
