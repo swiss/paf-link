@@ -15,7 +15,7 @@
     schema:identifier "CH-1234";
     prov:wasGeneratedBy :registration-activity.
 
-:base-entity a paf:BaseEntity;
+:registration-entity a paf:RegistrationEntity;
     prov:wasGeneratedBy :registration-activity;
     schema:name "Colocambiado";
     schema:description "Change background color of Swiss national flag to blue"@en;
@@ -26,7 +26,7 @@
 :proposal-activity a paf:ProposalActivity;
     prov:wasInformedBy :registration-activity;
     prov:startedAtTime "2024-01-02T12:00:00Z"^^xsd:dateTime;
-    prov:used :CH-1234, :base-entity;
+    prov:used :CH-1234, :registration-entity;
     prov:qualifiedAssociation [ 
         a prov:Association; 
         prov:agent :Colocambiado;
@@ -39,7 +39,7 @@
 :decision-activity a paf:DecisionActivity;
     prov:wasInformedBy :proposal-activity;
     prov:startedAtTime: "2024-01-03T12:00:00Z"^^xsd:dateTime;
-    prov:used :CH-1234, :base-entity;
+    prov:used :CH-1234, :registration-entity;
     prov:qualifiedAssociation [
         a prov:Association;
         prov:agent :national-council;
@@ -58,5 +58,5 @@ paf:ProposalActivity owl:subClassOf prov:Activity.
 paf:DecisionActivity owl:subClassOf prov:Activity.
 
 paf:IdentifierEntity owl:subClassOf prov:Entity.
-paf:BaseEntity owl:subClassOf prov:Entity.
+paf:RegistrationEntity owl:subClassOf prov:Entity.
 paf:DecisionEntity owl:subClassOf prov:Entity.

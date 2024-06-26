@@ -15,7 +15,7 @@
     schema:identifier "CH-1234";
     prov:wasGeneratedBy :registration-activity-1.
 
-:base-entity-1 a paf:BaseEntity;
+:registration-entity-1 a paf:RegistrationEntity;
     schema:name "Colocombiado";
     schema:description "Change the color to blue";
     prov:wasGeneratedBy :registration-activity-1.
@@ -23,13 +23,9 @@
 :registration-activity-2 a paf:RegistrationActivity;
     prov:startedAtTime "2024-01-02";
     prov:wasInformedBy :registration-activity-1;
-    prov:used :CH-1234, :base-entity-1.
+    prov:used :CH-1234.
 
-:CH-5678 a paf:IdentifierEntity;
-    schema:identifier "CH-5678";
-    prov:wasGeneratedBy :registration-activity-2.
-
-:base-entity-2 a paf:BaseEntity;
+:base-entity-2 a paf:RegistrationEntity;
     schema:name "Colocombiado";
     schema:description "Change the color to red";
     prov:wasGeneratedBy :registration-activity-2.
@@ -39,4 +35,4 @@
 paf:RegistrationActivity owl:subClassOf prov:Activity.
 
 paf:IdentifierEntity owl:subClassOf prov:Entity.
-paf:BaseEntity owl:subClassOf prov:Entity.
+paf:RegistrationEntity owl:subClassOf prov:Entity.
