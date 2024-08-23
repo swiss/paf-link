@@ -95,9 +95,7 @@ The following example illustrates a very basic affair based on three activities.
 In the following extended affair example, the base entity alone is not enough to form the proposal and therefore, the proposal is built by a separate proposal creation activity. Because an activity can not create and use an entity at the same time, a distinct proposal creation activity besides the actual proposal activity is needed.
 
 <aside class="example" title="Design Principles: Extended Affair">
-    <pre class="turtle">
-        <section data-include-format="text" data-include="../examples/design_principles_extended.ttl" data-include-replace="true"></section>
-    </pre>
+        Full turtle listing for: <a href="https://github.com/swiss/paf-link/blob/main/examples/design_principles_extended.ttl" target="_blank">extended affair</a>.
 </aside>
 
 <figure id="design_principles_extended">
@@ -112,9 +110,7 @@ In the following extended affair example, the base entity alone is not enough to
 The following example shows how a second **registration activity** changes an existing public affair. The change involves adding a second identifier entity and replacing the description from the base entity.
 
 <aside class="example" title="Design Principles: Changing Entities">
-    <pre class="turtle">
-        <section data-include-format="text" data-include="../examples/design_principles_change.ttl" data-include-replace="true"></section>
-    </pre>
+        Full turtle listing for: <a href="https://github.com/swiss/paf-link/blob/main/examples/design_principles_change.ttl" target="_blank">changing entities</a>.
 </aside>
 
 <figure id="design_principles_change">
