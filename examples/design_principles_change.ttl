@@ -4,6 +4,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix schema: <http://schema.org/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterm: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -32,7 +33,7 @@
 
 # class definitions
 
-paf:RegistrationActivity owl:subClassOf prov:Activity.
+paf:RegistrationActivity rdfs:subClassOf prov:Activity.
 
-paf:IdentifierEntity owl:subClassOf prov:Entity.
-paf:RegistrationEntity owl:subClassOf prov:Entity.
+paf:IdentifierEntity rdfs:subClassOf prov:Entity.
+paf:RegistrationEntity rdfs:subClassOf prov:Entity.
