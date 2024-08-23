@@ -77,3 +77,7 @@ If a relation between entities, activities and actors can not be adequately desc
 ## Linking Direction
 
 PROV-O is activity based and all activities have a strong relation to a temporal dimension. In PROV-O, entities, activities and agents are connected **backwards in time**. So items that happen later, link to their predecessors and not vice versa. If it is necessary to have also a forward in time link, PROV-O has some [recommendations](https://www.w3.org/TR/prov-o/#inverse-names-table) for these inverse names.
+
+## Reusing PROV-O Classes
+
+The paf.link schema does not use the PROV-O classes directly but defines its own subclasses of the PROV-O schema. In the same way, the application profiles of paf.link (e.g. ch.paf.link) define subclasses of paf.link.
