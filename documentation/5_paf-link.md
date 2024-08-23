@@ -6,13 +6,13 @@ Public affairs often come in the form of binoms: Proposal and decision, consulta
 
 ## Proposal & Decision Activities
 
-The affair of a proposal and decision means that someone or some body is formally asking for a decision (proposal) and another authoritative body is deciding on this proposal. Such an affair contains at least the following activities:
+The affair of a proposal and decision means that someone or some body is formally proposing something and another authoritative body is deciding on this proposal. Such an affair contains at least the following activities:
 
 - registration activity
 - proposal activity
 - decision activity
 
-The registration activity is needed to create the entities that are afterwards bundled by the proposal activity to form the actual proposal. The proposal activity does not create new entities. The reason for this design decision ist that the actual proposal can be queried easily by only looking for all entities that are used by the proposal entity and not have to look for entities that are used OR created by the proposal activity.
+The registration activity is needed to create the entities that are afterwards bundled by the proposal activity to form the actual proposal. The proposal activity does not create new entities.
 
 The decision activity again uses entities to the decide on. These can and normally will be the entities that the proposal used but there is the possibility that the deciding body wants to change the proposal with the help of an upstream activity (e.g. some kind of change activity) and then the decision activity will use these newly created entities for the decision. Whereas the proposal activity must not create new entities, the decision activity will create a result entity stating the result and possibly some details of the decision.
 
