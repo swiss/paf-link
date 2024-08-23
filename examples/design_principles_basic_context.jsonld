@@ -1,15 +1,22 @@
 
 {
     "@context": {
+        
         "prov": "http://www.w3.org/ns/prov#",
         "schema": "http://schema.org/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "dcterms": "http://purl.org/dc/terms/",
         "paf": "https://paf.link/",
         "example": "https://example.com/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
         "identifier": "http://schema.org/identifier",
         "name": "http://schema.org/name",
-        "description": "http://schema.org/description",
+
+        "description": {
+            "@id": "http://schema.org/description",
+            "@container": "@language"
+        },
         "agent": {
             "@id": "http://www.w3.org/ns/prov#agent",
             "@type": "@id"
@@ -38,14 +45,6 @@
             "@id": "http://www.w3.org/ns/prov#wasGeneratedBy",
             "@type": "@id"
         },
-        "predicate": {
-            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-            "@type": "@id"
-        },
-        "hasPart": {
-            "@id": "http://purl.org/dc/terms/hasPart",
-            "@type": "@id"
-        },
         "decision": {
             "@id": "https://paf.link/decision",
             "@type": "@id"
@@ -57,6 +56,10 @@
         "voteYes": {
             "@id": "https://paf.link/voteYes",
             "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        "subClassOf": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+            "@type": "@id"
         }
     }
 }

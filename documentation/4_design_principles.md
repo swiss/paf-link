@@ -122,22 +122,25 @@ The following example shows how a second **registration activity** changes an ex
 
 ## Transformation to JSON and XML
 
-To allow for maximum impact of the paf.link schema, the data should also be available as JSON and XML so that it can be consumed by a vide variety of technical systems. Every RDF serialization (e.g. turtle) can be transformed deterministically and lossless to JSON-LD. The resulting JSON file is quite verbose and probably does not look very familiar to a developer not accustomed to RDF. To mitigate these difficulties, JSON-LD allows the usage of some embedded context information. Using this information, the resulting JSON file looks much more familiar to a "standard" JSON.
+To allow for maximum impact of the paf.link schema, the data should also be available as JSON and XML so that it can be consumed by a vide variety of technical systems. Every RDF serialization (e.g. turtle) can be transformed deterministically and lossless to JSON-LD. The resulting JSON file is quite verbose and probably does not look very familiar to a developer not accustomed to RDF. 
 
-<aside class="example" title="JSON-LD without context information">
-    <pre class="json">
-        <section data-include-format="text" data-include="../examples/design_principles_basic.jsonld" data-include-replace="true"></section>
-    </pre>
+### Raw JSON-LD
+
+The following example shows a raw JSON-LD that was transformed from turtle from [above](#example-design-principles-basic-affair).
+
+<aside class="example" title="Raw JSON-LD without context information">
+        JSON-LD for: <a href="https://github.com/swiss/paf-link/blob/main/examples/design_principles_basic.jsonld" target="_blank">basic affair</a>.
+
 </aside>
 
+### Context
+
+To mitigate these difficulties concerning verbosity, JSON-LD allows the usage of some embedded context information. Using this information, the resulting JSON file looks much more familiar to a "standard" JSON.
+
 <aside class="example" title="JSON-LD context information">
-    <pre class="json">
-        <section data-include-format="text" data-include="../examples/design_principles_basic_context.jsonld" data-include-replace="true"></section>
-    </pre>
+  JSON-LD for: <a href="https://github.com/swiss/paf-link/blob/main/examples/design_principles_basic_context.jsonld" target="_blank">context information</a>.
 </aside>
 
 <aside class="example" title="Flattened JSON-LD using context information">
-    <pre class="json">
-        <section data-include-format="text" data-include="../examples/design_principles_basic_flattened.jsonld" data-include-replace="true"></section>
-    </pre>
+  JSON-LD for: <a href="https://github.com/swiss/paf-link/blob/main/examples/design_principles_basic_flattened.jsonld" target="_blank">flattened basic affair</a>.
 </aside>

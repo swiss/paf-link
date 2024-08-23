@@ -1,195 +1,249 @@
-{
-    "@graph": [
+[
+  {
+    "@id": "https://example.com/decision-entity",
+    "@type": [
+      "https://paf.link/DecisionEntity"
+    ],
+    "http://www.w3.org/ns/prov#wasGeneratedBy": [
       {
-        "@id": "_:b0",
-        "@type": "http://www.w3.org/ns/prov#Association",
-        "http://www.w3.org/ns/prov#agent": {
-          "@id": "https://example.com/Colocambiado"
-        },
-        "http://www.w3.org/ns/prov#hadRole": {
-          "@id": "https://paf.link/ProposalSubmitter"
-        }
+        "@id": "https://example.com/decision-activity"
+      }
+    ],
+    "https://paf.link/decision": [
+      {
+        "@id": "https://paf.link/Accepted"
+      }
+    ],
+    "https://paf.link/voteNo": [
+      {
+        "@value": 70
+      }
+    ],
+    "https://paf.link/voteYes": [
+      {
+        "@value": 130
+      }
+    ]
+  },
+  {
+    "@id": "https://paf.link/DecisionActivity",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Activity"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/CH-1234",
+    "@type": [
+      "https://paf.link/IdentifierEntity"
+    ],
+    "http://schema.org/identifier": [
+      {
+        "@value": "CH-1234"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasGeneratedBy": [
+      {
+        "@id": "https://example.com/registration-activity"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/registration-entity",
+    "@type": [
+      "https://paf.link/RegistrationEntity"
+    ],
+    "http://schema.org/description": [
+      {
+        "@language": "en",
+        "@value": "Change background color of Swiss national flag to blue"
       },
       {
-        "@id": "_:b1",
-        "@type": "http://www.w3.org/ns/prov#Association",
-        "http://www.w3.org/ns/prov#agent": {
-          "@id": "https://example.com/national-council"
-        },
-        "http://www.w3.org/ns/prov#hadRole": {
-          "@id": "https://paf.link/ProposalReceiver"
-        }
+        "@language": "de",
+        "@value": "Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau"
       },
       {
-        "@id": "_:b2",
-        "@type": "http://www.w3.org/ns/prov#Association",
-        "http://www.w3.org/ns/prov#agent": {
-          "@id": "https://example.com/national-council"
-        },
-        "http://www.w3.org/ns/prov#hadRole": {
-          "@id": "https://paf.link/DecisionMaker"
-        }
+        "@language": "it",
+        "@value": "Modifica il colore di sfondo della bandiera nazionale svizzera in blu"
       },
       {
-        "@id": "https://example.com/decision-activity",
-        "@type": "http://www.w3.org/ns/prov#Activity",
-        "http://www.w3.org/ns/prov#qualifiedAssociation": {
-          "@id": "_:b2"
-        },
-        "http://www.w3.org/ns/prov#startedAtTime:": {
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "@value": "2024-01-03T12:00:00Z"
-        },
-        "http://www.w3.org/ns/prov#used": [
-          {
-            "@id": "https://example.com/identifier-entity"
-          },
-          {
-            "@id": "https://example.com/name-entity"
-          },
-          {
-            "@id": "https://example.com/description-entity"
-          }
-        ],
-        "http://www.w3.org/ns/prov#wasInformedBy": {
-          "@id": "https://example.com/proposal-activity"
-        }
+        "@language": "fr",
+        "@value": "Modifiez la couleur de fond du drapeau national suisse en bleu"
+      }
+    ],
+    "http://schema.org/name": [
+      {
+        "@value": "Colocambiado"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasGeneratedBy": [
+      {
+        "@id": "https://example.com/registration-activity"
+      }
+    ]
+  },
+  {
+    "@id": "https://paf.link/ProposalActivity",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Activity"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/registration-activity",
+    "@type": [
+      "https://paf.link/RegistrationActivity"
+    ],
+    "http://www.w3.org/ns/prov#startedAtTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2024-01-01T12:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/proposal-activity",
+    "@type": [
+      "https://paf.link/ProposalActivity"
+    ],
+    "http://www.w3.org/ns/prov#qualifiedAssociation": [
+      {
+        "@id": "_:n797f7677dc4e4ac9b445d8ecc68af3fcb1"
       },
       {
-        "@id": "https://example.com/decision-entity",
-        "@type": "http://www.w3.org/ns/prov#Entity",
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": {
-          "@id": "https://paf.link/decision"
-        },
-        "http://www.w3.org/ns/prov#wasGeneratedBy": {
-          "@id": "https://example.com/decision-activity"
-        },
-        "https://paf.link/decision": {
-          "@id": "https://paf.link/Accepted"
-        },
-        "https://paf.link/voteNo": {
-          "@type": "http://www.w3.org/2001/XMLSchema#integer",
-          "@value": "70"
-        },
-        "https://paf.link/voteYes": {
-          "@type": "http://www.w3.org/2001/XMLSchema#integer",
-          "@value": "130"
-        }
+        "@id": "_:n797f7677dc4e4ac9b445d8ecc68af3fcb2"
+      }
+    ],
+    "http://www.w3.org/ns/prov#startedAtTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2024-01-02T12:00:00+00:00"
+      }
+    ],
+    "http://www.w3.org/ns/prov#used": [
+      {
+        "@id": "https://example.com/CH-1234"
       },
       {
-        "@id": "https://example.com/description-entity",
-        "@type": "http://www.w3.org/ns/prov#Entity",
-        "http://schema.org/description": [
-          {
-            "@language": "en",
-            "@value": "Change background color of Swiss national flag to blue"
-          },
-          {
-            "@language": "de",
-            "@value": "Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau"
-          },
-          {
-            "@language": "it",
-            "@value": "Modifica il colore di sfondo della bandiera nazionale svizzera in blu"
-          },
-          {
-            "@language": "fr",
-            "@value": "Modifiez la couleur de fond du drapeau national suisse en bleu"
-          }
-        ],
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": {
-          "@id": "http://schema.org/description"
-        },
-        "http://www.w3.org/ns/prov#wasGeneratedBy": {
-          "@id": "https://example.com/registration-activity"
-        }
+        "@id": "https://example.com/registration-entity"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasInformedBy": [
+      {
+        "@id": "https://example.com/registration-activity"
+      }
+    ]
+  },
+  {
+    "@id": "_:n797f7677dc4e4ac9b445d8ecc68af3fcb1",
+    "@type": [
+      "http://www.w3.org/ns/prov#Association"
+    ],
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://example.com/Colocambiado"
+      }
+    ],
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://paf.link/ProposalSubmitter"
+      }
+    ]
+  },
+  {
+    "@id": "_:n797f7677dc4e4ac9b445d8ecc68af3fcb2",
+    "@type": [
+      "http://www.w3.org/ns/prov#Association"
+    ],
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://example.com/national-council"
+      }
+    ],
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://paf.link/ProposalReceiver"
+      }
+    ]
+  },
+  {
+    "@id": "https://paf.link/IdentifierEntity",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Entity"
+      }
+    ]
+  },
+  {
+    "@id": "https://paf.link/DecisionEntity",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Entity"
+      }
+    ]
+  },
+  {
+    "@id": "https://paf.link/RegistrationEntity",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Entity"
+      }
+    ]
+  },
+  {
+    "@id": "https://paf.link/RegistrationActivity",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Activity"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/decision-activity",
+    "@type": [
+      "https://paf.link/DecisionActivity"
+    ],
+    "http://www.w3.org/ns/prov#qualifiedAssociation": [
+      {
+        "@id": "_:n797f7677dc4e4ac9b445d8ecc68af3fcb3"
+      }
+    ],
+    "http://www.w3.org/ns/prov#startedAtTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2024-01-03T12:00:00+00:00"
+      }
+    ],
+    "http://www.w3.org/ns/prov#used": [
+      {
+        "@id": "https://example.com/CH-1234"
       },
       {
-        "@id": "https://example.com/identifier-entity",
-        "@type": "http://www.w3.org/ns/prov#Entity",
-        "http://schema.org/identifier": "CH-1234",
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": {
-          "@id": "http://schema.org/identifier"
-        },
-        "http://www.w3.org/ns/prov#wasGeneratedBy": {
-          "@id": "https://example.com/registration-activity"
-        }
-      },
+        "@id": "https://example.com/registration-entity"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasInformedBy": [
       {
-        "@id": "https://example.com/name-entity",
-        "@type": "http://www.w3.org/ns/prov#Entity",
-        "http://schema.org/name": "Colocambiado",
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": {
-          "@id": "http://schema.org/name"
-        },
-        "http://www.w3.org/ns/prov#wasGeneratedBy": {
-          "@id": "https://example.com/registration-activity"
-        }
-      },
+        "@id": "https://example.com/proposal-activity"
+      }
+    ]
+  },
+  {
+    "@id": "_:n797f7677dc4e4ac9b445d8ecc68af3fcb3",
+    "@type": [
+      "http://www.w3.org/ns/prov#Association"
+    ],
+    "http://www.w3.org/ns/prov#agent": [
       {
-        "@id": "https://example.com/proposal-activity",
-        "@type": "http://www.w3.org/ns/prov#Activity",
-        "http://www.w3.org/ns/prov#qualifiedAssociation": [
-          {
-            "@id": "_:b0"
-          },
-          {
-            "@id": "_:b1"
-          }
-        ],
-        "http://www.w3.org/ns/prov#startedAtTime": {
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "@value": "2024-01-02T12:00:00Z"
-        },
-        "http://www.w3.org/ns/prov#used": [
-          {
-            "@id": "https://example.com/identifier-entity"
-          },
-          {
-            "@id": "https://example.com/name-entity"
-          },
-          {
-            "@id": "https://example.com/description-entity"
-          }
-        ],
-        "http://www.w3.org/ns/prov#wasInformedBy": {
-          "@id": "https://example.com/registration-activity"
-        }
-      },
+        "@id": "https://example.com/national-council"
+      }
+    ],
+    "http://www.w3.org/ns/prov#hadRole": [
       {
-        "@id": "https://example.com/registration-activity",
-        "@type": "http://www.w3.org/ns/prov#Activity",
-        "http://www.w3.org/ns/prov#startedAtTime": {
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "@value": "2024-01-01T12:00:00Z"
-        }
-      },
-      {
-        "@id": "https://example.com/view-point",
-        "@type": "https://paf.link/ViewPoint",
-        "http://purl.org/dc/terms/hasPart": [
-          {
-            "@id": "https://example.com/registration-activity"
-          },
-          {
-            "@id": "https://example.com/proposal-activity"
-          },
-          {
-            "@id": "https://example.com/decision-activity"
-          },
-          {
-            "@id": "https://example.com/identifier-entity"
-          },
-          {
-            "@id": "https://example.com/name-entity"
-          },
-          {
-            "@id": "https://example.com/description-entity"
-          },
-          {
-            "@id": "https://example.com/decision-entity"
-          }
-        ]
+        "@id": "https://paf.link/DecisionMaker"
       }
     ]
   }
+]

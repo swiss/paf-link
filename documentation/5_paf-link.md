@@ -2,7 +2,7 @@
 
 ## Public Affairs as Binoms
 
-Public affairs often come in the form of binoms: Proposal and decision, consultation and comment, information and acknowledgment, order and completion. The next sections model such generic public affairs. 
+Public affairs often come in the form of binoms: Proposal and decision, consultation and comment, information and acknowledgment, order and completion. The next sections model such generic public affairs.
 
 ## Proposal & Decision Activities
 
