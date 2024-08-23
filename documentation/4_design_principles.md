@@ -80,9 +80,7 @@ The challenge with public affairs is that they do **look differently depending o
 The following example illustrates a very basic affair based on three activities. First a **registration activity** that creates entities for identification and name and description of a public affair. The second activity uses these two entities to form a **proposal** to a deciding body. The last activity is the **decision activity** that creates a decision entity stating the result of the decision. In this case, no proposal entity is created because the proposal is already included in the description entity.
 
 <aside class="example" title="Design Principles: Basic Affair">
-    <pre class="turtle">
-        <section data-include-format="text" data-include="../examples/design_principles_basic.ttl" data-include-replace="true"></section>
-    </pre>
+    Full turtle listing for: <a href="https://github.com/swiss/paf-link/blob/main/examples/design_principles_basic.ttl" target="_blank">basic affair</a>.
 </aside>
 
 <figure id="design_principles_basic">
