@@ -1,6 +1,7 @@
 # Introduction
 
 ## Problem Declaration and Goal
+
 Public administrations often handle their affairs in similar ways, revealing recurring patterns. However, the specifics of how each country's government and its administrative levels manage these affairs can vary significantly. The approach described here focuses on identifying the smallest common core that can describe an activity (or event). It provides a framework to link and connect these activities, offering insights into the functioning of public affairs both at an overview level and in capturing the detailed differences between various administrations.
 
 The main goal of the Public Affairs Schema (paf) is to provide a common data model for public affairs that is interoperable with all levels of public administration, while also capturing the specific details of each administration. Since it is unlikely that an entire administration will adopt a common data model all at once, the secondary goal is to ensure that an independent step-by-step adoption at different areas and levels is possible, ultimately converging to a common data model in the long run.
@@ -21,9 +22,8 @@ Ultimately, by making public administration information easier accessible to bot
 
 **Multi-level Analysis and Querying**: The schema enables analysis and querying at various levels, facilitating detailed insights into public affairs processes.
 
-
-
 ## High-level Design Decisions
+
 *Event-Based*: The Public Affairs Schema (paf.link) is designed to be event-based to avoid confusion regarding perspectives. Different public affairs can express different statuses in various organizations simultaneously.
 
 *Extensible in Depth and Width*: The schema allows for extensions both in depth, by detailing more specific sub-processes, and in width, by including additional parts of the public affair process.
@@ -32,8 +32,8 @@ Ultimately, by making public administration information easier accessible to bot
 
 *Shared Concepts for Interoperability*: The use of shared concepts within the schema drives interoperability between different organizations and systems.
 
-
 ## Layered Design
+
 As it is good practice, the paf.link schema strives for reuse of existing vocabulary. Using PROV-O as a **base layer** gives paf.link a robust and widespread foundation. As PROV-O by design is very generic, the Public Affairs Schema (paf.link) provides on a **second layer** a framework of **design principles** to model public affairs based on the core elements of PROV-O. Additional classes and predicates are defined in this layer within the context of public affairs. The second layer is generic and strives for interoperability of public administrations between countries and and different levels of adminstrations.
 
 The **third layer** provides naming and classes for the concrete instances of public affairs at a specific level of the public adminstration. It is created to allow the modeling specific public affairs for certain realms of public administration. On the third layer, all elements have to be declared whether they are mandatory (and in which cardinality) or if they are optional.
@@ -60,3 +60,7 @@ The three layers elements are connected by sub-classing the next hihgher layer.
 | xsd | [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) |
 | rdfs | [http://www.w3.org/2000/01/rdf-schema#](http://www.w3.org/2000/01/rdf-schema#) |
 | rdf | [http://www.w3.org/1999/02/22-rdf-syntax-ns#](http://www.w3.org/1999/02/22-rdf-syntax-ns#) |
+
+## Machine Readable Schema
+
+This webpage is intended for humans and as a such, not every detail of the schema is covered. The goal of this documentation is to show and explain the main ideas of the schema. The complete paf.link schema is also available in a machine readable form as [turtle file](https://raw.githubusercontent.com/swiss/paf-link/main/paf-link.ttl).
