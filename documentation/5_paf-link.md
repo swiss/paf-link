@@ -55,189 +55,61 @@ The agent (person or group) which issues the decision.
 ### Full Example on Proposal & Decision
 
 <aside class="example" title="Full Example on Proposal & Decision">
-    <pre class="turtle">
-        <section data-include-format="text" data-include="../examples/proposal_decision.ttl" data-include-replace="true"></section>
-    </pre>
+    Full turtle listing for: <a href="https://github.com/swiss/paf-link/blob/main/examples/proposal_decision.ttl" target="_blank">Full example on proposal & decision</a>.
 </aside>
 
 ## Consultation & Comment Activities
 
-### Class paf:ConsultationActivity
+In a consultation & comment affair, an agent is seeking comments on a legislative draft or other ideas.
 
-paf:ConsultationActivity is an rdfs:subClass of prov:Activity 
+Translations for such activities are in the table below:
 
-[Translations](https://www.termdat.bk.admin.ch/entry/56976):
+|     | [consultation](https://www.termdat.bk.admin.ch/entry/56976) | [comment](https://www.termdat.bk.admin.ch/entry/23059) |
+| --- | ----------------------------------------------------------- | ------------------------------------------------------ |
+| en: | consultation                                                | comment                                                |
+| de: | Vernehmlassungsverfahren                                    | Stellungsnahme                                         |
+| fr: | procédure de consultation                                   | avis/prise de position                                 |
+| it: | procedura di consultazione                                  |                                                        |
 
-- E: Consultation
-- D: Vernehmlassungsverfahren
-- F: Procédure de consultation
-- I: Procedura di consultazione
+### Class **paf:ConsultationCreationActivity** {#ConsultationCreationActivity}
 
-This  is the activity in the process to formally for a comment.
+This is the activity that creates all the necessary entities to form the consultation. As the actual consultation activity should not generate entities, this pre consultation activity is used.
 
-#### Class paf:ConsultationSubmitter
+### Class **paf:ConsultationRegistrationActivity** {#ConsultationRegistrationActivity}
 
-paf:ConsultationSubmitter is an rdfs:subClass of prov:Agent
+This is the activity, that registers the consultation in the necessary systems (this is usually not the agent that actually wants to do the consultation). The consultation itself is the sum of all input entities to this activity.
+
+### Class **paf:ConsultationRegistrar** {#ConsultationRegistrar}
+
+The agent(person or group) which registers the consultation in the necessary systems.
+
+### Class **paf:ConsultationActivity** {#ConsultationActivity}
+
+This activity contains as the sum of all input entities the actual consultation with all necessary information.
+
+### Class **paf:ConsultationSubmitter** {#ConsultationSubmitter}
 
 The agent(person or group) which submits the consultation.
 
-#### Class paff:ConsultationReceiver
-
-paf:ConsultationReceiver is an rdfs:subClass of prov:Agent
+### Class **paf:ConsultationReceiver** {#ConsultationReceiver}
 
 The agent (person or group) which receives the consultation.
 
-#### Usage of prov:qualifiedAssociation ? 
+### Class **paf:CommentActivity** {#CommentActivity}
 
-EXAMPLE : Usage of prov:qualifiedAssociation in Turtle
+This activity contains as the sum of all output entities the complete comments on the consultation. The input entities could be used to show, if not the entire scope of the consultation was considered for making comments.
 
-```jsx
-:consultation-activity-1 a paf:ConsultationActivity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :consultation-submitter-1;
-        prov:hadRole paf:ConsultationSubmitter;
-        rdfs:comment "consultation-submitter-1 is the issuer of consultation-activity-1."@en;
-    ].
+In the case of comment activities, there is no need to alter the consultation, so there is no comment creation activity (in comparisson to the proposal and decision activities).
 
-:consultation-submitter-1 a prov:Agent;
-    schema:name "Consultation Submitter 1".
-```
-
-EXAMPLE : Usage of prov:qualifiedAssociation in XML 
-
-```xml
-<prov:document>
-
-    <paf:ConsultationActivity prov:id=":consultation-activity-1">
-        <prov:qualifiedAssociation prov:ref="association-1"/>
-    </paf:ConsultationActivity>
-
-    <prov:Association prov:id="association-1">
-            <prov:agent prov:ref=":Consultation-submitter-1"/>
-            <prov:hadRole prov:ref="paf:ConsultationSubmitter"/>
-            <rdfs:comment xml:lang="en">consultation-submitter-1 is the issuer of consultation-activity-1.</rdfs:comment>
-    </prov:Association>
-
-    <prov:Agent prov:id=":consultation-submitter-1">
-        <schema:name>Consultation Submitter 1</schema:name>
-    </prov:Agent>
-
-</prov:document>
-```
-
-#### Usage of prov:wasInformedBy  ?
-EXAMPLE : Usage of prov:wasInformedBy in Turtle 
-
-```jsx
-:consultation-activity-1 a paf:ConsultationActivity;
-    prov:wasInformedBy :affair-1.
-
-:affair-1 a prov:Activity;
-    rdfs:comment "affair-1 is a higher level activity."@en.
-```
-
-EXEMPLE: Usage of prov:wasInformedBy in XML
-
-```xml
-<prov:document>
-    
-    <paf:ConsultationActivity prov:id=":consultation-activity-1">
-        <prov:wasInformedBy prof:ref=":affair-1"/>
-    </paf:ConsultationActivity>
-    
-    <paf:Activity prov:id=":affair-1">
-        <rdfs:comment xml:lang="en">affair-1 is a higher level activity.</rdfs:comment>
-    </paf:Activity>
-    
-</prov:document>
-```
-
-### Class paf:CommentActivity
-
-paf:CommentActivity is a rdfs:subClass of prov:Activity 
-
-[Translations](https://www.termdat.bk.admin.ch/entry/23059):
-
-- E: Comment
-- D: Stellungsnahme
-- F: avis/prise de position
-
-
-This is the activity to formally answer the corresponding paf:CommentActivtiy.
-
-#### Class paf:CommentMaker (maker est-ce le bon terme )
-
-paf:DecisionMaker is a rdfs:subClass of prov:Activity 
-
-Translations 
+### Class **paf:CommentMaker** {#CommentMaker}
 
 The agent (person or group) which issues the comment.
 
-#### Usage of prov:qualifiedAssociation ? 
-
-EXAMPLE Usage of prov:qualifiedAssociation in Turtle
-
-```jsx
-:decision-activity-1 a paf:DecisionActivity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :Comment-maker-1;
-        prov:hadRole paf:CommentMaker;
-        rdfs:comment "comment-maker-1 is the issuer of comment-activity-1."@en;
-    ].
-```
-
 ### Full Example on Consultation & Comment
 
-EXAMPLE 10: Full Example on Consultation & Comment in Turtle
-
-```jsx
-@prefix : <https://example.com/> .
-@prefix paf: <https://paf.link/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix schema: <http://schema.org/> .
-
-:consultation-activity-1 a paf:ConsultationlActivity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :consultation-submitter-1;
-        prov:hadRole paf:ConsultationlSubmitter;
-    ];
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :consultation-receiver-1;
-        prov:hadRole paf:ConsultationReceiver;
-    ];
-    prov:used :consultation-1;
-    prov:wasInformedBy :parlamentary-activity-1;
-    prov:wasInformedBy :executive-activity-1;
-    prov:wasInformedBy :law-activity-1.
-
-:proposal-1 a prov:Entity;
-    prov:wasGeneratedBy :consultation-activity-1.
-
-:parlamentary-activity-1 a prov:Activity;
-    schema:identifier "23.0123".
-
-:executive-activity-1 a prov:Activity;
-    schema:identifier "321".
-
-:law-activity-1 a prov:Activity;
-    schema:identifier "SR21.1".
-
-:decision-activity-1 a paf:CommentActivity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :comment-maker-1;
-        prov:hadRole paf:CommentMaker;
-    ];
-    prov:wasInformedBy :proposal-activity-1;
-    prov:used :decision-1.
-
-:decision-1 a prov:Entity;
-    prov:wasGeneratedBy :decision-activity-1.
-```
+<aside class="example" title="Full Example on Consultation & Comment">
+    Full turtle listing for: <a href="https://github.com/swiss/paf-link/blob/main/examples/consultation_comment.ttl" target="_blank">Full example on consultation & comment</a>.
+</aside>
 
 ## Information & Acknowledgement Activities
 

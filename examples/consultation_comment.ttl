@@ -1,0 +1,60 @@
+
+@prefix : <https://example.com/> .
+@prefix paf: <https://paf.link/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:registration-activity a paf:RegistrationActivity;
+    prov:startedAtTime "2024-01-01T12:00:00Z"^^xsd:dateTime.
+
+:identifier-entity a prov:Entity;
+    prov:wasGeneratedBy :registration-activity;
+    schema:identifier "CH-1234".
+
+:consultation-creation-activity a paf:ConsultationCreationActivity;
+    prov:wasInformedBy :registration-activity;
+    prov:startedAtTime "2024-01-02T12:00:00Z"^^xsd:dateTime;
+    prov:used :identifier-entity.
+
+:consultation-entity a prov:Entity;
+    prov:wasGeneratedBy :consultation-creation-activity;
+    schema:description "Draft for new legislation concerning rabbit breeder regulations..."@en.
+
+:consultation-registration-activity a paf:ConsultationRegistrationActivity;
+    prov:wasInformedBy :consultation-creation-activity;
+    prov:startedAtTime "2024-01-03T12:00:00Z"^^xsd:dateTime;
+    prov:used :identifier-entity, :consultation-entity;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :Registrato;
+        prov:hadRole paf:ConsultationRegistrar].
+
+:consultation-activity a paf:ConsultationActivity;
+    prov:wasInformedBy :consultation-registration-activity;
+    prov:startedAtTime "2024-01-04T12:00:00Z"^^xsd:dateTime;
+    prov:used :identifier-entity, :consultation-entity;
+    prov:qualifiedAssociation [ 
+        a prov:Association; 
+        prov:agent :Submito;
+        prov:hadRole paf:ConsultationSubmitter];
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :Risivo;
+        prov:hadRole paf:ConsultationReceiver].
+
+:comment-activity a paf:CommentActivity;
+    prov:wasInformedBy :consultation-activity;
+    prov:startedAtTime "2024-01-05T12:00:00Z"^^xsd:dateTime;
+    prov:used :identifier-entity, :consultation-entity;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :Risivo;
+        prov:hadRole paf:CommentMaker].
+
+:comment-entity a prov:Entity;
+    prov:wasGeneratedBy :comment-activity;
+    schema:description "It is very important to include also bunny breeders in this regulation..."@en.
