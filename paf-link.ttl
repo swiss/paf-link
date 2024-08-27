@@ -1,9 +1,12 @@
 @prefix : <urn:webprotege:ontology:50ac2812-49cb-4140-9355-0e6bbd8e3667#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix paf: <https://paf.link/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix chpaf: <https://ch.paf.link/> .
 @base <urn:webprotege:ontology:50ac2812-49cb-4140-9355-0e6bbd8e3667> .
 
 <urn:webprotege:ontology:50ac2812-49cb-4140-9355-0e6bbd8e3667> rdf:type owl:Ontology .
@@ -13,55 +16,55 @@
 #################################################################
 
 ###  http://www.w3.org/ns/prov#agent
-<http://www.w3.org/ns/prov#agent> rdf:type owl:ObjectProperty ;
-                                  rdfs:subPropertyOf owl:topObjectProperty ;
-                                  rdfs:domain <http://www.w3.org/ns/prov#Association> ;
-                                  rdfs:range <http://www.w3.org/ns/prov#Agent> ;
-                                  rdfs:label "agent"@en .
+prov:agent rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain prov:Association ;
+           rdfs:range prov:Agent ;
+           rdfs:label "agent"@en .
 
 
 ###  http://www.w3.org/ns/prov#hadRole
-<http://www.w3.org/ns/prov#hadRole> rdf:type owl:ObjectProperty ;
-                                    rdfs:subPropertyOf owl:topObjectProperty ;
-                                    rdfs:domain <http://www.w3.org/ns/prov#Association> ;
-                                    rdfs:range <http://www.w3.org/ns/prov#Role> ;
-                                    rdfs:label "hadRole"@en .
+prov:hadRole rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain prov:Association ;
+             rdfs:range prov:Role ;
+             rdfs:label "hadRole"@en .
 
 
 ###  http://www.w3.org/ns/prov#qualifiedAssociation
-<http://www.w3.org/ns/prov#qualifiedAssociation> rdf:type owl:ObjectProperty ;
-                                                 rdfs:subPropertyOf owl:topObjectProperty ;
-                                                 rdfs:domain <http://www.w3.org/ns/prov#Activity> ;
-                                                 rdfs:range <http://www.w3.org/ns/prov#Association> ;
-                                                 rdfs:label "qualifiedAssociation"@en .
+prov:qualifiedAssociation rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
+                          rdfs:domain prov:Activity ;
+                          rdfs:range prov:Association ;
+                          rdfs:label "qualifiedAssociation"@en .
 
 
 ###  http://www.w3.org/ns/prov#used
-<http://www.w3.org/ns/prov#used> rdf:type owl:ObjectProperty ;
-                                 rdfs:domain <http://www.w3.org/ns/prov#Activity> ;
-                                 rdfs:range <http://www.w3.org/ns/prov#Entity> ;
-                                 rdfs:label "used"@en .
+prov:used rdf:type owl:ObjectProperty ;
+          rdfs:domain prov:Activity ;
+          rdfs:range prov:Entity ;
+          rdfs:label "used"@en .
 
 
 ###  http://www.w3.org/ns/prov#wasGeneratedBy
-<http://www.w3.org/ns/prov#wasGeneratedBy> rdf:type owl:ObjectProperty ;
-                                           rdfs:subPropertyOf owl:topObjectProperty ;
-                                           rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
-                                           rdfs:range <http://www.w3.org/ns/prov#Activity> ;
-                                           rdfs:label "wasGeneratedBy"@en .
+prov:wasGeneratedBy rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain prov:Entity ;
+                    rdfs:range prov:Activity ;
+                    rdfs:label "wasGeneratedBy"@en .
 
 
 ###  http://www.w3.org/ns/prov#wasInformedBy
-<http://www.w3.org/ns/prov#wasInformedBy> rdf:type owl:ObjectProperty ;
-                                          rdfs:subPropertyOf owl:topObjectProperty ;
-                                          rdfs:label "wasInformedBy"@en .
+prov:wasInformedBy rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:label "wasInformedBy"@en .
 
 
 ###  https://paf.link/proposalActivity
-<https://paf.link/proposalActivity> rdf:type owl:ObjectProperty ;
-                                    rdfs:domain <https://paf.link/DecisionActivity> ;
-                                    rdfs:range <https://paf.link/ProposalActivity> ;
-                                    rdfs:label "proposalActivity"@en .
+paf:proposalActivity rdf:type owl:ObjectProperty ;
+                     rdfs:domain paf:DecisionActivity ;
+                     rdfs:range paf:ProposalActivity ;
+                     rdfs:label "proposalActivity"@en .
 
 
 #################################################################
@@ -69,82 +72,214 @@
 #################################################################
 
 ###  http://www.w3.org/ns/prov#Activity
-<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class ;
-                                     rdfs:label "Activity"@en .
+prov:Activity rdf:type owl:Class ;
+              rdfs:label "Activity"@en .
 
 
 ###  http://www.w3.org/ns/prov#Agent
-<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class ;
-                                  rdfs:label "Agent"@en .
+prov:Agent rdf:type owl:Class ;
+           rdfs:label "Agent"@en .
 
 
 ###  http://www.w3.org/ns/prov#Association
-<http://www.w3.org/ns/prov#Association> rdf:type owl:Class ;
-                                        rdfs:label "Association"@en .
+prov:Association rdf:type owl:Class ;
+                 rdfs:label "Association"@en .
 
 
 ###  http://www.w3.org/ns/prov#Entity
-<http://www.w3.org/ns/prov#Entity> rdf:type owl:Class ;
-                                   rdfs:label "Entity"@en .
+prov:Entity rdf:type owl:Class ;
+            rdfs:label "Entity"@en .
 
 
 ###  http://www.w3.org/ns/prov#Role
-<http://www.w3.org/ns/prov#Role> rdf:type owl:Class ;
-                                 rdfs:label "Role"@en .
+prov:Role rdf:type owl:Class ;
+          rdfs:label "Role"@en .
+
+
+###  https://ch.paf.link/OCoCommentActivity
+chpaf:OCoCommentActivity rdf:type owl:Class ;
+                         rdfs:subClassOf paf:CommentActivity ;
+                         rdfs:label "OCoCommentActivity"@en .
+
+
+###  https://ch.paf.link/OCoCommentEntity
+chpaf:OCoCommentEntity rdf:type owl:Class ;
+                       rdfs:subClassOf paf:CommentEntity ;
+                       rdfs:label "OCoCommentEntity"@en .
+
+
+###  https://ch.paf.link/OCoCommentMaker
+chpaf:OCoCommentMaker rdf:type owl:Class ;
+                      rdfs:subClassOf paf:CommentMaker ;
+                      rdfs:label "OCoCommentMaker"@en .
+
+
+###  https://ch.paf.link/OCoConsultationActivity
+chpaf:OCoConsultationActivity rdf:type owl:Class ;
+                              rdfs:subClassOf paf:ConsultationActivity ;
+                              rdfs:label "OCoConsultationActivity"@en .
+
+
+###  https://ch.paf.link/OCoConsultationCreationActivity
+chpaf:OCoConsultationCreationActivity rdf:type owl:Class ;
+                                      rdfs:subClassOf paf:ConsultationCreationActivity ;
+                                      rdfs:label "OCoConsultationCreationActivity"@en .
+
+
+###  https://ch.paf.link/OCoConsultationEntity
+chpaf:OCoConsultationEntity rdf:type owl:Class ;
+                            rdfs:subClassOf paf:ConsultationEntity ;
+                            rdfs:label "OCoConsultationEntity"@en .
+
+
+###  https://ch.paf.link/OCoConsultationReceiver
+chpaf:OCoConsultationReceiver rdf:type owl:Class ;
+                              rdfs:subClassOf paf:ConsultationReceiver ;
+                              rdfs:label "OCoConsultationReceiver"@en .
+
+
+###  https://ch.paf.link/OCoConsultationRegistrar
+chpaf:OCoConsultationRegistrar rdf:type owl:Class ;
+                               rdfs:subClassOf paf:ConsultationRegistrar ;
+                               rdfs:label "OCoConsultationRegistrar"@en .
+
+
+###  https://ch.paf.link/OCoConsultationRegistrationActivity
+chpaf:OCoConsultationRegistrationActivity rdf:type owl:Class ;
+                                          rdfs:subClassOf paf:ConsultationRegistrationActivity ;
+                                          rdfs:label "OCoConsultationRegistrationActivity"@en .
+
+
+###  https://ch.paf.link/OCoConsultationSubmitter
+chpaf:OCoConsultationSubmitter rdf:type owl:Class ;
+                               rdfs:subClassOf paf:ConsultationSubmitter ;
+                               rdfs:label "OCoConsultationSubmitter"@en .
+
+
+###  https://ch.paf.link/OCoIdentifierEntity
+chpaf:OCoIdentifierEntity rdf:type owl:Class ;
+                          rdfs:subClassOf paf:IdentifierEntity ;
+                          rdfs:label "OCoIdentifierEntity"@en .
+
+
+###  https://ch.paf.link/RegistrationActivity
+chpaf:RegistrationActivity rdf:type owl:Class ;
+                           rdfs:subClassOf paf:RegistrationActivity ;
+                           rdfs:label "RegistrationActivity"@en .
+
+
+###  https://paf.link/CommentActivity
+paf:CommentActivity rdf:type owl:Class ;
+                    rdfs:subClassOf prov:Activity ;
+                    rdfs:label "CommentActivity"@en .
+
+
+###  https://paf.link/CommentEntity
+paf:CommentEntity rdf:type owl:Class ;
+                  rdfs:subClassOf prov:Entity ;
+                  rdfs:label "CommentEntity"@en .
+
+
+###  https://paf.link/CommentMaker
+paf:CommentMaker rdf:type owl:Class ;
+                 rdfs:subClassOf prov:Role ;
+                 rdfs:label "CommentMaker"@en .
+
+
+###  https://paf.link/ConsultationActivity
+paf:ConsultationActivity rdf:type owl:Class ;
+                         rdfs:subClassOf prov:Activity ;
+                         rdfs:label "ConsultationActivity"@en .
+
+
+###  https://paf.link/ConsultationCreationActivity
+paf:ConsultationCreationActivity rdf:type owl:Class ;
+                                 rdfs:subClassOf prov:Activity ;
+                                 rdfs:label "ConsultationCreationActivity"@en .
+
+
+###  https://paf.link/ConsultationEntity
+paf:ConsultationEntity rdf:type owl:Class ;
+                       rdfs:subClassOf prov:Entity ;
+                       rdfs:label "ConsultationEntity"@en .
+
+
+###  https://paf.link/ConsultationReceiver
+paf:ConsultationReceiver rdf:type owl:Class ;
+                         rdfs:subClassOf prov:Role ;
+                         rdfs:label "ConsultationReceiver"@en .
+
+
+###  https://paf.link/ConsultationRegistrar
+paf:ConsultationRegistrar rdf:type owl:Class ;
+                          rdfs:subClassOf prov:Role ;
+                          rdfs:label "ConsultationRegistrar"@en .
+
+
+###  https://paf.link/ConsultationRegistrationActivity
+paf:ConsultationRegistrationActivity rdf:type owl:Class ;
+                                     rdfs:subClassOf prov:Activity ;
+                                     rdfs:label "ConsultationRegistrationActivity"@en .
+
+
+###  https://paf.link/ConsultationSubmitter
+paf:ConsultationSubmitter rdf:type owl:Class ;
+                          rdfs:subClassOf prov:Role ;
+                          rdfs:label "ConsultationSubmitter"@en .
 
 
 ###  https://paf.link/DecisionActivity
-<https://paf.link/DecisionActivity> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
-                                    rdfs:label "DecisionActivity"@en .
+paf:DecisionActivity rdf:type owl:Class ;
+                     rdfs:subClassOf prov:Activity ;
+                     rdfs:label "DecisionActivity"@en .
 
 
 ###  https://paf.link/DecisionCreationActivity
-<https://paf.link/DecisionCreationActivity> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
-                                            rdfs:label "DecisionCreationActivity"@en .
+paf:DecisionCreationActivity rdf:type owl:Class ;
+                             rdfs:subClassOf prov:Activity ;
+                             rdfs:label "DecisionCreationActivity"@en .
 
 
 ###  https://paf.link/DecisionMaker
-<https://paf.link/DecisionMaker> rdf:type owl:Class ;
-                                 rdfs:subClassOf <http://www.w3.org/ns/prov#Role> ;
-                                 rdfs:label "DecisionMaker"@en .
+paf:DecisionMaker rdf:type owl:Class ;
+                  rdfs:subClassOf prov:Role ;
+                  rdfs:label "DecisionMaker"@en .
 
 
 ###  https://paf.link/IdentifierEntity
-<https://paf.link/IdentifierEntity> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
-                                    rdfs:label "IdentifierEntity"@en .
+paf:IdentifierEntity rdf:type owl:Class ;
+                     rdfs:subClassOf prov:Entity ;
+                     rdfs:label "IdentifierEntity"@en .
 
 
 ###  https://paf.link/ProposalActivity
-<https://paf.link/ProposalActivity> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
-                                    rdfs:label "ProposalActivity"@en .
+paf:ProposalActivity rdf:type owl:Class ;
+                     rdfs:subClassOf prov:Activity ;
+                     rdfs:label "ProposalActivity"@en .
 
 
 ###  https://paf.link/ProposalCreationActivity
-<https://paf.link/ProposalCreationActivity> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
-                                            rdfs:label "ProposalCreationActivity"@en .
+paf:ProposalCreationActivity rdf:type owl:Class ;
+                             rdfs:subClassOf prov:Activity ;
+                             rdfs:label "ProposalCreationActivity"@en .
 
 
 ###  https://paf.link/ProposalReceiver
-<https://paf.link/ProposalReceiver> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.w3.org/ns/prov#Role> ;
-                                    rdfs:label "ProposalReceiver"@en .
+paf:ProposalReceiver rdf:type owl:Class ;
+                     rdfs:subClassOf prov:Role ;
+                     rdfs:label "ProposalReceiver"@en .
 
 
 ###  https://paf.link/ProposalSubmitter
-<https://paf.link/ProposalSubmitter> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.w3.org/ns/prov#Role> ;
-                                     rdfs:label "ProposalSubmitter"@en .
+paf:ProposalSubmitter rdf:type owl:Class ;
+                      rdfs:subClassOf prov:Role ;
+                      rdfs:label "ProposalSubmitter"@en .
 
 
 ###  https://paf.link/RegistrationActivity
-<https://paf.link/RegistrationActivity> rdf:type owl:Class ;
-                                        rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
-                                        rdfs:label "RegistrationActivity"@en .
+paf:RegistrationActivity rdf:type owl:Class ;
+                         rdfs:subClassOf prov:Activity ;
+                         rdfs:label "RegistrationActivity"@en .
 
 
 ###  Generated by the OWL API (version 4.5.13) https://github.com/owlcs/owlapi
