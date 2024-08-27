@@ -75,6 +75,10 @@ Translations for such activities are in the table below:
 
 This is the activity that creates all the necessary entities to form the consultation. As the actual consultation activity should not generate entities, this pre consultation activity is used.
 
+### Class **paf:ConsultationEntity** {#ConsultationEntity}
+
+This is the entity that contains (together with other entities) the content of the consultation.
+
 ### Class **paf:ConsultationRegistrationActivity** {#ConsultationRegistrationActivity}
 
 This is the activity, that registers the consultation in the necessary systems (this is usually not the agent that actually wants to do the consultation). The consultation itself is the sum of all input entities to this activity.
@@ -99,7 +103,11 @@ The agent (person or group) which receives the consultation.
 
 This activity contains as the sum of all output entities the complete comments on the consultation. The input entities could be used to show, if not the entire scope of the consultation was considered for making comments.
 
-In the case of comment activities, there is no need to alter the consultation, so there is no comment creation activity (in comparisson to the proposal and decision activities).
+In the case of comment activities, there is no need to alter the consultation, so there is no comment creation activity (in comparison to the proposal and decision activities).
+
+### Class **paf:CommentEntity** {#CommentEntity}
+
+This is the entity that contains the comments to the consultation.
 
 ### Class **paf:CommentMaker** {#CommentMaker}
 

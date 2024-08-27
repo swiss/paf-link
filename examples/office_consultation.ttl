@@ -1,0 +1,75 @@
+@prefix : <https://example.com/> .
+@prefix paf: <https://paf.link/> .
+@prefix chpaf: <https://ch.paf.link/> . # Swiss specific extension
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:ActID-1 a chpaf:RegistrationActivity;
+    prov:startedAtTime "2023-10-08T14:23:00Z"^^xsd:dateTime.
+
+:OCo_2023-2118 a chpaf:OCoIdentifierEntity;
+    prov:wasGeneratedBy :ActID-1;
+    schema:identifier "OCo_2023-2118".
+
+:ActID-2 a chpaf:OCoConsultationCreationActivity ;
+  	prov:wasInformedBy :ActID-1;
+	prov:startedAtTime "2023-10-09T14:23:00Z";
+    prov:used :OCo_2023-2118.
+
+:EntID-1 a chpaf:OCoConsultationEntity;
+    prov:wasGeneratedBy :ActID-2;
+    prov:startedAtTime "2023-08-01T14:23:00Z";
+    chpaf:oCoTitle "Titel der ÄK" @de;
+    chpaf:oCoRequestTo "Antrag an" @de;
+    chpaf:oCoDate "Datum" @de;
+    chpaf:oCoIntroduction "Einleitung" @de;
+    chpaf:oCoIssues "Problemstellung" @de;
+    chpaf:oCoModification "Änderung" @de;
+    chpaf:oCoConsequences "Auswirkungen" @de;
+    chpaf:oCoRelationshipToLaW "Verhältnis zum Recht" @de;
+    chpaf:oCoDeadlineForPublication "Frist für die Veröffentlichung"  @de;
+    chpaf:oCoComments "Stellungnahmen"  @de;
+    chpaf:oCoRequestFor "Antrag von"  @de;
+    chpaf:oCoAnnexes "Beilagen" @de.
+
+:ActID-3 a chpaf:OCoConsultationRegistrationActivity ;
+    prov:wasInformedBy :ActID-2;
+    prov:used :OCo_2023-2118, :EntID-1;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :arthur_registro; #  person registrating the consultation
+        prov:hadRole chpaf:OCoConsultationRegistrar;
+    ].
+
+:ActID-4 a chpaf:OCoConsultationActivity ;
+	prov:wasInformedBy :ActID-3;
+    prov:used :OCo_2023-2118, :EntID-1;
+	chpaf:officeConsultationStarted "2023-10-19T00:00:00Z"; # official start of the consultation / sub-property of prov:startedAtTime
+	chpaf:officeConsultationEnded "2023-11-01T00:00:00Z"; # deadline for the inputs of the consultation
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent <https://ld.admin.ch/office/III.1.4>; # Staatssekretariat für Migration
+        prov:hadRole chpaf:OCoConsultationSubmitter;
+    ];
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent <https://ld.admin.ch/office/III.1.2>; # Bundesamt für Justiz
+        prov:hadRole chpaf:OCoConsultationReceiver;
+    ].
+
+:ActID-5 a chpaf:OCoCommentActivity ;
+	prov:wasInformedBy :ActID-4;
+	prov:used :OCo_2023-2118, :EntID-1;
+  	prov:qualifiedAssociation [
+        	a prov:Association;
+        	prov:agent <https://ld.admin.ch/office/III.1.2>; # BJ
+        	prov:hadRole chpaf:OCoCommentMaker;
+  	].
+
+:EntID-2 a chpaf:OCoCommentEntity;
+    prov:wasGeneratedBy :ActID-5;
+    schema:description "It is very important to include also..."@en.
