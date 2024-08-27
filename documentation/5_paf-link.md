@@ -2,81 +2,53 @@
 
 ## Public Affairs as Binoms
 
-Public affairs often come in the form of binoms: Proposal and decision, consultation and comment, information and acknowledgment, order and completion. The next sections model such generic public affairs.
+Public affairs often come in the form of **binoms**:
+
+- proposal and decision
+- consultation and comment
+- information and acknowledgment
+- order and completion
+
+The next sections model such generic public affairs.
 
 ## Proposal & Decision Activities
 
-The affair of a proposal and decision means that someone or some body is formally proposing something and another authoritative body is deciding on this proposal. Such an affair contains at least the following activities:
+The affair of a proposal and decision means that someone or some body is formally proposing something and another authoritative body is deciding on this proposal. Translations for such activities are in the table below:
 
-- registration activity
-- proposal activity
-- decision activity
+|     | [proposal](https://www.termdat.bk.admin.ch/entry/56995) | [decision](https://www.termdat.bk.admin.ch/entry/414335) |
+| --- | ------------------------------------------------------- | -------------------------------------------------------- |
+| en: | proposal                                                | decision                                                 |
+| de: | Antrag                                                  | Entscheidung                                             |
+| fr: | proposition                                             | décision                                                 |
+| it: | proposta                                                | decisione                                                |
 
-The registration activity is needed to create the entities that are afterwards bundled by the proposal activity to form the actual proposal. The proposal activity does not create new entities.
+The following elements are involved in such an affair:
 
-The decision activity again uses entities to the decide on. These can and normally will be the entities that the proposal used but there is the possibility that the deciding body wants to change the proposal with the help of an upstream activity (e.g. some kind of change activity) and then the decision activity will use these newly created entities for the decision. Whereas the proposal activity must not create new entities, the decision activity will create a result entity stating the result and possibly some details of the decision.
+### Class **paf:ProposalCreationActivity** {#ProposalCreationActivity}
 
-Because there is not necessarily a direct succession between the proposal- and decision activity, the decision activity has a separate link to the proposal activity connecting these two.
-
-### Mandatory Elements
-
-Registration activity:
-
-- entities that link by `prov:wasGeneratedBy` or `paf:wasComplementedBy` to the registration activity
-
-Proposal activity:
-
-- `prov:used` to the entities that form the proposal
-
-Decision activity:
-
-- `paf:proposalActivity` to link to the proposal activity
-- `prov:used` to the entities that are decided upon
-- an entity that links by `prov:wasGeneratedBy` to the decision activity
+This is the activity that creates all the necessary entities to form the proposal. As the actual proposal activity should not generate entities, this pre proposal activity is used.
 
 ### Class **paf:ProposalActivity** {#ProposalActivity}
 
-paf:ProposalActivity is an rdfs:subClass of prov:Activity
+This activity contains as the sum of all input entities the actual proposal.
 
-[Translations](https://www.termdat.bk.admin.ch/entry/56995):
-
-* en: proposal
-* de: Antrag
-* fr: proposition
-* it: proposta
-
-This is the activity in the process to formally ask for a decision.
-
-#### Class **paf:ProposalSubmitter** {#ProposalSubmitter}
-
-paf:ProposalSubmitter is an rdfs:subClass of prov:Agent
+### Class **paf:ProposalSubmitter** {#ProposalSubmitter}
 
 The agent (person or group) which submits the proposal.
 
-#### Class **paf:ProposalReceiver** {#ProposalReceiver}
-
-paf:ProposalReceiver is an rdfs:subClass of prov:Agent
+### Class **paf:ProposalReceiver** {#ProposalReceiver}
 
 The agent (person or group) which receives the proposal.
 
+### Class **paf:DecisionCreationActivity** {#DecisionCreationActivity}
+
+This is the activity that creates all the necessary entities to form the content of the decision. As the actual decision activity should not generate new content for the decision but only the result of the decision, such a pre decision activity can be used.
+
 ### Class **paf:DecisionActivity** {#DecisionActivity}
 
-paf:DecisionActivity is a rdfs:subClass of prov:Activity
+This activity contains as the sum of all input entities the content of the decision (what is decided upon) and as output entity the actual result of the decision. Because there is not necessarily a direct succession between the proposal- and decision activity, the decision activity has a separate link to the proposal activity connecting these two.
 
-[Translations](https://www.termdat.bk.admin.ch/entry/414335):
-
-* en: Decision
-* de: Entscheid
-* fr: décision
-* it: decisione
-
-This is the activity to formally answer the corresponding paf:ProposalActivity.
-
-#### Class **paf:DecisionMaker** {#DecisionMaker}
-
-paf:DecisionMaker is a rdfs:subClass of prov:Activity
-
-[Translations](https://www.termdat.bk.admin.ch/entry/132147)
+### Class **paf:DecisionMaker** {#DecisionMaker}
 
 The agent (person or group) which issues the decision.
 
