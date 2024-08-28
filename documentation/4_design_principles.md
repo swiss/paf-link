@@ -139,14 +139,14 @@ The following example shows a raw JSON-LD that was transformed from turtle from 
 
 </aside>
 
-### Context
+### Context and Framing
 
-To mitigate these difficulties concerning verbosity, JSON-LD allows the usage of some embedded context information. Using this information, the resulting JSON file looks much more familiar to a "standard" JSON.
+To mitigate these difficulties concerning verbosity, JSON-LD allows the usage of some embedded context information. Using this information and the framing mechanism, the resulting JSON file looks much more familiar to a "standard" JSON.
 
 <aside class="example" title="JSON-LD context information">
   JSON-LD for: <a href="https://github.com/swiss/paf-link/blob/main/examples/design_principles_basic_context.jsonld" target="_blank">context information</a>.
 </aside>
 
 <aside class="example" title="Flattened JSON-LD using context information">
-  JSON-LD for: <a href="https://github.com/swiss/paf-link/blob/main/examples/design_principles_basic_flattened.jsonld" target="_blank">flattened basic affair</a>.
+  JSON-LD for: <a href="https://github.com/swiss/paf-link/blob/main/examples/design_principles_basic_framed.jsonld" target="_blank">framed basic affair with context information</a>.
 </aside>

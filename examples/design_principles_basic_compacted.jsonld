@@ -83,7 +83,7 @@
     {
       "@id": "example:decision-activity",
       "@type": "paf:DecisionActivity",
-      "association": "_:n8c50ffb32da543339e4df35fc7862988b3",
+      "association": "_:nc9f93d46f886410ea198529a2242caf4b3",
       "startedAtTime": "2024-01-03T12:00:00+00:00",
       "used": [
         "example:CH-1234",
@@ -92,7 +92,7 @@
       "wasInformedBy": "example:proposal-activity"
     },
     {
-      "@id": "_:n8c50ffb32da543339e4df35fc7862988b3",
+      "@id": "_:nc9f93d46f886410ea198529a2242caf4b3",
       "@type": "prov:Association",
       "agent": "example:national-council",
       "role": "paf:DecisionMaker"
@@ -101,8 +101,8 @@
       "@id": "example:proposal-activity",
       "@type": "paf:ProposalActivity",
       "association": [
-        "_:n8c50ffb32da543339e4df35fc7862988b1",
-        "_:n8c50ffb32da543339e4df35fc7862988b2"
+        "_:nc9f93d46f886410ea198529a2242caf4b1",
+        "_:nc9f93d46f886410ea198529a2242caf4b2"
       ],
       "startedAtTime": "2024-01-02T12:00:00+00:00",
       "used": [
@@ -112,13 +112,13 @@
       "wasInformedBy": "example:registration-activity"
     },
     {
-      "@id": "_:n8c50ffb32da543339e4df35fc7862988b1",
+      "@id": "_:nc9f93d46f886410ea198529a2242caf4b1",
       "@type": "prov:Association",
       "agent": "example:Colocambiado",
       "role": "paf:ProposalSubmitter"
     },
     {
-      "@id": "_:n8c50ffb32da543339e4df35fc7862988b2",
+      "@id": "_:nc9f93d46f886410ea198529a2242caf4b2",
       "@type": "prov:Association",
       "agent": "example:national-council",
       "role": "paf:ProposalReceiver"
