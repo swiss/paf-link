@@ -51,13 +51,3 @@
     paf:decision paf:Accepted;
     paf:voteYes 130;
     paf:voteNo 70.
-
-# class definitions
-
-paf:RegistrationActivity rdfs:subClassOf prov:Activity.
-paf:ProposalActivity rdfs:subClassOf prov:Activity.
-paf:DecisionActivity rdfs:subClassOf prov:Activity.
-
-paf:IdentifierEntity rdfs:subClassOf prov:Entity.
-paf:RegistrationEntity rdfs:subClassOf prov:Entity.
-paf:DecisionEntity rdfs:subClassOf prov:Entity.

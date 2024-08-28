@@ -1,55 +1,5 @@
 [
   {
-    "@id": "https://example.com/decision-entity",
-    "@type": [
-      "https://paf.link/DecisionEntity"
-    ],
-    "http://www.w3.org/ns/prov#wasGeneratedBy": [
-      {
-        "@id": "https://example.com/decision-activity"
-      }
-    ],
-    "https://paf.link/decision": [
-      {
-        "@id": "https://paf.link/Accepted"
-      }
-    ],
-    "https://paf.link/voteNo": [
-      {
-        "@value": 70
-      }
-    ],
-    "https://paf.link/voteYes": [
-      {
-        "@value": 130
-      }
-    ]
-  },
-  {
-    "@id": "https://paf.link/DecisionActivity",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Activity"
-      }
-    ]
-  },
-  {
-    "@id": "https://example.com/CH-1234",
-    "@type": [
-      "https://paf.link/IdentifierEntity"
-    ],
-    "http://schema.org/identifier": [
-      {
-        "@value": "CH-1234"
-      }
-    ],
-    "http://www.w3.org/ns/prov#wasGeneratedBy": [
-      {
-        "@id": "https://example.com/registration-activity"
-      }
-    ]
-  },
-  {
     "@id": "https://example.com/registration-entity",
     "@type": [
       "https://paf.link/RegistrationEntity"
@@ -84,119 +34,28 @@
     ]
   },
   {
-    "@id": "https://paf.link/ProposalActivity",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Activity"
-      }
-    ]
-  },
-  {
-    "@id": "https://example.com/registration-activity",
+    "@id": "https://example.com/decision-entity",
     "@type": [
-      "https://paf.link/RegistrationActivity"
+      "https://paf.link/DecisionEntity"
     ],
-    "http://www.w3.org/ns/prov#startedAtTime": [
+    "http://www.w3.org/ns/prov#wasGeneratedBy": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2024-01-01T12:00:00+00:00"
-      }
-    ]
-  },
-  {
-    "@id": "https://example.com/proposal-activity",
-    "@type": [
-      "https://paf.link/ProposalActivity"
-    ],
-    "http://www.w3.org/ns/prov#qualifiedAssociation": [
-      {
-        "@id": "_:n797f7677dc4e4ac9b445d8ecc68af3fcb1"
-      },
-      {
-        "@id": "_:n797f7677dc4e4ac9b445d8ecc68af3fcb2"
+        "@id": "https://example.com/decision-activity"
       }
     ],
-    "http://www.w3.org/ns/prov#startedAtTime": [
+    "https://paf.link/decision": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2024-01-02T12:00:00+00:00"
+        "@id": "https://paf.link/Accepted"
       }
     ],
-    "http://www.w3.org/ns/prov#used": [
+    "https://paf.link/voteNo": [
       {
-        "@id": "https://example.com/CH-1234"
-      },
-      {
-        "@id": "https://example.com/registration-entity"
+        "@value": 70
       }
     ],
-    "http://www.w3.org/ns/prov#wasInformedBy": [
+    "https://paf.link/voteYes": [
       {
-        "@id": "https://example.com/registration-activity"
-      }
-    ]
-  },
-  {
-    "@id": "_:n797f7677dc4e4ac9b445d8ecc68af3fcb1",
-    "@type": [
-      "http://www.w3.org/ns/prov#Association"
-    ],
-    "http://www.w3.org/ns/prov#agent": [
-      {
-        "@id": "https://example.com/Colocambiado"
-      }
-    ],
-    "http://www.w3.org/ns/prov#hadRole": [
-      {
-        "@id": "https://paf.link/ProposalSubmitter"
-      }
-    ]
-  },
-  {
-    "@id": "_:n797f7677dc4e4ac9b445d8ecc68af3fcb2",
-    "@type": [
-      "http://www.w3.org/ns/prov#Association"
-    ],
-    "http://www.w3.org/ns/prov#agent": [
-      {
-        "@id": "https://example.com/national-council"
-      }
-    ],
-    "http://www.w3.org/ns/prov#hadRole": [
-      {
-        "@id": "https://paf.link/ProposalReceiver"
-      }
-    ]
-  },
-  {
-    "@id": "https://paf.link/IdentifierEntity",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Entity"
-      }
-    ]
-  },
-  {
-    "@id": "https://paf.link/DecisionEntity",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Entity"
-      }
-    ]
-  },
-  {
-    "@id": "https://paf.link/RegistrationEntity",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Entity"
-      }
-    ]
-  },
-  {
-    "@id": "https://paf.link/RegistrationActivity",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Activity"
+        "@value": 130
       }
     ]
   },
@@ -207,7 +66,7 @@
     ],
     "http://www.w3.org/ns/prov#qualifiedAssociation": [
       {
-        "@id": "_:n797f7677dc4e4ac9b445d8ecc68af3fcb3"
+        "@id": "_:n8c50ffb32da543339e4df35fc7862988b3"
       }
     ],
     "http://www.w3.org/ns/prov#startedAtTime": [
@@ -231,7 +90,7 @@
     ]
   },
   {
-    "@id": "_:n797f7677dc4e4ac9b445d8ecc68af3fcb3",
+    "@id": "_:n8c50ffb32da543339e4df35fc7862988b3",
     "@type": [
       "http://www.w3.org/ns/prov#Association"
     ],
@@ -243,6 +102,99 @@
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://paf.link/DecisionMaker"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/proposal-activity",
+    "@type": [
+      "https://paf.link/ProposalActivity"
+    ],
+    "http://www.w3.org/ns/prov#qualifiedAssociation": [
+      {
+        "@id": "_:n8c50ffb32da543339e4df35fc7862988b1"
+      },
+      {
+        "@id": "_:n8c50ffb32da543339e4df35fc7862988b2"
+      }
+    ],
+    "http://www.w3.org/ns/prov#startedAtTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2024-01-02T12:00:00+00:00"
+      }
+    ],
+    "http://www.w3.org/ns/prov#used": [
+      {
+        "@id": "https://example.com/CH-1234"
+      },
+      {
+        "@id": "https://example.com/registration-entity"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasInformedBy": [
+      {
+        "@id": "https://example.com/registration-activity"
+      }
+    ]
+  },
+  {
+    "@id": "_:n8c50ffb32da543339e4df35fc7862988b1",
+    "@type": [
+      "http://www.w3.org/ns/prov#Association"
+    ],
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://example.com/Colocambiado"
+      }
+    ],
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://paf.link/ProposalSubmitter"
+      }
+    ]
+  },
+  {
+    "@id": "_:n8c50ffb32da543339e4df35fc7862988b2",
+    "@type": [
+      "http://www.w3.org/ns/prov#Association"
+    ],
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://example.com/national-council"
+      }
+    ],
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://paf.link/ProposalReceiver"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/registration-activity",
+    "@type": [
+      "https://paf.link/RegistrationActivity"
+    ],
+    "http://www.w3.org/ns/prov#startedAtTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2024-01-01T12:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/CH-1234",
+    "@type": [
+      "https://paf.link/IdentifierEntity"
+    ],
+    "http://schema.org/identifier": [
+      {
+        "@value": "CH-1234"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasGeneratedBy": [
+      {
+        "@id": "https://example.com/registration-activity"
       }
     ]
   }

@@ -1,102 +1,201 @@
-{
-  "@graph": [
-    {
-      "@id": "_:b0",
-      "@type": "prov:Association",
-      "agent": "example:Colocambiado",
-      "role": "paf:ProposalSubmitter"
-    },
-    {
-      "@id": "_:b1",
-      "@type": "prov:Association",
-      "agent": "example:national-council",
-      "role": "paf:ProposalReceiver"
-    },
-    {
-      "@id": "_:b2",
-      "@type": "prov:Association",
-      "agent": "example:national-council",
-      "role": "paf:DecisionMaker"
-    },
-    {
-      "@id": "example:CH-1234",
-      "@type": "paf:IdentifierEntity",
-      "identifier": "CH-1234",
-      "wasGeneratedBy": "example:registration-activity"
-    },
-    {
-      "@id": "example:decision-activity",
-      "@type": "paf:DecisionActivity",
-      "association": "_:b2",
-      "startedAtTime": "2024-01-03T12:00:00+00:00",
-      "used": [
-        "example:CH-1234",
-        "example:registration-entity"
-      ],
-      "wasInformedBy": "example:proposal-activity"
-    },
-    {
-      "@id": "example:decision-entity",
-      "@type": "paf:DecisionEntity",
-      "wasGeneratedBy": "example:decision-activity",
-      "decision": "paf:Accepted",
-      "paf:voteNo": 70,
-      "paf:voteYes": 130
-    },
-    {
-      "@id": "example:proposal-activity",
-      "@type": "paf:ProposalActivity",
-      "association": [
-        "_:b0",
-        "_:b1"
-      ],
-      "startedAtTime": "2024-01-02T12:00:00+00:00",
-      "used": [
-        "example:CH-1234",
-        "example:registration-entity"
-      ],
-      "wasInformedBy": "example:registration-activity"
-    },
-    {
-      "@id": "example:registration-activity",
-      "@type": "paf:RegistrationActivity",
-      "startedAtTime": "2024-01-01T12:00:00+00:00"
-    },
-    {
-      "@id": "example:registration-entity",
-      "@type": "paf:RegistrationEntity",
-      "description": {
-        "en": "Change background color of Swiss national flag to blue",
-        "de": "Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau",
-        "it": "Modifica il colore di sfondo della bandiera nazionale svizzera in blu",
-        "fr": "Modifiez la couleur de fond du drapeau national suisse en bleu"
+[
+  {
+    "@id": "_:b0",
+    "@type": [
+      "http://www.w3.org/ns/prov#Association"
+    ],
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://example.com/national-council"
+      }
+    ],
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://paf.link/DecisionMaker"
+      }
+    ]
+  },
+  {
+    "@id": "_:b1",
+    "@type": [
+      "http://www.w3.org/ns/prov#Association"
+    ],
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://example.com/Colocambiado"
+      }
+    ],
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://paf.link/ProposalSubmitter"
+      }
+    ]
+  },
+  {
+    "@id": "_:b2",
+    "@type": [
+      "http://www.w3.org/ns/prov#Association"
+    ],
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://example.com/national-council"
+      }
+    ],
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://paf.link/ProposalReceiver"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/CH-1234",
+    "@type": [
+      "https://paf.link/IdentifierEntity"
+    ],
+    "http://schema.org/identifier": [
+      {
+        "@value": "CH-1234"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasGeneratedBy": [
+      {
+        "@id": "https://example.com/registration-activity"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/decision-activity",
+    "@type": [
+      "https://paf.link/DecisionActivity"
+    ],
+    "http://www.w3.org/ns/prov#qualifiedAssociation": [
+      {
+        "@id": "_:b0"
+      }
+    ],
+    "http://www.w3.org/ns/prov#startedAtTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2024-01-03T12:00:00+00:00"
+      }
+    ],
+    "http://www.w3.org/ns/prov#used": [
+      {
+        "@id": "https://example.com/CH-1234"
       },
-      "name": "Colocambiado",
-      "wasGeneratedBy": "example:registration-activity"
-    },
-    {
-      "@id": "paf:DecisionActivity",
-      "subClassOf": "prov:Activity"
-    },
-    {
-      "@id": "paf:DecisionEntity",
-      "subClassOf": "prov:Entity"
-    },
-    {
-      "@id": "paf:IdentifierEntity",
-      "subClassOf": "prov:Entity"
-    },
-    {
-      "@id": "paf:ProposalActivity",
-      "subClassOf": "prov:Activity"
-    },
-    {
-      "@id": "paf:RegistrationActivity",
-      "subClassOf": "prov:Activity"
-    },
-    {
-      "@id": "paf:RegistrationEntity",
-      "subClassOf": "prov:Entity"
-    }
-  ]
-}
+      {
+        "@id": "https://example.com/registration-entity"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasInformedBy": [
+      {
+        "@id": "https://example.com/proposal-activity"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/decision-entity",
+    "@type": [
+      "https://paf.link/DecisionEntity"
+    ],
+    "http://www.w3.org/ns/prov#wasGeneratedBy": [
+      {
+        "@id": "https://example.com/decision-activity"
+      }
+    ],
+    "https://paf.link/decision": [
+      {
+        "@id": "https://paf.link/Accepted"
+      }
+    ],
+    "https://paf.link/voteNo": [
+      {
+        "@value": 70
+      }
+    ],
+    "https://paf.link/voteYes": [
+      {
+        "@value": 130
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/proposal-activity",
+    "@type": [
+      "https://paf.link/ProposalActivity"
+    ],
+    "http://www.w3.org/ns/prov#qualifiedAssociation": [
+      {
+        "@id": "_:b1"
+      },
+      {
+        "@id": "_:b2"
+      }
+    ],
+    "http://www.w3.org/ns/prov#startedAtTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2024-01-02T12:00:00+00:00"
+      }
+    ],
+    "http://www.w3.org/ns/prov#used": [
+      {
+        "@id": "https://example.com/CH-1234"
+      },
+      {
+        "@id": "https://example.com/registration-entity"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasInformedBy": [
+      {
+        "@id": "https://example.com/registration-activity"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/registration-activity",
+    "@type": [
+      "https://paf.link/RegistrationActivity"
+    ],
+    "http://www.w3.org/ns/prov#startedAtTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2024-01-01T12:00:00+00:00"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/registration-entity",
+    "@type": [
+      "https://paf.link/RegistrationEntity"
+    ],
+    "http://schema.org/description": [
+      {
+        "@language": "en",
+        "@value": "Change background color of Swiss national flag to blue"
+      },
+      {
+        "@language": "de",
+        "@value": "\u00c4ndere Hintergrundfarbe der Schweizer Nationalflagge zu blau"
+      },
+      {
+        "@language": "it",
+        "@value": "Modifica il colore di sfondo della bandiera nazionale svizzera in blu"
+      },
+      {
+        "@language": "fr",
+        "@value": "Modifiez la couleur de fond du drapeau national suisse en bleu"
+      }
+    ],
+    "http://schema.org/name": [
+      {
+        "@value": "Colocambiado"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasGeneratedBy": [
+      {
+        "@id": "https://example.com/registration-activity"
+      }
+    ]
+  }
+]

@@ -1,0 +1,44 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix : <https://example.com/> .
+@prefix paf: <https://paf.link/> .
+@prefix chpaf: <https://ch.paf.link/> . # Swiss specific extension
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# paf:DecisionActivity needs a paf:proposalActivity with a range of paf:ProposalActivity
+paf:DecisionActivityShape
+    a sh:NodeShape ;
+    sh:targetClass paf:DecisionActivity ;  # Target the class paf:DecisionActivity
+    sh:property [
+        sh:path paf:proposalActivity ;      # The property path to validate
+        sh:class paf:ProposalActivity ;     # The object must be of type paf:ProposalActivity
+        sh:minCount 1 ;                     # At least one paf:proposalActivity is required
+        sh:maxCount 1 ;                     # No more than one paf:proposalActivity is allowed
+    ].
+
+
+# All Activities (except paf:RegistrationActivity) must have the prov:wasInformedBy predicate with a range of prov:Activity
+paf:ActivityShape
+    a sh:NodeShape ;
+    sh:targetClass prov:Activity ;  # Target all instances of prov:Activity
+    sh:node [
+        sh:or (                       # Apply one of the following two conditions
+            [
+                #sh:not [              # Exclude paf:RegistrationActivity from the rule
+                    sh:class paf:RegistrationActivity ;
+                #] ;
+            ]
+            [
+                sh:property [         # Require prov:wasInformedBy for all other subclasses of prov:Activity
+                    sh:path prov:wasInformedBy ;
+                    sh:class prov:Activity ;  # Range constraint: the value must be of type prov:Activity
+                    sh:minCount 1 ;           # At least one prov:wasInformedBy is required
+                ] ;
+            ]
+        ) ;
+    ] ;
+    sh:message "All Activities (except paf:RegistrationActivity) must have the prov:wasInformedBy predicate with a range of prov:Activity." .
