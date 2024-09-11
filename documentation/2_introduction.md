@@ -12,9 +12,9 @@ Ultimately, by making public administration information easier accessible to bot
 
 ## Main Features
 
-**Core Simplicity and Extensibility**: The core of the Public Affairs Schema (paf.link) is designed to be simple, based on activities making it easy to understand and implement. It can be extended to accommodate a wide range of public affairs sub-types and capture more fine-grained aspects of public affair processes based on specific activities.
+**Core Simplicity and Extensibility**: The core of the Public Affairs Schema (paf.link) is designed to be simple, based on activities making it easy to understand and implement. It can be extended to accommodate a wide range of public affairs sub-types and capture more fine-grained aspects of public affair processes based on specific activities. Therefore it is possible to start the description at different ends of the overall process. Either very simple and high-level, or also in more detailed sub-processes. This flexibility helps to overcome the scope problem which can be observed to be set to large and jeopardizes the success. 
 
-**Independent yet Unified Development**: Independent development in different areas of the overall public affair process is supported, with a path by design for future unification. This includes different levels within public administrations.
+**Independent yet Unified Development**: Independent development in different areas of the overall public affair process is supported, with a path by design for future unification. This includes different levels within public administrations. Therfore this schema allows to create a common schema independently in different organization units and also more important at different periods of time. This helps to deal with the reality that project budgets and application life-cycles often don't allow to synchronize projects to be done at the same time frame.
 
 **Defined Process Connections**: There is a well-defined method for connecting different public affairs processes, such as linking parliamentary motions with executive actions and law text publications. To map to underlying data management systems one or multiple object identifiers can be used to express the connection of an activity to a process.
 
