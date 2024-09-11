@@ -8,7 +8,7 @@
 @prefix dcterm: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:ActID-1 a chpaf:RegistrationActivity;
+:ActID-1 a chpaf:OCoRegistrationActivity;
     prov:startedAtTime "2023-10-08T14:23:00Z"^^xsd:dateTime.
 
 :OCo_2023-2118 a chpaf:OCoIdentifierEntity;
