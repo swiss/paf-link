@@ -1,0 +1,68 @@
+[
+  {
+    "@id": "example:decision-activity",
+    "@type": "paf:DecisionActivity",
+    "association": "_:nf79070d0a77b401394affb63842ba94cb3",
+    "startedAtTime": "2024-01-05T12:00:00+00:00",
+    "used": [
+      "example:identifier-entity",
+      "example:proposal-entity"
+    ],
+    "wasInformedBy": "example:proposal-activity"
+  },
+  {
+    "@id": "_:nf79070d0a77b401394affb63842ba94cb3",
+    "@type": "prov:Association",
+    "agent": "example:national-council",
+    "role": "paf:DecisionMaker"
+  },
+  {
+    "@id": "example:identifier-entity",
+    "@type": "prov:Entity",
+    "identifier": "CH-1234"
+  },
+  {
+    "@id": "example:proposal-entity",
+    "@type": "prov:Entity",
+    "description": {
+      "en": "Change background color of Swiss national flag to blue",
+      "de": "Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau",
+      "it": "Modifica il colore di sfondo della bandiera nazionale svizzera in blu",
+      "fr": "Modifiez la couleur de fond du drapeau national suisse en bleu"
+    },
+    "name": "Colocambiado"
+  },
+  {
+    "@id": "example:decision-entity",
+    "@type": "prov:Entity",
+    "wasGeneratedBy": "example:decision-activity",
+    "decision": "paf:Accepted",
+    "paf:voteNo": 70,
+    "paf:voteYes": 130
+  },
+  {
+    "@id": "example:proposal-activity",
+    "@type": "paf:ProposalActivity",
+    "association": [
+      "_:nf79070d0a77b401394affb63842ba94cb1",
+      "_:nf79070d0a77b401394affb63842ba94cb2"
+    ],
+    "startedAtTime": "2024-01-03T12:00:00+00:00",
+    "used": [
+      "example:identifier-entity",
+      "example:proposal-entity"
+    ]
+  },
+  {
+    "@id": "_:nf79070d0a77b401394affb63842ba94cb1",
+    "@type": "prov:Association",
+    "agent": "example:Colocambiado",
+    "role": "paf:ProposalSubmitter"
+  },
+  {
+    "@id": "_:nf79070d0a77b401394affb63842ba94cb2",
+    "@type": "prov:Association",
+    "agent": "example:national-council",
+    "role": "paf:ProposalReceiver"
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "@id": "example:decision-entity",
+  "@type": "prov:Entity",
+  "wasGeneratedBy": {
+    "@id": "example:decision-activity",
+    "@type": "paf:DecisionActivity",
+    "association": {
+      "@type": "prov:Association",
+      "agent": "example:national-council",
+      "role": "paf:DecisionMaker"
+    },
+    "startedAtTime": "2024-01-05T12:00:00+00:00",
+    "used": [
+      {
+        "@id": "example:identifier-entity",
+        "@type": "prov:Entity",
+        "identifier": "CH-1234"
+      },
+      {
+        "@id": "example:proposal-entity",
+        "@type": "prov:Entity",
+        "description": {
+          "en": "Change background color of Swiss national flag to blue",
+          "de": "Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau",
+          "it": "Modifica il colore di sfondo della bandiera nazionale svizzera in blu",
+          "fr": "Modifiez la couleur de fond du drapeau national suisse en bleu"
+        },
+        "name": "Colocambiado"
+      }
+    ],
+    "wasInformedBy": {
+      "@id": "example:proposal-activity",
+      "@type": "paf:ProposalActivity",
+      "association": [
+        {
+          "@type": "prov:Association",
+          "agent": "example:Colocambiado",
+          "role": "paf:ProposalSubmitter"
+        },
+        {
+          "@type": "prov:Association",
+          "agent": "example:national-council",
+          "role": "paf:ProposalReceiver"
+        }
+      ],
+      "startedAtTime": "2024-01-03T12:00:00+00:00",
+      "used": [
+        "example:identifier-entity",
+        "example:proposal-entity"
+      ]
+    }
+  },
+  "decision": "paf:Accepted",
+  "paf:voteNo": 70,
+  "paf:voteYes": 130
+}

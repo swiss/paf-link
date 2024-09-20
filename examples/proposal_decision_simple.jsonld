@@ -1,0 +1,174 @@
+[
+  {
+    "@id": "https://example.com/decision-activity",
+    "@type": [
+      "https://paf.link/DecisionActivity"
+    ],
+    "http://www.w3.org/ns/prov#qualifiedAssociation": [
+      {
+        "@id": "_:nf79070d0a77b401394affb63842ba94cb3"
+      }
+    ],
+    "http://www.w3.org/ns/prov#startedAtTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2024-01-05T12:00:00+00:00"
+      }
+    ],
+    "http://www.w3.org/ns/prov#used": [
+      {
+        "@id": "https://example.com/identifier-entity"
+      },
+      {
+        "@id": "https://example.com/proposal-entity"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasInformedBy": [
+      {
+        "@id": "https://example.com/proposal-activity"
+      }
+    ]
+  },
+  {
+    "@id": "_:nf79070d0a77b401394affb63842ba94cb3",
+    "@type": [
+      "http://www.w3.org/ns/prov#Association"
+    ],
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://example.com/national-council"
+      }
+    ],
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://paf.link/DecisionMaker"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/identifier-entity",
+    "@type": [
+      "http://www.w3.org/ns/prov#Entity"
+    ],
+    "http://schema.org/identifier": [
+      {
+        "@value": "CH-1234"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/proposal-entity",
+    "@type": [
+      "http://www.w3.org/ns/prov#Entity"
+    ],
+    "http://schema.org/description": [
+      {
+        "@language": "en",
+        "@value": "Change background color of Swiss national flag to blue"
+      },
+      {
+        "@language": "de",
+        "@value": "Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau"
+      },
+      {
+        "@language": "it",
+        "@value": "Modifica il colore di sfondo della bandiera nazionale svizzera in blu"
+      },
+      {
+        "@language": "fr",
+        "@value": "Modifiez la couleur de fond du drapeau national suisse en bleu"
+      }
+    ],
+    "http://schema.org/name": [
+      {
+        "@value": "Colocambiado"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/decision-entity",
+    "@type": [
+      "http://www.w3.org/ns/prov#Entity"
+    ],
+    "http://www.w3.org/ns/prov#wasGeneratedBy": [
+      {
+        "@id": "https://example.com/decision-activity"
+      }
+    ],
+    "https://paf.link/decision": [
+      {
+        "@id": "https://paf.link/Accepted"
+      }
+    ],
+    "https://paf.link/voteNo": [
+      {
+        "@value": 70
+      }
+    ],
+    "https://paf.link/voteYes": [
+      {
+        "@value": 130
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/proposal-activity",
+    "@type": [
+      "https://paf.link/ProposalActivity"
+    ],
+    "http://www.w3.org/ns/prov#qualifiedAssociation": [
+      {
+        "@id": "_:nf79070d0a77b401394affb63842ba94cb1"
+      },
+      {
+        "@id": "_:nf79070d0a77b401394affb63842ba94cb2"
+      }
+    ],
+    "http://www.w3.org/ns/prov#startedAtTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2024-01-03T12:00:00+00:00"
+      }
+    ],
+    "http://www.w3.org/ns/prov#used": [
+      {
+        "@id": "https://example.com/identifier-entity"
+      },
+      {
+        "@id": "https://example.com/proposal-entity"
+      }
+    ]
+  },
+  {
+    "@id": "_:nf79070d0a77b401394affb63842ba94cb1",
+    "@type": [
+      "http://www.w3.org/ns/prov#Association"
+    ],
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://example.com/Colocambiado"
+      }
+    ],
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://paf.link/ProposalSubmitter"
+      }
+    ]
+  },
+  {
+    "@id": "_:nf79070d0a77b401394affb63842ba94cb2",
+    "@type": [
+      "http://www.w3.org/ns/prov#Association"
+    ],
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://example.com/national-council"
+      }
+    ],
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://paf.link/ProposalReceiver"
+      }
+    ]
+  }
+]
