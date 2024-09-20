@@ -59,7 +59,7 @@
 :decision-activity a paf:DecisionActivity;
     prov:wasInformedBy :decision-creation-activity;
     paf:proposalActivity :proposal-activity;
-    prov:startedAtTime: "2024-01-05T12:00:00Z"^^xsd:dateTime;
+    prov:startedAtTime "2024-01-05T12:00:00Z"^^xsd:dateTime;
     prov:used :identifier-entity, :decision-entity;
     prov:qualifiedAssociation [
         a prov:Association;
