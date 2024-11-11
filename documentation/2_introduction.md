@@ -43,7 +43,7 @@ The three layers elements are connected by sub-classing the next hihgher layer.
 <figure id="figure">
   <img src="img/layers.svg" alt="Layered Design" />
   <figcaption>
-    The paf.link public affaires schema with its layered design.
+    The paf.link - "Public Affairs" schema with its layered design.
   </figcaption>
 </figure>
 
