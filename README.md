@@ -1,6 +1,6 @@
 # paf.link
 
-In this repository we develop the **paf.link schema** as a RDF schema for public affaires within the public administration.
+In this repository we develop the **paf.link schema** as a RDF schema for public affairs within the public administration.
 
 @prefix paf: <https://paf.link/>.
 
