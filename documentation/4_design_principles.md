@@ -1,6 +1,6 @@
 # Design Principles {#design-principles}
 
-PROV-O is deliberately very open in its design allowing it to be used in a wide variety of application scenarios. The paf.link schema builds upon this open foundation and defines some narrower **design principles** how to use PROV-O to represent public affaires.
+PROV-O is deliberately very open in its design allowing it to be used in a wide variety of application scenarios. The paf.link schema builds upon this open foundation and defines some narrower **design principles** how to use PROV-O to represent public affairs.
 
 These design principles try to strike a balance between on the one hand too much openness which would lead to implementations that differ very much and on the other hand too rigid requirements making it difficult to adapt to the existing realities of different public affairs.
 
