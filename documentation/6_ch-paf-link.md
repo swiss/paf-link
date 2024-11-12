@@ -1,164 +1,42 @@
 # Layer 3: Swiss Public Affairs (ch.paf.link) {#ch-paf-link}
 
+This chapter concretises the chapter before. Whereas the paf-link classes will never be used on real entities (except for examples), the ch-paf-link classes defined in this chapter will be used in real world applications in the public administration of Switzerland.
+
 ## Office Consultation
 
-An office consultation is an example of [consultation and comment activities]{#consultation-comment-activities}. In such a consultation, the submitter of the consultation seeks for comments of different offices.
+An office consultation is an example of [consultation and comment activities](#consultation-comment-activities). In such a consultation, the submitter of the consultation seeks comments to a draft from different offices.
 
-### Full Example
+The activities that are involved are the following:
+
+- Registration Activity (**chpaf:OCoRegistrationActivity**): Registers the already available information in the system. This is the entry into the paf.link realm.
+- Consultation Creation Activity (**chpaf:OCoConsultationCreationActivity**): Creates the entities that form the consultation.
+- Consultation Registration Activity (**chpaf:OCoConsultationRegistrationActivity**): Registers the consultation in the system. This is an important step because this consultations are registred centrally. This is a subclass of [paf:ConsultationCreationActivity](#ConsultationCreationActivity).
+- Consultation Activity (**chpaf:OCoConsultationActivity**): This activity is important for bundling the submitter and receiver of the consultation.
+- Comment Activity (**chpaf:OCoCommentActivity**): This activity generates the answer entities to the consultation. Every receiver of the consultation has its own comment activity.
+
+The possible roles are:
+
+- Consultation Registrar (**chpaf:OCoConsultationRegistrar**)
+- Consultation Submitter (**chpaf:OCoConsultationSubmitter**)
+- Consultation Receiver (**chpaf:OCoConsultationReceiver**)
+- Comment Maker (**chpaf:OCoCommentMaker**)
+
+### Full Example on Office Consultation
 
 <aside class="example" title="Full Example on Office Consultation">
     Full turtle listing for: <a href="https://github.com/swiss/paf-link/blob/main/examples/office_consultation.ttl" target="_blank">Full example on office consultation</a>.
 </aside>
 
-## Procedural Request (Motion, Postulate) - Proposal for Resolution or Information
+## Motions and Postulates
 
-### Internal Request TaskActivity 
-* task id
-* based on a Curia ID -> with title and text and potentialy link
-* language
-* office / responsible person
-* chapter -> is it done or not?
-* connex 
-( from BK to Dep)
+Motions and postulates (MoPo) are parliamentary instruments ([de](https://www.parlament.ch/de/%C3%BCber-das-parlament/parlamentsportraet/stellung-der-bundesversammlung/bundesversammlung-und-bundesrat/parlamentarische-vorstoesse)/[fr](https://www.parlament.ch/fr/%C3%BCber-das-parlament/portrait-du-parlement/statut-assemblee-federale/assemblee-federale-et-le-conseil-federal/interventions-parlementaires)/[it](https://www.parlament.ch/it/%C3%BCber-das-parlament/ritratto-del-parlamento/statuto-assemblea-federale/assemblea-federale-e-consiglio-federale/interventi-parlamentari)).
 
+Basically, motions and postulates demand actions from the federal council. The answer from the federal council can be a proposal to close the MoPo (because the appropriate action has been taken) or some information about the status of the fulfillment (why is the demanded action of the MoPo not yet fully done).
 
+The history of a MoPo can be quite long and branched. This chapter focusses only on the moment, when the federal council gives an answer to a MoPo, be it a proposal to close the MoPo or the report of the current status of the fulfillment.
 
+### Full Example on Motion and Postulate
 
-### Procedural Request Proposal for Abandonment ProposalActivity (Chapter1)
-For Mopo Report, chapter 1, propose a resolution (Abschreibung) (task done).
-( from BK to PD)
-
-<aside class="example">
-
-```turtle
-
-# 1st registration
-:PropAct-19.4390 a paf:ProceduralRequest-ProposalForAbandonment-ProposalActivity ; # Chapter1 
-  	prov:used :Curia-19.4390;
-	prov:startedAtTime "2020-10-08T14:23:00Z"; # Time of Proposal
-
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent <https://ld.admin.ch/FCh>; # 
-        prov:hadRole paf:Proposer;
-    ].
-
-# 2nd Entity
-
-"""Die am 1. Januar 2022 in Kraft getretenen Weisungen des Bundesrates vom 18. August 2021 über Administrativ- und 
-Disziplinaruntersuchungen (BBl 2021 1903) bezeichnen Beratungsstellen in Sachen Administrativ- und Disziplinaruntersuchungen
-und legen die Konsultations- und Dokumentationspflichten der für die Anordnung dieser Untersuchungen zuständigen Stellen fest. 
-Diese Weisungen sind für die Departemente und die ihnen unterstellten Verwaltungseinheiten sowie die Bundeskanzlei verbindlich 
-und werden in der Praxis umgesetzt.
-Der Bundesrat erachtet das Anliegen der Motion als erfüllt und beantragt deren Abschreibung"""
-
-# 2nd generation of id
-
-:Curia-19.4390; a prov:Entity, chpaf:Motion . (chpaf:Postulate)
-
-
-```
-</aside>
-
-### Procedural Request DecisionActivity (Chapter 1 / Answer)
-For MoPo Report on each Proposal Activity, the answer on Chapter 1 proposals.
-( from PD to BK)
-
-
-### Procedural Request Report Of State InformationActivity (Chapter 2)
-For Mopo Report, chapter 2, informing on status of procedural request.
-( from BK to PD)
-<aside class="example">
-
-```turtle
-# Chapter2 ProceduralRequest-ReportOfState-InformationActivity
-```
-</aside>
-
-<aside class="example">
-
-### Procedural Request Report of Abandoned (Chapter 3)
-For Mopo Report, chapter 3 / Annex1, informing on already abandoned procedural requests.
-( from BK to PD)
-
-```turtle
-# Annex 1 (Chapter3) ProceduralRequest-ReportOfAbandoned-InformationActivity
-```
-</aside>
-
-### Full Example
-
-<aside class="example">
-
-```turtle
-@prefix : <https://example.com/> .
-@prefix chpaf: <https://ch.paf.link/> .
-@prefix paf: <https://paf.link/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix schema: <http://schema.org/> .
-
-:mo-po-admission-activity a chpaf:MoPoAdmissionActivity, prov:Activity;
-	schema:comment "The activity that brings the MoPo into the system boundaries"@en;
-	prov:used :mo-po-admission-entity, :mo-po-identifier-entity.
-
-:mo-po-admission-entity a chpaf:MoPoAdmissionEntity, prov:Entity;
-	schema:comment "The entity that contains all the known info about the MoPo from outside the system boundaries"@en.
-
-:mo-po-identifier-activity a chpaf:MoPoIdentifierActivity, prov:Activity;
-	schema:comment "The activity that creates the identifier entity."@en;
-	prov:wasInformedBy :mo-po-admission-activity;
-	prov:used :mo-po-identifier-entity.
-
-:mo-po-identifier-entity a chpaf:MoPoIdentifierEntity, prov:Entity;
-	schema:comment "The entity tha represents the identifier of the MoPo."@en;
-	prov:wasGeneratedBy :mo-po-identifier-activity;
-	prov:wasDerivedFrom :mo-po-admission-entity;
-	schema:identifier "2019 P 18.3750".
-
-:mo-po-creation-activity a chpaf:MoPoCreationActivity, prov:Activity;
-	schema:comment "The activity that adds all the available information to the MoPo."@en;
-	prov:wasInformedBy :mo-po-identifier-activity;
-	prov:used :mo-po-identifier-entity.
-
-:mo-po-entity a chpaf:MoPoEntity, prov:Entity;
-	schema:comment "The entity that represents the actual MoPo."@en;
-	prov:wasGeneratedBy :mo-po-creation-activity;
-	prov:wasDerivedFrom :mo-po-identifier-entity;
-	schema:name "Verstärkte Regulierung der EU im Bereich der internationalen Rheinschifffahrt. Interessenwahrung der Schweiz (Janiak)";
-	schema:text "Der Bundesrat wird gebeten, in einem Bericht aufzuzeigen, wie sich die Entwicklung des Rheinregimes...".
-
-:mo-po-report-activity a chpaf:MoPoReportActivity, prov:Activity;
-	schema:comment "The activity that reports the MoPo."@en;
-	prov:wasInformedBy :mo-po-creation-activity;
-	prov:used :mo-po-identifier-entity.
-	
-:mo-po-report-entity a chpaf:MoPoReportEntity, prov:Entity;
-	schema:comment "The entity that represents the report of the MoPo."@en;
-	prov:wasGeneratedBy :mo-po-report-activity;
-	prov:wasDerivedFrom :mo-po-entity;
-	schema:text "Das Postulat beauftragt den Bundesrat aufzuzeigen...".
-
-:mo-po-proposal-activity a chpaf:MoPoProposalActivity, prov:Activity;
-	schema:comment "The activity that makes a proposal to the MoPo."@en;
-	prov:wasInformedBy :mo-po-report-activity;
-	prov:used :mo-po-identifier-entity.
-	
-:mo-po-proposal-entity a chpaf:MoPoProposalEntity, prov:Entity;
-	schema:comment "The entity that represents the proposal to the MoPo."@en;
-	prov:wasGeneratedBy :mo-po-proposal-activity;
-	prov:wasDerivedFrom :mo-po-report-entity;
-	schema:text "Postulatsbericht vom 16. Dezember 2022...".
-
-:mo-po-proposal-decision-activity a chpaf:MoPoProposalDecisionActivity, prov:Activity;
-	schema:comment "The activity that leads to a decision to the MoPo."@en;
-	prov:wasInformedBy :mo-po-proposal-activity;
-	prov:used :mo-po-identifier-entity.
-
-:mo-po-proposal-decision-entity a chpaf:MoPoProposalDecisionEntity, prov:Entity;
-	schema:comment "The entity that represents the decision to the MoPo."@en;
-	prov:wasGeneratedBy :mo-po-proposal-decision-activity;
-	prov:wasDerivedFrom :mo-po-proposal-entity;
-	chpaf:moPoProposalDecision chpaf:MoPoProposalAccepted.
-```
-
+<aside class="example" title="Full Example on Motion and Postulate">
+    Full turtle listing for: <a href="https://github.com/swiss/paf-link/blob/main/examples/motion_postulate.ttl" target="_blank">Full example on motion and postulate.</a>.
 </aside>

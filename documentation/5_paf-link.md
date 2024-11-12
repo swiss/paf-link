@@ -123,12 +123,12 @@ The agent (person or group) which issues the comment.
 
 The affair of information and acknowledgement means that a person or organization is informing another person or organization. The receiving body or person (can) acknowledge this information. Depending on the affair, such an acknowledgement can be mandatory, optional or not planned. Translations for such activities are in the table below:
 
-|     | information | acknowledgement |
-| --- | ------------------------------------------------------- | -------------------------------------------------------- |
-| en: | information                                                | acknowledgement                                                 |
-| de: | Information                                                  | Quittierung                                             |
-| fr: | information                                             | accusé de réception                                                 |
-| it: | informazione                                                | conferma                                                |
+|     | information  | acknowledgement     |
+| --- | ------------ | ------------------- |
+| en: | information  | acknowledgement     |
+| de: | Information  | Quittierung         |
+| fr: | information  | accusé de réception |
+| it: | informazione | conferma            |
 
 The following elements are involved in such an affair:
 
@@ -164,10 +164,11 @@ The agent (person or group) which acknowledges the information.
 
 ## Order & Completion Activities
 
-These activites are meant to be a sort of "catch-all" activities if the other are not suitable. In fact, all the activities described before could be understood as some kind of "order and completion" activities.
+These activities are meant to be a sort of "catch-all" activities if the other are not suitable. In fact, all the activities described before could be understood as some kind of "order and completion" activities.
 
 Alternative names:
 
-* TaskAssignement & TaskFulfilment Activities
-* Mandate & Resolution Activities
-* Todo & Done Activities ("done" does not sound like an activity)
+- Task-Assignment & Task-Fulfillment Activities
+- Mandate & Resolution Activities
+- Todo & Done Activities ("done" does not sound like an activity)
+- Action & Reaction Activities

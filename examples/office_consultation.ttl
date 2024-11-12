@@ -48,8 +48,8 @@
 :ActID-4 a chpaf:OCoConsultationActivity ;
 	prov:wasInformedBy :ActID-3;
     prov:used :OCo_2023-2118, :EntID-1;
-	chpaf:officeConsultationStarted "2023-10-19T00:00:00Z"; # official start of the consultation / sub-property of prov:startedAtTime
-	chpaf:officeConsultationEnded "2023-11-01T00:00:00Z"; # deadline for the inputs of the consultation
+	prov:startedAtTime "2023-10-19T00:00:00Z"; # official start of the consultation
+	prov:endedAtTime "2023-11-01T00:00:00Z"; # deadline for the inputs of the consultation
     prov:qualifiedAssociation [
         a prov:Association;
         prov:agent <https://ld.admin.ch/office/III.1.4>; # Staatssekretariat für Migration
@@ -58,6 +58,11 @@
     prov:qualifiedAssociation [
         a prov:Association;
         prov:agent <https://ld.admin.ch/office/III.1.2>; # Bundesamt für Justiz
+        prov:hadRole chpaf:OCoConsultationReceiver;
+    ];
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent <https://ld.admin.ch/office/III.1.3>; # Bundesamt für Polizei
         prov:hadRole chpaf:OCoConsultationReceiver;
     ].
 
@@ -73,3 +78,16 @@
 :EntID-2 a chpaf:OCoCommentEntity;
     prov:wasGeneratedBy :ActID-5;
     schema:description "It is very important to include also..."@en.
+
+:ActID-6 a chpaf:OCoCommentActivity ;
+	prov:wasInformedBy :ActID-4;
+	prov:used :OCo_2023-2118, :EntID-1;
+  	prov:qualifiedAssociation [
+        	a prov:Association;
+        	prov:agent <https://ld.admin.ch/office/III.1.3>; # BPOL
+        	prov:hadRole chpaf:OCoCommentMaker;
+  	].
+
+:EntID-3 a chpaf:OCoCommentEntity;
+    prov:wasGeneratedBy :ActID-6;
+    schema:description "It is very important to exclude also..."@en.
