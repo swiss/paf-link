@@ -1,34 +1,33 @@
 # Tutorial RDF to XML
 
-## Step 1:
+## Step 1
 
 go to [Easy RDF](https://www.easyrdf.org/) and click on "Converter" in the menu bar 
 
-## Step 2 :
+## Step 2
 
-### 2.1) Add data in the space provided.
+### Add data in the space provided
 <figure id="figure">
   <img src="https://github.com/swiss/paf-link/blob/main/img/1.png" />
 </figure>
 
+### Select the initial data format
 
-### 2.2) select the initial data format
-
-### 2.3) select the format into which the data should be converted, depending on your requirements take "Json-LD" or "RDF/XML".
+### Select the format into which the data should be converted, depending on your requirements take "Json-LD" or "RDF/XML"
 
 <figure id="figure">
   <img src="https://github.com/swiss/paf-link/blob/main/img/2.png" />
 </figure>
 
+### Then press "submit
 
-### 2.4) then press "submit
+### A new menu opens at the bottom of the page, framed with your converted code.
 
-### 2.5) A new menu opens at the bottom of the page, framed with your converted code.
+### Result
 
-### 2.6) Result
+#### Input data
 
-#### Input data : 
-```jsx
+```ttl
 @prefix : <https://example.com/> .
 @prefix paf: <https://paf.link/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -74,7 +73,8 @@ go to [Easy RDF](https://www.easyrdf.org/) and click on "Converter" in the menu 
 :acknowledgement-1 a prov:Entity;
     prov:wasGeneratedBy :acknowledgement-activity-1.
 ```
-#### Output data : 
+
+#### Output data
 
 ```<?xml version="1.0" encoding="utf-8" ?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -142,25 +142,29 @@ go to [Easy RDF](https://www.easyrdf.org/) and click on "Converter" in the menu 
 
 </rdf:RDF>
 ```
+
 # Tutorial RDF to JSON
 
-## Step 1:
+## Step 1
+
 go to [Easy RDF]([https://www.easyrdf.org/](https://json-ld.org/)) and click on "Playground" in the menu bar 
 
 ## Step 2:
-### 2.1) Add data in the space provided.
+
+### Add data in the space provided.
 <figure id="figure">
   <img src="https://github.com/swiss/paf-link/blob/main/img/JSON-LD%201.png" />
 </figure>
 
-### 2.2) select the shape
+### Select the shape
 <figure id="figure">
   <img src="https://github.com/swiss/paf-link/blob/main/img/JSON-LD%202.png" />
 </figure>
 
-### 2.3) Result
+### Result
 
-#### Input data : 
+#### Input data 
+
 ```
 {
   "@context": "https://json-ld.org/contexts/person.jsonld",
@@ -171,7 +175,7 @@ go to [Easy RDF]([https://www.easyrdf.org/](https://json-ld.org/)) and click on 
 }
 ```
 
-#### Output data : 
+#### Output data
 
 ```
 [
@@ -195,11 +199,4 @@ go to [Easy RDF]([https://www.easyrdf.org/](https://json-ld.org/)) and click on 
     ]
   }
 ]
-
 ```
-
-
-
-
-
-
