@@ -6,7 +6,7 @@ Public affairs often come in the form of **binoms**:
 
 - proposal and decision
 - consultation and comment
-- information and acknowledgment
+- information and acknowledgement
 - order and completion
 
 The next sections model such generic public affairs.
@@ -121,158 +121,46 @@ The agent (person or group) which issues the comment.
 
 ## Information & Acknowledgement Activities
 
-### Class paf:InformationActivity
-paf:InformationActivity is an rdfs:subClass of prov:Activity
+The affair of information and acknowledgement means that a person or organization is informing another person or organization. The receiving body or person (can) acknowledge this information. Depending on the affair, such an acknowledgement can be mandatory, optional or not planned. Translations for such activities are in the table below:
 
-[Translations](https://www.termdat.bk.admin.ch/entry/380634):
+|     | information | acknowledgement |
+| --- | ------------------------------------------------------- | -------------------------------------------------------- |
+| en: | information                                                | acknowledgement                                                 |
+| de: | Information                                                  | Quittierung                                             |
+| fr: | information                                             | accusé de réception                                                 |
+| it: | informazione                                                | conferma                                                |
 
-- E: Information
-- D: Information
-- F: Information
-- I: Informazione
+The following elements are involved in such an affair:
 
-This is the activity in the process to formally ask for a decision.
+### Class **paf:InformationCreationActivity** {#InformationCreationActivity}
 
-#### Class paf:InformationSubmitter
+This is the activity that creates all the necessary entities to bundle the information. As the actual information activity should not generate entities, this pre information activity is used.
 
-paf:InformationSubmitter is an rdfs:subClass of prov:Agent 
+### Class **paf:InformationActivity** {#InformationActivity}
 
-The agent(person or group)which submits the information.
+This activity contains as the sum of all input entities the actual information.
 
-#### Class paff:InformationReceiver
+### Class **paf:InformationSubmitter** {#InformationSubmitter}
 
-paf:InformationReceiver is an rdfs:subClass of prov:Agent
+The agent (person or group) which submits the information.
+
+### Class **paf:InformationReceiver** {#InformationReceiver}
 
 The agent (person or group) which receives the information.
 
-#### Usage of prov:qualifiedAssociation ? 
-EXAMPLE : Usage of prov:qualifiedAssociation in Turtle 
+### Class **paf:AcknowledgementActivity** {#AcknowledgementActivity}
 
-```jsx
-:information-activity-1 a paf:InformationActivity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :information-submitter-1;
-        prov:hadRole paf:InformationSubmitter;
-        rdfs:comment "infornatuib-submitter-1 is the issuer of information-activity-1."@en;
-    ].
+This is the activity to formally acknowledge the corresponding [paf:InformationActivity](#InformationActivity). It contains as the sum of all input entities the information that is acknowledged and creates no output entity.
 
-:information-submitter-1 a prov:Agent;
-    schema:name "Information Submitter 1".
-```
+### Class **paf:AcknowledgementMaker** {#AcknowledgementMaker}
 
-#### Usage of prov:wasInformedBy  ? 
-To connect a higher level process, e.g. a Parliament Affair Identificator.
+The agent (person or group) which acknowledges the information.
 
-EXAMPLE : Usage of prov:wasInformedBy in Turtle
+### Full Example on Information & Acknowledgement
 
-```jsx
-:information-activity-1 a paf:InformationActivity;
-    prov:wasInformedBy :affair-1.
-
-:affair-1 a prov:Activity;
-    rdfs:comment "affair-1 is a higher level activity."@en.
-```
-
-EXAMPLE : Usage of prov:wasInformedBy in XML
-
-```xml
-<prov:document>
-    
-    <paf:InformationActivity prov:id=":information-activity-1">
-        <prov:wasInformedBy prof:ref=":affair-1"/>
-    </paf:InformationActivity>
-    
-    <paf:Activity prov:id=":affair-1">
-        <rdfs:comment xml:lang="en">affair-1 is a higher level activity.</rdfs:comment>
-    </paf:Activity>
-    
-</prov:document>
-```
-
-### Class paf:AcknowledgementActivity
-
-paf:AcknowledgementActivity is a rdfs:subClass of prov:Activity
-
-[Translations](https://www.termdat.bk.admin.ch/entry/379358):
-
-- E Acknowledgement
-- D Quittierung
-- F Accusé de réception
-- I conferma
-
-This is the activity to formally answer the corresponding paf:InformationActivity.
-
-#### Class paf:AcknowledgementMaker (maker est-ce le bon terme ? )
-
-paf:AcknowledgementMaker is a rdfs:subClass of prov:Activity
-
-The agent (person or group) which issues the decision.
-
-#### Usage of prov:qualifiedAssociation ? 
-
-EXAMPLE: Usage of prov:qualifiedAssociation in Turtle
-
-```jsx
-:acknowledgement-activity-1 a paf:AcknowledgementActivity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :Acknowledgement-maker-1;
-        prov:hadRole paf:AcknowledgementMaker;
-        rdfs:comment "Acknowledgement-maker-1 is the issuer of Acknowledgement-activity-1."@en;
-    ].
-```
-
-### Full Example on Information & Acknowledgement Activities
-
-EXAMPLE : Full Example on Information & Acknowledgement in Turtle
-
-```jsx
-@prefix : <https://example.com/> .
-@prefix paf: <https://paf.link/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix schema: <http://schema.org/> .
-
-:information-activity-1 a paf:InformationActivity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :information-submitter-1;
-        prov:hadRole paf:InformationSubmitter;
-    ];
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :information-receiver-1;
-        prov:hadRole paf:InformationReceiver;
-    ];
-    prov:used :information-1;
-    prov:wasInformedBy :parlamentary-activity-1;
-    prov:wasInformedBy :executive-activity-1;
-    prov:wasInformedBy :law-activity-1.
-
-:proposal-1 a prov:Entity;
-    prov:wasGeneratedBy :information-activity-1.
-
-:parlamentary-activity-1 a prov:Activity;
-    schema:identifier "23.0123".
-
-:executive-activity-1 a prov:Activity;
-    schema:identifier "321".
-
-:law-activity-1 a prov:Activity;
-    schema:identifier "SR21.1".
-
-:acknowledgemen-activity-1 a paf:AcknowledgementActivity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :acknowledgement-maker-1;
-        prov:hadRole paf:AcknowledgemetnMaker;
-    ];
-    prov:wasInformedBy :information-activity-1;
-    prov:used :acknowledgement-1.
-
-:acknowledgement-1 a prov:Entity;
-    prov:wasGeneratedBy :acknowledgement-activity-1.
-```
+<aside class="example" title="Full Example on Information & Acknowledgement">
+    Full turtle listing for: <a href="https://github.com/swiss/paf-link/blob/main/examples/information_acknowledgement.ttl" target="_blank">Full Example on information & acknowledgement</a>.
+</aside>
 
 ## Order & Completion Activities
 
