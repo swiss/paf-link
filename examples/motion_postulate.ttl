@@ -22,7 +22,7 @@
     chpaf:department <https://ld.admin.ch/FCh> ;
     chpaf:office "NaN"^^<http://www.w3.org/2001/XMLSchema#double> ;
     chpaf:sourceCouncil <https://politics.ld.admin.ch/council/S> ;
-    chpaf:MoPoType chpaf:Motion .
+    chpaf:moPoType chpaf:Motion .
 
 <https://politics.ld.admin.ch/curia/18.4276/2021/information-creation-activity> a chpaf:MoPoInformationCreationActivity ;
     prov:used <https://politics.ld.admin.ch/curia/18.4276>,
