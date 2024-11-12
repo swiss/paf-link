@@ -29,7 +29,7 @@ The possible roles are:
 
 ## Motions and Postulates
 
-Motions and postulates (MoPo) are parliamentary instruments ([de](https://www.parlament.ch/de/%C3%BCber-das-parlament/parlamentsportraet/stellung-der-bundesversammlung/bundesversammlung-und-bundesrat/parlamentarische-vorstoesse)/[fr](https://www.parlament.ch/fr/%C3%BCber-das-parlament/portrait-du-parlement/statut-assemblee-federale/assemblee-federale-et-le-conseil-federal/interventions-parlementaires)/[it](https://www.parlament.ch/it/%C3%BCber-das-parlament/ritratto-del-parlamento/statuto-assemblea-federale/assemblea-federale-e-consiglio-federale/interventi-parlamentari)).
+Motions and postulates (MoPo) are parliamentary instruments ([de](https://www.parlament.ch/de/%C3%BCber-das-parlament/parlamentsportraet/stellung-der-bundesversammlung/bundesversammlung-und-bundesrat/parlamentarische-vorstoesse)/[fr](https://www.parlament.ch/fr/%C3%BCber-das-parlament/portrait-du-parlement/statut-assemblee-federale/assemblee-federale-et-le-conseil-federal/interventions-parlementaires)/[it](https://www.parlament.ch/it/%C3%BCber-das-parlament/ritratto-del-parlamento/statuto-assemblea-federale/assemblea-federale-e-consiglio-federale/interventi-parlamentari)). More information about the legislative process is available [here (de)](https://www.bj.admin.ch/dam/bj/de/data/staat/legistik/hauptinstrumente/gleitf-d.pdf.download.pdf/gleitf-d.pdf).
 
 Basically, motions and postulates demand actions from the federal council. The answer from the federal council can be a proposal to close the MoPo (because the appropriate action has been taken) or some information about the status of the fulfillment (why is the demanded action of the MoPo not yet fully done).
 
