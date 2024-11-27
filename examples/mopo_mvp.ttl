@@ -1,0 +1,91 @@
+@prefix chpaf: <https://ch.paf.link/> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix paf: <https://paf.link/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+
+# Example for a Chapter 1 Motion
+
+<https://politics.ld.admin.ch/parliamentary-affair/21.4382> a chpaf:ParliamentaryAffairIdentifierEntity;
+    schema:identifier "21.4382".
+
+<https://politics.ld.admin.ch/procedural-request/21.4382/entity> a chpaf:ProceduralRequestEntity;
+    chpaf:ProceduralRequestType chpaf:Motion;
+    chpaf:council "SR";
+    schema:author "Céline V.";
+    schema:title "Eine Armee, die ihre Auswirkungen auf die Biodiversität senkt"@de;
+    schema:description "Der Bundesrat, insbesondere das Departement für Verteidigung, Bevölkerungsschutz und Sport (VBS), wird beauftragt..."@de;
+    chpaf:submissionDate "2021-12-06"^^xsd:date;
+    chpaf:transmissionDate "2022-09-22"^^xsd:date;
+    chpaf:department "VBS";
+    chpaf:office "GS-VBS".
+
+<https://politics.ld.admin.ch/procedural-request/proposal/2023/21.4382/entity> a chpaf:ProceduralRequestProposalEntity;
+    chpaf:proceduralRequestReportYear "2023"^^xsd:gYear;
+    schema:description "Das VBS hat seinen Aktionsplan Biodiversität am 22. Juni 2023 veröffentlicht [...] Der Bundesrat erachtet das Anliegen der Motion als erfüllt und beantragt deren Abschreibung."@de.
+
+<https://politics.ld.admin.ch/procedural-request/proposal/2023/21.4382/activity> a chpaf:ProceduralRequestProposalActivity;
+    prov:used <https://politics.ld.admin.ch/parliamentary-affair/21.4382>, <https://politics.ld.admin.ch/procedural-request/21.4382/entity>, <https://politics.ld.admin.ch/procedural-request/proposal/2023/21.4382/entity>.
+
+
+# Example for a Chapter 2 Postulate with Connex
+
+# Master Postulate
+
+<https://politics.ld.admin.ch/parliamentary-affair/21.3877> a chpaf:ParliamentaryAffairIdentifierEntity;
+    schema:identifier "21.3877".
+
+<https://politics.ld.admin.ch/procedural-request/21.3877/entity> a chpaf:ProceduralRequestEntity;
+    chpaf:ProceduralRequestType chpaf:Postulate;
+    chpaf:council "NR";
+    schema:author "Melanie M.";
+    schema:title "Evaluation der Strukturreform BVG"@de;
+    schema:description "Der Bundesrat wird beauftragt, die vor zehn Jahren in Kraft getretene Strukturreform BVG [...]"@de;
+    chpaf:submissionDate "2021-06-17"^^xsd:date;
+    chpaf:transmissionDate "2021-10-01"^^xsd:date;
+    chpaf:department "EDI";
+    chpaf:office "BSV".
+
+<https://politics.ld.admin.ch/procedural-request/information/2023/21.3877/entity> a chpaf:ProceduralRequestInformationEntity;
+    chpaf:proceduralRequestReportYear "2023"^^xsd:gYear;
+    schema:description "Die Forschungsarbeiten sind im Gang. Sie werden als Grundlage für den Bericht des Bundesrates dienen, der für die zweite Hälfte 2024 geplant ist."@de.
+
+<https://politics.ld.admin.ch/procedural-request/information/2023/21.3877/activity> a chpaf:ProceduralRequestInformationActivity;
+    prov:used <https://politics.ld.admin.ch/parliamentary-affair/21.3877>, <https://politics.ld.admin.ch/procedural-request/21.3877/entity>, <https://politics.ld.admin.ch/procedural-request/information/2023/21.3877/entity>.
+
+
+# Connex Postulate
+
+<https://politics.ld.admin.ch/parliamentary-affair/21.3968> a chpaf:ParliamentaryAffairIdentifierEntity;
+    schema:identifier "21.3968".
+
+<https://politics.ld.admin.ch/procedural-request/21.3968/entity> a chpaf:ProceduralRequestEntity;
+    chpaf:ProceduralRequestType chpaf:Postulate;
+    chpaf:council "NR";
+    schema:author "Kommission für soziale Sicherheit und Gesundheit NR";
+    schema:title "Zielerreichung der Strukturreform BVG evaluieren"@de;
+    schema:description "Der Bundesrat wird beauftragt, die vor zehn Jahren in Kraft getretene Strukturreform BVG [...] Eine Minderheit der Kommission beantragt, das Postulat abzulehnen."@de;
+    chpaf:submissionDate "2021-06-25"^^xsd:date;
+    chpaf:transmissionDate "2021-09-16"^^xsd:date;
+    chpaf:department "EDI";
+    chpaf:office "BSV";
+    chpaf:connectedParliamentaryAffair <https://politics.ld.admin.ch/parliamentary-affair/21.3877>.
+
+<https://politics.ld.admin.ch/procedural-request/information/2023/21.3968/entity> a chpaf:ProceduralRequestInformationEntity;
+    owl:sameAs <https://politics.ld.admin.ch/procedural-request/information/2023/21.3877/entity>.
+
+<https://politics.ld.admin.ch/procedural-request/information/2023/21.3968/activity> a chpaf:ProceduralRequestInformationActivity;
+    prov:used <https://politics.ld.admin.ch/parliamentary-affair/21.3968>, <https://politics.ld.admin.ch/procedural-request/21.3968/entity>, <https://politics.ld.admin.ch/procedural-request/information/2023/21.3968/entity>.
+
+# The MoPo Report
+
+<https://politics.ld.admin.ch/procedural-request/report/2023> a chpaf:ProceduralRequestReportEntity;
+    schema:author "Viola A.";
+    schema:author "Viktor R.".
+
+<https://politics.ld.admin.ch/procedural-request/report/2023/activity> a chpaf:ProceduralRequestReportActivity;
+    prov:wasInformedBy <https://politics.ld.admin.ch/procedural-request/proposal/2023/21.4382/activity>, <https://politics.ld.admin.ch/procedural-request/information/2023/21.3877/activity>, <https://politics.ld.admin.ch/procedural-request/information/2023/21.3968/activity>;
+    prov:used <https://politics.ld.admin.ch/procedural-request/report/2023>.
