@@ -53,6 +53,14 @@ The way how to divide information about the public affair into different entitie
 
 A special case of entities are **identifier entities** that represent the identifier of a specific public affair. Such identifier entities should not contain any other information than the identifier which should also be part of the URI of such entities. Every activity that acts upon a specific affair should use the corresponding identifier entity as part of the input entities.
 
+### Class **paf:IdentifierEntity** {#IdentifierEntity}
+
+Subclass of prov:Entity. Used with only one property: paf:identifier.
+
+### Property **paf:identifier** {#identifier}
+
+The literal containing the identifier of the public affair. This identifier should be part of the URI of the identifier entity.
+
 ## System Boundaries
 
 In reality, the paf.link schema will only be used during subparts of the public affair meaning that at some point in time, preexisting information will enter the paf.link realm. This will be done with a **registration activity**. If the information is to leave the paf.link boundary this has to be done by querying the paf.link data according to the needs of the acquiring system.
