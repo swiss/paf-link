@@ -1,5 +1,5 @@
 var respecConfig = {
-    specStatus: "Working Draft",
+    specStatus: "unofficial",
     shortName: 'paf-link',
     edDraftURI: "https://paf.link/",
     format: 'markdown', 

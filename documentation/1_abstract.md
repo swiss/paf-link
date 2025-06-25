@@ -1,5 +1,3 @@
-# Abstract
-
 <div class="advisement">
 
 Warning: This Document is a draft version. The content is not stable as of now. It is expected to have a stable version as of **September 2025**.
