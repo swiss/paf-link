@@ -6,11 +6,15 @@ These design principles try to strike a balance between on the one hand too much
 
 ## Public Affairs in General
 
-In its simplest form, public affairs are **activities** undertaken by **agents** (person or systems) that use **entities** as input information and for generating output information.
+In its simplest form, public affairs are:
+
+- **activities** undertaken by
+- **agents** (person or systems) that use
+- **entities** as input information and for generating output information.
 
 ## Necessity vs. Convenience
 
-The design principles specify only the **bare necessities** for describing a public affair. In the specific application of paf.link it usually will be advantageous to define some additional links between activities, agents and entities purely for **convenience purposes** (e.g. for easier querying). Using RDF makes it possible to comply to the paf.link schema and at the same time having some additional convenience driven triples added to the data.
+The design principles specify only the **bare necessities** for describing a public affair. In the specific application of paf.link it usually will be advantageous to define some additional links between activities, agents and entities purely for **convenience purposes** (e.g. for easier querying). Using RDF makes it possible to comply to the paf.link schema and at the same time having some additional convenience driven links added to the data.
 
 ## Activities
 
@@ -47,11 +51,16 @@ Entities can be used as **input information** for a certain activity or can be c
 
 Even without generating output entities, the fact that an activity happened can also signal some information: For example an acknowledgment activity means that something is acknowledged even without generating an output entity.
 
-The way how to divide information about the public affair into different entities is with one exception (see below) a matter of judgement. As guideline: It should not be necessary to add further reification to the entity: If some information added to the entity does not hold true for the whole entity, this is a sign to split the entity into separate entities.
+The way how to divide information about the public affair into different entities is with one exception (see [below](#IdentifierEntities)) a matter of judgement. As guideline: If some information added to the entity does not hold true for the whole entity, this is a sign to split the entity into separate entities.
 
-## Identifier Entities
+## Identifier Entities {#IdentifierEntities}
 
-A special case of entities are **identifier entities** that represent the identifier of a specific public affair. Such identifier entities should not contain any other information than the identifier which should also be part of the URI of such entities. Every activity that acts upon a specific affair should use the corresponding identifier entity as part of the input entities.
+A special case of entities are **identifier entities** that represent the identifier of a specific public affair. Such identifier entities should only contain:
+
+- the identifier which should also be part of the URI of such entities and
+- an additional class showing the kind of identifier (e.g. identifier of the national parliament).
+
+Every activity that acts upon a specific affair should use the corresponding identifier entity as part of the input entities.
 
 ### Class **paf:IdentifierEntity** {#IdentifierEntity}
 
@@ -67,11 +76,11 @@ In reality, the paf.link schema will only be used during subparts of the public 
 
 ### Class **paf:RegistrationActivity** {#RegistrationActivity}
 
-With help of a paf:RegistrationActivity, the necessary information gets registered within the paf.link system boundaries. This registration activity takes the preexisting information an groups it into the necessary entities that are mapped as output entities of the registration activity (although of course the corresponding information was available long before that and was not *generated* by the registration activity).
+With help of a paf:RegistrationActivity, the necessary information gets registered within the paf.link system boundaries. This registration activity takes the preexisting information and groups it into the necessary entities that are mapped as output entities of the registration activity (although of course the corresponding information was available long before that and was not *generated* by the registration activity).
 
-## Traceability
+## Traceability and Corrections
 
-To ensure **complete traceability**, entities must not be changed or deleted after their creation. If a change is necessary, a new entity must be created. Connecting such entities to their predecessors could be advantageous in terms of convenience but is not a requirement by the paf.link design principles. It has to become clear based on the activities, if something is merely a change of some pre-existing entities. For example, if a registration activity is carried out a second time, this will create another registration entity that replaces the existing one.
+To ensure **complete traceability**, entities must not be changed or deleted after their creation. If a change/correction is necessary, a new entity must be created. Connecting such entities to their predecessors could be advantageous in terms of convenience but is not a requirement by the paf.link design principles. It has to become clear based on the activities, if something is merely a change of some pre-existing entities. For example, if a registration activity is carried out a second time, this will create another registration entity that replaces the existing one.
 
 ## Binomial Activities
 
