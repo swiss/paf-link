@@ -62,11 +62,11 @@ A special case of entities are **identifier entities** that represent the identi
 
 Every activity that acts upon a specific affair should use the corresponding identifier entity as part of the input entities.
 
-### Class **paf:IdentifierEntity** {#IdentifierEntity}
+Class **paf:IdentifierEntity** {#IdentifierEntity}
 
 Subclass of prov:Entity. Used with only one property: paf:identifier.
 
-### Property **paf:identifier** {#identifier}
+Property **paf:identifier** {#identifier}
 
 The literal containing the identifier of the public affair. This identifier should be part of the URI of the identifier entity.
 
@@ -74,7 +74,7 @@ The literal containing the identifier of the public affair. This identifier shou
 
 In reality, the paf.link schema will only be used during subparts of the public affair meaning that at some point in time, preexisting information will enter the paf.link realm. This will be done with a **registration activity**. If the information is to leave the paf.link boundary this has to be done by querying the paf.link data according to the needs of the acquiring system.
 
-### Class **paf:RegistrationActivity** {#RegistrationActivity}
+Class **paf:RegistrationActivity** {#RegistrationActivity}
 
 With help of a paf:RegistrationActivity, the necessary information gets registered within the paf.link system boundaries. This registration activity takes the preexisting information and groups it into the necessary entities that are mapped as output entities of the registration activity (although of course the corresponding information was available long before that and was not *generated* by the registration activity).
 
@@ -98,7 +98,7 @@ The challenge with public affairs is that they do **look differently depending o
 
 ## Examples to the Design Principles
 
-### Basic Affair
+**Basic Affair**
 
 The following example illustrates a very basic affair based on three activities. First a **registration activity** that creates entities for identification and name and description of a public affair. The second activity uses these two entities to form a **proposal** to a deciding body. The last activity is the **decision activity** that creates a decision entity stating the result of the decision. In this case, no proposal entity is created because the proposal is already included in the description entity.
 
@@ -113,7 +113,7 @@ The following example illustrates a very basic affair based on three activities.
   </figcaption>
 </figure>
 
-### Extended Affair
+**Extended Affair**
 
 In the following extended affair example, the base entity alone is not enough to form the proposal and therefore, the proposal is built by a separate proposal creation activity. Because an activity can not create and use an entity at the same time, a distinct proposal creation activity besides the actual proposal activity is needed.
 
@@ -128,7 +128,7 @@ In the following extended affair example, the base entity alone is not enough to
   </figcaption>
 </figure>
 
-### Changing Entities
+**Changing Entities**
 
 The following example shows how a second registration activity changes an existing public affair by creating a second registration entity.
 
@@ -145,9 +145,9 @@ The following example shows how a second registration activity changes an existi
 
 ## Transformation to JSON and XML
 
-To allow for maximum impact of the paf.link schema, the data should also be available as JSON and XML so that it can be consumed by a vide variety of technical systems. Every RDF serialization (e.g. turtle) can be transformed deterministically and lossless to JSON-LD. The resulting JSON file is quite verbose and probably does not look very familiar to a developer not accustomed to RDF. 
+To allow for maximum impact of the paf.link schema, the data should also be available as JSON and XML so that it can be consumed by a vide variety of technical systems. Every RDF serialization (e.g. turtle) can be transformed deterministically and lossless to JSON-LD. The resulting JSON file is quite verbose and probably does not look very familiar to a developer not accustomed to RDF.
 
-### Raw JSON-LD
+**Raw JSON-LD**
 
 The following example shows a raw JSON-LD that was transformed from turtle from [above](#example-design-principles-basic-affair).
 
@@ -156,7 +156,7 @@ The following example shows a raw JSON-LD that was transformed from turtle from 
 
 </aside>
 
-### Context and Framing
+**Context and Framing**
 
 To mitigate these difficulties concerning verbosity, JSON-LD allows the usage of some embedded context information. Using this information and the framing mechanism, the resulting JSON file looks much more familiar to a "standard" JSON.
 

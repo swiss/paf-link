@@ -63,7 +63,7 @@ The following elements are involved in such an affair:
   </tbody>
 </table>
 
-### Full Example on Proposal & Decision
+**Full Example on Proposal & Decision**
 
 <aside class="example" title="Full Example on Proposal & Decision">
     Full turtle listing for: <a href="https://github.com/swiss/paf-link/blob/main/examples/proposal_decision.ttl" target="_blank">Full example on proposal & decision</a>.
@@ -135,7 +135,7 @@ The following elements are involved in such an affair:
   </tbody>
 </table>
 
-### Full Example on Consultation & Comment
+**Full Example on Consultation & Comment**
 
 <aside class="example" title="Full Example on Consultation & Comment">
     Full turtle listing for: <a href="https://github.com/swiss/paf-link/blob/main/examples/consultation_comment.ttl" target="_blank">Full example on consultation & comment</a>.
@@ -189,7 +189,7 @@ The following elements are involved in such an affair:
   </tbody>
 </table>
 
-### Full Example on Information & Acknowledgement
+**Full Example on Information & Acknowledgement**
 
 <aside class="example" title="Full Example on Information & Acknowledgement">
     Full turtle listing for: <a href="https://github.com/swiss/paf-link/blob/main/examples/information_acknowledgement.ttl" target="_blank">Full Example on information & acknowledgement</a>.
@@ -247,7 +247,7 @@ The following elements are involved in such an affair:
   </tbody>
 </table>
 
-### Full Example on Order & Completion
+**Full Example on Order & Completion**
 
 <aside class="example" title="Full Example on Order & Completion">
     Full turtle listing for: <a href="https://github.com/swiss/paf-link/blob/main/examples/order_completion.ttl" target="_blank">Full example on order & completion</a>.
