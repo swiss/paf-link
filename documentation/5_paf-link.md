@@ -24,15 +24,44 @@ The affair of a proposal and decision means that someone or some body is formall
 
 The following elements are involved in such an affair:
 
-| Class                                                        | Description                                                                                                                                                                                                                                                                                                                                                   |
-| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **paf:ProposalCreationActivity** {#ProposalCreationActivity} | This is the activity that creates all the necessary entities to form the proposal. As the actual proposal activity should not generate entities, this pre-proposal activity is used.                                                                                                                                                                          |
-| **paf:ProposalActivity** {#ProposalActivity}                 | This activity contains as the sum of all input entities the actual proposal.                                                                                                                                                                                                                                                                                  |
-| **paf:ProposalSubmitter** {#ProposalSubmitter}               | The agent (person or group) which submits the proposal.                                                                                                                                                                                                                                                                                                       |
-| **paf:ProposalReceiver** {#ProposalReceiver}                 | The agent (person or group) which receives the proposal.                                                                                                                                                                                                                                                                                                      |
-| **paf:DecisionCreationActivity** {#DecisionCreationActivity} | This is the activity that creates all the necessary entities to form the content of the decision. As the actual decision activity should not generate new content for the decision but only the result of the decision, such a pre-decision activity can be used.                                                                                             |
-| **paf:DecisionActivity** {#DecisionActivity}                 | This activity contains as the sum of all input entities the content of the decision (what is decided upon) and as output entity the actual result of the decision. Because there is not necessarily a direct succession between the proposal- and decision activity, the decision activity has a separate link to the proposal activity connecting these two. |
-| **paf:DecisionMaker** {#DecisionMaker}                       | The agent (person or group) which issues the decision.                                                                                                                                                                                                                                                                                                        |
+<table>
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a id="ProposalCreationActivity"><strong>paf:ProposalCreationActivity</strong></a></td>
+      <td>This is the activity that creates all the necessary entities to form the proposal. As the actual proposal activity should not generate entities, this pre-proposal activity is used.</td>
+    </tr>
+    <tr>
+      <td><a id="ProposalActivity"><strong>paf:ProposalActivity</strong></a></td>
+      <td>This activity contains as the sum of all input entities the actual proposal.</td>
+    </tr>
+    <tr>
+      <td><a id="ProposalSubmitter"><strong>paf:ProposalSubmitter</strong></a></td>
+      <td>The agent (person or group) which submits the proposal.</td>
+    </tr>
+    <tr>
+      <td><a id="ProposalReceiver"><strong>paf:ProposalReceiver</strong></a></td>
+      <td>The agent (person or group) which receives the proposal.</td>
+    </tr>
+    <tr>
+      <td><a id="DecisionCreationActivity"><strong>paf:DecisionCreationActivity</strong></a></td>
+      <td>This is the activity that creates all the necessary entities to form the content of the decision. As the actual decision activity should not generate new content for the decision but only the result of the decision, such a pre-decision activity can be used.</td>
+    </tr>
+    <tr>
+      <td><a id="DecisionActivity"><strong>paf:DecisionActivity</strong></a></td>
+      <td>This activity contains as the sum of all input entities the content of the decision (what is decided upon) and as output entity the actual result of the decision. Because there is not necessarily a direct succession between the proposal- and decision activity, the decision activity has a separate link to the proposal activity connecting these two.</td>
+    </tr>
+    <tr>
+      <td><a id="DecisionMaker"><strong>paf:DecisionMaker</strong></a></td>
+      <td>The agent (person or group) which issues the decision.</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Full Example on Proposal & Decision
 
@@ -55,18 +84,56 @@ Translations for such activities are in the table below:
 
 The following elements are involved in such an affair:
 
-| Class | Description |
-|-------|-------------|
-| **paf:ConsultationCreationActivity** {#ConsultationCreationActivity} | This is the activity that creates all the necessary entities to form the consultation. As the actual consultation activity should not generate entities, this pre-consultation activity is used. |
-| **paf:ConsultationEntity** {#ConsultationEntity} | This is the entity that contains (together with other entities) the content of the consultation. |
-| **paf:ConsultationRegistrationActivity** {#ConsultationRegistrationActivity} | This is the activity, that registers the consultation in the necessary systems (this is usually not the agent that actually wants to do the consultation). The consultation itself is the sum of all input entities to this activity. |
-| **paf:ConsultationRegistrar** {#ConsultationRegistrar} | The agent (person or group) which registers the consultation in the necessary systems. |
-| **paf:ConsultationActivity** {#ConsultationActivity} | This activity contains as the sum of all input entities the actual consultation with all necessary information. |
-| **paf:ConsultationSubmitter** {#ConsultationSubmitter} | The agent (person or group) which submits the consultation. |
-| **paf:ConsultationReceiver** {#ConsultationReceiver} | The agent (person or group) which receives the consultation. |
-| **paf:CommentActivity** {#CommentActivity} | This activity contains as the sum of all output entities the complete comments on the consultation. The input entities could be used to show, if not the entire scope of the consultation was considered for making comments.In the case of comment activities, there is no need to alter the consultation, so there is no comment creation activity (in comparison to the proposal and decision activities). |
-| **paf:CommentEntity** {#CommentEntity} | This is the entity that contains the comments to the consultation. |
-| **paf:CommentMaker** {#CommentMaker} | The agent (person or group) which issues the comment. |
+<table>
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a id="ConsultationCreationActivity"><strong>paf:ConsultationCreationActivity</strong></a></td>
+      <td>This is the activity that creates all the necessary entities to form the consultation. As the actual consultation activity should not generate entities, this pre-consultation activity is used.</td>
+    </tr>
+    <tr>
+      <td><a id="ConsultationEntity"><strong>paf:ConsultationEntity</strong></a></td>
+      <td>This is the entity that contains (together with other entities) the content of the consultation.</td>
+    </tr>
+    <tr>
+      <td><a id="ConsultationRegistrationActivity"><strong>paf:ConsultationRegistrationActivity</strong></a></td>
+      <td>This is the activity, that registers the consultation in the necessary systems (this is usually not the agent that actually wants to do the consultation). The consultation itself is the sum of all input entities to this activity.</td>
+    </tr>
+    <tr>
+      <td><a id="ConsultationRegistrar"><strong>paf:ConsultationRegistrar</strong></a></td>
+      <td>The agent (person or group) which registers the consultation in the necessary systems.</td>
+    </tr>
+    <tr>
+      <td><a id="ConsultationActivity"><strong>paf:ConsultationActivity</strong></a></td>
+      <td>This activity contains as the sum of all input entities the actual consultation with all necessary information.</td>
+    </tr>
+    <tr>
+      <td><a id="ConsultationSubmitter"><strong>paf:ConsultationSubmitter</strong></a></td>
+      <td>The agent (person or group) which submits the consultation.</td>
+    </tr>
+    <tr>
+      <td><a id="ConsultationReceiver"><strong>paf:ConsultationReceiver</strong></a></td>
+      <td>The agent (person or group) which receives the consultation.</td>
+    </tr>
+    <tr>
+      <td><a id="CommentActivity"><strong>paf:CommentActivity</strong></a></td>
+      <td>This activity contains as the sum of all output entities the complete comments on the consultation. The input entities could be used to show, if not the entire scope of the consultation was considered for making comments. In the case of comment activities, there is no need to alter the consultation, so there is no comment creation activity (in comparison to the proposal and decision activities).</td>
+    </tr>
+    <tr>
+      <td><a id="CommentEntity"><strong>paf:CommentEntity</strong></a></td>
+      <td>This is the entity that contains the comments to the consultation.</td>
+    </tr>
+    <tr>
+      <td><a id="CommentMaker"><strong>paf:CommentMaker</strong></a></td>
+      <td>The agent (person or group) which issues the comment.</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Full Example on Consultation & Comment
 
@@ -87,14 +154,40 @@ The affair of information and acknowledgement means that a person or organizatio
 
 The following elements are involved in such an affair:
 
-| Class | Description |
-|-------|-------------|
-| **paf:InformationCreationActivity** {#InformationCreationActivity} | This is the activity that creates all the necessary entities to bundle the information. As the actual information activity should not generate entities, this pre-information activity is used. |
-| **paf:InformationActivity** {#InformationActivity} | This activity contains as the sum of all input entities the actual information. |
-| **paf:InformationSubmitter** {#InformationSubmitter} | The agent (person or group) which submits the information. |
-| **paf:InformationReceiver** {#InformationReceiver} | The agent (person or group) which receives the information. |
-| **paf:AcknowledgementActivity** {#AcknowledgementActivity} | This is the activity to formally acknowledge the corresponding [paf:InformationActivity](#InformationActivity). It contains as the sum of all input entities the information that is acknowledged and creates no output entity. |
-| **paf:AcknowledgementMaker** {#AcknowledgementMaker} | The agent (person or group) which acknowledges the information. |
+<table>
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a id="InformationCreationActivity"><strong>paf:InformationCreationActivity</strong></a></td>
+      <td>This is the activity that creates all the necessary entities to bundle the information. As the actual information activity should not generate entities, this pre-information activity is used.</td>
+    </tr>
+    <tr>
+      <td><a id="InformationActivity"><strong>paf:InformationActivity</strong></a></td>
+      <td>This activity contains as the sum of all input entities the actual information.</td>
+    </tr>
+    <tr>
+      <td><a id="InformationSubmitter"><strong>paf:InformationSubmitter</strong></a></td>
+      <td>The agent (person or group) which submits the information.</td>
+    </tr>
+    <tr>
+      <td><a id="InformationReceiver"><strong>paf:InformationReceiver</strong></a></td>
+      <td>The agent (person or group) which receives the information.</td>
+    </tr>
+    <tr>
+      <td><a id="AcknowledgementActivity"><strong>paf:AcknowledgementActivity</strong></a></td>
+      <td>This is the activity to formally acknowledge the corresponding <a href="#InformationActivity">paf:InformationActivity</a>. It contains as the sum of all input entities the information that is acknowledged and creates no output entity.</td>
+    </tr>
+    <tr>
+      <td><a id="AcknowledgementMaker"><strong>paf:AcknowledgementMaker</strong></a></td>
+      <td>The agent (person or group) which acknowledges the information.</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Full Example on Information & Acknowledgement
 
@@ -115,15 +208,44 @@ Alternative names:
 
 The following elements are involved in such an affair:
 
-| Class | Description |
-|-------|-------------|
-| **paf:OrderCreationActivity** {#OrderCreationActivity} | This is the activity that creates all the necessary entities to bundle the order. As the actual order activity should not generate entities, this pre-order activity is used. |
-| **paf:OrderActivity** {#OrderActivity} | This activity contains as the sum of all input entities the actual order. |
-| **paf:OrderSubmitter** {#OrderSubmitter} | The agent (person or group) which submits the order. |
-| **paf:OrderReceiver** {#OrderReceiver} | The agent (person or group) which receives the order. |
-| **paf:CompletionCreationActivity** {#OrderEntity} | This is the activity that creates all the necessary entities to form the explanation of the completion (how was the order completed). As the actual completion activity should not generate new content for the completion but only the result of the completion, such a pre-completion activity can be used. |
-| **paf:CompletionActivity** {#CompletionActivity} | This is the activity to formally complete the corresponding [paf:OrderActivity](#OrderActivity). It contains as the sum of all input entities the order that is completed and creates no output entity. |
-| **paf:Completer** {#Completer} | The agent (person or group) which completes the order. |
+<table>
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a id="OrderCreationActivity"><strong>paf:OrderCreationActivity</strong></a></td>
+      <td>This is the activity that creates all the necessary entities to bundle the order. As the actual order activity should not generate entities, this pre-order activity is used.</td>
+    </tr>
+    <tr>
+      <td><a id="OrderActivity"><strong>paf:OrderActivity</strong></a></td>
+      <td>This activity contains as the sum of all input entities the actual order.</td>
+    </tr>
+    <tr>
+      <td><a id="OrderSubmitter"><strong>paf:OrderSubmitter</strong></a></td>
+      <td>The agent (person or group) which submits the order.</td>
+    </tr>
+    <tr>
+      <td><a id="OrderReceiver"><strong>paf:OrderReceiver</strong></a></td>
+      <td>The agent (person or group) which receives the order.</td>
+    </tr>
+    <tr>
+      <td><a id="CompletionCreationActivity"><strong>paf:CompletionCreationActivity</strong></a></td>
+      <td>This is the activity that creates all the necessary entities to form the explanation of the completion (how was the order completed). As the actual completion activity should not generate new content for the completion but only the result of the completion, such a pre-completion activity can be used.</td>
+    </tr>
+    <tr>
+      <td><a id="CompletionActivity"><strong>paf:CompletionActivity</strong></a></td>
+      <td>This is the activity to formally complete the corresponding <a href="#OrderActivity">paf:OrderActivity</a>. It contains as the sum of all input entities the order that is completed and creates no output entity.</td>
+    </tr>
+    <tr>
+      <td><a id="Completer"><strong>paf:Completer</strong></a></td>
+      <td>The agent (person or group) which completes the order.</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Full Example on Order & Completion
 
