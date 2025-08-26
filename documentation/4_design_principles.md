@@ -143,9 +143,9 @@ The following example shows how a second registration activity changes an existi
   </figcaption>
 </figure>
 
-## Transformation to JSON and XML
+## Transformation to JSON
 
-To allow for maximum impact of the paf.link schema, the data should also be available as JSON and XML so that it can be consumed by a vide variety of technical systems. Every RDF serialization (e.g. turtle) can be transformed deterministically and lossless to JSON-LD. The resulting JSON file is quite verbose and probably does not look very familiar to a developer not accustomed to RDF.
+To allow for maximum impact of the paf.link schema, the data should also be available also as JSON so that it can be consumed by a vide variety of technical systems. Every RDF serialization (e.g. turtle) can be transformed deterministically and lossless to JSON-LD. The resulting JSON file is quite verbose and probably does not look very familiar to a developer not accustomed to RDF.
 
 **Raw JSON-LD**
 
