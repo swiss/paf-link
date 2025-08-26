@@ -33,31 +33,31 @@ The following elements are involved in such an affair:
   </thead>
   <tbody>
     <tr>
-      <td><dfn id="ProposalCreationActivity"><strong>paf:ProposalCreationActivity</strong></dfn></td>
+      <td><dfn id="ProposalCreationActivity" data-dfn-noexport><strong>paf:ProposalCreationActivity</strong></dfn></td>
       <td>This is the activity that creates all the necessary entities to form the proposal. As the actual proposal activity should not generate entities, this pre-proposal activity is used.</td>
     </tr>
     <tr>
-      <td><dfn id="ProposalActivity"><strong>paf:ProposalActivity</strong></dfn></td>
+      <td><dfn id="ProposalActivity" data-dfn-noexport><strong>paf:ProposalActivity</strong></dfn></td>
       <td>This activity contains as the sum of all input entities the actual proposal.</td>
     </tr>
     <tr>
-      <td><dfn id="ProposalSubmitter"><strong>paf:ProposalSubmitter</strong></dfn></td>
+      <td><dfn id="ProposalSubmitter" data-dfn-noexport><strong>paf:ProposalSubmitter</strong></dfn></td>
       <td>The agent (person or group) which submits the proposal.</td>
     </tr>
     <tr>
-      <td><dfn id="ProposalReceiver"><strong>paf:ProposalReceiver</strong></dfn></td>
+      <td><dfn id="ProposalReceiver" data-dfn-noexport><strong>paf:ProposalReceiver</strong></dfn></td>
       <td>The agent (person or group) which receives the proposal.</td>
     </tr>
     <tr>
-      <td><dfn id="DecisionCreationActivity"><strong>paf:DecisionCreationActivity</strong></dfn></td>
+      <td><dfn id="DecisionCreationActivity" data-dfn-noexport><strong>paf:DecisionCreationActivity</strong></dfn></td>
       <td>This is the activity that creates all the necessary entities to form the content of the decision. As the actual decision activity should not generate new content for the decision but only the result of the decision, such a pre-decision activity can be used.</td>
     </tr>
     <tr>
-      <td><dfn id="DecisionActivity"><strong>paf:DecisionActivity</strong></dfn></td>
+      <td><dfn id="DecisionActivity" data-dfn-noexport><strong>paf:DecisionActivity</strong></dfn></td>
       <td>This activity contains as the sum of all input entities the content of the decision (what is decided upon) and as output entity the actual result of the decision. Because there is not necessarily a direct succession between the proposal- and decision activity, the decision activity has a separate link to the proposal activity connecting these two.</td>
     </tr>
     <tr>
-      <td><dfn id="DecisionMaker"><strong>paf:DecisionMaker</strong></dfn></td>
+      <td><dfn id="DecisionMaker" data-dfn-noexport><strong>paf:DecisionMaker</strong></dfn></td>
       <td>The agent (person or group) which issues the decision.</td>
     </tr>
   </tbody>
@@ -93,43 +93,43 @@ The following elements are involved in such an affair:
   </thead>
   <tbody>
     <tr>
-      <td><dfn id="ConsultationCreationActivity"><strong>paf:ConsultationCreationActivity</strong></dfn></td>
+      <td><dfn id="ConsultationCreationActivity" data-dfn-noexport><strong>paf:ConsultationCreationActivity</strong></dfn></td>
       <td>This is the activity that creates all the necessary entities to form the consultation. As the actual consultation activity should not generate entities, this pre-consultation activity is used.</td>
     </tr>
     <tr>
-      <td><dfn id="ConsultationEntity"><strong>paf:ConsultationEntity</strong></dfn></td>
+      <td><dfn id="ConsultationEntity" data-dfn-noexport><strong>paf:ConsultationEntity</strong></dfn></td>
       <td>This is the entity that contains (together with other entities) the content of the consultation.</td>
     </tr>
     <tr>
-      <td><dfn id="ConsultationRegistrationActivity"><strong>paf:ConsultationRegistrationActivity</strong></dfn></td>
+      <td><dfn id="ConsultationRegistrationActivity" data-dfn-noexport><strong>paf:ConsultationRegistrationActivity</strong></dfn></td>
       <td>This is the activity, that registers the consultation in the necessary systems (this is usually not the agent that actually wants to do the consultation). The consultation itself is the sum of all input entities to this activity.</td>
     </tr>
     <tr>
-      <td><dfn id="ConsultationRegistrar"><strong>paf:ConsultationRegistrar</strong></dfn></td>
+      <td><dfn id="ConsultationRegistrar" data-dfn-noexport><strong>paf:ConsultationRegistrar</strong></dfn></td>
       <td>The agent (person or group) which registers the consultation in the necessary systems.</td>
     </tr>
     <tr>
-      <td><dfn id="ConsultationActivity"><strong>paf:ConsultationActivity</strong></dfn></td>
+      <td><dfn id="ConsultationActivity" data-dfn-noexport><strong>paf:ConsultationActivity</strong></dfn></td>
       <td>This activity contains as the sum of all input entities the actual consultation with all necessary information.</td>
     </tr>
     <tr>
-      <td><dfn id="ConsultationSubmitter"><strong>paf:ConsultationSubmitter</strong></dfn></td>
+      <td><dfn id="ConsultationSubmitter" data-dfn-noexport><strong>paf:ConsultationSubmitter</strong></dfn></td>
       <td>The agent (person or group) which submits the consultation.</td>
     </tr>
     <tr>
-      <td><dfn id="ConsultationReceiver"><strong>paf:ConsultationReceiver</strong></dfn></td>
+      <td><dfn id="ConsultationReceiver" data-dfn-noexport><strong>paf:ConsultationReceiver</strong></dfn></td>
       <td>The agent (person or group) which receives the consultation.</td>
     </tr>
     <tr>
-      <td><dfn id="CommentActivity"><strong>paf:CommentActivity</strong></dfn></td>
+      <td><dfn id="CommentActivity" data-dfn-noexport><strong>paf:CommentActivity</strong></dfn></td>
       <td>This activity contains as the sum of all output entities the complete comments on the consultation. The input entities could be used to show, if not the entire scope of the consultation was considered for making comments. In the case of comment activities, there is no need to alter the consultation, so there is no comment creation activity (in comparison to the proposal and decision activities).</td>
     </tr>
     <tr>
-      <td><dfn id="CommentEntity"><strong>paf:CommentEntity</strong></dfn></td>
+      <td><dfn id="CommentEntity" data-dfn-noexport><strong>paf:CommentEntity</strong></dfn></td>
       <td>This is the entity that contains the comments to the consultation.</td>
     </tr>
     <tr>
-      <td><dfn id="CommentMaker"><strong>paf:CommentMaker</strong></dfn></td>
+      <td><dfn id="CommentMaker" data-dfn-noexport><strong>paf:CommentMaker</strong></dfn></td>
       <td>The agent (person or group) which issues the comment.</td>
     </tr>
   </tbody>
@@ -163,27 +163,27 @@ The following elements are involved in such an affair:
   </thead>
   <tbody>
     <tr>
-      <td><dfn id="InformationCreationActivity"><strong>paf:InformationCreationActivity</strong></dfn></td>
+      <td><dfn id="InformationCreationActivity" data-dfn-noexport><strong>paf:InformationCreationActivity</strong></dfn></td>
       <td>This is the activity that creates all the necessary entities to bundle the information. As the actual information activity should not generate entities, this pre-information activity is used.</td>
     </tr>
     <tr>
-      <td><dfn id="InformationActivity"><strong>paf:InformationActivity</strong></dfn></td>
+      <td><dfn id="InformationActivity" data-dfn-noexport><strong>paf:InformationActivity</strong></dfn></td>
       <td>This activity contains as the sum of all input entities the actual information.</td>
     </tr>
     <tr>
-      <td><dfn id="InformationSubmitter"><strong>paf:InformationSubmitter</strong></dfn></td>
+      <td><dfn id="InformationSubmitter" data-dfn-noexport><strong>paf:InformationSubmitter</strong></dfn></td>
       <td>The agent (person or group) which submits the information.</td>
     </tr>
     <tr>
-      <td><dfn id="InformationReceiver"><strong>paf:InformationReceiver</strong></dfn></td>
+      <td><dfn id="InformationReceiver" data-dfn-noexport><strong>paf:InformationReceiver</strong></dfn></td>
       <td>The agent (person or group) which receives the information.</td>
     </tr>
     <tr>
-      <td><dfn id="AcknowledgementActivity"><strong>paf:AcknowledgementActivity</strong></dfn></td>
+      <td><dfn id="AcknowledgementActivity" data-dfn-noexport><strong>paf:AcknowledgementActivity</strong></dfn></td>
       <td>This is the activity to formally acknowledge the corresponding <a href="#InformationActivity">paf:InformationActivity</a>. It contains as the sum of all input entities the information that is acknowledged and creates no output entity.</td>
     </tr>
     <tr>
-      <td><dfn id="AcknowledgementMaker"><strong>paf:AcknowledgementMaker</strong></dfn></td>
+      <td><dfn id="AcknowledgementMaker" data-dfn-noexport><strong>paf:AcknowledgementMaker</strong></dfn></td>
       <td>The agent (person or group) which acknowledges the information.</td>
     </tr>
   </tbody>
@@ -217,31 +217,31 @@ The following elements are involved in such an affair:
   </thead>
   <tbody>
     <tr>
-      <td><dfn id="OrderCreationActivity"><strong>paf:OrderCreationActivity</strong></dfn></td>
+      <td><dfn id="OrderCreationActivity" data-dfn-noexport><strong>paf:OrderCreationActivity</strong></dfn></td>
       <td>This is the activity that creates all the necessary entities to bundle the order. As the actual order activity should not generate entities, this pre-order activity is used.</td>
     </tr>
     <tr>
-      <td><dfn id="OrderActivity"><strong>paf:OrderActivity</strong></dfn></td>
+      <td><dfn id="OrderActivity" data-dfn-noexport><strong>paf:OrderActivity</strong></dfn></td>
       <td>This activity contains as the sum of all input entities the actual order.</td>
     </tr>
     <tr>
-      <td><dfn id="OrderSubmitter"><strong>paf:OrderSubmitter</strong></dfn></td>
+      <td><dfn id="OrderSubmitter" data-dfn-noexport><strong>paf:OrderSubmitter</strong></dfn></td>
       <td>The agent (person or group) which submits the order.</td>
     </tr>
     <tr>
-      <td><dfn id="OrderReceiver"><strong>paf:OrderReceiver</strong></dfn></td>
+      <td><dfn id="OrderReceiver" data-dfn-noexport><strong>paf:OrderReceiver</strong></dfn></td>
       <td>The agent (person or group) which receives the order.</td>
     </tr>
     <tr>
-      <td><dfn id="CompletionCreationActivity"><strong>paf:CompletionCreationActivity</strong></dfn></td>
+      <td><dfn id="CompletionCreationActivity" data-dfn-noexport><strong>paf:CompletionCreationActivity</strong></dfn></td>
       <td>This is the activity that creates all the necessary entities to form the explanation of the completion (how was the order completed). As the actual completion activity should not generate new content for the completion but only the result of the completion, such a pre-completion activity can be used.</td>
     </tr>
     <tr>
-      <td><dfn id="CompletionActivity"><strong>paf:CompletionActivity</strong></dfn></td>
+      <td><dfn id="CompletionActivity" data-dfn-noexport><strong>paf:CompletionActivity</strong></dfn></td>
       <td>This is the activity to formally complete the corresponding <a href="#OrderActivity">paf:OrderActivity</a>. It contains as the sum of all input entities the order that is completed and creates no output entity.</td>
     </tr>
     <tr>
-      <td><dfn id="Completer"><strong>paf:Completer</strong></dfn></td>
+      <td><dfn id="Completer" data-dfn-noexport><strong>paf:Completer</strong></dfn></td>
       <td>The agent (person or group) which completes the order.</td>
     </tr>
   </tbody>
