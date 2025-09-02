@@ -4,7 +4,7 @@ var respecConfig = {
     edDraftURI: "https://paf.link/",
     format: 'markdown', 
     latestVersion: null,
-    maxTocLevel: 4,
+    maxTocLevel: 2,
     preProcess: [loadTurtle],
     postProcess: [jumpTo, window.respecMermaid.createFigures],
     github: {
