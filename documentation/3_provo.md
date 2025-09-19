@@ -29,7 +29,7 @@ PROV-O consists of different categories representing different levels of granula
 The [starting point terms](https://www.w3.org/TR/prov-o/#description-starting-point-terms) including classes and their properties are shown in the following figure:
 
 <figure id="figure">
-  <img src="https://www.w3.org/TR/2013/REC-prov-o-20130430/diagrams/starting-points.svg" alt="PROV-O" />
+  <img src="img/starting-points.svg" alt="PROV-O" />
   <figcaption>The PROV Ontology with the three starting point classes and their properties, <a href="https://www.w3.org/TR/2013/REC-prov-o-20130430/" target="_blank">Source</a>.
   </figcaption>
 </figure>
@@ -38,7 +38,7 @@ The [starting point terms](https://www.w3.org/TR/prov-o/#description-starting-po
 
 The [expanded terms](https://www.w3.org/TR/prov-o/#description-expanded-terms) introduce some more specific subclasses and properties but also more general properties compared to the starting point terms. In addition, terms that relate entities according to their levels of abstraction are added. Furthermore, additional terms to describe the lifetime of entities and activities are defined.
 
-## Qualified Terms
+## Qualified Terms {#QualifiedTerms}
 
 If a relation between entities, activities and actors can not be adequately described with starting point or expanded terms, PROV-O allows the application of a special **qualification pattern** which results in so called [qualified terms](https://www.w3.org/TR/prov-o/#description-qualified-terms). This qualification pattern is basically a RDF reification.
 
@@ -77,7 +77,3 @@ If a relation between entities, activities and actors can not be adequately desc
 ## Linking Direction
 
 PROV-O is activity based and all activities have a strong relation to a temporal dimension. In PROV-O, entities, activities and agents are connected **backwards in time**. So items that happen later, link to their predecessors and not vice versa. If it is necessary to have also a forward in time link, PROV-O has some [recommendations](https://www.w3.org/TR/prov-o/#inverse-names-table) for these inverse names.
-
-## Reusing PROV-O Classes and Predicates
-
-The paf.link schema does not use the **PROV-O classes** directly but defines its own subclasses of the PROV-O schema. In the same way, the application profiles of paf.link (e.g. ch.paf.link) define subclasses of paf.link. In contrast to this, the **PROV-O predicates** are reused on all levels.

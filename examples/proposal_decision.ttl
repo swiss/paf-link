@@ -8,66 +8,38 @@
 @prefix dcterm: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:registration-activity a paf:RegistrationActivity;
-    prov:startedAtTime "2024-01-01T12:00:00Z"^^xsd:dateTime.
-
-:identifier-entity a prov:Entity;
-    prov:wasGeneratedBy :registration-activity;
+:identifier-entity a paf:IdentifierEntity ;
     schema:identifier "CH-1234".
 
-:proposal-creation-activity a paf:ProposalCreationActivity;
-    prov:wasInformedBy :registration-activity;
-    prov:startedAtTime "2024-01-02T12:00:00Z"^^xsd:dateTime;
-    prov:used :identifier-entity.
+:proposal-entity a paf:ProposalEntity ;
+    schema:description "Change background color of Swiss national flag to blue"@en .
 
-:proposal-entity a prov:Entity;
-    prov:wasGeneratedBy :proposal-creation-activity;
-    schema:name "Colocambiado";
-    schema:description "Change background color of Swiss national flag to blue"@en;
-    schema:description "Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau"@de;
-    schema:description "Modifica il colore di sfondo della bandiera nazionale svizzera in blu"@it;
-    schema:description "Modifiez la couleur de fond du drapeau national suisse en bleu"@fr.
-
-:proposal-activity a paf:ProposalActivity;
-    prov:wasInformedBy :proposal-creation-activity;
-    prov:startedAtTime "2024-01-03T12:00:00Z"^^xsd:dateTime;
-    prov:used :identifier-entity, :proposal-entity;
+:proposal-activity a paf:ProposalActivity ;
+    prov:startedAtTime "2024-01-03T12:00:00Z"^^xsd:dateTime ;
+    prov:used :identifier-entity, :proposal-entity ;
     prov:qualifiedAssociation [ 
-        a prov:Association; 
-        prov:agent :Colocambiado;
-        prov:hadRole paf:ProposalSubmitter];
+        a prov:Association ; 
+        prov:agent :Proposilinada ;
+        prov:hadRole paf:ProposalSubmitter ] ;
     prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :national-council;
-        prov:hadRole paf:ProposalReceiver].
+        a prov:Association ;
+        prov:agent :national-council ;
+        prov:hadRole paf:ProposalReceiver ] .
 
-:decision-creation-activity a paf:DecisionCreationActivity;
-    prov:wasInformedBy :proposal-activity;
-    prov:startedAtTime "2024-01-04T12:00:00Z"^^xsd:dateTime;
+:decision-entity a prov:DecisionEntity;
+    schema:description "Change background color of Swiss national flag to blue and yellow"@en . 
+
+:decision-activity a paf:DecisionActivity ;
+    prov:wasInformedBy :proposal-activity ;
+    prov:startedAtTime "2024-01-05T12:00:00Z"^^xsd:dateTime ;
+    prov:used :identifier-entity, :decision-entity ;
     prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :national-council;
-        prov:hadRole paf:ChangeMaker].
+        a prov:Association ;
+        prov:agent :national-council ;
+        prov:hadRole paf:DecisionMaker ] .
 
-:decision-entity a prov:Entity;
-    prov:wasGeneratedBy :decision-creation-activity;
-    schema:description "Change background color of Swiss national flag to blue and yellow"@en;
-    schema:description "Ändere Hintergrundfarbe der Schweizer Nationalflagge zu blau und gelb"@de;
-    schema:description "Modifica il colore di sfondo della bandiera nazionale svizzera in blu e giallo"@it;
-    schema:description "Modifiez la couleur de fond du drapeau national suisse en bleu et jaune"@fr.
-
-:decision-activity a paf:DecisionActivity;
-    prov:wasInformedBy :decision-creation-activity;
-    paf:proposalActivity :proposal-activity;
-    prov:startedAtTime "2024-01-05T12:00:00Z"^^xsd:dateTime;
-    prov:used :identifier-entity, :decision-entity;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :national-council;
-        prov:hadRole paf:DecisionMaker].
-
-:decision-result-entity a prov:Entity;
-    prov:wasGeneratedBy :decision-activity;
-    paf:decision paf:Accepted;
-    paf:voteYes 130;
-    paf:voteNo 70.
+:decision-result-entity a paf:DecisionResultEntity ;
+    prov:wasGeneratedBy :decision-activity ;
+    paf:decision paf:Accepted ;
+    paf:voteYes 130 ;
+    paf:voteNo 70 .

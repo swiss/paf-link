@@ -1,19 +1,19 @@
 # Introduction
 
-## Example of a Public Affair
+This introduction explains the rationale behind the event-based approach and how it differs from a state-based business object approach.
 
-A typical public affair might look like this:
+An example of a typical public affair might look like the following:
 
-- A member of parliament would like the government to investigate a specific topic and creates a request.
-- The parliament decides whether to submit this request to the government.
-- The government tasks the appropriate department as part of the administration to answer the request.
+- A member of parliament would like the executive branch to investigate a specific topic and creates a request.
+- The parliament decides whether to submit this request to the executive branch.
+- The executive branch tasks the appropriate department as part of the administration to answer the request.
 - The department investigates the topic and prepares a report.
-- The report is sent to the government, which then forwards it to the parliament.
-- The parliament discusses the report and decides whether it accepts the report.
+- The report is sent to the executive branch, which then forwards it to the parliament.
+- The parliament discusses the report and decides whether it accepts the report as answer to the original request from the member of parliament.
 
-## State-Based Business Object Approach
+## State-Based Approach
 
-To model such a public affair, one could try to create a business object that describes the affair, including all the involved parties, their roles, and the specific steps they take. This could also be called a **state-based approach** and might look like the following:
+To model such a public affair, a **business object** that describes the affair could be created. This object would include all the involved parties, their roles, and the specific steps they take. This would be called a **state-based approach** and the corresponding business object might look like the following:
 
 ```yaml
 business_object_id: 15abh-dh
@@ -41,14 +41,16 @@ business_object_id: 15abh-dh
 
 There are a few challenges associated with this approach:
 
-- **Organizational Complexity**: The involved parties (here: parliament, government, and department of the administration) have to reach an agreement on the structure of the business object. For this, they have to have the resources allocated to define such a business object at the same time, which is often not the case in reality.
+- **Organizational Complexity**: The involved parties (here: parliament, executive branch and department of the administration) have to reach an agreement on the structure of the business object. For this, they have to have the resources allocated to define such a business object at the same time, which is often not the case in reality.
 - **Structural Complexity**: The structure of the business object should allow for diversions in the process such as rejections, resubmissions and changes. This would require a complex structure that can handle all possible variations, which can be difficult to manage and maintain.
 - **Different Perspectives**: Different parties involved in the public affair may have different perspectives on the process. For example, the parliament might view the status of the process as "submitted" while the government might see it as "under review."
 - **Traceability**: The business object should also capture the history of the process, including changes in status, comments, and decisions made at each step. This can lead to a complex and potentially unwieldy structure.
 
+Because of these challenges, the paf.link schema takes a different approach:
+
 ## Event-Based Approach
 
-To address these challenges, the Public Affairs Schema (paf.link) takes an **event-based approach**. Instead of trying to create a single business object that describes the entire public affair, it focuses on defining activities (events) that can be linked together to form a stream of activities.
+Instead of trying to create a single business object that describes the entire public affair, the paf.link schema takes an **event-based approach** focussing on defining activities (events) that can be linked together to form a stream of activities.
 
 This approach has several advantages:
 
@@ -57,7 +59,7 @@ This approach has several advantages:
 - **Flexibility**: The basic elements of the schema can be combined in a flexible way to describe a wide range of public affairs, from simple requests to complex investigations involving multiple parties.
 - **Defined Connections**: The schema provides a well-defined method for connecting different public affairs processes, such as linking parliamentary motions with executive actions and law text publications. This allows for a clear understanding of how different activities relate to each other.
 
-## State-Based vs. Event-Based Approach
+## Comparison of Approaches
 
 If the number of involved parties is small and the process is well-defined, a state-based approach might be sufficient. However, in the context of public affairs, where multiple parties are involved and processes can vary significantly, an event-based approach is more suitable. It allows for greater flexibility, independence, and interoperability, making it easier to adapt to the complexities of public administration.
 
@@ -68,15 +70,13 @@ If the number of involved parties is small and the process is well-defined, a st
   </figcaption>
 </figure>
 
-If one tries to solve one clear defined problem with a state-based approach, it is often possible to do so. However, it is difficult to reuse such state-based business objects outside the specific context they were created for. The event-based approach, on the other hand, allows for the reuse of activities across different public affairs, making it more versatile and adaptable to various contexts.
+If a well defined problem is tackled with a state-based approach, it is often possible to do so. However, it is difficult to reuse such state-based business objects outside the specific context they were created for. The event-based approach, on the other hand, allows for the reuse of activities across different public affairs, making it more versatile and adaptable to various contexts.
 
 ## Layered Design
 
-As it is good practice, the paf.link schema strives for reuse of existing vocabulary. Using PROV-O as a **base layer** gives paf.link a robust and widespread foundation. As PROV-O by design is very generic, the Public Affairs Schema (paf.link) provides on a **second layer** a framework of **design principles** to model public affairs based on the core elements of PROV-O. Additional sub-classes are defined in this layer within the context of public affairs. The second layer is generic and strives for interoperability of public administrations between countries and and different levels of adminstrations.
+The paf.link schema strives to reuse already existing vocabulary. Using PROV-O as a **base layer** gives paf.link a robust and well known foundation. As PROV-O by design is very generic, the Public Affairs Schema (paf.link) is designed as a **second layer** that allows to use PROV-O ideas for public affairs by presenting **design principles** to model public affairs based on the core elements of PROV-O. The second layer still is quite generic and strives for interoperability of public administrations between countries and and different levels of administrations.
 
-The **third layer** provides naming and sub-classes for the concrete instances of public affairs at a specific level of the public adminstration. It is created to allow the modeling specific public affairs for certain realms of public administration. On the third layer, all elements have to be declared whether they are mandatory (and in which cardinality) or if they are optional.
-
-The three layers elements are connected by sub-classing the next higher layer.
+The **third layer** provides elements for concrete public affairs at a specific level of the public administration.
 
 <figure id="figure">
   <img src="img/layers.svg" alt="Layered Design" />
@@ -98,7 +98,3 @@ The three layers elements are connected by sub-classing the next higher layer.
 | xsd | [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) |
 | rdfs | [http://www.w3.org/2000/01/rdf-schema#](http://www.w3.org/2000/01/rdf-schema#) |
 | rdf | [http://www.w3.org/1999/02/22-rdf-syntax-ns#](http://www.w3.org/1999/02/22-rdf-syntax-ns#) |
-
-## Machine Readable Schema
-
-This webpage is intended for humans and as a such, not every detail of the schema is covered. The goal of this documentation is to show and explain the main ideas of the schema. The complete paf.link schema is also available in a machine readable form as [turtle file](https://raw.githubusercontent.com/swiss/paf-link/main/paf-link.ttl).

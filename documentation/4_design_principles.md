@@ -1,14 +1,14 @@
-# Design Principles {#design-principles}
+# Design Principles for paf.link {#design-principles}
 
-PROV-O is deliberately very open in its design allowing it to be used in a wide variety of application scenarios. The paf.link schema builds upon this open foundation and defines some narrower **design principles** how to use PROV-O to represent public affairs.
+PROV-O is deliberately very open in its design allowing it to be used in a wide variety of application scenarios. The paf.link schema builds upon this open foundation and establishes some **design principles** how to use PROV-O in paf.link to represent public affairs.
 
-These design principles try to strike a balance between on the one hand too much openness which would lead to implementations that differ very much and on the other hand too rigid requirements making it difficult to adapt to the existing realities of different public affairs.
+These design principles try to **strike a balance** between on the one hand too much openness which would lead to implementations that differ very much and on the other hand too rigid requirements making it difficult to adapt to the existing realities of different public affairs.
 
 ## Public Affairs in General
 
 In its simplest form, public affairs are:
 
-- **activities** undertaken by
+- **activities** undertaken at a certain time or within a time span by
 - **agents** (person or systems) that use
 - **entities** as input information and for generating output information.
 
@@ -18,7 +18,7 @@ The design principles specify only the **bare necessities** for describing a pub
 
 ## Activities
 
-Activities are bound to to **take place at a certain point in time** and can have a **time duration**. They are **executed by agents** that can be single persons or groups of people or technical systems. Activities are **chained in temporal succession** to build an **activity stream** that can also branch and reunite.
+Activities are bound to **take place at a certain point in time** and can have a **time duration**. They are **executed by agents** that can be single persons or groups of people or technical systems. Activities are **chained in temporal succession** to build an **activity stream** that can also branch and reunite.
 
 <figure id="activities">
   <img src="img/activities.svg" alt="Activity Stream" />
@@ -27,9 +27,41 @@ Activities are bound to to **take place at a certain point in time** and can hav
   </figcaption>
 </figure>
 
+The time specification of activities is done by using the PROV-O predicates `prov:startedAtTime` and `prov:endedAtTime` with values of type `xsd:dateTime` or `xsd:date`. If an activity is instantaneous, only the start time is given. This means that an activity without end time is considered to be instantaneous.
+
+<aside class="example" title="Activities with agents and time specifications.">
+
+```turtle
+@prefix : <https://example.com/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+:activity-1 a prov:Activity ;
+    # start and end time of the activity as xsd:date
+    prov:startedAtTime "2023-01-01"^^xsd:date ;
+    prov:endedAtTime "2023-02-10"^^xsd:date ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent :agent-1 ;
+        prov:hadRole :role-1" ;
+    ] .
+
+:activity-2 a prov:Activity ;
+    prov:wasInformedBy :activity-1 ;
+    # only start time of the activity, meaning instantaneous activity as xsd:dateTime
+    prov:startedAtTime "2023-02-15Z12:00:00^^xsd:dateTime ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent :agent-2 ;
+        prov:hadRole :role-2" ;
+    ] .
+
+```
+
+</aside>
+
 ## Agents
 
-Agents are used in connection with activities. They are used to show who (or which system) executed a certain activity but are also used to depict further players that are involved. For example in a proposal activity, there is a proposal submitter and a proposal receiver involved.
+Agents are the actors in the different activities. They are used to show **who** (or which system) in which **role** acted on the activity. For example in a proposal activity, there is a proposal submitter and a proposal receiver involved.
 
 <figure id="agents">
   <img src="img/agents.svg" alt="Agents and Activities" />
@@ -38,9 +70,11 @@ Agents are used in connection with activities. They are used to show who (or whi
   </figcaption>
 </figure>
 
+In paf.link, agents and their roles are always modeled as qualified associations (see [PROV-O Qualified Terms](#QualifiedTerms)).
+
 ## Entities
 
-Entities can be used as **input information** for a certain activity or can be created as **output information** representing the **result of a specific activity** (e.g. voting result of a voting activity). Such output information in turn can act as **input information** for later activities. Entities should not act at the same time as input and output entity for the *same* activity.
+Entities can be used as **input information** for a certain activity or can be created as **output information** representing the **result of a specific activity** (e.g. voting result of a voting activity). Such output information in turn can act as **input information** for later activities. If there is no specific need to link the creation of an entity to a specific activity, the entity can just be used without formal creation. Usually, entities will not act at the same time as input and output information of the same activity.
 
 <figure id="entities">
   <img src="img/entities.svg" alt="Input and Output Entities" />
@@ -51,119 +85,54 @@ Entities can be used as **input information** for a certain activity or can be c
 
 Even without generating output entities, the fact that an activity happened can also signal some information: For example an acknowledgment activity means that something is acknowledged even without generating an output entity.
 
-The way how to divide information about the public affair into different entities is with one exception (see [below](#IdentifierEntities)) a matter of judgement. As guideline: If some information added to the entity does not hold true for the whole entity, this is a sign to split the entity into separate entities.
-
 ## Identifier Entities {#IdentifierEntities}
 
-A special case of entities are **identifier entities** that represent the identifier of a specific public affair. Such identifier entities should only contain:
+As identifiers of specific public affairs are very **fundamental**, these information is modelled by using **identifier entities** with class **`paf:IdentifierEntity`** as subclass of `prov:Entity`. Such identifier entities are very atomic and only contain the following information:
 
-- the identifier which should also be part of the URI of such entities and
+- the identifier itself (as string linke via `schema:identifier`) which in addition should also be part of the URI of such entities and
 - an additional class showing the kind of identifier (e.g. identifier of the national parliament).
 
-Every activity that acts upon a specific affair should use the corresponding identifier entity as part of the input entities.
+Every activity that acts upon a specific affair should use the corresponding identifier entity as part of the input entities (`prov:used`). I is very common, that **activities act upon multiple identifiers** at the same time meaning that at least parts of a public affair can have multiple different identifiers from different systems.
 
-Class **paf:IdentifierEntity** {#IdentifierEntity}
+## Changing, Corrections and Traceability
 
-Subclass of prov:Entity. Used with only one property: paf:identifier.
+To ensure **traceability**, entities **must not be changed or deleted**. Otherwise, activities that used these entities before, could lead to other results. If a change/correction is necessary, a **`paf:EntityChangeActivity`** is carried out that uses the old entity as input and creates the changed/corrected entity as output.
 
-Property **paf:identifier** {#identifier}
+<figure id="entity_change">
+  <img src="img/entity_change.svg" alt="Changing an Entity" />
+  <figcaption>
+    Changing an entity through an entity change activity.
+  </figcaption>
+</figure>
 
-The literal containing the identifier of the public affair. This identifier should be part of the URI of the identifier entity.
+Of course, there are situations where it is necessary to delete entities (e.g. due to legal requirements or if the information was mistakenly published). In such cases, the traceability is deliberately broken.
 
-## System Boundaries
+## Dividing Information into Entities
 
-In reality, the paf.link schema will only be used during subparts of the public affair meaning that at some point in time, preexisting information will enter the paf.link realm. This will be done with a **registration activity**. If the information is to leave the paf.link boundary this has to be done by querying the paf.link data according to the needs of the acquiring system.
-
-Class **paf:RegistrationActivity** {#RegistrationActivity}
-
-With help of a paf:RegistrationActivity, the necessary information gets registered within the paf.link system boundaries. This registration activity takes the preexisting information and groups it into the necessary entities that are mapped as output entities of the registration activity (although of course the corresponding information was available long before that and was not *generated* by the registration activity).
-
-## Traceability and Corrections
-
-To ensure **complete traceability**, entities must not be changed or deleted after their creation. If a change/correction is necessary, a new entity must be created. Connecting such entities to their predecessors could be advantageous in terms of convenience but is not a requirement by the paf.link design principles. It has to become clear based on the activities, if something is merely a change of some pre-existing entities. For example, if a registration activity is carried out a second time, this will create another registration entity that replaces the existing one.
+The way how to divide information about the public affair into different entities is - with one exception (see [Identifier Entities](#IdentifierEntities)) - at least partially also a matter of judgement.
 
 ## Binomial Activities
 
-Public affairs can come in some form of binomial affairs. One example of such an affair is a proposal and decision activity. The challenge in mapping such activities is the question, how to map the actual proposal, the decision (what was decided upon - does not have to be exactly the same as in the proposal) and the actual result of the decision.
+Public affairs can come in some form of binomial affairs. One example of such an affair is a proposal and decision activity. The challenge in mapping such activities is the question, how to map the **actual proposal**, **the actual decision** (what was decided upon - does not have to be exactly the same as in the proposal) and the **votes in favour or against the decision**.
 
-The basic design principle states that the actual proposal is the sum of all input entities to the proposal activity. As they should not be at the same time an output entity of the proposal activity (meaning that the proposal activity would have generated them), all the necessary input entities of the proposal activity had to be generated by other previous activities (e.g. proposal creation activity). So basically this means, a proposal activity should not generate any new entities. One reason for this design decision ist that the actual proposal can be queried easily by only looking for all entities that are input entities for the proposal activity.
+The actual proposal is the sum of all input entities to the proposal activity. If there is a possibility, that the content of the decision differs from the proposal (which is common in political affairs), the decision activity must state what is being decided and how it was actually decided. It does so by using the content of the decision as the sum of all input entities and the result of the decision as newly generated output entity.
 
-If there is a possibility, that the content of the decision differs from the proposal (which is common in political affairs), the decision activity must state what is being decided and how it was actually decided. It does so by using the content of the decision as the sum of all input entities and the result of the decision as newly generated output entity. If there was a change in the content of the decision compared to the proposal, the change of the corresponding entity again must be through a intermediate activity (e.g. decision creation activity) between the proposal and the decision activity.
+<figure id="proposal_decision_1">
+  <img src="img/proposal_decision_1.svg" alt="Proposal and Decision Activities and Entities" />
+  <figcaption>
+    A proposal and decision that act upon the same proposal entity - meaning that the decision is exactly the same as the proposal.
+  </figcaption>
+</figure>
 
-This principle of using input entities to show an actual proposal or decision applies to other binoms as well.
+<figure id="proposal_decision_2">
+  <img src="img/proposal_decision_2.svg" alt="Proposal and Decision Activities and Entities" />
+  <figcaption>
+    A proposal and decision that act upon different entities - meaning that the decision is not the same as the proposal.
+  </figcaption>
+</figure>
+
+This principle of using input entities to show an actual proposal or decision applies to other binomials as well.
 
 ## View Points
 
-The challenge with public affairs is that they do **look differently depending on the view point** on the affair. To allow for these different perspectives, a `paf:ViewPoint` can be defined that links to all the activities, agents and entities relevant for this specific perspective via `dcterm:hasPart` (no subclass of `prov:used` can be used for this because the range of this predicate has to allow for activities, agents and entities at the same time).
-
-## Examples to the Design Principles
-
-**Basic Affair**
-
-The following example illustrates a very basic affair based on three activities. First a **registration activity** that creates entities for identification and name and description of a public affair. The second activity uses these two entities to form a **proposal** to a deciding body. The last activity is the **decision activity** that creates a decision entity stating the result of the decision. In this case, no proposal entity is created because the proposal is already included in the description entity.
-
-<aside class="example" title="Design Principles: Basic Affair">
-    Full turtle listing for: <a href="https://github.com/swiss/paf-link/blob/main/examples/design_principles_basic.ttl" target="_blank">basic affair</a>.
-</aside>
-
-<figure id="design_principles_basic">
-  <img src="img/design_principles_basic.svg" alt="Design Principles: Basic Affair" />
-  <figcaption>
-    A basic affair example with registration, proposal and decision activities.
-  </figcaption>
-</figure>
-
-**Extended Affair**
-
-In the following extended affair example, the base entity alone is not enough to form the proposal and therefore, the proposal is built by a separate proposal creation activity. Because an activity can not create and use an entity at the same time, a distinct proposal creation activity besides the actual proposal activity is needed.
-
-<aside class="example" title="Design Principles: Extended Affair">
-        Full turtle listing for: <a href="https://github.com/swiss/paf-link/blob/main/examples/design_principles_extended.ttl" target="_blank">extended affair</a>.
-</aside>
-
-<figure id="design_principles_extended">
-  <img src="img/design_principles_extended.svg" alt="Design Principles: Extended Affair" />
-  <figcaption>
-    An extended affair example with registration, proposal creation, proposal and decision activities.
-  </figcaption>
-</figure>
-
-**Changing Entities**
-
-The following example shows how a second registration activity changes an existing public affair by creating a second registration entity.
-
-<aside class="example" title="Design Principles: Changing Entities">
-        Full turtle listing for: <a href="https://github.com/swiss/paf-link/blob/main/examples/design_principles_change.ttl" target="_blank">changing entities</a>.
-</aside>
-
-<figure id="design_principles_change">
-  <img src="img/design_principles_change.svg" alt="Design Principles: Changing Entities" />
-  <figcaption>
-    A change of an existing public affair through a repeated execution of a registration activity.
-  </figcaption>
-</figure>
-
-## Transformation to JSON
-
-To allow for maximum impact of the paf.link schema, the data should also be available also as JSON so that it can be consumed by a vide variety of technical systems. Every RDF serialization (e.g. turtle) can be transformed deterministically and lossless to JSON-LD. The resulting JSON file is quite verbose and probably does not look very familiar to a developer not accustomed to RDF.
-
-**Raw JSON-LD**
-
-The following example shows a raw JSON-LD that was transformed from turtle from [above](#example-design-principles-basic-affair).
-
-<aside class="example" title="Raw JSON-LD without context information">
-        JSON-LD for: <a href="https://github.com/swiss/paf-link/blob/main/examples/design_principles_basic.jsonld" target="_blank">basic affair</a>.
-
-</aside>
-
-**Context and Framing**
-
-To mitigate these difficulties concerning verbosity, JSON-LD allows the usage of some embedded context information. Using this information and the framing mechanism, the resulting JSON file looks much more familiar to a "standard" JSON.
-
-<aside class="example" title="JSON-LD context information">
-  JSON-LD for: <a href="https://github.com/swiss/paf-link/blob/main/examples/design_principles_basic_context.jsonld" target="_blank">context information</a>.
-</aside>
-
-<aside class="example" title="Flattened JSON-LD using context information">
-  JSON-LD for: <a href="https://github.com/swiss/paf-link/blob/main/examples/design_principles_basic_framed.jsonld" target="_blank">framed basic affair with context information</a>.
-</aside>
+The challenge with public affairs is that they do **look differently depending on the view point** on the affair. To allow for these different perspectives, a **`paf:ViewPoint`** can be defined that links to all the activities and entities relevant for this specific perspective via `dcterm:hasPart` (no subclass of `prov:used` can be used for this because the range of this predicate has to allow for activities, agents and entities at the same time).
