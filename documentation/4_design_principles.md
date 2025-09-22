@@ -136,3 +136,15 @@ This principle of using input entities to show an actual proposal or decision ap
 ## View Points
 
 The challenge with public affairs is that they do **look differently depending on the view point** on the affair. To allow for these different perspectives, a **`paf:ViewPoint`** can be defined that links to all the activities and entities relevant for this specific perspective via `dcterm:hasPart` (no subclass of `prov:used` can be used for this because the range of this predicate has to allow for activities, agents and entities at the same time).
+
+## Summary
+
+The most important design principle to follow is that **all** activities, entities and agents should be **linked together**. This will allow to design queries that can find all information. The most important links are:
+
+- Activities should be linked in temporal succession via `prov:wasInformedBy`.
+- Activities should have a time specification via `prov:startedAtTime` and optionally `prov:endedAtTime`.
+- Activities should have at least one agent linked via a qualified association (`prov:qualifiedAssociation`).
+- Activities link to the entities via `prov:used`.
+- If it is important to show that an entity was created by a specific activity, the entity should link to the activity via `prov:wasGeneratedBy`.
+
+For complete traceability, elements should not be deleted or changed but instead a new element should be created via corresponding activities.
