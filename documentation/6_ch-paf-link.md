@@ -8,4 +8,3 @@ The currently available subjects in ch.paf.link are:
 
 - [Parliamentary Affairs](https://ch.paf.link#parliamentary-affair)
 - [Procedural Requests](https://ch.paf.link#procedural-request)
-- [Office Consultations](https://ch.paf.link#office-consultation)
