@@ -1,9 +1,10 @@
 var respecConfig = {
-    specStatus: "unofficial",
+    specStatus: "base",
     shortName: 'paf-link',
-    edDraftURI: "https://paf.link/",
+    subtitle: "Version 1.0",
+    edDraftURI: null,
     format: 'markdown', 
-    latestVersion: null,
+    latestVersion: "https://paf.link",
     maxTocLevel: 2,
     preProcess: [loadTurtle],
     postProcess: [jumpTo, window.respecMermaid.createFigures],

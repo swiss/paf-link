@@ -1,8 +1,3 @@
-<div class="advisement">
-
-Warning: This Document is a draft version. The expected release date of version 1.0 is the beginning of **October 2025**.
-</div>
-
 The **paf.link schema** is an **event-based** RDF ([[[rdf11-concepts]]]) data schema for describing **public affairs** (paf) administered by a public administration. It is based on the [[[prov-o]]] which it extends based on a number of design principles. Reusing **activities**, **agents** and **entities** as central elements, paf.link schema allows to model generic public affairs to the full extend. Furthermore, the paf.link schema allows to be adapted to specific public administrations on different public levels by using an **application profile** (e.g. [ch.paf.link](#ch-paf-link)).
 
 The paf.link schema provides the foundations for implementing public affairs in a wide variety of applications and contexts. The schema can also be used with JSON and XML implementations.
