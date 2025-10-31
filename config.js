@@ -7,7 +7,12 @@ var respecConfig = {
     latestVersion: "https://paf.link",
     maxTocLevel: 2,
     preProcess: [loadTurtle],
-    postProcess: [jumpTo, window.respecMermaid.createFigures],
+    postProcess: [jumpTo, window.respecMermaid.createFigures, () => {
+      const copyright = document.querySelector("#w3c-copyright, .copyright");
+      if (copyright) {
+        copyright.remove();
+      }
+    }],
     github: {
       repoURL: "https://github.com/swiss/paf-link",
       branch: "main", // alternative branch
